@@ -1,0 +1,19 @@
+nbproject
+.project
+.settings
+.buildpath
+.metadata
+wp-admin
+wp-includes
+wp-content/plugins
+#include the plugins with a negate pattern (!)
+
+wp-content/themes/*
+!wp-content/themes/genesis-removals-index
+
+wp-*.php
+index.php
+xmlrpc.php
+.htaccess
+readme.html
+*.txt
