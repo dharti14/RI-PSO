@@ -14,9 +14,9 @@ function before_header(){
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-	
+	<body <?php body_class();?>>
 
-  <header class="header">
+  <header class="main">
  <?php 
   }
 
@@ -24,28 +24,22 @@ add_action('genesis_header', 'main_header');
 function main_header(){
 	?>
   
+    <section id="logo_call">
       <div class="container">
         <div class="row">
-        
-        <div class="col-sm-6">
-		     <div class="logo">
-		     	<a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-		     		<img src="<?php echo TDU;?>/lp2/lib/assets/images/logo.svg">
-		     	</a>
-		     </div>
-		     
-		     <div class="mobile-logo">
-			     <a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-			     	<img src="<?php echo TDU;?>/lp2/lib/assets/images/logo.svg">
-			     </a>
-		     </div>
-	    </div>
-	    	<div class="col-sm-6">
-	     	<div class="contact-num">Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
-	    </div>
-	    
+          <div class="col-sm-3">
+            <a id="logo" href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
+              <img width="180" src="<?php echo TDU;?>/lp2/lib/assets/images/removals-index_logo.svg" alt="<?php bloginfo( 'name' );?>"/>
+            </a>
+          </div>
+          <div class="col-sm-9 call">
+            <span class="glyphicon glyphicon-earphone"></span>
+            Call <strong>FREE</strong> 24/7 on: <span class="green">0333 444 8710</span>
+          </div>
         </div>
       </div>
+    </section>
+    <!-- /#logo_call -->
     </header>
 <?php 
   }

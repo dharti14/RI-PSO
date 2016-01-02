@@ -15,7 +15,7 @@ function ri_genesis_loop()
 	require(TD.'/lp1/lib/structure/ppc-content.php');
 }
 
-require(TD.'/lp1/lib/structure/footer.php');
+//require(TD.'/lp1/lib/structure/footer.php');
 
 genesis();
 ?>
