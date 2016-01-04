@@ -1,11 +1,11 @@
 // JavaScript Document
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
 		
 		function phoneValidation(key) {
 			var error = 0;
-			var phoneLength = $(this).val().length;
-			var firsTwoValue = $(this).val().substring(0, 2);
-			var firsFourValue = $(this).val().substring(0, 4);
+			var phoneLength = jQuery(this).val().length;
+			var firsTwoValue = jQuery(this).val().substring(0, 2);
+			var firsFourValue = jQuery(this).val().substring(0, 4);
 			var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+' ];
 			if(validateArr.indexOf( firsTwoValue )<0){ 
 				error = 1;
@@ -31,15 +31,15 @@ $( document ).ready(function() {
 				error = 0;
 			}
 			if(error = 1){
-				$(this).removeClass("valid");
-				$(this).addClass("error");
+				jQuery(this).removeClass("valid");
+				jQuery(this).addClass("error");
 			}else{
-				$(this).addClass("valid");
-				$(this).removeClass("error");
+				jQuery(this).addClass("valid");
+				jQuery(this).removeClass("error");
 			}
         }
 		
-	$.validator.addMethod("phoneValidate", function (phone_number, element) {
+	jQuery.validator.addMethod("phoneValidate", function (phone_number, element) {
             phone_number = phone_number;
 			
 			var phoneLength = phone_number.length;
@@ -59,10 +59,10 @@ $( document ).ready(function() {
 			}
         }, "Invalid phone number");
 			
-	$("#form input[name='phone']").keypress(phoneValidation);
+	jQuery("#form input[name='phone']").keypress(phoneValidation);
 		
         //form validation rules
-        $("#form").validate({
+        jQuery("#form").validate({
                 rules: {
 					bedrooms: "required",
                     name: "required",
@@ -111,268 +111,100 @@ $( document ).ready(function() {
             });
 
     	
-		$(".get-my-quote-second").click(function() {
-    		$("#form").submit();
+		jQuery(".get-my-quote-second").click(function() {
+    		jQuery("#form").submit();
  		 });
 		 
-	 	$('#form input').keydown(function(e) {
+	 	jQuery('#form input').keydown(function(e) {
 			if (e.keyCode == 13) {
-    			$("#form").submit();
+    			jQuery("#form").submit();
 			}
  		 });
 
-	$(".get-my-quote").click(function(){
-		$(".looking-for").hide();
-		$(".will-removal").hide();
-		//$("#hide-after-get").hide();
-		$(".free-quotes-now").hide();
-		$(".slide-main").hide();
-		$(".companies").hide();
-		$(".find-experts").hide();
-		$(".footer").hide();
-		var postcode_from = $("#postcode_from").val();
-		var postcode_to = $("#postcode_to").val();
-		var buseness_type = $("input[name=buseness_type]:checked").val();
-			if(buseness_type == "International"){ postcode_to = ''; }
-		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
-		if(buseness_type == "Business Removal"){
-			$("#show-after-get-business").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get-business').offset().top
-    		}, 300);
-		}else if(buseness_type == "International"){
-			$("#show-after-get-international").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get-international').offset().top
-    		}, 300);
-		}else{	
-			$("#show-after-get").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get').offset().top
-    		}, 300);
-		}
-		
-		$.ajax({
-			type: "POST",
-			url: "ajaxaddress.php",
-			data: dataString,
-			success: function(result){
-				//alert(result);
-				var json_obj = $.parseJSON(result);
-				//alert(result);
-				$("input[name=city]").val(json_obj.town[0]);
-				$("input[name=postcode]").val(postcode_from);
-				$("input[name=address]").val(json_obj.line_1);
-				$("input[name=city_to]").val(json_obj.town_to[0]);
-				$("input[name=postcode_to]").val(postcode_to);
-				$("input[name=address_to]").val(json_obj.line_1_to);
-				$("input:text").each(function(){
-					if ($.trim($(this).val()).length != 0){
-						$(this).addClass("valid");
-						
-					}
-					
-				});
-
-				
-/*				$(".header").addClass("hide-after-get");
-				$(".looking-for").addClass("hide-after-get");
-				$(".will-removal").addClass("hide-after-get");
-				$("#hide-after-get").addClass("hide-after-get");*/
-				//$(".header").hide();
-				
-				
-			},
-			
-		});
-		
-	});
-	$(".get-my-quote2").click(function(){
-
-		var postcode_from = $("#postcode_from2").val();
-		var postcode_to = $("#postcode_to2").val();
-		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
-		$(".looking-for").hide();
-		$(".will-removal").hide();
-		//$("#hide-after-get").hide();
-		$(".free-quotes-now").hide();
-		$(".slide-main").hide();
-		$(".companies").hide();
-		$(".find-experts").hide();
-		$("#show-after-get").css("display","block");
-		$('html, body').animate({
-        	scrollTop: $('#show-after-get').offset().top
-    	}, 300);
-		$.ajax({
-			type: "POST",
-			url: "ajaxaddress.php",
-			data: dataString,
-			success: function(result){
-				//alert(result);
-				var json_obj = $.parseJSON(result);
-				
-				$("input[name=city]").val(json_obj.town[0]);
-				$("input[name=postcode]").val(postcode_from);
-				$("input[name=address]").val(json_obj.line_1);
-				$("input[name=city_to]").val(json_obj.town_to[0]);
-				$("input[name=postcode_to]").val(postcode_to);
-				$("input[name=address_to]").val(json_obj.line_1_to);
-				$("#form input:text").each(function(){
-					if ($.trim($(this).val()).length != 0){
-						$(this).addClass("valid");
-						
-					}
-					
-				});
-/*				$(".header").addClass("hide-after-get");
-				$(".looking-for").addClass("hide-after-get");
-				$(".will-removal").addClass("hide-after-get");
-				$("#hide-after-get").addClass("hide-after-get");*/
-				//$(".header").hide();
-				
-			},
-			
-		});
-		
-	});
-	$(".get-my-quote3").click(function(){
-
-		var postcode_from = $("#postcode_from3").val();
-		var postcode_to = $("#postcode_to3").val();
-		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
-		$(".looking-for").hide();
-		$(".will-removal").hide();
-		//$("#hide-after-get").hide();
-		$(".free-quotes-now").hide();
-		$(".slide-main").hide();
-		$(".companies").hide();
-		$(".find-experts").hide();
-		$("#show-after-get").css("display","block");
-		$('html, body').animate({
-        	scrollTop: $('#show-after-get').offset().top
-    	}, 300);
-		$.ajax({
-			type: "POST",
-			url: "ajaxaddress.php",
-			data: dataString,
-			success: function(result){
-				//alert(result);
-				var json_obj = $.parseJSON(result);
-				
-				$("input[name=city]").val(json_obj.town[0]);
-				$("input[name=postcode]").val(postcode_from);
-				$("input[name=address]").val(json_obj.line_1);
-				$("input[name=city_to]").val(json_obj.town_to[0]);
-				$("input[name=postcode_to]").val(postcode_to);
-				$("input[name=address_to]").val(json_obj.line_1_to);
-				$("#form input:text").each(function(){
-					if ($.trim($(this).val()).length != 0){
-						$(this).addClass("valid");
-						
-					}
-					
-				});
-/*				$(".header").addClass("hide-after-get");
-				$(".looking-for").addClass("hide-after-get");
-				$(".will-removal").addClass("hide-after-get");
-				$("#hide-after-get").addClass("hide-after-get");*/
-				//$(".header").hide();
-				
-			},
-			
-		});
-		
-	});
-	$('#form1 input').keydown(function(e) {
+	jQuery('#form1 input').keydown(function(e) {
 		
     	if (e.keyCode == 13) {
-        $(".looking-for").hide();
-		$(".will-removal").hide();
-		//$("#hide-after-get").hide();
-		$(".free-quotes-now").hide();
-		$(".slide-main").hide();
-		$(".companies").hide();
-		$(".find-experts").hide();
-		$(".footer").hide();
-		var postcode_from = $("#postcode_from").val();
-		var postcode_to = $("#postcode_to").val();
-		var buseness_type = $("input[name=buseness_type]:checked").val();
+        jQuery(".looking-for").hide();
+		jQuery(".will-removal").hide();
+		//jQuery("#hide-after-get").hide();
+		jQuery(".free-quotes-now").hide();
+		jQuery(".slide-main").hide();
+		jQuery(".companies").hide();
+		jQuery(".find-experts").hide();
+		jQuery(".footer").hide();
+		var postcode_from = jQuery("#postcode_from").val();
+		var postcode_to = jQuery("#postcode_to").val();
+		var buseness_type = jQuery("input[name=buseness_type]:checked").val();
 			if(buseness_type == "International"){ postcode_to = ''; }
 		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
 		// AJAX Code To Submit Form.
 		//alert(dataString);
 		if(buseness_type == "Business Removal"){
-			$("#show-after-get-business").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get-business').offset().top
+			jQuery("#show-after-get-business").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get-business').offset().top
     		}, 300);
 		}else if(buseness_type == "International"){
-			$("#show-after-get-international").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get-international').offset().top
+			jQuery("#show-after-get-international").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get-international').offset().top
     		}, 300);
 		}else{	
-			$("#show-after-get").css("display","block");
-			$('html, body').animate({
-        		scrollTop: $('#show-after-get').offset().top
+			jQuery("#show-after-get").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get').offset().top
     		}, 300);
 		}
-		$.ajax({
+		jQuery.ajax({
 			type: "POST",
 			url: "ajaxaddress.php",
 			data: dataString,
 			success: function(result){
 				//alert(result);
-				var json_obj = $.parseJSON(result);
+				var json_obj = jQuery.parseJSON(result);
 				//alert(result);
-				$("input[name=city]").val(json_obj.town[0]);
-				$("input[name=postcode]").val(postcode_from);
-				$("input[name=address]").val(json_obj.line_1);
-				$("input[name=city_to]").val(json_obj.town_to[0]);
-				$("input[name=postcode_to]").val(postcode_to);
-				$("input[name=address_to]").val(json_obj.line_1_to);
-				$("#form input:text").each(function(){
-					if ($.trim($(this).val()).length != 0){
-						$(this).addClass("valid");
+				jQuery("input[name=city]").val(json_obj.town[0]);
+				jQuery("input[name=postcode]").val(postcode_from);
+				jQuery("input[name=address]").val(json_obj.line_1);
+				jQuery("input[name=city_to]").val(json_obj.town_to[0]);
+				jQuery("input[name=postcode_to]").val(postcode_to);
+				jQuery("input[name=address_to]").val(json_obj.line_1_to);
+				jQuery("#form input:text").each(function(){
+					if (jQuery.trim(jQuery(this).val()).length != 0){
+						jQuery(this).addClass("valid");
 						
 					}
 					
 				});
 				if(buseness_type == "Business Removal"){
-					$("input[name=companyname]").css("display","block");
-					$("input[name=companyname]").removeAttr('disabled');
-					$("input[name=companyname]").attr('required','required');
+					jQuery("input[name=companyname]").css("display","block");
+					jQuery("input[name=companyname]").removeAttr('disabled');
+					jQuery("input[name=companyname]").attr('required','required');
 				}else{
-					$("input[name=companyname]").css("display","none");
-					$("input[name=companyname]").attr('disabled','disabled');
+					jQuery("input[name=companyname]").css("display","none");
+					jQuery("input[name=companyname]").attr('disabled','disabled');
 				}
 				if(buseness_type == "International"){
-					$("select[name=country]").css("display","inline");
-					$("select[name=country]").removeAttr('disabled');
-					$("select[name=countryTo]").css("display","inline");
-					$("select[name=countryTo]").removeAttr('disabled');
-					$("select[name=country]").attr('required','required');
-					$("select[name=countryTo]").attr('required','required');
+					jQuery("select[name=country]").css("display","inline");
+					jQuery("select[name=country]").removeAttr('disabled');
+					jQuery("select[name=countryTo]").css("display","inline");
+					jQuery("select[name=countryTo]").removeAttr('disabled');
+					jQuery("select[name=country]").attr('required','required');
+					jQuery("select[name=countryTo]").attr('required','required');
 				}else{
-					$("select[name=country]").css("display","none");
-					$("select[name=country]").attr('disabled','disabled');
-					$("select[name=countryTo]").css("display","none");
-					$("select[name=countryTo]").removeAttr('disabled');
-					$("select[name=country]").removeAttr('required');
-					$("select[name=countryTo]").removeAttr('required');
+					jQuery("select[name=country]").css("display","none");
+					jQuery("select[name=country]").attr('disabled','disabled');
+					jQuery("select[name=countryTo]").css("display","none");
+					jQuery("select[name=countryTo]").removeAttr('disabled');
+					jQuery("select[name=country]").removeAttr('required');
+					jQuery("select[name=countryTo]").removeAttr('required');
 				}
-				$("#show-after-get").css("display","block")
-/*				$(".header").addClass("hide-after-get");
-				$(".looking-for").addClass("hide-after-get");
-				$(".will-removal").addClass("hide-after-get");
-				$("#hide-after-get").addClass("hide-after-get");*/
-				//$(".header").hide();
+				jQuery("#show-after-get").css("display","block")
+/*				jQuery(".header").addClass("hide-after-get");
+				jQuery(".looking-for").addClass("hide-after-get");
+				jQuery(".will-removal").addClass("hide-after-get");
+				jQuery("#hide-after-get").addClass("hide-after-get");*/
+				//jQuery(".header").hide();
 				
 			},
 			
@@ -381,50 +213,50 @@ $( document ).ready(function() {
 	
     	}
 	});
-	$('#form2 input').keydown(function(e) {
+	jQuery('#form2 input').keydown(function(e) {
 		
     	if (e.keyCode == 13) {
         	
-		var postcode_from = $("#postcode_from2").val();
-		var postcode_to = $("#postcode_to2").val();
+		var postcode_from = jQuery("#postcode_from2").val();
+		var postcode_to = jQuery("#postcode_to2").val();
 		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
 		// AJAX Code To Submit Form.
 		//alert(dataString);
-		$.ajax({
+		jQuery.ajax({
 			type: "POST",
 			url: "ajaxaddress.php",
 			data: dataString,
 			success: function(result){
 				//alert(result);
-				var json_obj = $.parseJSON(result);
+				var json_obj = jQuery.parseJSON(result);
 				
-				$("input[name=city]").val(json_obj.town[0]);
-				$("input[name=postcode]").val(postcode_from);
-				$("input[name=address]").val(json_obj.line_1);
-				$("input[name=city_to]").val(json_obj.town_to[0]);
-				$("input[name=postcode_to]").val(postcode_to);
-				$("input[name=address_to]").val(json_obj.line_1_to);
-				$("#form input:text").each(function(){
-					if ($.trim($(this).val()).length != 0){
-						$(this).addClass("valid");
+				jQuery("input[name=city]").val(json_obj.town[0]);
+				jQuery("input[name=postcode]").val(postcode_from);
+				jQuery("input[name=address]").val(json_obj.line_1);
+				jQuery("input[name=city_to]").val(json_obj.town_to[0]);
+				jQuery("input[name=postcode_to]").val(postcode_to);
+				jQuery("input[name=address_to]").val(json_obj.line_1_to);
+				jQuery("#form input:text").each(function(){
+					if (jQuery.trim(jQuery(this).val()).length != 0){
+						jQuery(this).addClass("valid");
 						
 					}
 					
 				});
-				$("#show-after-get").css("display","block")
-/*				$(".header").addClass("hide-after-get");
-				$(".looking-for").addClass("hide-after-get");
-				$(".will-removal").addClass("hide-after-get");
-				$("#hide-after-get").addClass("hide-after-get");*/
-				//$(".header").hide();
-				$(".looking-for").hide();
-				$(".will-removal").hide();
-				//$("#hide-after-get").hide();
-				$(".free-quotes-now").hide();
-				$(".slide-main").hide();
-				$(".companies").hide();
-				$(".find-experts").hide();
-				$(".footer").hide();
+				jQuery("#show-after-get").css("display","block")
+/*				jQuery(".header").addClass("hide-after-get");
+				jQuery(".looking-for").addClass("hide-after-get");
+				jQuery(".will-removal").addClass("hide-after-get");
+				jQuery("#hide-after-get").addClass("hide-after-get");*/
+				//jQuery(".header").hide();
+				jQuery(".looking-for").hide();
+				jQuery(".will-removal").hide();
+				//jQuery("#hide-after-get").hide();
+				jQuery(".free-quotes-now").hide();
+				jQuery(".slide-main").hide();
+				jQuery(".companies").hide();
+				jQuery(".find-experts").hide();
+				jQuery(".footer").hide();
 				 
 			},
 			
@@ -434,152 +266,152 @@ $( document ).ready(function() {
     	}
 	});
 	
-	$('.bed-radios-container').click(function(){
-		$('.bed-radios-container').removeClass("bed-radios-container-sel");
+	jQuery('.bed-radios-container').click(function(){
+		jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
 		
-		if($(this).attr("rel") == "bed0"){
+		if(jQuery(this).attr("rel") == "bed0"){
 			
-			$(".step-4-checkbox span").remove();
-			$(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
-			$('#greenwood_drive2').show();
-			$("input[name='any_addition_information']").attr( 'checked', 'checked' );
+			jQuery(".step-4-checkbox span").remove();
+			jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery('#greenwood_drive2').show();
+			jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
 			
 		}else{
-			$(this).addClass("bed-radios-container-sel");
+			jQuery(this).addClass("bed-radios-container-sel");
 		}
 		
-		$(this).find("input[type='radio']").prop("checked", true);
-		$(".removing-stress-frm h4.property span").remove();
-		$(".removing-stress-frm h4.property").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(this).find("input[type='radio']").prop("checked", true);
+		jQuery(".removing-stress-frm h4.property span").remove();
+		jQuery(".removing-stress-frm h4.property").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 	});
 	
-	$("#show-after-get input[name='property_type_from']").click(function(){
-		if($(this).val() == "Apartment / Flat"){
-			$("#show-after-get #appartment-floor-from").css("display","block");
-			$("#show-after-get select[name='floor_from']").prop("required",true);
-			$("#show-after-get input[name='lift_available_from']").prop("required",true);
+	jQuery("#show-after-get input[name='property_type_from']").click(function(){
+		if(jQuery(this).val() == "Apartment / Flat"){
+			jQuery("#show-after-get #appartment-floor-from").css("display","block");
+			jQuery("#show-after-get select[name='floor_from']").prop("required",true);
+			jQuery("#show-after-get input[name='lift_available_from']").prop("required",true);
 		}else{
-			$("#show-after-get #appartment-floor-from").css("display","none");
-			$("#show-after-get select[name='floor_from']").prop("required",false);
-			$("#show-after-get input[name='lift_available_from']").prop("required",false);
+			jQuery("#show-after-get #appartment-floor-from").css("display","none");
+			jQuery("#show-after-get select[name='floor_from']").prop("required",false);
+			jQuery("#show-after-get input[name='lift_available_from']").prop("required",false);
 		}
 		
-		$("#show-after-get .leftpart .redio-with-text h5 span").remove();
-		$("#show-after-get .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .leftpart .redio-with-text h5 span").remove();
+		jQuery("#show-after-get .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#show-after-get input[name='property_type_to']").click(function(){
-		if($(this).val() == "Apartment / Flat"){
-			$("#show-after-get #appartment-floor-to").css("display","block");
-			$("#show-after-get select[name='floor_to']").prop("required",true);
-			$("#show-after-get input[name='lift_available_to']").prop("required",true);
+	jQuery("#show-after-get input[name='property_type_to']").click(function(){
+		if(jQuery(this).val() == "Apartment / Flat"){
+			jQuery("#show-after-get #appartment-floor-to").css("display","block");
+			jQuery("#show-after-get select[name='floor_to']").prop("required",true);
+			jQuery("#show-after-get input[name='lift_available_to']").prop("required",true);
 		}else{
-			$("#show-after-get #appartment-floor-to").css("display","none");
-			$("#show-after-get select[name='floor_to']").prop("required",false);
-			$("#show-after-get input[name='lift_available_to']").prop("required",false);
+			jQuery("#show-after-get #appartment-floor-to").css("display","none");
+			jQuery("#show-after-get select[name='floor_to']").prop("required",false);
+			jQuery("#show-after-get input[name='lift_available_to']").prop("required",false);
 		}
-		$("#show-after-get .rightpart .redio-with-text h5 span").remove();
-		$("#show-after-get .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .rightpart .redio-with-text h5 span").remove();
+		jQuery("#show-after-get .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#show-after-get input[name='lift_available_from']").click(function(){
-		$("#show-after-get .leftpart .redio-with-text2 span").remove();
-		$("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get input[name='lift_available_from']").click(function(){
+		jQuery("#show-after-get .leftpart .redio-with-text2 span").remove();
+		jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#show-after-get input[name='lift_available_to']").click(function(){
-		$("#show-after-get .rightpart .redio-with-text2 span").remove();
-		$("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get input[name='lift_available_to']").click(function(){
+		jQuery("#show-after-get .rightpart .redio-with-text2 span").remove();
+		jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#show-after-get input[name='parking_available_from']").click(function(){
-		$("#show-after-get .leftpart .redio-with-text3 span").remove();
-		$("#show-after-get .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get input[name='parking_available_from']").click(function(){
+		jQuery("#show-after-get .leftpart .redio-with-text3 span").remove();
+		jQuery("#show-after-get .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#show-after-get input[name='parking_available_to']").click(function(){
-		$("#show-after-get .rightpart .redio-with-text3 span").remove();
-		$("#show-after-get .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get input[name='parking_available_to']").click(function(){
+		jQuery("#show-after-get .rightpart .redio-with-text3 span").remove();
+		jQuery("#show-after-get .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
 	
-	$("#show-after-get input[name='packing_service']").click(function(){
-		$("#show-after-get .packing-service span").remove();
-		$("#show-after-get .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get input[name='packing_service']").click(function(){
+		jQuery("#show-after-get .packing-service span").remove();
+		jQuery("#show-after-get .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("input[name='dismantle']").click(function(){
-		$(".dismantle span").remove();
-		$(".dismantle").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("input[name='dismantle']").click(function(){
+		jQuery(".dismantle span").remove();
+		jQuery(".dismantle").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("input[name='storage']").click(function(){
-		$(".storage span").remove();
-		$(".storage").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("input[name='storage']").click(function(){
+		jQuery(".storage span").remove();
+		jQuery(".storage").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("input[name='out_of_business']").click(function(){
-		$(".out_of_business span").remove();
-		$(".out_of_business").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("input[name='out_of_business']").click(function(){
+		jQuery(".out_of_business span").remove();
+		jQuery(".out_of_business").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("input[name='any_addition_information']").click(function(){
-		$(".step-4-checkbox span").remove();
-		$(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("input[name='any_addition_information']").click(function(){
+		jQuery(".step-4-checkbox span").remove();
+		jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("select[name='country']").change(function(){
-		if($(this).val() != ""){
-			$("span.country-select").remove();
-			$(this).after('<span class="vaild-check country-select"><img src="images/input-check.png" alt=""></span>');
+	jQuery("select[name='country']").change(function(){
+		if(jQuery(this).val() != ""){
+			jQuery("span.country-select").remove();
+			jQuery(this).after('<span class="vaild-check country-select"><img src="images/input-check.png" alt=""></span>');
 		}else{
-			$("span.country-select").remove();
+			jQuery("span.country-select").remove();
 		}
 		
 	});
 		
-	$("#show-after-get select[name='floor_from']").change(function(){
-		if($(this).val() == "Ground"){ 
-			$("input[name='lift_available_from']").attr( 'checked', 'checked' );
-			$("#show-after-get .leftpart .redio-with-text2 span").remove();
-			$("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get select[name='floor_from']").change(function(){
+		if(jQuery(this).val() == "Ground"){ 
+			jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
+			jQuery("#show-after-get .leftpart .redio-with-text2 span").remove();
+			jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		}
-		if($(this).val() != ""){
-			$("#show-after-get span.floor_from").remove();
-			$(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+		if(jQuery(this).val() != ""){
+			jQuery("#show-after-get span.floor_from").remove();
+			jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
 		}else{
-			$("#show-after-get span.floor_from").remove();
+			jQuery("#show-after-get span.floor_from").remove();
 		}
 	});
-	$("#show-after-get select[name='floor_to']").change(function(){
-		if($(this).val() == "Ground"){ 
-			$("input[name='lift_available_to']").attr( 'checked', 'checked' );
-			$("#show-after-get .rightpart .redio-with-text2 span").remove();
-			$("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#show-after-get select[name='floor_to']").change(function(){
+		if(jQuery(this).val() == "Ground"){ 
+			jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
+			jQuery("#show-after-get .rightpart .redio-with-text2 span").remove();
+			jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		}
-		if($(this).val() != ""){
-			$("#show-after-get span.floor_to").remove();
-			$(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+		if(jQuery(this).val() != ""){
+			jQuery("#show-after-get span.floor_to").remove();
+			jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
 		}else{
 			
-			$("#show-after-get span.floor_to").remove();
+			jQuery("#show-after-get span.floor_to").remove();
 		}
 	});
 
 	//form-business validation rules
-		$("#form-business input[name='phone']").keypress(phoneValidation);
-        $("#form-business").validate({
+		jQuery("#form-business input[name='phone']").keypress(phoneValidation);
+        jQuery("#form-business").validate({
                 rules: {
 					bedrooms: "required",
                     name: "required",
@@ -629,121 +461,121 @@ $( document ).ready(function() {
             });
 
     	
-		$(".get-my-quote-second-business").click(function() {
-    		$("#form-business").submit();
+		jQuery(".get-my-quote-second-business").click(function() {
+    		jQuery("#form-business").submit();
  		 });
 		 
-	 	$('#form-business input').keydown(function(e) {
+	 	jQuery('#form-business input').keydown(function(e) {
 			if (e.keyCode == 13) {
-    			$("#form-business").submit();
+    			jQuery("#form-business").submit();
 			}
  		 });
 
 
-		$("#form-business input[name='property_type_from']").click(function(){
-			if($(this).val() == "Apartment / Flat"){
-				$("#form-business #appartment-floor-from").css("display","block");
-				$("#form-business select[name='floor_from']").prop("required",true);
-				$("#form-business input[name='lift_available_from']").prop("required",true);
+		jQuery("#form-business input[name='property_type_from']").click(function(){
+			if(jQuery(this).val() == "Apartment / Flat"){
+				jQuery("#form-business #appartment-floor-from").css("display","block");
+				jQuery("#form-business select[name='floor_from']").prop("required",true);
+				jQuery("#form-business input[name='lift_available_from']").prop("required",true);
 			}else{
-				$("#form-business #appartment-floor-from").css("display","none");
-				$("#form-business select[name='floor_from']").prop("required",false);
-				$("#form-business input[name='lift_available_from']").prop("required",false);
+				jQuery("#form-business #appartment-floor-from").css("display","none");
+				jQuery("#form-business select[name='floor_from']").prop("required",false);
+				jQuery("#form-business input[name='lift_available_from']").prop("required",false);
 			}
 			
-			$("#form-business .leftpart .redio-with-text h5 span").remove();
-			$("#form-business .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .leftpart .redio-with-text h5 span").remove();
+			jQuery("#form-business .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 
-		$("#form-business input[name='property_type_to']").click(function(){
-			if($(this).val() == "Apartment / Flat"){
-				$("#form-business #appartment-floor-to").css("display","block");
-				$("#form-business select[name='floor_to']").prop("required",true);
-				$("#form-business input[name='lift_available_to']").prop("required",true);
+		jQuery("#form-business input[name='property_type_to']").click(function(){
+			if(jQuery(this).val() == "Apartment / Flat"){
+				jQuery("#form-business #appartment-floor-to").css("display","block");
+				jQuery("#form-business select[name='floor_to']").prop("required",true);
+				jQuery("#form-business input[name='lift_available_to']").prop("required",true);
 			}else{
-				$("#form-business #appartment-floor-to").css("display","none");
-				$("#form-business select[name='floor_to']").prop("required",false);
-				$("#form-business input[name='lift_available_to']").prop("required",false);
+				jQuery("#form-business #appartment-floor-to").css("display","none");
+				jQuery("#form-business select[name='floor_to']").prop("required",false);
+				jQuery("#form-business input[name='lift_available_to']").prop("required",false);
 			}
-			$("#form-business .rightpart .redio-with-text h5 span").remove();
-			$("#form-business .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .rightpart .redio-with-text h5 span").remove();
+			jQuery("#form-business .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 			
 		});
 
-		$("#form-business select[name='floor_from']").change(function(){
-			if($(this).val() == "Ground"){ 
-				$("input[name='lift_available_from']").attr( 'checked', 'checked' );
-				$("#form-business .leftpart .redio-with-text2 span").remove();
-				$("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business select[name='floor_from']").change(function(){
+			if(jQuery(this).val() == "Ground"){ 
+				jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
+				jQuery("#form-business .leftpart .redio-with-text2 span").remove();
+				jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 			}
-			if($(this).val() != ""){
-				$("#form-business span.floor_from").remove();
-				$(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+			if(jQuery(this).val() != ""){
+				jQuery("#form-business span.floor_from").remove();
+				jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
 			}else{
-				$("#form-business span.floor_from").remove();
+				jQuery("#form-business span.floor_from").remove();
 			}
 		});
 		
-		$("#form-business select[name='floor_to']").change(function(){
-			if($(this).val() == "Ground"){ 
-				$("input[name='lift_available_to']").attr( 'checked', 'checked' );
-				$("#form-business .rightpart .redio-with-text2 span").remove();
-				$("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business select[name='floor_to']").change(function(){
+			if(jQuery(this).val() == "Ground"){ 
+				jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
+				jQuery("#form-business .rightpart .redio-with-text2 span").remove();
+				jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 			}
-			if($(this).val() != ""){
-				$("#form-business span.floor_to").remove();
-				$(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+			if(jQuery(this).val() != ""){
+				jQuery("#form-business span.floor_to").remove();
+				jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
 			}else{
 				
-				$("#form-business span.floor_to").remove();
+				jQuery("#form-business span.floor_to").remove();
 			}
 		});
 		
-		$("#form-business input[name='lift_available_from']").click(function(){
-			$("#form-business .leftpart .redio-with-text2 span").remove();
-			$("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business input[name='lift_available_from']").click(function(){
+			jQuery("#form-business .leftpart .redio-with-text2 span").remove();
+			jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 	
-		$("#form-business input[name='lift_available_to']").click(function(){
-			$("#form-business .rightpart .redio-with-text2 span").remove();
-			$("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business input[name='lift_available_to']").click(function(){
+			jQuery("#form-business .rightpart .redio-with-text2 span").remove();
+			jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 	
-		$("#form-business input[name='parking_available_from']").click(function(){
-			$("#form-business .leftpart .redio-with-text3 span").remove();
-			$("#form-business .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business input[name='parking_available_from']").click(function(){
+			jQuery("#form-business .leftpart .redio-with-text3 span").remove();
+			jQuery("#form-business .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 	
-		$("#form-business input[name='parking_available_to']").click(function(){
-			$("#form-business .rightpart .redio-with-text3 span").remove();
-			$("#form-business .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business input[name='parking_available_to']").click(function(){
+			jQuery("#form-business .rightpart .redio-with-text3 span").remove();
+			jQuery("#form-business .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 	
 	
-		$("#form-business input[name='packing_service']").click(function(){
-			$("#form-business .packing-service span").remove();
-			$("#form-business .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-business input[name='packing_service']").click(function(){
+			jQuery("#form-business .packing-service span").remove();
+			jQuery("#form-business .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 
-		$("#form-international input[name='parking_available_from']").click(function(){
+		jQuery("#form-international input[name='parking_available_from']").click(function(){
 			
-			if($(this).val() == "No"){
-				$("#form-international .parking-issues-from").css("display","block");
+			if(jQuery(this).val() == "No"){
+				jQuery("#form-international .parking-issues-from").css("display","block");
 			}else{
-				$("#form-international .parking-issues-from").css("display","none");
+				jQuery("#form-international .parking-issues-from").css("display","none");
 			}
 			
 		});
 		
 	//form-international validation rules
-		$("#form-international input[name='phone']").keypress(phoneValidation);
-        $("#form-international").validate({
+		jQuery("#form-international input[name='phone']").keypress(phoneValidation);
+        jQuery("#form-international").validate({
                 rules: {
 					bedrooms: "required",
                     name: "required",
@@ -792,108 +624,108 @@ $( document ).ready(function() {
             });
 
     	
-		$(".get-my-quote-second-international").click(function() {
-    		$("#form-international").submit();
+		jQuery(".get-my-quote-second-international").click(function() {
+    		jQuery("#form-international").submit();
  		 });
 		 
-	 	$('#form-international input').keydown(function(e) {
+	 	jQuery('#form-international input').keydown(function(e) {
 			if (e.keyCode == 13) {
-    			$("#form-international").submit();
+    			jQuery("#form-international").submit();
 			}
  		 });
 		
-		$("#form-international input[name='property_type_from']").click(function(){
-			if($(this).val() == "Apartment / Flat"){
-				$("#form-international #appartment-floor-from").css("display","block");
-				$("#form-international select[name='floor_from']").prop("required",true);
-				$("#form-international input[name='lift_available_from']").prop("required",true);
+		jQuery("#form-international input[name='property_type_from']").click(function(){
+			if(jQuery(this).val() == "Apartment / Flat"){
+				jQuery("#form-international #appartment-floor-from").css("display","block");
+				jQuery("#form-international select[name='floor_from']").prop("required",true);
+				jQuery("#form-international input[name='lift_available_from']").prop("required",true);
 			}else{
-				$("#form-international #appartment-floor-from").css("display","none");
-				$("#form-international select[name='floor_from']").prop("required",false);
-				$("#form-international input[name='lift_available_from']").prop("required",false);
+				jQuery("#form-international #appartment-floor-from").css("display","none");
+				jQuery("#form-international select[name='floor_from']").prop("required",false);
+				jQuery("#form-international input[name='lift_available_from']").prop("required",false);
 			}
 			
-			$("#form-international .leftpart .redio-with-text h5 span").remove();
-			$("#form-international .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .leftpart .redio-with-text h5 span").remove();
+			jQuery("#form-international .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 		
 		});
 
-		$("#form-international input[name='property_type_to']").click(function(){
-			if($(this).val() == "Apartment / Flat"){
-				$("#form-international #appartment-floor-to").css("display","block");
-				$("#form-international select[name='floor_to']").prop("required",true);
-				$("#form-international input[name='lift_available_to']").prop("required",true);
+		jQuery("#form-international input[name='property_type_to']").click(function(){
+			if(jQuery(this).val() == "Apartment / Flat"){
+				jQuery("#form-international #appartment-floor-to").css("display","block");
+				jQuery("#form-international select[name='floor_to']").prop("required",true);
+				jQuery("#form-international input[name='lift_available_to']").prop("required",true);
 			}else{
-				$("#form-international #appartment-floor-to").css("display","none");
-				$("#form-international select[name='floor_to']").prop("required",false);
-				$("#form-international input[name='lift_available_to']").prop("required",false);
+				jQuery("#form-international #appartment-floor-to").css("display","none");
+				jQuery("#form-international select[name='floor_to']").prop("required",false);
+				jQuery("#form-international input[name='lift_available_to']").prop("required",false);
 			}
-			$("#form-international .rightpart .redio-with-text h5 span").remove();
-			$("#form-international .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .rightpart .redio-with-text h5 span").remove();
+			jQuery("#form-international .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
 			
 		});
 		
-		$("#form-international select[name='floor_from']").change(function(){
-			if($(this).val() == "Ground"){ 
-				$("#form-international .leftpart .redio-with-text2 span").remove();
-				$("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
-				$("input[name='lift_available_from']").attr( 'checked', 'checked' );
+		jQuery("#form-international select[name='floor_from']").change(function(){
+			if(jQuery(this).val() == "Ground"){ 
+				jQuery("#form-international .leftpart .redio-with-text2 span").remove();
+				jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+				jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
 			}
-			if($(this).val() != ""){
-				$("#form-international span.floor_from").remove();
-				$(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+			if(jQuery(this).val() != ""){
+				jQuery("#form-international span.floor_from").remove();
+				jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
 			}else{
-				$("#form-international span.floor_from").remove();
+				jQuery("#form-international span.floor_from").remove();
 			}
 		});
 	
-	$("#form-international select[name='floor_to']").change(function(){
-		if($(this).val() == "Ground"){ 
+	jQuery("#form-international select[name='floor_to']").change(function(){
+		if(jQuery(this).val() == "Ground"){ 
 			
-			$("#form-international .rightpart .redio-with-text2 span").remove();
-			$("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .rightpart .redio-with-text2 span").remove();
+			jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
-			$("input[name='lift_available_to']").attr( 'checked', 'checked' );
+			jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
 		}
-		if($(this).val() != ""){
-			$("#form-international span.floor_to").remove();
-			$(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+		if(jQuery(this).val() != ""){
+			jQuery("#form-international span.floor_to").remove();
+			jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
 		}else{
 			
-			$("#form-international span.floor_to").remove();
+			jQuery("#form-international span.floor_to").remove();
 		}
 	});
 	
-		$("#form-international input[name='lift_available_from']").click(function(){
-		$("#form-international .leftpart .redio-with-text2 span").remove();
-		$("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-international input[name='lift_available_from']").click(function(){
+		jQuery("#form-international .leftpart .redio-with-text2 span").remove();
+		jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
-	$("#form-international input[name='lift_available_to']").click(function(){
-		$("#form-international .rightpart .redio-with-text2 span").remove();
-		$("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#form-international input[name='lift_available_to']").click(function(){
+		jQuery("#form-international .rightpart .redio-with-text2 span").remove();
+		jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	
 	
-	$("#form-international input[name='packing_service']").click(function(){
-		$("#form-international .packing-service span").remove();
-		$("#form-international .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+	jQuery("#form-international input[name='packing_service']").click(function(){
+		jQuery("#form-international .packing-service span").remove();
+		jQuery("#form-international .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 
-	$("#form-international select[name='countryTo']").change(function(){
-		if($(this).val() != ""){
-			$("#form-international .select-item").addClass('valid');
+	jQuery("#form-international select[name='countryTo']").change(function(){
+		if(jQuery(this).val() != ""){
+			jQuery("#form-international .select-item").addClass('valid');
 		}else{
-			$("#form-international .select-item").removeClass('valid');
+			jQuery("#form-international .select-item").removeClass('valid');
 		}
 	});
 	
-	$("input[name='shipping_method']").click(function(){
-			$(".shipping-method span").remove();
-			$(".shipping-method").append('<span class="vaild-check" style="margin-left: 7px;"><img src="images/input-check.png" alt=""></span>');
+	jQuery("input[name='shipping_method']").click(function(){
+			jQuery(".shipping-method span").remove();
+			jQuery(".shipping-method").append('<span class="vaild-check" style="margin-left: 7px;"><img src="images/input-check.png" alt=""></span>');
 		
 	});
 	

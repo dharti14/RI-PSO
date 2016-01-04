@@ -549,6 +549,7 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 #appartment-floor-to .form-group label.error{ margin: 10px 0 0 0;}
 .select-item.valid {background: url("../images/input-check.png") no-repeat 97% 1px;}
 
+
 #show-after-get, #show-after-get-business, #show-after-get-international{ float:left; width:100%;}
 
 

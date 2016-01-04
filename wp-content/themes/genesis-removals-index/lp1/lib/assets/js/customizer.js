@@ -34,6 +34,18 @@ jQuery( document ).ready(function() {
     		}, 300);
 		}
 		
+		//just for demo
+		jQuery("input[name=postcode]").val(postcode_from);
+		jQuery("input[name=postcode_to]").val(postcode_to);
+		jQuery("input:text").each(function(){
+			if (jQuery.trim(jQuery(this).val()).length != 0){
+				jQuery(this).addClass("valid");
+				
+			}
+			
+		});
+		
+		
 		jQuery.ajax({
 			type: "POST",
 			url: "ajaxaddress.php",
@@ -67,7 +79,7 @@ jQuery( document ).ready(function() {
 			},
 			
 		});
-		
+				
 	});
 
 	
@@ -90,6 +102,20 @@ jQuery( document ).ready(function() {
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
 		jQuery(".footer").hide();
+		
+		
+		//just for demo
+		jQuery("input[name=postcode]").val(postcode_from);
+		jQuery("input[name=postcode_to]").val(postcode_to);
+		jQuery("input:text").each(function(){
+			if (jQuery.trim(jQuery(this).val()).length != 0){
+				jQuery(this).addClass("valid");
+				
+			}
+			
+		});
+		
+		
 		jQuery.ajax({
 			type: "POST",
 			url: "ajaxaddress.php",
@@ -141,6 +167,20 @@ jQuery( document ).ready(function() {
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
 		jQuery(".footer").hide();
+		
+		
+		//just for demo
+		jQuery("input[name=postcode]").val(postcode_from);
+		jQuery("input[name=postcode_to]").val(postcode_to);
+		jQuery("input:text").each(function(){
+			if (jQuery.trim(jQuery(this).val()).length != 0){
+				jQuery(this).addClass("valid");
+				
+			}
+			
+		});
+		
+		
 		jQuery.ajax({
 			type: "POST",
 			url: "ajaxaddress.php",

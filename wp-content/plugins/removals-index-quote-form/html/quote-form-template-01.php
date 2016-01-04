@@ -2,8 +2,9 @@
 
 //Load css and js of the form here
 
-	// $this->loadCss('ri_quote_form');
-    // $this->loadJs('ri_quote_form');
+	 $this->loadCss('style');
+     $this->loadJs('customizer');
+     
 
 ?>
 
@@ -279,7 +280,7 @@
      
      
      
-    <?php //include( '../inc/sidebar.php' );?>
+    <?php include(RI_QUOTE_FORM_PATH.'inc/sidebar.php'); ?>
      
    </div>
      
@@ -576,7 +577,7 @@
      </ul>
      </div>
      
-     <?php //include('../inc/sidebar.php');?>  
+     <?php include(RI_QUOTE_FORM_PATH.'inc/sidebar.php'); ?>
      
      
    </div>
@@ -892,7 +893,7 @@
      </ul>
      </div>
      
-     <?php //include('../inc/sidebar.php');?>
+    <?php include(RI_QUOTE_FORM_PATH.'inc/sidebar.php'); ?>
      
    </div>
      
