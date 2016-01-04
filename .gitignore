@@ -5,6 +5,13 @@ nbproject
 .metadata
 wp-admin
 wp-includes
+wp-*.php
+/index.php
+xmlrpc.php
+.htaccess
+readme.html
+*.txt
+
 wp-content/plugins/*
 #include the plugins with a negate pattern (!)
 !wp-content/plugins/removals-index-quote-form
@@ -12,9 +19,4 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/genesis-removals-index
 
-wp-*.php
-index.php
-xmlrpc.php
-.htaccess
-readme.html
-*.txt
+
