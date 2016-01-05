@@ -157,7 +157,7 @@ jQuery( document ).ready(function() {
 		}
 		jQuery.ajax({
 			type: "POST",
-			url: "ajaxaddress.php",
+			url: "wp-content/themes/lp1/lib/inc/ajaxaddress.php",
 			data: dataString,
 			success: function(result){
 				//alert(result);
@@ -199,13 +199,7 @@ jQuery( document ).ready(function() {
 					jQuery("select[name=country]").removeAttr('required');
 					jQuery("select[name=countryTo]").removeAttr('required');
 				}
-				jQuery("#show-after-get").css("display","block")
-/*				jQuery(".header").addClass("hide-after-get");
-				jQuery(".looking-for").addClass("hide-after-get");
-				jQuery(".will-removal").addClass("hide-after-get");
-				jQuery("#hide-after-get").addClass("hide-after-get");*/
-				//jQuery(".header").hide();
-				
+				jQuery("#show-after-get").css("display","block");				
 			},
 			
 		});
@@ -216,15 +210,24 @@ jQuery( document ).ready(function() {
 	jQuery('#form2 input').keydown(function(e) {
 		
     	if (e.keyCode == 13) {
-        	
-		var postcode_from = jQuery("#postcode_from2").val();
-		var postcode_to = jQuery("#postcode_to2").val();
+    	var postcode_from = '';
+    	if(jQuery("#postcode_from2").length)
+    	{
+    		postcode_from = jQuery("#postcode_from2").val();
+    	}	
+    	var postcode_to = '';	
+    	if(jQuery("#postcode_to2").length)
+    	{
+    		postcode_to = jQuery("#postcode_to2").val();
+    	}	
+		
 		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
 		// AJAX Code To Submit Form.
 		//alert(dataString);
+		
 		jQuery.ajax({
 			type: "POST",
-			url: "ajaxaddress.php",
+			url: "wp-content/themes/genesis-removals-index/lp1/lib/inc/ajaxaddress.php",
 			data: dataString,
 			success: function(result){
 				//alert(result);
@@ -243,15 +246,10 @@ jQuery( document ).ready(function() {
 					}
 					
 				});
+				
 				jQuery("#show-after-get").css("display","block")
-/*				jQuery(".header").addClass("hide-after-get");
-				jQuery(".looking-for").addClass("hide-after-get");
-				jQuery(".will-removal").addClass("hide-after-get");
-				jQuery("#hide-after-get").addClass("hide-after-get");*/
-				//jQuery(".header").hide();
 				jQuery(".looking-for").hide();
 				jQuery(".will-removal").hide();
-				//jQuery("#hide-after-get").hide();
 				jQuery(".free-quotes-now").hide();
 				jQuery(".slide-main").hide();
 				jQuery(".companies").hide();
@@ -272,7 +270,7 @@ jQuery( document ).ready(function() {
 		if(jQuery(this).attr("rel") == "bed0"){
 			
 			jQuery(".step-4-checkbox span").remove();
-			jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="../images/input-check.png" alt=""></span>');
 			jQuery('#greenwood_drive2').show();
 			jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
 			

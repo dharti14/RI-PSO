@@ -41,9 +41,9 @@ jQuery( document ).ready(function() {
 			if (jQuery.trim(jQuery(this).val()).length != 0){
 				jQuery(this).addClass("valid");
 				
-			}
-			
+			}		
 		});
+		//just for demo
 		
 		
 		jQuery.ajax({
@@ -67,15 +67,6 @@ jQuery( document ).ready(function() {
 					}
 					
 				});
-
-				
-/*				jQuery(".header").addClass("hide-after-get");
-				jQuery(".looking-for").addClass("hide-after-get");
-				jQuery(".will-removal").addClass("hide-after-get");
-				jQuery("#hide-after-get").addClass("hide-after-get");*/
-				//jQuery(".header").hide();
-				
-				
 			},
 			
 		});
@@ -101,7 +92,9 @@ jQuery( document ).ready(function() {
 		jQuery('html, body').animate({
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
-		jQuery(".footer").hide();
+		
+		//display footer and menu below plugin
+		jQuery(".footer").css("display","block");
 		
 		
 		//just for demo
@@ -111,10 +104,9 @@ jQuery( document ).ready(function() {
 			if (jQuery.trim(jQuery(this).val()).length != 0){
 				jQuery(this).addClass("valid");
 				
-			}
-			
+			}	
 		});
-		
+		//just for demo
 		
 		jQuery.ajax({
 			type: "POST",
@@ -137,17 +129,13 @@ jQuery( document ).ready(function() {
 					}
 					
 				});
-/*				jQuery(".header").addClass("hide-after-get");
-				jQuery(".looking-for").addClass("hide-after-get");
-				jQuery(".will-removal").addClass("hide-after-get");
-				jQuery("#hide-after-get").addClass("hide-after-get");*/
-				//jQuery(".header").hide();
 				
 			},
 			
 		});
 		
 	});
+	
 	jQuery(".get-my-quote3").click(function(){
 
 		var postcode_from = jQuery("#postcode_from3").val();
@@ -166,7 +154,10 @@ jQuery( document ).ready(function() {
 		jQuery('html, body').animate({
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
-		jQuery(".footer").hide();
+		
+		
+		//display footer and menu below plugin
+		jQuery(".footer").css("display","block");
 		
 		
 		//just for demo
@@ -177,8 +168,8 @@ jQuery( document ).ready(function() {
 				jQuery(this).addClass("valid");
 				
 			}
-			
 		});
+		//just for demo
 		
 		
 		jQuery.ajax({
@@ -202,12 +193,7 @@ jQuery( document ).ready(function() {
 					}
 					
 				});
-/*				jQuery(".header").addClass("hide-after-get");
-				jQuery(".looking-for").addClass("hide-after-get");
-				jQuery(".will-removal").addClass("hide-after-get");
-				jQuery("#hide-after-get").addClass("hide-after-get");*/
-				//jQuery(".header").hide();
-				
+
 			},
 			
 		});

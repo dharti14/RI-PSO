@@ -6,8 +6,18 @@ $text1 = preg_replace('/\d/','',$text);
 define ('CRAFTY_KEY',	'b6e12-06b5f-e1c4d-00fca');
 define ('CRAFTY_URL',	'http://pcls1.craftyclicks.co.uk/xml/rapidaddress');
 
-$postcode = $_REQUEST["postcode_from"];
-$postcode_to = $_REQUEST["postcode_to"];
+$postcode = '';
+$postcode_to = '';
+
+if(isset($_REQUEST["postcode_from"])){
+	
+	$postcode = $_REQUEST["postcode_from"];
+}
+
+if(isset($_REQUEST["postcode_to"])){
+	
+	$postcode_to = $_REQUEST["postcode_to"];
+}
 
 // try 2 response styles
 $response_style = 'data_formatted';

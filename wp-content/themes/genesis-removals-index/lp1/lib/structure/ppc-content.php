@@ -1,4 +1,4 @@
-
+<?php require(TD.'/lp1/lib/inc/analytics.php'); ?>
 <div class="looking-for">
 <div class="container">
 <div class="keyword"><?php echo "Looking For ";//echo exact_string( 'Looking For '. $hln ); ?><span>Trusted Local Removal Companies?</span></div>
@@ -283,6 +283,36 @@
 <script>
 
 jQuery(function() {
+
+	jQuery('#date1').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
+	 
+	jQuery('#date2').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
+	
+	jQuery('#date3').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
 
 	/*google analytics event tracking.*/	
 	
