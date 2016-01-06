@@ -650,9 +650,9 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 	margin: 10px 0 0 0;
 }
 
-.select-item.valid {
-	background: url("../images/input-check.png") no-repeat 97% 1px;
-}
+/* .select-item.valid { */
+/* 	background: url("../images/input-check.png") no-repeat 97% 1px; */
+/* } */
 
 @media(min-width:641px){
 	.danger{

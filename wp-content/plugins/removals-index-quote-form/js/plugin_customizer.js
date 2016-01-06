@@ -120,149 +120,6 @@ jQuery( document ).ready(function() {
     			jQuery("#form").submit();
 			}
  		 });
-
-	jQuery('#form1 input').keydown(function(e) {
-		
-    	if (e.keyCode == 13) {
-        jQuery(".looking-for").hide();
-		jQuery(".will-removal").hide();
-		//jQuery("#hide-after-get").hide();
-		jQuery(".free-quotes-now").hide();
-		jQuery(".slide-main").hide();
-		jQuery(".companies").hide();
-		jQuery(".find-experts").hide();
-		jQuery(".footer").hide();
-		var postcode_from = jQuery("#postcode_from").val();
-		var postcode_to = jQuery("#postcode_to").val();
-		var buseness_type = jQuery("input[name=buseness_type]:checked").val();
-			if(buseness_type == "International"){ postcode_to = ''; }
-		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
-		if(buseness_type == "Business Removal"){
-			jQuery("#show-after-get-business").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get-business').offset().top
-    		}, 300);
-		}else if(buseness_type == "International"){
-			jQuery("#show-after-get-international").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get-international').offset().top
-    		}, 300);
-		}else{	
-			jQuery("#show-after-get").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get').offset().top
-    		}, 300);
-		}
-		jQuery.ajax({
-			type: "POST",
-			url: "wp-content/themes/lp1/lib/inc/ajaxaddress.php",
-			data: dataString,
-			success: function(result){
-				//alert(result);
-				var json_obj = jQuery.parseJSON(result);
-				//alert(result);
-				jQuery("input[name=city]").val(json_obj.town[0]);
-				jQuery("input[name=postcode]").val(postcode_from);
-				jQuery("input[name=address]").val(json_obj.line_1);
-				jQuery("input[name=city_to]").val(json_obj.town_to[0]);
-				jQuery("input[name=postcode_to]").val(postcode_to);
-				jQuery("input[name=address_to]").val(json_obj.line_1_to);
-				jQuery("#form input:text").each(function(){
-					if (jQuery.trim(jQuery(this).val()).length != 0){
-						jQuery(this).addClass("valid");
-						
-					}
-					
-				});
-				if(buseness_type == "Business Removal"){
-					jQuery("input[name=companyname]").css("display","block");
-					jQuery("input[name=companyname]").removeAttr('disabled');
-					jQuery("input[name=companyname]").attr('required','required');
-				}else{
-					jQuery("input[name=companyname]").css("display","none");
-					jQuery("input[name=companyname]").attr('disabled','disabled');
-				}
-				if(buseness_type == "International"){
-					jQuery("select[name=country]").css("display","inline");
-					jQuery("select[name=country]").removeAttr('disabled');
-					jQuery("select[name=countryTo]").css("display","inline");
-					jQuery("select[name=countryTo]").removeAttr('disabled');
-					jQuery("select[name=country]").attr('required','required');
-					jQuery("select[name=countryTo]").attr('required','required');
-				}else{
-					jQuery("select[name=country]").css("display","none");
-					jQuery("select[name=country]").attr('disabled','disabled');
-					jQuery("select[name=countryTo]").css("display","none");
-					jQuery("select[name=countryTo]").removeAttr('disabled');
-					jQuery("select[name=country]").removeAttr('required');
-					jQuery("select[name=countryTo]").removeAttr('required');
-				}
-				jQuery("#show-after-get").css("display","block");				
-			},
-			
-		});
-		
-	
-    	}
-	});
-	jQuery('#form2 input').keydown(function(e) {
-		
-    	if (e.keyCode == 13) {
-    	var postcode_from = '';
-    	if(jQuery("#postcode_from2").length)
-    	{
-    		postcode_from = jQuery("#postcode_from2").val();
-    	}	
-    	var postcode_to = '';	
-    	if(jQuery("#postcode_to2").length)
-    	{
-    		postcode_to = jQuery("#postcode_to2").val();
-    	}	
-		
-		var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
-		
-		jQuery.ajax({
-			type: "POST",
-			url: "wp-content/themes/genesis-removals-index/lp1/lib/inc/ajaxaddress.php",
-			data: dataString,
-			success: function(result){
-				//alert(result);
-				var json_obj = jQuery.parseJSON(result);
-				
-				jQuery("input[name=city]").val(json_obj.town[0]);
-				jQuery("input[name=postcode]").val(postcode_from);
-				jQuery("input[name=address]").val(json_obj.line_1);
-				jQuery("input[name=city_to]").val(json_obj.town_to[0]);
-				jQuery("input[name=postcode_to]").val(postcode_to);
-				jQuery("input[name=address_to]").val(json_obj.line_1_to);
-				jQuery("#form input:text").each(function(){
-					if (jQuery.trim(jQuery(this).val()).length != 0){
-						jQuery(this).addClass("valid");
-						
-					}
-					
-				});
-				
-				jQuery("#show-after-get").css("display","block")
-				jQuery(".looking-for").hide();
-				jQuery(".will-removal").hide();
-				jQuery(".free-quotes-now").hide();
-				jQuery(".slide-main").hide();
-				jQuery(".companies").hide();
-				jQuery(".find-experts").hide();
-				jQuery(".footer").hide();
-				 
-			},
-			
-		});
-		
-	
-    	}
-	});
 	
 	jQuery('.bed-radios-container').click(function(){
 		jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
@@ -270,7 +127,7 @@ jQuery( document ).ready(function() {
 		if(jQuery(this).attr("rel") == "bed0"){
 			
 			jQuery(".step-4-checkbox span").remove();
-			jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="../images/input-check.png" alt=""></span>');
+			jQuery(".step-4-checkbox").append('<span class="vaild-check valid"></span>');
 			jQuery('#greenwood_drive2').show();
 			jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
 			
@@ -280,7 +137,7 @@ jQuery( document ).ready(function() {
 		
 		jQuery(this).find("input[type='radio']").prop("checked", true);
 		jQuery(".removing-stress-frm h4.property span").remove();
-		jQuery(".removing-stress-frm h4.property").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(".removing-stress-frm h4.property").append('<span class="vaild-check valid"></span>');
 	});
 	
 	jQuery("#show-after-get input[name='property_type_from']").click(function(){
@@ -295,7 +152,7 @@ jQuery( document ).ready(function() {
 		}
 		
 		jQuery("#show-after-get .leftpart .redio-with-text h5 span").remove();
-		jQuery("#show-after-get .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .leftpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 		
 	});
 	
@@ -310,69 +167,69 @@ jQuery( document ).ready(function() {
 			jQuery("#show-after-get input[name='lift_available_to']").prop("required",false);
 		}
 		jQuery("#show-after-get .rightpart .redio-with-text h5 span").remove();
-		jQuery("#show-after-get .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .rightpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 		
 	});
 	
 	jQuery("#show-after-get input[name='lift_available_from']").click(function(){
 		jQuery("#show-after-get .leftpart .redio-with-text2 span").remove();
-		jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("#show-after-get input[name='lift_available_to']").click(function(){
 		jQuery("#show-after-get .rightpart .redio-with-text2 span").remove();
-		jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("#show-after-get input[name='parking_available_from']").click(function(){
 		jQuery("#show-after-get .leftpart .redio-with-text3 span").remove();
-		jQuery("#show-after-get .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .leftpart .redio-with-text3").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("#show-after-get input[name='parking_available_to']").click(function(){
 		jQuery("#show-after-get .rightpart .redio-with-text3 span").remove();
-		jQuery("#show-after-get .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .rightpart .redio-with-text3").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	
 	jQuery("#show-after-get input[name='packing_service']").click(function(){
 		jQuery("#show-after-get .packing-service span").remove();
-		jQuery("#show-after-get .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#show-after-get .packing-service").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("input[name='dismantle']").click(function(){
 		jQuery(".dismantle span").remove();
-		jQuery(".dismantle").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(".dismantle").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("input[name='storage']").click(function(){
 		jQuery(".storage span").remove();
-		jQuery(".storage").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(".storage").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("input[name='out_of_business']").click(function(){
 		jQuery(".out_of_business span").remove();
-		jQuery(".out_of_business").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(".out_of_business").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("input[name='any_addition_information']").click(function(){
 		jQuery(".step-4-checkbox span").remove();
-		jQuery(".step-4-checkbox").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery(".step-4-checkbox").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("select[name='country']").change(function(){
 		if(jQuery(this).val() != ""){
 			jQuery("span.country-select").remove();
-			jQuery(this).after('<span class="vaild-check country-select"><img src="images/input-check.png" alt=""></span>');
+			jQuery(this).after('<span class="vaild-check country-select valid"></span>');
 		}else{
 			jQuery("span.country-select").remove();
 		}
@@ -383,11 +240,11 @@ jQuery( document ).ready(function() {
 		if(jQuery(this).val() == "Ground"){ 
 			jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
 			jQuery("#show-after-get .leftpart .redio-with-text2 span").remove();
-			jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#show-after-get .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		}
 		if(jQuery(this).val() != ""){
 			jQuery("#show-after-get span.floor_from").remove();
-			jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+			jQuery(this).after('<span class="vaild-check floor_from valid"></span>');
 		}else{
 			jQuery("#show-after-get span.floor_from").remove();
 		}
@@ -396,11 +253,11 @@ jQuery( document ).ready(function() {
 		if(jQuery(this).val() == "Ground"){ 
 			jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
 			jQuery("#show-after-get .rightpart .redio-with-text2 span").remove();
-			jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#show-after-get .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		}
 		if(jQuery(this).val() != ""){
 			jQuery("#show-after-get span.floor_to").remove();
-			jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+			jQuery(this).after('<span class="vaild-check floor_to valid"></span>');
 		}else{
 			
 			jQuery("#show-after-get span.floor_to").remove();
@@ -482,7 +339,7 @@ jQuery( document ).ready(function() {
 			}
 			
 			jQuery("#form-business .leftpart .redio-with-text h5 span").remove();
-			jQuery("#form-business .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .leftpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 		
 		});
 
@@ -497,7 +354,7 @@ jQuery( document ).ready(function() {
 				jQuery("#form-business input[name='lift_available_to']").prop("required",false);
 			}
 			jQuery("#form-business .rightpart .redio-with-text h5 span").remove();
-			jQuery("#form-business .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .rightpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 			
 		});
 
@@ -505,11 +362,11 @@ jQuery( document ).ready(function() {
 			if(jQuery(this).val() == "Ground"){ 
 				jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
 				jQuery("#form-business .leftpart .redio-with-text2 span").remove();
-				jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+				jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 			}
 			if(jQuery(this).val() != ""){
 				jQuery("#form-business span.floor_from").remove();
-				jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+				jQuery(this).after('<span class="vaild-check floor_from valid"></span>');
 			}else{
 				jQuery("#form-business span.floor_from").remove();
 			}
@@ -519,11 +376,11 @@ jQuery( document ).ready(function() {
 			if(jQuery(this).val() == "Ground"){ 
 				jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
 				jQuery("#form-business .rightpart .redio-with-text2 span").remove();
-				jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+				jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 			}
 			if(jQuery(this).val() != ""){
 				jQuery("#form-business span.floor_to").remove();
-				jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+				jQuery(this).after('<span class="vaild-check floor_to valid"></span>');
 			}else{
 				
 				jQuery("#form-business span.floor_to").remove();
@@ -532,32 +389,32 @@ jQuery( document ).ready(function() {
 		
 		jQuery("#form-business input[name='lift_available_from']").click(function(){
 			jQuery("#form-business .leftpart .redio-with-text2 span").remove();
-			jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 		});
 	
 		jQuery("#form-business input[name='lift_available_to']").click(function(){
 			jQuery("#form-business .rightpart .redio-with-text2 span").remove();
-			jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 		});
 	
 		jQuery("#form-business input[name='parking_available_from']").click(function(){
 			jQuery("#form-business .leftpart .redio-with-text3 span").remove();
-			jQuery("#form-business .leftpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .leftpart .redio-with-text3").append('<span class="vaild-check valid"></span>');
 		
 		});
 	
 		jQuery("#form-business input[name='parking_available_to']").click(function(){
 			jQuery("#form-business .rightpart .redio-with-text3 span").remove();
-			jQuery("#form-business .rightpart .redio-with-text3").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .rightpart .redio-with-text3").append('<span class="vaild-check valid"></span>');
 		
 		});
 	
 	
 		jQuery("#form-business input[name='packing_service']").click(function(){
 			jQuery("#form-business .packing-service span").remove();
-			jQuery("#form-business .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-business .packing-service").append('<span class="vaild-check valid"></span>');
 		
 		});
 
@@ -644,7 +501,7 @@ jQuery( document ).ready(function() {
 			}
 			
 			jQuery("#form-international .leftpart .redio-with-text h5 span").remove();
-			jQuery("#form-international .leftpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .leftpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 		
 		});
 
@@ -659,19 +516,19 @@ jQuery( document ).ready(function() {
 				jQuery("#form-international input[name='lift_available_to']").prop("required",false);
 			}
 			jQuery("#form-international .rightpart .redio-with-text h5 span").remove();
-			jQuery("#form-international .rightpart .redio-with-text h5").append('<span class="vaild-check property_type"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .rightpart .redio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 			
 		});
 		
 		jQuery("#form-international select[name='floor_from']").change(function(){
 			if(jQuery(this).val() == "Ground"){ 
 				jQuery("#form-international .leftpart .redio-with-text2 span").remove();
-				jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+				jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 				jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
 			}
 			if(jQuery(this).val() != ""){
 				jQuery("#form-international span.floor_from").remove();
-				jQuery(this).after('<span class="vaild-check floor_from"><img src="images/input-check.png" alt=""></span>');
+				jQuery(this).after('<span class="vaild-check floor_from valid"></span>');
 			}else{
 				jQuery("#form-international span.floor_from").remove();
 			}
@@ -681,13 +538,13 @@ jQuery( document ).ready(function() {
 		if(jQuery(this).val() == "Ground"){ 
 			
 			jQuery("#form-international .rightpart .redio-with-text2 span").remove();
-			jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+			jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 			jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
 		}
 		if(jQuery(this).val() != ""){
 			jQuery("#form-international span.floor_to").remove();
-			jQuery(this).after('<span class="vaild-check floor_to"><img src="images/input-check.png" alt=""></span>');
+			jQuery(this).after('<span class="vaild-check floor_to valid"></span>');
 		}else{
 			
 			jQuery("#form-international span.floor_to").remove();
@@ -696,20 +553,20 @@ jQuery( document ).ready(function() {
 	
 		jQuery("#form-international input[name='lift_available_from']").click(function(){
 		jQuery("#form-international .leftpart .redio-with-text2 span").remove();
-		jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-international .leftpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	jQuery("#form-international input[name='lift_available_to']").click(function(){
 		jQuery("#form-international .rightpart .redio-with-text2 span").remove();
-		jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-international .rightpart .redio-with-text2").append('<span class="vaild-check valid"></span>');
 		
 	});
 	
 	
 	jQuery("#form-international input[name='packing_service']").click(function(){
 		jQuery("#form-international .packing-service span").remove();
-		jQuery("#form-international .packing-service").append('<span class="vaild-check"><img src="images/input-check.png" alt=""></span>');
+		jQuery("#form-international .packing-service").append('<span class="vaild-check valid"></span>');
 		
 	});
 
@@ -723,7 +580,7 @@ jQuery( document ).ready(function() {
 	
 	jQuery("input[name='shipping_method']").click(function(){
 			jQuery(".shipping-method span").remove();
-			jQuery(".shipping-method").append('<span class="vaild-check" style="margin-left: 7px;"><img src="images/input-check.png" alt=""></span>');
+			jQuery(".shipping-method").append('<span class="vaild-check valid" style="margin-left: 7px;"></span>');
 		
 	});
 	

@@ -1,4 +1,6 @@
 <?php
+
+
 $text = '1 GREENWOOD DRIVE';
 $text1 = preg_replace('/\d/','',$text);
 //echo $text1;
