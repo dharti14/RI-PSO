@@ -19,5 +19,5 @@
      
      <div class="right-logo">
      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php //echo $hln;?>"></a>
-      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php //echo $hln;?>"></a>
+      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/privecy-img.png" style="padding-top: 10px;" alt="<?php //echo $hln;?>"></a>
      </div>

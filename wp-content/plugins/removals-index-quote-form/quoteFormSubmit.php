@@ -1,13 +1,10 @@
 <?php
-echo 'Form Submitted';
-die();
-
 
 ob_start();
+
 if ($_POST) 
 {
-	
-	
+
 	$apiKey ='';
 	
 	$referrer = $_SERVER['HTTP_REFERER'];
@@ -273,6 +270,9 @@ if ($_POST)
 		    {
 				header("Location: http://www.removals-index.com/ri/thanks/index.php?form=".$form."&h=" . $obj->hash);
 		    	exit();
+		    	
+// 		    	$page = get_page_by_title('lp1-thanks');
+// 		    	header("Location: " . get_page_link($page->ID) . "?form=" . $form . "&h=" . $obj->hash);
 		    }
 		    elseif ($http_code == 406) //ERRORS DETECTED BY PINLOCAL SYSTEM IN DATA
 		    {

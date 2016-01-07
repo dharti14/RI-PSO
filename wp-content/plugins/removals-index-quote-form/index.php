@@ -120,27 +120,23 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		public function quoteFormAssets( ) {		
 				
+			wp_enqueue_script( 'ri-jquery-display-message', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
+			
 			wp_enqueue_style( 'ri-jquery-ui-css', RI_QUOTE_FORM_URL.'css/datepicker.css' );
 					
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
 			
 			wp_enqueue_script( 'ri-jquery-validation', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
-
-			wp_enqueue_script( 'ri-jquery-display-message', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
 			
 		}
-				
+		
 
 		/**
 		 * function to display Removals Index Quote Form.
 		 */
 		public function quoteFormHtml( $atts ) {
-			
-			$ri_heading = (isset($atts['form_title']) && $atts['form_title'] != "") ? $atts['form_title'] : "";						
 						
-			$ri_submitBtn_class = (isset($atts['submit_button']) && $atts['submit_button'] != "") ? $atts['submit_button'] : 'btn btn-info btn-block';
-			
-			if( $_POST && isset($_POST['quoteFormSubmit']) && $_POST['quoteFormSubmit'] == 'yes' ) {
+			if( $_POST ) {	
 				
 				include 'quoteFormSubmit.php';
 			}

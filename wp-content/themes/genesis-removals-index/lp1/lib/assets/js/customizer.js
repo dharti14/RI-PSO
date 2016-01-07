@@ -44,13 +44,12 @@ jQuery( document ).ready(function() {
 			success: function(result){
 				
 				var json_obj = result;
-				jQuery("input[name=postcode]").val(postcode_from);
-				jQuery("input[name=postcode_to]").val(postcode_to);
 				
+				//console.log(json_obj.length);
 				
 				//If result is not empty
-				if(json_obj !== 0){	
-					
+				if(json_obj != 0){	
+				
 					jQuery("input[name=city]").val(json_obj.town[0]);
 					jQuery("input[name=address]").val(json_obj.line_1);
 					jQuery("input[name=city_to]").val(json_obj.town_to[0]);
@@ -58,6 +57,8 @@ jQuery( document ).ready(function() {
 				
 				}
 				
+				jQuery("input[name=postcode]").val(postcode_from);
+				jQuery("input[name=postcode_to]").val(postcode_to);
 				
 				jQuery("input:text").each(function(){
 					if (jQuery.trim(jQuery(this).val()).length != 0){
@@ -105,7 +106,7 @@ jQuery( document ).ready(function() {
 				var json_obj = result;
 				
 				//If result is not empty
-				if(json_obj !== 0){	
+				if(json_obj != 0){	
 					
 					jQuery("input[name=city]").val(json_obj.town[0]);
 					jQuery("input[name=address]").val(json_obj.line_1);
@@ -164,14 +165,14 @@ jQuery( document ).ready(function() {
 				var json_obj = result;
 				
 				//If result is not empty
-//				if(json_obj !== 0){	
+				if(json_obj != 0){	
 					
 					jQuery("input[name=city]").val(json_obj.town[0]);
 					jQuery("input[name=address]").val(json_obj.line_1);
 					jQuery("input[name=city_to]").val(json_obj.town_to[0]);
 					jQuery("input[name=address_to]").val(json_obj.line_1_to);
 				
-//				}
+				}
 				
 				jQuery("input[name=postcode]").val(postcode_from);
 				jQuery("input[name=postcode_to]").val(postcode_to);

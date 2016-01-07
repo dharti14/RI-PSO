@@ -1,6 +1,6 @@
 <?php
 
-//Load css and js of the form here
+	//Load css and js of the form here
 
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
@@ -16,7 +16,7 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving Up To 40% With Vetted, Hand Checked, Removal Companies</p>
    </div>
-   <form action="<?php //echo plugin_dir_url( __FILE__ ); ?>quoteFormSubmit.php" method="post" name="form" id="form">
+   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form">
    		<input type="hidden" value="0" name="form-type">
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php //echo $hln;?>"></div>
@@ -251,7 +251,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div> 
+        <div class="get-my"><a class="get-my-quote-second" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div> 
         <div class="danger" id="danger-get-my-quote-second"><span></span></div>      
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         
@@ -308,7 +308,7 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, Commercial Removal Companies</p>
    </div>
-   <form action="../send.php" method="post" name="form" id="form-business">
+   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form-business">
    	<input type="hidden" name="form-type" value="2">
    	<div class="row">
      <div class="col-sm-8">
@@ -550,7 +550,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>
+        <div class="get-my"><a class="get-my-quote-second-business" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>
         <div class="danger" id="danger-get-my-quote-second-business"><span></span></div>        
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         
@@ -606,7 +606,7 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, International Removal Companies</p>
    </div>
-   <form action="../send.php" method="post" name="form" id="form-international">
+   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form-international">
    		<input type="hidden" name="form-type" value="1">
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php //echo $hln;?>"></div>
@@ -831,8 +831,6 @@
                 </div>
               </div>
               
-        
-         
           </div>
         </div>
         
@@ -866,7 +864,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second-international">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>  
+        <div class="get-my"><a class="get-my-quote-second-international" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>  
         <div class="danger" id="danger-get-my-quote-second-international"><span></span></div>      
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         
