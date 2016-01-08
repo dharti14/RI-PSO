@@ -34,9 +34,11 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 * Constructor function.
 		 */
 		public function __construct( ) {
-									
+			
 			/* Admin page action */
 			add_action( 'admin_menu', array( &$this, 'quoteFormAdminMenu' ) );
+			
+			
 						
 			/* Fron page action */
 			
@@ -62,6 +64,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			add_action( 'wp_ajax_nopriv_getAddressByPostCode',  array( &$this, 'getAddressByPostCode'));
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quoteFormHtml' ) );
+			
 		}
 		
 		/**
@@ -122,11 +125,11 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				
 			wp_enqueue_script( 'ri-jquery-display-message', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
 			
-			wp_enqueue_style( 'ri-jquery-ui-css', RI_QUOTE_FORM_URL.'css/datepicker.css' );
+			wp_enqueue_style( 'ri-jquery-ui-css', RI_QUOTE_FORM_URL.'css/site.min.css' );
 					
-			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
+			//wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
 			
-			wp_enqueue_script( 'ri-jquery-validation', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
+			//wp_enqueue_script( 'ri-jquery-validation', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			
 		}
 		
@@ -135,12 +138,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 * function to display Removals Index Quote Form.
 		 */
 		public function quoteFormHtml( $atts ) {
-						
+					
 			if( $_POST ) {	
 				
 				include 'quoteFormSubmit.php';
 			}
-                       
+       
 			if(isset($atts['template_name']) && !empty($atts['template_name'])) {
 			  
 				   $template_name=$atts['template_name'];  
@@ -193,5 +196,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 	}
 	
 	new RI_QuoteForm( );
+	
+
 }
 ?>

@@ -112,7 +112,10 @@ jQuery( document ).ready(function() {
 
     	
 		jQuery(".get-my-quote-second").click(function() {
+			//alert("form submitted");
     		jQuery("#form").submit();
+    		//alert("form submitted2");
+    		
  		 });
 		 
 	 	jQuery('#form input').keydown(function(e) {

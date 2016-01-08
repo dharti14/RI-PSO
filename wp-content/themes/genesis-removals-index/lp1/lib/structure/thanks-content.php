@@ -125,9 +125,9 @@ jQuery(window).load(function(){
   
   <!-- If you don't want hard code menu then please remove this part of code -->
 	   <ul>
-	    <li><a href="#">Removal Companies Join Us</a>|</li>
-	    <li><a href="#">Terms and Conditions</a>|</li>
-	    <li><a href="#">Privacy Policy</a>|</li>
+	    <li><a href="#">Removal Companies Join Us</a></li>
+	    <li><a href="#">Terms and Conditions</a></li>
+	    <li><a href="#">Privacy Policy</a></li>
 	    <li><a href="#">Removals Price Guide</a> </li>
 	   </ul>
    <!-- If you don't want hard code menu then please remove this part of code -->

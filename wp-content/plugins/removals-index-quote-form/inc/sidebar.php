@@ -1,4 +1,7 @@
- <h4 class="right-information-heading">YOUR INFORMATION IS SAFE</h4>
+<?php 
+
+?>
+<h4 class="right-information-heading">YOUR INFORMATION IS SAFE</h4>
      <div class="right-satisfaction">
       <p>We will not sell your personal contact information for any marketing purposes whatsoever.</p>
      </div>
@@ -19,5 +22,5 @@
      
      <div class="right-logo">
      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php //echo $hln;?>"></a>
-      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/privecy-img.png" style="padding-top: 10px;" alt="<?php //echo $hln;?>"></a>
+      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php //echo $hln;?>"></a>
      </div>

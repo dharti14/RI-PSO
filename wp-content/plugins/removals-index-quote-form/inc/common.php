@@ -1,43 +1,43 @@
 <?php
-if(strpos($_SERVER['HTTP_HOST'],'local-ri')!==false)
-{
-	$jsmode = $cssmode = 'development';
-}
-else
-{
-	error_reporting(0);
-	$jsmode = $cssmode = 'production';
-}
+// if(strpos($_SERVER['HTTP_HOST'],'local-ri')!==false)
+// {
+// 	$jsmode = $cssmode = 'development';
+// }
+// else
+// {
+// 	error_reporting(0);
+// 	$jsmode = $cssmode = 'production';
+// }
 
-function addBrTag($string, $position){
-	$ex = explode(" ",$string);
-	$count = count($ex);
-	$i = 1;
-	$string = "";
-	foreach($ex as $s){
-		if(($position < $count) && ($i == ($count - $position))){
-			$tag = '<br> ';
-		}else{
-			$tag = ' ';
-		}
-		$string .= $s.$tag;
-		$i++;
-	}
-	return rtrim($string,' ');
-}
+// function addBrTag($string, $position){
+// 	$ex = explode(" ",$string);
+// 	$count = count($ex);
+// 	$i = 1;
+// 	$string = "";
+// 	foreach($ex as $s){
+// 		if(($position < $count) && ($i == ($count - $position))){
+// 			$tag = '<br> ';
+// 		}else{
+// 			$tag = ' ';
+// 		}
+// 		$string .= $s.$tag;
+// 		$i++;
+// 	}
+// 	return rtrim($string,' ');
+// }
 
-function exact_string( $query ){
+// function exact_string( $query ){
 
-	$query = str_replace('_', ' ', $query);
-	$c = strlen($query);
-	$l = ( $c > 42 ) ? ceil( $c/42 ) : 1;
-	$break_point = ceil( $c / $l );
-	//$wrapped_txt = wordwrap($query, $break_point, "<br>\n");
-	$wrapped_txt = $query;
-	$wrapped_txt = str_replace('Looking For ', 'Looking For <span class="nobr">', $wrapped_txt);
-	$wrapped_txt = $wrapped_txt.'</span>';
-	return $wrapped_txt;
-}
+// 	$query = str_replace('_', ' ', $query);
+// 	$c = strlen($query);
+// 	$l = ( $c > 42 ) ? ceil( $c/42 ) : 1;
+// 	$break_point = ceil( $c / $l );
+// 	//$wrapped_txt = wordwrap($query, $break_point, "<br>\n");
+// 	$wrapped_txt = $query;
+// 	$wrapped_txt = str_replace('Looking For ', 'Looking For <span class="nobr">', $wrapped_txt);
+// 	$wrapped_txt = $wrapped_txt.'</span>';
+// 	return $wrapped_txt;
+// }
 
 
 function getDKIParam($var_name, $default_value)
@@ -62,8 +62,6 @@ function getDKIParam($var_name, $default_value)
 
 function getVar($var_name, $default_value)
 {
-	
-	
 	
 	if(isset($_GET[$var_name]) && $_GET[$var_name] != ''){
 		$val = str_replace("_", " ", escapeshellcmd(htmlspecialchars(strip_tags(urldecode($_GET[$var_name])))));
@@ -108,42 +106,42 @@ function minify_callback($buffer)
  * @param unknown $location
  */
 
-function load_js_files($timestamp)
-{
+// function load_js_files($timestamp)
+// {
 	
-	global $jsmode;
+// 	global $jsmode;
 	
-	if($jsmode == 'development')	//load minified
-	{
-		echo '
-			<script src="js/jquery.min.js"></script>
-			<script src="js/jquery.ui.js"></script>
-			<script src="js/jquery.validate.min.js"></script>
-			<script src="js/customizer.js"></script>				
-			';
-	}
-	else
-	{
+// 	if($jsmode == 'development')	//load minified
+// 	{
+// 		echo '
+// 			<script src="js/jquery.min.js"></script>
+// 			<script src="js/jquery.ui.js"></script>
+// 			<script src="js/jquery.validate.min.js"></script>
+// 			<script src="js/customizer.js"></script>				
+// 			';
+// 	}
+// 	else
+// 	{
 
-		echo '<script src="js/site.min.'. $timestamp .'.js"></script>';
-	}
+// 		echo '<script src="js/site.min.'. $timestamp .'.js"></script>';
+// 	}
 	
 	
 	
-}
+// }
 
-function load_css_files($timestamp)
-{
-	global $cssmode;
-	if($cssmode == 'development')	//load minified
-	{
-		echo '<link href="css/site.min.css" rel="stylesheet">';
-	}
-	else
-	{
-		echo '<link href="css/site.min.'. $timestamp  .'.css" rel="stylesheet">';
-	}
+// function load_css_files($timestamp)
+// {
+// 	global $cssmode;
+// 	if($cssmode == 'development')	//load minified
+// 	{
+// 		echo '<link href="css/site.min.css" rel="stylesheet">';
+// 	}
+// 	else
+// 	{
+// 		echo '<link href="css/site.min.'. $timestamp  .'.css" rel="stylesheet">';
+// 	}
 
 
 
-}
+// }

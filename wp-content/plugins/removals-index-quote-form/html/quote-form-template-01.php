@@ -16,12 +16,12 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving Up To 40% With Vetted, Hand Checked, Removal Companies</p>
    </div>
-   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form">
+   <form method="post" name="form" id="form">
    		<input type="hidden" value="0" name="form-type">
   		<div class="removing-stress-frm step1">
-            <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php //echo $hln;?>"></div>
+            <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
-             <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+             <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
@@ -61,7 +61,7 @@
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
          <h4>Step 2 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -170,7 +170,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 3 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -223,12 +223,12 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 4 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">
               
-                <input type="text" class="form-control" name="name" placeholder="Enter Full Name...*">
+                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
                 <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
                  
                 <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*">
@@ -251,7 +251,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div> 
+        <div class="get-my"><a class="get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div> 
         <div class="danger" id="danger-get-my-quote-second"><span></span></div>      
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         
@@ -308,14 +308,14 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, Commercial Removal Companies</p>
    </div>
-   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form-business">
+   <form method="post" name="form" id="form-business">
    	<input type="hidden" name="form-type" value="2">
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
-       	<div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php //echo $hln;?>"></div>
+       	<div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
          <h4>Step 1 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -456,7 +456,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 2 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -522,12 +522,12 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 3 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">
               	<input type="text" class="form-control" name="companyname" placeholder="Company Name...">
-                <input type="text" class="form-control" name="name" placeholder="Contact Name...">
+                <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
                 <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...">
                  
                 <input type="text" class="form-control" name="email" placeholder="Enter Email Address...">
@@ -550,7 +550,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second-business" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>
+        <div class="get-my"><a class="get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>
         <div class="danger" id="danger-get-my-quote-second-business"><span></span></div>        
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         
@@ -606,12 +606,12 @@
     <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, International Removal Companies</p>
    </div>
-   <form action="<?php echo RI_QUOTE_FORM_URL; ?>quoteFormSubmit.php" method="post" name="form" id="form-international">
+   <form method="post" name="form" id="form-international">
    		<input type="hidden" name="form-type" value="1">
   		<div class="removing-stress-frm step1">
-            <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php //echo $hln;?>"></div>
+            <div class="nearly"><img src="<?php echo TDU;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
-             <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+             <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
@@ -651,7 +651,7 @@
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
          <h4>Step 2 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -768,7 +768,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 3 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -836,12 +836,12 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 4 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">
               	
-                <input type="text" class="form-control" name="name" placeholder="Enter Full Name...*">
+                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
                 <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
                  
                 <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*">
@@ -864,7 +864,7 @@
           </div>
         </div>
         
-        <div class="get-my"><a class="get-my-quote-second-international" name="submitQuoteForm">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>  
+        <div class="get-my"><a class="get-my-quote-second-international">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>  
         <div class="danger" id="danger-get-my-quote-second-international"><span></span></div>      
 		<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
         

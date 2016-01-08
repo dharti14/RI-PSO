@@ -1,8 +1,57 @@
-<?php require(TD.'/lp1/lib/inc/analytics.php'); ?>
+<?php
+
+// Scripts and code  required for dki scripts 
+require(TD.'/lp1/lib/inc/analytics.php');
+require(TD.'/lp1/lib/inc/common.php');
+
+ob_start('minify_callback');	//minify the output
+
+$nodki = false;
+if(isset($_GET['nodki']) && $_GET['nodki'] == 'true') $nodki = true;
+
+$loc = getDKIParam("LOC",'your area');
+$typ = getDKIParam("TYP",'');
+$hln = getDKIParam("HLN",'Trusted Local Removal Companies');
+
+
+if($nodki == true)
+{
+	$hln = 'Trusted Local Removal Companies';
+	$loc = 'your area';
+}
+
+
+//meta keywords fix added 25 Feb 2015
+$meta_keywords = array();
+$meta_keywords_string = '';
+
+if($hln != 'Trusted Local Removal Companies') array_push($meta_keywords,$hln);
+if($typ != '') array_push($meta_keywords,$typ);
+if($loc != 'your area') array_push($meta_keywords,$loc);
+
+if(count($meta_keywords)>0)
+{
+	$meta_keywords_string = implode(",", $meta_keywords);
+
+	$meta_keywords_string .= ',';
+}
+
+//end meta keywords fix
+
+$wordsCount=str_word_count($hln);
+$wordsCount;
+if($wordsCount==4){
+	$spacebr=2;
+}else{
+	$spacebr=$wordsCount-3;
+}
+
+// Dki scripts over
+?>
 
 <div class="looking-for">
 <div class="container">
-<div class="keyword"><?php echo "Looking For ";//echo exact_string( 'Looking For '. $hln ); ?><span>Trusted Local Removal Companies?</span></div>
+<div class="keyword"><?php echo exact_string( 'Looking For '. $hln ); ?><span>?</span></div>
  
   <div class="quotes-top">
    <h1>Get Your <span>FREE Removal Quotes</span> Today!</h1>
@@ -13,7 +62,7 @@
     <div class="col-sm-12">
         <div class="free-quotes">
           <div class="free-quotes-form">
-           <div class="start-here"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-img.png" alt="<?php //echo $hln;?>"></div>
+           <div class="start-here"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-img.png" alt="<?php echo $hln;?>"></div>
            <div class="quotes-form-con">
             <h3>SAVE Up To 40% On Your Move!</h3>
             
@@ -52,24 +101,24 @@
 
 <div class="client-box">
   <div class="container">
-   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
    <div class="row">
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img.png" alt="<?php //echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Superb Service, put me in contact with the companies I needed!"</p>
        <span><strong>Tom Deller</strong> London</span>
       </div>
      </div>
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img2.png" alt="<?php //echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img2.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Great way to get fast quotes without trawling through websites"</p>
        <span><strong>Christine Key</strong> Manchester</span>
       </div>
      </div>
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img3.png" alt="<?php //echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img3.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Took a lot of the stress of finding a suitable removal company"</p>
        <span><strong>Adam Kirkpatrick</strong> Brighton</span>
@@ -89,17 +138,17 @@
    
    <div class="row">
      <div class="col-sm-4">
-       <div class="post-img pad1"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img1.png" alt="<?php //echo $hln;?>"></div>
+       <div class="post-img pad1"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img1.png" alt="<?php echo $hln;?>"></div>
        <h3>1. Provide a few details</h3>
        <p>Tell us about your move and  the best local removal companies will compete for your business</p>
      </div>
      <div class="col-sm-4">
-       <div class="post-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img2.png" alt="<?php //echo $hln;?>"></div>
+       <div class="post-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img2.png" alt="<?php echo $hln;?>"></div>
        <h3>2. Compare Prices</h3>
-       <p>Get multiple FREE quotes from local removal firms in <?php //echo $loc;?>, so you never need to haggle on price</p>
+       <p>Get multiple FREE quotes from local removal firms in <?php echo $loc;?>, so you never need to haggle on price</p>
      </div>
      <div class="col-sm-4">
-       <div class="post-img pad2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img3.png" alt="<?php //echo $hln;?>"></div>
+       <div class="post-img pad2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img3.png" alt="<?php echo $hln;?>"></div>
        <h3>3. Hire the Best</h3>
        <p>Removals Index's internal review process ensure you hire only the best movers for the job</p>
      </div>
@@ -112,7 +161,7 @@
 <div class="free-quotes-now">
   <div class="container">
    <div class="row quotes-form-con">
-    <div class="start-here-free"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-free-img.png" alt="<?php //echo $hln;?>"></div>
+    <div class="start-here-free"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-free-img.png" alt="<?php echo $hln;?>"></div>
     <form name="form2" id="form2" action="" method="post">
     <div class="col-sm-3">
      <div class="moving-from">
@@ -161,7 +210,7 @@
        <ul>
         <li>
          <h4>Never Haggle On Price Again </h4>
-         <p>You'll get a full list of quotes from removal firms in <?php //echo $loc;?> that will all be <u>competing for your move.</u></p>
+         <p>You'll get a full list of quotes from removal firms in <?php echo $loc;?> that will all be <u>competing for your move.</u></p>
         </li>
         <li>
          <h4>Get Done In Seconds Not Hours</h4>
@@ -201,9 +250,9 @@
 
 <div class="free-quotes-now">
   <div class="container">
-   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php //echo $hln;?>"></span>
+   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
    <div class="row quotes-form-con">
-    <div class="start-compare"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-compare-img.png" alt="<?php //echo $hln;?>"></div>
+    <div class="start-compare"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-compare-img.png" alt="<?php echo $hln;?>"></div>
     <div class="col-sm-3">
      <div class="moving-from">
               <label>I'm Moving From:</label>

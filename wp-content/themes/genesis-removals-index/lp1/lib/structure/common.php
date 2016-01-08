@@ -10,7 +10,6 @@ function ri_load_scripts() {
 	wp_enqueue_style('bootstrapcss', TDU.'/lp1/lib/assets/css/bootstrap.min.css');
 	wp_enqueue_style('style_css', TDU.'/lp1/lib/assets/css/style.css');
 	wp_enqueue_style('fontawsome', TDU.'/lp1/lib/assets/css/font-awesome.min.css');
-	//wp_enqueue_style('font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800,700');
 
 }
 ?>

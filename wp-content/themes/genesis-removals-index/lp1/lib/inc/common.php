@@ -1,13 +1,13 @@
 <?php
-if(strpos($_SERVER['HTTP_HOST'],'local-ri')!==false)
-{
-	$jsmode = $cssmode = 'development';
-}
-else
-{
-	error_reporting(0);
-	$jsmode = $cssmode = 'production';
-}
+// if(strpos($_SERVER['HTTP_HOST'],'local-ri')!==false)
+// {
+// 	$jsmode = $cssmode = 'development';
+// }
+// else
+// {
+// 	error_reporting(0);
+// 	$jsmode = $cssmode = 'production';
+// }
 
 function addBrTag($string, $position){
 	$ex = explode(" ",$string);
@@ -63,8 +63,6 @@ function getDKIParam($var_name, $default_value)
 function getVar($var_name, $default_value)
 {
 	
-	
-	
 	if(isset($_GET[$var_name]) && $_GET[$var_name] != ''){
 		$val = str_replace("_", " ", escapeshellcmd(htmlspecialchars(strip_tags(urldecode($_GET[$var_name])))));
 	}else{
@@ -108,42 +106,42 @@ function minify_callback($buffer)
  * @param unknown $location
  */
 
-function load_js_files($timestamp)
-{
+// function load_js_files($timestamp)
+// {
 	
-	global $jsmode;
+// 	global $jsmode;
 	
-	if($jsmode == 'development')	//load minified
-	{
-		echo '
-			<script src="js/jquery.min.js"></script>
-			<script src="js/jquery.ui.js"></script>
-			<script src="js/jquery.validate.min.js"></script>
-			<script src="js/customizer.js"></script>				
-			';
-	}
-	else
-	{
+// 	if($jsmode == 'development')	//load minified
+// 	{
+// 		echo '
+// 			<script src="js/jquery.min.js"></script>
+// 			<script src="js/jquery.ui.js"></script>
+// 			<script src="js/jquery.validate.min.js"></script>
+// 			<script src="js/customizer.js"></script>				
+// 			';
+// 	}
+// 	else
+// 	{
 
-		echo '<script src="js/site.min.'. $timestamp .'.js"></script>';
-	}
+// 		echo '<script src="js/site.min.'. $timestamp .'.js"></script>';
+// 	}
 	
 	
 	
-}
+// }
 
-function load_css_files($timestamp)
-{
-	global $cssmode;
-	if($cssmode == 'development')	//load minified
-	{
-		echo '<link href="css/site.min.css" rel="stylesheet">';
-	}
-	else
-	{
-		echo '<link href="css/site.min.'. $timestamp  .'.css" rel="stylesheet">';
-	}
+// function load_css_files($timestamp)
+// {
+// 	global $cssmode;
+// 	if($cssmode == 'development')	//load minified
+// 	{
+// 		echo '<link href="css/site.min.css" rel="stylesheet">';
+// 	}
+// 	else
+// 	{
+// 		echo '<link href="css/site.min.'. $timestamp  .'.css" rel="stylesheet">';
+// 	}
 
 
 
-}
+// }
