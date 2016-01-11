@@ -123,13 +123,16 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		public function quoteFormAssets( ) {		
 				
-			wp_enqueue_script( 'ri-jquery-display-message', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'ri-jquery', RI_QUOTE_FORM_URL.'js/jquery.min.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'ri-jquery-validation1', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
+			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.css' );
 			
-			wp_enqueue_style( 'ri-jquery-ui-css', RI_QUOTE_FORM_URL.'css/site.min.css' );
-					
-			//wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
-			
-			//wp_enqueue_script( 'ri-jquery-validation', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
+			//Minified Version of JS and CSS
+			//wp_enqueue_script( 'ri-jquery-min-js', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
+			//wp_enqueue_style( 'ri-jquery-min-css', RI_QUOTE_FORM_URL.'css/site.min.css' );
+							
 			
 		}
 		

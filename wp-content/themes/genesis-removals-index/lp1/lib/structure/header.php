@@ -9,21 +9,20 @@ function before_header(){
 
   <link rel="icon" href="favicon.png">
 
-
+<!--  DKI Scripts in meta tags -->
   
-  
-<!--   =============================================================================================== -->
-  
-  <meta name="description" content="<?php 
+<meta name="description" content="<?php 
 if($hln == 'Trusted Local Removal Companies'){
 	echo 'Get up to 6 quotes from trusted removal companies in your area';
 }else{
 	echo $hln.'. Get up to 6 quotes from trusted removal companies in your area';
 }
 ?>">
+
 <meta name="keywords" content="<?php
 echo $meta_keywords_string .'removal companies,removals,house removal companies,removal firms,removal quotes,compare removals';
 ?>">
+
 <title><?php 
 if($hln == 'Trusted Local Removal Companies'){
 	echo 'Get Removal Quotes | Removals Index';
@@ -42,15 +41,11 @@ if($hln == 'Trusted Local Removal Companies'){
 	$gexp = (isset($_GET['gexp']))?$_GET['gexp']:0;
 	
 	if($gexp == 0): //control page	(index.php)	
+
+    elseif($gexp == 5):
 	
-		
-		
-	
- elseif($gexp == 5):
-	
-	
-	 endif; ?>
-<!--   =============================================================================================== -->
+	endif; ?>
+<!--   DKI Scripts over -->
   
 
 	

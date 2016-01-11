@@ -58,63 +58,127 @@ jQuery( document ).ready(function() {
 				 		validateArr.indexOf( firsTwoValue )>=0;
 			}
         }, "Invalid phone number");
-			
+	
 	jQuery("#form input[name='phone']").keypress(phoneValidation);
+	
+	
+	//Validate Date
+	$.validator.addMethod("dateValidate",function(a){
 		
+		var b=a.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+		if(null==b)return!1;
+		if(b.length<3)return!1;
+		var c=parseInt(b[1]),d=parseInt(b[2]),e=parseInt(b[3]),f=new Date;
+		if(!(d>=1&&12>=d))return!1;
+		if(!(c>=1&&31>=c))return!1;
+		if(e<f.getFullYear())return!1;
+		var g=!1;if((e%4||!(e%100))&&e%400||(g=!0),0==g&&2==d&&c>28)return!1;
+		if(2==d&&c>29)return!1;
+		var h=[4,6,9,11];
+		if(jQuery.inArray(d,h)>-1&&c>30)return!1;
+		var i=new Date(e,d-1,c,0,0,0,0);
+		return i.getTime()<f.getTime()?!1:!0
+				
+	},"Invalid moving date. Date must be in mm/dd/yyyy format and must be future date."),
+	
+	
+	//Allow Only Characters
+	$.validator.addMethod("onlyChars",function(a){
+		var b=a.match(/\d+/g);return null!=b&&b.length>0?!1:!0
+	},"Invalid name. Name must be atleast 2 chars long and can not contain digits."),
+	
+	//If Additional Info radio is clicked then validate it
+	$.validator.addMethod("additional_info_valid",function(a,b){
+		var c=$(b).closest("form");
+		return"Yes"==$(c).find("input[name='any_addition_information']:checked").val()&&""==a?!1:!0
+	},"Additional information is required"),
+	
+	//If information provided then make it valid
+	$("input[name='any_addition_information']").click(function(){
+		var a=$(this).closest("form");$(a).find("textarea[name='additional_info']").valid();
+	}),
+	
+	
         //form validation rules
         jQuery("#form").validate({
-                rules: {
-					bedrooms: "required",
-                    name: "required",
-					phone: "required",
-					postcode: "required",
-					address: "required",
-                    city: "required",
-					city_to: "required",
-					packing_service: "required",
-					dismantle : "required",
-					storage : "required",
-					date: "required",
-					
-                    email: {
-                        required: true,
-                        email: true
-                    },
-					phone: {
-                        required: true,
-						
-						phoneValidate:true,
-                    },
-                    password: {
-                        required: true,
-                        minlength: 5
-                    },
-                    agree: "required"
-                },
-                messages: {
-					bedrooms: "Size of current property is required",
-                    name: "Your name is required",
-                    phone: "Please enter a valid phone number",
-					email: "Your email address is required",
-                  	postcode: "Your post code address is required",
-					address: "Your address is required",
-                    city: "Your city is required",
-					city_to: "Your city is required",
-					packing_service: "Packing service is required",
-                    dismantle: "Dismantle / Reassemble is required",
-					storage: "Storage is required",
-					date: "Anticipated moving date is required",
-                },
-                submitHandler: function(form) {
-                    form.submit();
-                }
-            });
+        	rules:{
+        	bedrooms:"required",
+			fullname:{
+				required:!0,
+				minlength:2,
+				onlyChars:!0
+			},
+			phone:"required",
+			postcode:"required",
+			address:"required",
+			city:"required",
+			city_to:"required",
+			property_type_from:"required",
+			property_type_to:"required",
+			packing_service:"required",
+			dismantle:"required",
+			storage:"required",
+			date:{
+				required:!0,
+				dateValidate:!0
+			},
+			email:{
+				required:!0,
+				email:!0
+			},
+			phone:{
+				required:!0,
+				phoneValidate:!0
+			},
+			password:{
+				required:!0,
+				minlength:5
+			},
+			agree:"required",
+			additional_info:"additional_info_valid"
+		},
+		
+		errorPlacement:function(a,b){
+			"property_type_from"==b.attr("name")?a.appendTo("div.leftpart div.redio-with-text"):"property_type_to"==b.attr("name")?a.appendTo("div.rightpart div.redio-with-text"):a.insertAfter(b)
+		},
+		
+		showErrors:function(){
+			var a=this.numberOfInvalids();a>0?($("div.danger").show(),
+			$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),
+			this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+		},
+		
+		messages:{
+			bedrooms:"Size of current property is required",
+			fullname:{
+				required:"Your name is required",
+				minlength:"Your name should be atleast 2 characters long"
+			},
+		    phone:"Please enter a valid phone number",
+		    email:"Your email address is required",
+		    postcode:"Your post code address is required",
+		    address:"Your address is required",
+		    city:"Your city is required",
+		    city_to:"Your city is required",
+		    property_type_from:"Property type is required",
+		    property_type_to:"Property type is required",
+		    packing_service:"Packing service is required",
+		    dismantle:"Dismantle / Reassemble is required",
+		    storage:"Storage is required",
+		    date:{
+		    	required:"Anticipated moving date is required",
+		    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
+		    }
+		},
+		
+        submitHandler: function(form) {
+                form.submit();
+        }
+     });
 
     	
 		jQuery(".get-my-quote-second").click(function() {
-			//alert("form submitted");
     		jQuery("#form").submit();
-    		//alert("form submitted2");
     		
  		 });
 		 
@@ -268,57 +332,69 @@ jQuery( document ).ready(function() {
 	});
 
 	//form-business validation rules
+	
 		jQuery("#form-business input[name='phone']").keypress(phoneValidation);
         jQuery("#form-business").validate({
-                rules: {
-					bedrooms: "required",
-                    name: "required",
-					phone: "required",
-					postcode: "required",
-					address: "required",
-                    city: "required",
-					city_to: "required",
-					packing_service: "required",
-					dismantle : "required",
-					storage : "required",
-					date: "required",
-					
-                    email: {
-                        required: true,
-                        email: true
-                    },
-					phone: {
-                        required: true,
-						
-						phoneValidate: true,
-                        
-                    },
-                    password: {
-                        required: true,
-                        minlength: 5
-                    },
-                    agree: "required"
-                },
-                messages: {
-					bedrooms: "Size of current property is required",
-                    name: "Your name is required",
-                    phone: "Please enter a valid phone number",
-					email: "Your email address is required",
-                  	postcode: "Your post code address is required",
-					address: "Your address is required",
-                    city: "Your city is required",
-					city_to: "Your city is required",
-					packing_service: "Packing service is required",
-                    dismantle: "Dismantle / Reassemble is required",
-					storage: "Storage is required",
-					date: "Anticipated moving date is required",
-                },
-                submitHandler: function(form) {
-                    form.submit();
-                }
-            });
-
-    	
+        		
+			rules:{
+				bedrooms:"required",
+				fullname:{
+					required:!0,
+					minlength:2,
+					onlyChars:!0
+				},
+				postcode:"required",
+				address:"required",
+				city:"required",
+				city_to:"required",
+				packing_service:"required",
+				dismantle:"required",
+				storage:"required",
+				date:"required",
+				email:{
+					required:!0,
+					email:!0
+				},
+				phone:{
+					required:!0,
+					phoneValidate:!0
+				},
+				password:{
+					required:!0,
+					minlength:5
+				},
+				agree:"required",
+				additional_info:"additional_info_valid"
+				},
+				
+				showErrors:function(){
+					var a=this.numberOfInvalids();a>0?($("div.danger").show(),$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+				},
+				
+				messages:{
+					bedrooms:"Size of current property is required",
+					fullname:{
+						required:"Your name is required",
+						minlength:"Your name should be atleast 2 characters long"
+					},
+					phone:"Please enter a valid phone number",
+					email:"Your email address is required",
+					postcode:"Your post code address is required",
+					address:"Your address is required",
+					city:"Your city is required",
+					city_to:"Your city is required",
+					packing_service:"Packing service is required",
+					dismantle:"Dismantle / Reassemble is required",
+					storage:"Storage is required",
+					date:"Anticipated moving date is required"
+				},
+				
+		        submitHandler: function(form) {
+		            form.submit();
+		        }
+	});
+	
+	
 		jQuery(".get-my-quote-second-business").click(function() {
     		jQuery("#form-business").submit();
  		 });
@@ -434,53 +510,75 @@ jQuery( document ).ready(function() {
 	//form-international validation rules
 		jQuery("#form-international input[name='phone']").keypress(phoneValidation);
         jQuery("#form-international").validate({
-                rules: {
-					bedrooms: "required",
-                    name: "required",
-					phone: "required",
-					postcode: "required",
-					address: "required",
-                    city: "required",
-					city_to: "required",
-					packing_service: "required",
-					dismantle : "required",
-					storage : "required",
-					date: "required",
-					
-                    email: {
-                        required: true,
-                        email: true
-                    },
-					phone: {
-                        required: true,
-                       
-						phoneValidate: true,
-                    },
-                    password: {
-                        required: true,
-                        minlength: 5
-                    },
-                    agree: "required"
-                },
-                messages: {
-					bedrooms: "Size of current property is required",
-                    name: "Your name is required",
-                    phone: "Please enter a valid phone number",
-					email: "Your email address is required",
-                  	postcode: "Your post code address is required",
-					address: "Your address is required",
-                    city: "Your city is required",
-					city_to: "Your city is required",
-					packing_service: "Packing service is required",
-                    dismantle: "Dismantle / Reassemble is required",
-					storage: "Storage is required",
-					date: "Anticipated moving date is required",
-                },
+        	
+        	rules:{
+        		bedrooms:"required",
+        		fullname:{
+        			required:!0,
+        			minlength:2,
+        			onlyChars:!0
+        		},
+        		postcode:"required",
+        		address:"required",
+        		city:"required",
+        		city_to:"required",
+        		property_type_from:"required",
+        		property_type_to:"required",
+        		packing_service:"required",
+        		dismantle:"required",
+        		storage:"required",
+        		shipping_method:"required",
+        		date:"required",
+        		email:{
+        			required:!0,
+        			email:!0
+        		},
+        		phone:{
+        			required:!0,
+        			phoneValidate:!0
+        		},
+        		password:{
+        			required:!0,
+        			minlength:5
+        		},
+        		agree:"required",
+        		additional_info:"additional_info_valid"
+        		},
+        		
+        		errorPlacement:function(a,b){
+        			"property_type_from"==b.attr("name")?a.appendTo("div.leftpart div.redio-with-text"):"property_type_to"==b.attr("name")?a.appendTo("div.rightpart div.redio-with-text"):a.insertAfter(b)
+        		},
+        		
+        		showErrors:function(){
+        			var a=this.numberOfInvalids();a>0?($("div.danger").show(),$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+        		},
+        		
+        		messages:{
+        			bedrooms:"Size of current property is required",
+        			fullname:{
+        				required:"Your name is required",
+        				minlength:"Your name should be atleast 2 characters long"
+        			},
+        			phone:"Please enter a valid phone number",
+        			email:"Your email address is required",
+        			postcode:"Your post code address is required",
+        			address:"Your address is required",
+        			city:"Your city is required",
+        			city_to:"Your city is required",
+        			property_type_from:"Property type is required",
+        			property_type_to:"Property type is required",
+        			packing_service:"Packing service is required",
+        			dismantle:"Dismantle / Reassemble is required",
+        			storage:"Storage is required",
+        			shipping_method:"Shipping Method is required",
+        			date:"Anticipated moving date is required"
+        		},
+        		
                 submitHandler: function(form) {
                     form.submit();
                 }
-            });
-
+        	});
+        
     	
 		jQuery(".get-my-quote-second-international").click(function() {
     		jQuery("#form-international").submit();
