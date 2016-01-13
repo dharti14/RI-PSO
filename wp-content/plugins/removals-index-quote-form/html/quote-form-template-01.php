@@ -1,11 +1,7 @@
 <?php
-
 	//Load css and js of the form here
-
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
-     
-
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">

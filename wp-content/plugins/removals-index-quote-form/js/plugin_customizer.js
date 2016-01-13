@@ -63,7 +63,7 @@ jQuery( document ).ready(function() {
 	
 	
 	//Validate Date
-	$.validator.addMethod("dateValidate",function(a){
+	jQuery.validator.addMethod("dateValidate",function(a){
 		
 		var b=a.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
 		if(null==b)return!1;
@@ -83,19 +83,19 @@ jQuery( document ).ready(function() {
 	
 	
 	//Allow Only Characters
-	$.validator.addMethod("onlyChars",function(a){
+	jQuery.validator.addMethod("onlyChars",function(a){
 		var b=a.match(/\d+/g);return null!=b&&b.length>0?!1:!0
 	},"Invalid name. Name must be atleast 2 chars long and can not contain digits."),
 	
 	//If Additional Info radio is clicked then validate it
-	$.validator.addMethod("additional_info_valid",function(a,b){
-		var c=$(b).closest("form");
-		return"Yes"==$(c).find("input[name='any_addition_information']:checked").val()&&""==a?!1:!0
+	jQuery.validator.addMethod("additional_info_valid",function(a,b){
+		var c=jQuery(b).closest("form");
+		return"Yes"==jQuery(c).find("input[name='any_addition_information']:checked").val()&&""==a?!1:!0
 	},"Additional information is required"),
 	
 	//If information provided then make it valid
-	$("input[name='any_addition_information']").click(function(){
-		var a=$(this).closest("form");$(a).find("textarea[name='additional_info']").valid();
+	jQuery("input[name='any_addition_information']").click(function(){
+		var a=jQuery(this).closest("form");jQuery(a).find("textarea[name='additional_info']").valid();
 	}),
 	
 	
@@ -143,9 +143,9 @@ jQuery( document ).ready(function() {
 		},
 		
 		showErrors:function(){
-			var a=this.numberOfInvalids();a>0?($("div.danger").show(),
-			$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),
-			this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+			var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),
+			jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),
+			this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
 		},
 		
 		messages:{
@@ -368,7 +368,7 @@ jQuery( document ).ready(function() {
 				},
 				
 				showErrors:function(){
-					var a=this.numberOfInvalids();a>0?($("div.danger").show(),$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+					var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
 				},
 				
 				messages:{
@@ -550,7 +550,7 @@ jQuery( document ).ready(function() {
         		},
         		
         		showErrors:function(){
-        			var a=this.numberOfInvalids();a>0?($("div.danger").show(),$("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):($("div.danger").hide(),this.defaultShowErrors())
+        			var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
         		},
         		
         		messages:{
