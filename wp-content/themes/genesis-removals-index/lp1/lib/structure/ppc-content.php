@@ -256,34 +256,6 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
     </div>   
  </div>
 </div>
-
-<div class="footer">
-	<div class="container">
-		<div class="footer-link">
-		 <?php
-		            $defaults = array(
-		              'theme_location'  => 'ppc_footer',
-		              'container'       => false,
-		              'menu_class'      => 'menu',
-		              'echo'            => true,
-		              'items_wrap'      => '<ul id="ppc_footer">%3$s</ul>',
-		              'depth'           => 1
-		            );
-		
-		            genesis_nav_menu( $defaults );
-		?>
-		</div>
-	
-		<div class="copyright">
-		
-			<p>Copyright &copy; <?php echo date('Y');?> removals-index.com All rights reserved</p>
-		    <p>Pinlocal Leads, Communications House, 26 York St, London, W1U 6PZ</p>
-		    
-		 </div>
-	</div>
-</div>
-
-
 <script>
 
 jQuery(function() {

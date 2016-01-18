@@ -2,7 +2,6 @@
 /** Start the engine */
 require_once( TEMPLATEPATH . '/lib/init.php' );
 
-
 //* We tell the name of our child theme
 define( 'Child_Theme_Name', __( 'Genesis Child', 'genesis-removals-index' ) );
 //* We tell the web address of our child theme (More info & demo)
@@ -41,6 +40,38 @@ remove_action('genesis_footer', 'genesis_do_footer');
 remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 // remove default genesis action.....................................
+
+
+
+// Setting Site header and footer for all pages
+require(TD.'/lib/site/common.php');
+require(TD.'/lib/site/header.php');
+require(TD.'/lib/site/footer.php');
+// Setting Site header and footer for all pages
+
+
+add_action('genesis_loop','loop_for_internal_page_content');
+
+function loop_for_internal_page_content()
+{
+	?>
+
+<article id="main_article">
+	<div class="container">
+		<?php if (have_posts()) :?>
+			<?php while (have_posts()) : the_post();?>
+				<h1 class="title"><?php the_title();?></h1>
+				<?php the_content();?>
+			<?php endwhile;?>
+		<?php endif;?>
+		
+	</div>
+</article>
+<!-- /#main_article -->	
+
+<?php
+}
+
 
 
 // ADD DEFER/ASYNC TAG TO LOADED SCRIPTS
@@ -237,4 +268,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			echo $fb_output;
 		}
 	}
+	
 }
+
+?>

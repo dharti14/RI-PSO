@@ -325,8 +325,8 @@ span.arrow-post { bottom: -25px;}
 }
 
 .footer-link ul li{display:inline-block;text-align:center;margin-bottom:0;padding-bottom:0;border:0}
-.footer-link ul li a{font-size:10px}
-.footer-link ul li:after{content:" | "}
+.footer-link ul li a{font-size:12px}
+.footer-link ul li a:after{content:" | "}
 
 }
 

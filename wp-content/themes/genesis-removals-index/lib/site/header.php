@@ -1,8 +1,8 @@
 <?php 
 
-add_action('genesis_before_header', 'before_header');
+add_action('genesis_before_header', 'site_before_header');
 
-function before_header(){
+function site_before_header(){
 ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no" />
@@ -20,8 +20,8 @@ function before_header(){
  <?php 
   }
 
-add_action('genesis_header', 'main_header');
-function main_header(){
+add_action('genesis_header', 'site_header');
+function site_header(){
 	?>
   
     <section id="logo_call">
@@ -42,9 +42,9 @@ function main_header(){
     <!-- /#logo_call -->
 <?php 
   }
-  add_action('genesis_after_header', 'after_header');
+  add_action('genesis_after_header', 'site_after_header');
 
-  function after_header(){
+  function site_after_header(){
   	?>
     <nav class="navbar navbar-default">
       <div class="container">

@@ -105,7 +105,7 @@
 	
 	
 	<!--form -->
-        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-01"]'); ?>
+        <?php //do_shortcode('[ri_quote_form template_name="quote-form-template-01"]'); ?>
     <!--form -->
 
 	<section id="how_will">

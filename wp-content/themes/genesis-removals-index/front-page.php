@@ -1,16 +1,12 @@
 <?php
+remove_action('genesis_loop', 'loop_for_internal_page_content');
 
-require('lib/site/common.php');
-require('lib/site/header.php');
+add_action('genesis_loop','genesis_loop_front_page_content');
 
-add_action('genesis_loop','ri_genesis_loop');
-
-function ri_genesis_loop()
+function genesis_loop_front_page_content()
 {
-	require('site-content.php');
+	require('front-page-content.php');
 }
-
-require('lib/site/footer.php');
 
 //Initialize the genesis framework
 genesis();

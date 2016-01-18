@@ -1,6 +1,6 @@
 <?php
-add_action('wp_enqueue_scripts', 'ri_load_scripts');
-function ri_load_scripts() {
+add_action('wp_enqueue_scripts', 'site_load_scripts');
+function site_load_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrapjs', TDU.'/lib/site/assets/js/bootstrap.min.js' );
 	wp_enqueue_script('trustpilot', '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js', '', '', true);

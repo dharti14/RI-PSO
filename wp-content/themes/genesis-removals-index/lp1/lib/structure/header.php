@@ -17,7 +17,7 @@ function viewport_meta_tag() {
 	<!--  DKI Scripts in meta tags -->
 	<?php 
 	// Scripts and code  required for dki scripts
-	require(TD.'/lp1/lib/inc/analytics.php');
+	//require(TD.'/lp1/lib/inc/analytics.php');
 	require(TD.'/lp1/lib/inc/common.php');
 	
 	require(TD.'/lp1/lib/inc/DKIScripts.php');
@@ -71,19 +71,14 @@ function viewport_meta_tag() {
   <?php 
 }
 
-add_action('genesis_before_header', 'before_header');
+add_action('genesis_header', 'lp1_header');
 
-function before_header(){
+function lp1_header(){
+	
 ?>
 
   <header class="header">
- <?php 
-  }
 
-add_action('genesis_header', 'main_header');
-function main_header(){
-	?>
-  
       <div class="container">
         <div class="row">
         

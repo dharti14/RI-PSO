@@ -1,8 +1,8 @@
 <?php 
 
-add_action('genesis_footer', 'footer');
+add_action('genesis_footer', 'site_footer');
 
-function footer(){
+function site_footer(){
 ?>	
 	<footer class="main">
 		<div class="container">

@@ -1,8 +1,8 @@
 <?php 
 
-add_action('genesis_before_header', 'before_header');
+add_action('genesis_before_header', 'lp2_before_header');
 
-function before_header(){
+function lp2_before_header(){
 ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no" />
@@ -20,8 +20,8 @@ function before_header(){
  <?php 
   }
 
-add_action('genesis_header', 'main_header');
-function main_header(){
+add_action('genesis_header', 'lp2_header');
+function lp2_header(){
 	?>
   
     <section id="logo_call">

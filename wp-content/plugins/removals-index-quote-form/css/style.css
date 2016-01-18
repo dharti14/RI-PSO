@@ -649,3 +649,11 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 #appartment-floor-to .form-group label.error{ 
 	margin: 10px 0 0 0;
 }
+
+
+
+@media (min-width: 641px){
+	.danger {
+	    margin: 0 40px 0 0;
+	}
+}
