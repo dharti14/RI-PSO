@@ -101,12 +101,28 @@ jQuery( document ).ready(function() {
 	
         //form validation rules
         jQuery("#form").validate({
-        	rules:{
+        	
+        	invalidHandler: function(event, validator) {
+				 var errors = validator.numberOfInvalids();
+					if (errors) {
+					 
+				      var first_element = validator.errorList[0].element;
+					  var real_offset = $(first_element).offset();
+					  var top_offset  = real_offset.top - 100;
+					  var left_offset = real_offset.left;
+					  
+					  $(window).scrollTo({top:top_offset,left:left_offset});
+					 
+					}
+
+				},
+        	
+       rules:{
         	bedrooms:"required",
 			fullname:{
-				required:!0,
+				required:true,
 				minlength:2,
-				onlyChars:!0
+				onlyChars:true
 			},
 			phone:"required",
 			postcode:"required",
@@ -119,33 +135,52 @@ jQuery( document ).ready(function() {
 			dismantle:"required",
 			storage:"required",
 			date:{
-				required:!0,
-				dateValidate:!0
+				required:true,
+				dateValidate:true
 			},
 			email:{
-				required:!0,
-				email:!0
+				required:true,
+				email:true
 			},
 			phone:{
-				required:!0,
-				phoneValidate:!0
+				required:true,
+				phoneValidate:true
 			},
 			password:{
-				required:!0,
+				required:true,
 				minlength:5
 			},
 			agree:"required",
 			additional_info:"additional_info_valid"
 		},
 		
-		errorPlacement:function(a,b){
-			"property_type_from"==b.attr("name")?a.appendTo("div.leftpart div.redio-with-text"):"property_type_to"==b.attr("name")?a.appendTo("div.rightpart div.redio-with-text"):a.insertAfter(b)
-		},
+		errorPlacement: function (error, element) {                   
+            if (element.attr("name") == "property_type_from") {
+               error.appendTo("div.leftpart div.redio-with-text");
+            }
+			else if(element.attr("name") == "property_type_to")
+			{
+				error.appendTo("div.rightpart div.redio-with-text");
+			}					
+			else {
+                error.insertAfter(element);
+            }						
+			
+        },
+		showErrors: function(errorMap, errorList) {
+		var errors = this.numberOfInvalids();
+		if(errors > 0){
 		
-		showErrors:function(){
-			var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),
-			jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),
-			this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
+			$("div.danger").show();
+			$("div.danger span").html("You missed "
+			+ errors
+			+ " field. It has been highlighted");
+			this.defaultShowErrors();
+		  }
+		  else{
+			$("div.danger").hide();
+			this.defaultShowErrors();
+		  }				  
 		},
 		
 		messages:{
@@ -335,13 +370,26 @@ jQuery( document ).ready(function() {
 	
 		jQuery("#form-business input[name='phone']").keypress(phoneValidation);
         jQuery("#form-business").validate({
-        		
+        	
+        	invalidHandler: function(event, validator) {
+				 var errors = validator.numberOfInvalids();
+					if (errors) {
+					 
+				      var first_element = validator.errorList[0].element;
+					  var real_offset = $(first_element).offset();
+					  var top_offset  = real_offset.top - 100;
+					  var left_offset = real_offset.left;
+					  
+					  $(window).scrollTo({top:top_offset,left:left_offset});
+					 
+					}	
+				},	
 			rules:{
 				bedrooms:"required",
 				fullname:{
-					required:!0,
+					required:true,
 					minlength:2,
-					onlyChars:!0
+					onlyChars:true
 				},
 				postcode:"required",
 				address:"required",
@@ -352,24 +400,36 @@ jQuery( document ).ready(function() {
 				storage:"required",
 				date:"required",
 				email:{
-					required:!0,
-					email:!0
+					required:true,
+					email:true
 				},
 				phone:{
-					required:!0,
-					phoneValidate:!0
+					required:true,
+					phoneValidate:true
 				},
 				password:{
-					required:!0,
+					required:true,
 					minlength:5
 				},
 				agree:"required",
 				additional_info:"additional_info_valid"
 				},
 				
-				showErrors:function(){
-					var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
-				},
+				showErrors: function(errorMap, errorList) {
+					var errors = this.numberOfInvalids();
+					if(errors > 0){
+					
+						$("div.danger").show();
+						$("div.danger span").html("You missed "
+						+ errors
+						+ " field. It has been highlighted");
+						this.defaultShowErrors();
+					  }
+					  else{
+						$("div.danger").hide();
+						this.defaultShowErrors();
+					  }				  
+					},
 				
 				messages:{
 					bedrooms:"Size of current property is required",
@@ -511,12 +571,25 @@ jQuery( document ).ready(function() {
 		jQuery("#form-international input[name='phone']").keypress(phoneValidation);
         jQuery("#form-international").validate({
         	
+        	invalidHandler: function(event, validator) {
+				 var errors = validator.numberOfInvalids();
+					if (errors) {
+					 
+				      var first_element = validator.errorList[0].element;
+					  var real_offset = $(first_element).offset();
+					  var top_offset  = real_offset.top - 100;
+					  var left_offset = real_offset.left;
+					  
+					  $(window).scrollTo({top:top_offset,left:left_offset});
+					 
+					}
+				},
         	rules:{
         		bedrooms:"required",
         		fullname:{
-        			required:!0,
+        			required:true,
         			minlength:2,
-        			onlyChars:!0
+        			onlyChars:true
         		},
         		postcode:"required",
         		address:"required",
@@ -530,28 +603,49 @@ jQuery( document ).ready(function() {
         		shipping_method:"required",
         		date:"required",
         		email:{
-        			required:!0,
-        			email:!0
+        			required:true,
+        			email:true
         		},
         		phone:{
-        			required:!0,
-        			phoneValidate:!0
+        			required:true,
+        			phoneValidate:true
         		},
         		password:{
-        			required:!0,
+        			required:true,
         			minlength:5
         		},
         		agree:"required",
         		additional_info:"additional_info_valid"
         		},
         		
-        		errorPlacement:function(a,b){
-        			"property_type_from"==b.attr("name")?a.appendTo("div.leftpart div.redio-with-text"):"property_type_to"==b.attr("name")?a.appendTo("div.rightpart div.redio-with-text"):a.insertAfter(b)
-        		},
-        		
-        		showErrors:function(){
-        			var a=this.numberOfInvalids();a>0?(jQuery("div.danger").show(),jQuery("div.danger span").html("You have missed "+a+(a>1?" fields":" field")+". Please correct and re-submit."),this.defaultShowErrors()):(jQuery("div.danger").hide(),this.defaultShowErrors())
-        		},
+        		errorPlacement: function (error, element) {                   
+                    if (element.attr("name") == "property_type_from") {
+                       error.appendTo("div.leftpart div.redio-with-text");
+                    }
+					else if(element.attr("name") == "property_type_to")
+					{
+						error.appendTo("div.rightpart div.redio-with-text");
+					}					
+					else {
+                        error.insertAfter(element);
+                    }						
+					
+                },
+				showErrors: function(errorMap, errorList) {
+					var errors = this.numberOfInvalids();
+					if(errors > 0){
+					
+						$("div.danger").show();
+						$("div.danger span").html("You missed "
+						+ errors
+						+ " field. It has been highlighted");
+						this.defaultShowErrors();
+					  }
+					  else{
+						$("div.danger").hide();
+						this.defaultShowErrors();
+					  }				  
+				},
         		
         		messages:{
         			bedrooms:"Size of current property is required",
