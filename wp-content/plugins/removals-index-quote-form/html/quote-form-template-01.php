@@ -532,10 +532,10 @@
                <span class="additional help">Eg move inventory, best time to call</span>
                <div class="step-4-checkbox ">
                 <label>
-                  <input onClick="jQuery('#greenwood_drive1').hide();$('.help').show();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No 
+                  <input onClick="jQuery('#greenwood_drive1').hide();jQuery('.help').show();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No 
                 </label>&nbsp; &nbsp;
                 <label for="any-addition-information-y">
-                  <input onClick="jQuery('#greenwood_drive1').show();$('.help').hide();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes 
+                  <input onClick="jQuery('#greenwood_drive1').show();jQuery('.help').hide();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes 
                 </label>
                 </div>
               </div>

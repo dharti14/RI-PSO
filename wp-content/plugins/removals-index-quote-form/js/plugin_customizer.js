@@ -58,10 +58,7 @@ jQuery( document ).ready(function() {
 				 		validateArr.indexOf( firsTwoValue )>=0;
 			}
         }, "Invalid phone number");
-	
-	jQuery("#form input[name='phone']").keypress(phoneValidation);
-	
-	
+		
 	//Validate Date
 	jQuery.validator.addMethod("dateValidate",function(a){
 		
@@ -84,11 +81,13 @@ jQuery( document ).ready(function() {
 	
 	//Allow Only Characters
 	jQuery.validator.addMethod("onlyChars",function(a){
-		var b=a.match(/\d+/g);return null!=b&&b.length>0?!1:!0
+		var b=a.match(/\d+/g);
+		return null!=b&&b.length>0?!1:!0
 	},"Invalid name. Name must be atleast 2 chars long and can not contain digits."),
 	
 	//If Additional Info radio is clicked then validate it
 	jQuery.validator.addMethod("additional_info_valid",function(a,b){
+				
 		var c=jQuery(b).closest("form");
 		return"Yes"==jQuery(c).find("input[name='any_addition_information']:checked").val()&&""==a?!1:!0
 	},"Additional information is required"),
@@ -100,6 +99,7 @@ jQuery( document ).ready(function() {
 	
 	
         //form validation rules
+		jQuery("#form input[name='phone']").keypress(phoneValidation);
         jQuery("#form").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -152,6 +152,7 @@ jQuery( document ).ready(function() {
 			},
 			agree:"required",
 			additional_info:"additional_info_valid"
+	
 		},
 		
 		errorPlacement: function (error, element) {                   
@@ -227,11 +228,17 @@ jQuery( document ).ready(function() {
 		jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
 		
 		if(jQuery(this).attr("rel") == "bed0"){
-			
+
 			jQuery(".step-4-checkbox span").remove();
 			jQuery(".step-4-checkbox").append('<span class="vaild-check valid"></span>');
-			jQuery('#greenwood_drive2').show();
+			jQuery('#greenwood_drive').show();
+			
+			if(jQuery('div#show-after-get-international').is(":visible") == true){
+				jQuery('#greenwood_drive2').show();
+			}
+			
 			jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
+			jQuery('textarea[name="additional_info"]').valid();
 			
 		}else{
 			jQuery(this).addClass("bed-radios-container-sel");
@@ -398,7 +405,10 @@ jQuery( document ).ready(function() {
 				packing_service:"required",
 				dismantle:"required",
 				storage:"required",
-				date:"required",
+				date:{
+			    	required:true,
+			    	dateValidate:true
+			    },
 				email:{
 					required:true,
 					email:true
@@ -446,7 +456,10 @@ jQuery( document ).ready(function() {
 					packing_service:"Packing service is required",
 					dismantle:"Dismantle / Reassemble is required",
 					storage:"Storage is required",
-					date:"Anticipated moving date is required"
+					date:{
+				    	required:"Anticipated moving date is required",
+				    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
+				    }
 				},
 				
 		        submitHandler: function(form) {
@@ -601,7 +614,10 @@ jQuery( document ).ready(function() {
         		dismantle:"required",
         		storage:"required",
         		shipping_method:"required",
-        		date:"required",
+        		date:{
+    		    	required:true,
+    		    	dateValidate:true
+    		    },
         		email:{
         			required:true,
         			email:true
@@ -618,7 +634,8 @@ jQuery( document ).ready(function() {
         		additional_info:"additional_info_valid"
         		},
         		
-        		errorPlacement: function (error, element) {                   
+        		errorPlacement: function (error, element) {  
+        			
                     if (element.attr("name") == "property_type_from") {
                        error.appendTo("div.leftpart div.redio-with-text");
                     }
@@ -665,7 +682,10 @@ jQuery( document ).ready(function() {
         			dismantle:"Dismantle / Reassemble is required",
         			storage:"Storage is required",
         			shipping_method:"Shipping Method is required",
-        			date:"Anticipated moving date is required"
+        			date:{
+    			    	required:"Anticipated moving date is required",
+    			    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
+    			    }			
         		},
         		
                 submitHandler: function(form) {
@@ -683,6 +703,7 @@ jQuery( document ).ready(function() {
     			jQuery("#form-international").submit();
 			}
  		 });
+	 	
 		
 		jQuery("#form-international input[name='property_type_from']").click(function(){
 			if(jQuery(this).val() == "Apartment / Flat"){
