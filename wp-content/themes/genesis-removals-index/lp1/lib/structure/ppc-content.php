@@ -301,11 +301,4 @@ jQuery(function() {
 });
 
 </script>
-
-<script async type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
-
-<script type="text/javascript">
-(function(a,e,c,f,g,b,d){var h={ak:"999191207",cl:"8UxmCKOV4FkQp-W53AM"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[f]||(a[f]=h.ak);b=e.createElement(g);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(g)[0];d.parentNode.insertBefore(b,d);a._googWcmGet=function(b,d,e){a[c](2,b,h,d,null,new Date,e)}})(window,document,"_googWcmImpl","_googWcmAk","script");
-</script>
-
 <?php require(TD.'/lp1/lib/inc/footer-code.php'); ?>

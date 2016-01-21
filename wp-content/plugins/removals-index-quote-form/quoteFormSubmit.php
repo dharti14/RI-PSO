@@ -261,21 +261,12 @@ if ($_POST)
 		    curl_close($ch);
 		    
 		    $obj = json_decode($result);
-		   
-		    
-		    echo '<pre>';
-		    print_r($obj);
-		    echo '</pre>';
-		    
-		    echo '<br />';
-		    echo get_permalink(40) . "?form=" . $form . "&h=" . $obj->hash;
-		    die();
-
-			
+		   			
 		    if ($http_code == 201) 	//ALL LOOKS GOOD, LEAD SUBMITED. REDIRECT TO YOUR THANKS PAGE
 		    {
-		    	//please provide the id of thank you page which you want to redirect
-				header("Location: " . get_permalink(40) . "?form=" . $form . "&h=" . $obj->hash);
+		    	//please provide the page title/id of thank you page which you want to redirect (in our case its id=40)
+		    	//get_permalink(40);
+				header("Location: " . get_permalink(get_page_by_title('Static Removals-Index Thanks')) . "?form=" . $form . "&h=" . $obj->hash);
 		    	exit();
 		    	
 		    }

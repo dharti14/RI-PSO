@@ -1,6 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300);
 
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, 
 big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, 
 li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th {border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; margin: 0; outline: 0; padding: 0; vertical-align: baseline;}
@@ -902,7 +901,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	}
 	
 	.call-free { 
-		font-size:46px; 
+		font-size:40px !important; 
 		line-height:40px;
 		padding: 10px 0 0;
 	}
@@ -961,7 +960,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	}
 	
 	.step1 span.arrow-post2 { 
-		left: 50%; 
+		left: 50% !important; 
 	}
 	
 	.right-slider { 
@@ -1403,8 +1402,4 @@ ul#ppc_footer li{
 
 .page-template-lp1-thanks .site-inner{
 	    padding-top: 90px !important;
-}
-
-.page-template-lp1-thanks .site-inner .content-sidebar-wrap{
-	    padding-top: 32px;
 }

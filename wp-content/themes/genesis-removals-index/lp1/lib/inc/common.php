@@ -1,14 +1,4 @@
 <?php
-// if(strpos($_SERVER['HTTP_HOST'],'local-ri')!==false)
-// {
-// 	$jsmode = $cssmode = 'development';
-// }
-// else
-// {
-// 	error_reporting(0);
-// 	$jsmode = $cssmode = 'production';
-// }
-
 function addBrTag($string, $position){
 	$ex = explode(" ",$string);
 	$count = count($ex);
@@ -95,53 +85,3 @@ function minify_callback($buffer)
 	return $buffer;
 
 }
-
-
-/**
- * dynamically loads the appropriate JS files based on the $jsmode
- * if $jsmode = production we load the single minified js file
- * if $jsmode = development we load the unminified separate files
- * 
- * @param unknown $base_path
- * @param unknown $location
- */
-
-// function load_js_files($timestamp)
-// {
-	
-// 	global $jsmode;
-	
-// 	if($jsmode == 'development')	//load minified
-// 	{
-// 		echo '
-// 			<script src="js/jquery.min.js"></script>
-// 			<script src="js/jquery.ui.js"></script>
-// 			<script src="js/jquery.validate.min.js"></script>
-// 			<script src="js/customizer.js"></script>				
-// 			';
-// 	}
-// 	else
-// 	{
-
-// 		echo '<script src="js/site.min.'. $timestamp .'.js"></script>';
-// 	}
-	
-	
-	
-// }
-
-// function load_css_files($timestamp)
-// {
-// 	global $cssmode;
-// 	if($cssmode == 'development')	//load minified
-// 	{
-// 		echo '<link href="css/site.min.css" rel="stylesheet">';
-// 	}
-// 	else
-// 	{
-// 		echo '<link href="css/site.min.'. $timestamp  .'.css" rel="stylesheet">';
-// 	}
-
-
-
-// }

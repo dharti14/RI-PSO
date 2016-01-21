@@ -2,6 +2,8 @@
 	//Load css and js of the form here
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
+     
+     include(TD.'/lp1/lib/inc/DKIScripts.php');
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">

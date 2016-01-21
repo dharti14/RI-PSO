@@ -17,7 +17,6 @@ function viewport_meta_tag() {
 	<!--  DKI Scripts in meta tags -->
 	<?php 
 	// Scripts and code  required for dki scripts
-	//require(TD.'/lp1/lib/inc/analytics.php');
 	require(TD.'/lp1/lib/inc/common.php');
 	
 	require(TD.'/lp1/lib/inc/DKIScripts.php');
