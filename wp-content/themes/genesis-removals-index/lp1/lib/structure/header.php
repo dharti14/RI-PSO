@@ -17,9 +17,9 @@ function viewport_meta_tag() {
 	<!--  DKI Scripts in meta tags -->
 	<?php 
 	// Scripts and code  required for dki scripts
-	require(TD.'/lp1/lib/inc/common.php');
+	require(THEME_PATH_DIR.'/lp1/lib/inc/common.php');
 	
-	require(TD.'/lp1/lib/inc/DKIScripts.php');
+	require(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
 	
 	// Dki scripts over
 	?>
@@ -84,13 +84,13 @@ function lp1_header(){
         <div class="col-sm-6">
 		     <div class="logo">
 		     	<a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-		     		<img src="<?php echo TDU;?>/lp1/lib/assets/images/logo.svg">
+		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg">
 		     	</a>
 		     </div>
 		     
 		     <div class="mobile-logo">
 			     <a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-			     	<img src="<?php echo TDU;?>/lp1/lib/assets/images/logo.svg">
+			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg">
 			     </a>
 		     </div>
 	    </div>

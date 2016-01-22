@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-sm-6">
 					<figure class="thanks_figure">
-						<img src="<?php echo TDU;?>/lp2/lib/assets/images/thanks_figure.jpg" alt="Thanks"/>
+						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/thanks_figure.jpg" alt="Thanks"/>
 					</figure>
 				</div>
 			</div>

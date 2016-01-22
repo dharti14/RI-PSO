@@ -18,13 +18,13 @@ function lp2_load_scripts() {
 	
 	// Enqueuing Scripts and Styles for lp2
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('lp2_bootstrapjs', TDU.'/lp2/lib/assets/js/bootstrap.min.js' );
+	wp_enqueue_script('lp2_bootstrapjs', THEME_PATH_URI.'/lp2/lib/assets/js/bootstrap.min.js' );
 	wp_enqueue_script('trustpilot', '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js', '', '', true);
 
 	// LOAD MAIN STYLE
-	wp_enqueue_style('lp2_bootstrapcss', TDU.'/lp2/lib/assets/css/bootstrap.min.css');
-	wp_enqueue_style('lp2_style_css', TDU.'/lp2/lib/assets/css/style.css');
-	wp_enqueue_style('lp2_fontawsome', TDU.'/lp2/lib/assets/css/font-awesome.min.css');
+	wp_enqueue_style('lp2_bootstrapcss', THEME_PATH_URI.'/lp2/lib/assets/css/bootstrap.min.css');
+	wp_enqueue_style('lp2_style_css', THEME_PATH_URI.'/lp2/lib/assets/css/style.css');
+	wp_enqueue_style('lp2_fontawsome', THEME_PATH_URI.'/lp2/lib/assets/css/font-awesome.min.css');
 	wp_enqueue_style('lp2_font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800,700');
 
 }

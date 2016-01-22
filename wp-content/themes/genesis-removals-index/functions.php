@@ -10,8 +10,8 @@ define( 'Child_Theme_Url', 'http://my.studiopress.com/themes/genesis/' );
 define( 'Child_Theme_Version', '2.1.2' );
 
 // DEFINE CHILD THEME DIRS
-define('TD', get_stylesheet_directory());
-define('TDU', get_stylesheet_directory_uri());
+define('THEME_PATH_DIR', get_stylesheet_directory()); 
+define('THEME_PATH_URI', get_stylesheet_directory_uri()); 
 
 
 //* Add HTML5 markup structure from Genesis
@@ -44,9 +44,9 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 
 // Setting Site header and footer for all pages
-require(TD.'/lib/site/common.php');
-require(TD.'/lib/site/header.php');
-require(TD.'/lib/site/footer.php');
+require(THEME_PATH_DIR.'/lib/site/common.php');
+require(THEME_PATH_DIR.'/lib/site/header.php');
+require(THEME_PATH_DIR.'/lib/site/footer.php');
 // Setting Site header and footer for all pages
 
 

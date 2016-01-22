@@ -5,7 +5,7 @@
  */
 /*
 Plugin Name: Removals Index Quote Form
-Plugin URI: 
+Plugin URI: http://www.regur.net
 Description: This plugin is used to generate Removals index quote form.
 Author: Regur Technology Solutions
 Version: 1.0

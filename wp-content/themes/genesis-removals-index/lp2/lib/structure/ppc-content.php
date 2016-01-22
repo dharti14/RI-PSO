@@ -68,7 +68,7 @@
 				<div class="col-sm-4">
 					<div class="wrap">
 						<figure class="cell">
-							<img src="<?php echo TDU;?>/lp2/lib/assets/images/client-img.png" alt="Tom Deller, London"/>
+							<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/client-img.png" alt="Tom Deller, London"/>
 						</figure>
 						<div class="cell testimonial">
 							<p>"Superb service, put me in contact with companies I needed!"</p>
@@ -79,7 +79,7 @@
 				<div class="col-sm-4">
 					<div class="wrap">
 						<figure class="cell">
-							<img src="<?php echo TDU;?>/lp2/lib/assets/images/client-img2.png" alt="Christine Key, Manchester"/>
+							<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/client-img2.png" alt="Christine Key, Manchester"/>
 						</figure>
 						<div class="cell testimonial">
 							<p>"Great way to get fast quotes without trawling through websites"</p>
@@ -90,7 +90,7 @@
 				<div class="col-sm-4">
 					<div class="wrap">
 						<figure class="cell">
-							<img src="<?php echo TDU;?>/lp2/lib/assets/images/client-img3.png" alt="Adam Kirkpatrick, Brighton"/>
+							<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/client-img3.png" alt="Adam Kirkpatrick, Brighton"/>
 						</figure>
 						<div class="cell testimonial">
 							<p>"Took a lot of the stress of finding a suitable removal company"</p>
@@ -299,13 +299,13 @@
 			<div class="foot_imgs">
 				<div class="row">
 					<div class="col-sm-4">
-						<img src="<?php echo TDU;?>/lp2/lib/assets/images/footer-img1.png" alt="Hacker Safe"/>
+						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img1.png" alt="Hacker Safe"/>
 					</div>
 					<div class="col-sm-4">
-						<img src="<?php echo TDU;?>/lp2/lib/assets/images/footer-img2.png" alt="SSL"/>
+						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img2.png" alt="SSL"/>
 					</div>
 					<div class="col-sm-4">
-						<img src="<?php echo TDU;?>/lp2/lib/assets/images/footer-img3.png" alt="SSL Secure Connection"/>
+						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img3.png" alt="SSL Secure Connection"/>
 					</div>
 				</div>
 			</div>

@@ -33,7 +33,7 @@ jQuery(window).load(function(){
      </div>
      
      <div class="col-sm-6">
-      <div class="thank-you-top-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/thanks/people-boxes.jpg" alt=""></div>
+      <div class="thank-you-top-img"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/thanks/people-boxes.jpg" alt=""></div>
      </div>
 
    </div>

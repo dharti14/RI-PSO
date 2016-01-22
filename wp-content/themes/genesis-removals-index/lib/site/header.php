@@ -29,7 +29,7 @@ function site_header(){
         <div class="row">
           <div class="col-sm-3">
             <a id="logo" href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-              <img width="180" src="<?php echo TDU;?>/lib/site/assets/images/removals-index_logo.svg" alt="<?php bloginfo( 'name' );?>"/>
+              <img width="180" src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/removals-index_logo.svg" alt="<?php bloginfo( 'name' );?>"/>
             </a>
           </div>
           <div class="col-sm-9 call">

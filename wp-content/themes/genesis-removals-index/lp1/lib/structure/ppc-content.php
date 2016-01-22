@@ -1,5 +1,5 @@
 <?php
-require(TD.'/lp1/lib/inc/DKIScripts.php');
+require(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
 ?>
 
 <div class="looking-for">
@@ -15,7 +15,7 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
     <div class="col-sm-12">
         <div class="free-quotes">
           <div class="free-quotes-form">
-           <div class="start-here"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-img.png" alt="<?php echo $hln;?>"></div>
+           <div class="start-here"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/start-here-img.png" alt="<?php echo $hln;?>"></div>
            <div class="quotes-form-con">
             <h3>SAVE Up To 40% On Your Move!</h3>
             
@@ -54,24 +54,24 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
 
 <div class="client-box">
   <div class="container">
-   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+   <span class="arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
    <div class="row">
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img.png" alt="<?php echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/client-img.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Superb Service, put me in contact with the companies I needed!"</p>
        <span><strong>Tom Deller</strong> London</span>
       </div>
      </div>
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img2.png" alt="<?php echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/client-img2.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Great way to get fast quotes without trawling through websites"</p>
        <span><strong>Christine Key</strong> Manchester</span>
       </div>
      </div>
      <div class="col-sm-4">
-      <div class="client-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/client-img3.png" alt="<?php echo $hln;?>"></div>
+      <div class="client-img"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/client-img3.png" alt="<?php echo $hln;?>"></div>
       <div class="client-detail">
        <p>"Took a lot of the stress of finding a suitable removal company"</p>
        <span><strong>Adam Kirkpatrick</strong> Brighton</span>
@@ -91,17 +91,17 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
    
    <div class="row">
      <div class="col-sm-4">
-       <div class="post-img pad1"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img1.png" alt="<?php echo $hln;?>"></div>
+       <div class="post-img pad1"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/post-img1.png" alt="<?php echo $hln;?>"></div>
        <h3>1. Provide a few details</h3>
        <p>Tell us about your move and  the best local removal companies will compete for your business</p>
      </div>
      <div class="col-sm-4">
-       <div class="post-img"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img2.png" alt="<?php echo $hln;?>"></div>
+       <div class="post-img"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/post-img2.png" alt="<?php echo $hln;?>"></div>
        <h3>2. Compare Prices</h3>
        <p>Get multiple FREE quotes from local removal firms in <?php echo $loc;?>, so you never need to haggle on price</p>
      </div>
      <div class="col-sm-4">
-       <div class="post-img pad2"><img src="<?php echo TDU;?>/lp1/lib/assets/images/post-img3.png" alt="<?php echo $hln;?>"></div>
+       <div class="post-img pad2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/post-img3.png" alt="<?php echo $hln;?>"></div>
        <h3>3. Hire the Best</h3>
        <p>Removals Index's internal review process ensure you hire only the best movers for the job</p>
      </div>
@@ -114,7 +114,7 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
 <div class="free-quotes-now">
   <div class="container">
    <div class="row quotes-form-con">
-    <div class="start-here-free"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-here-free-img.png" alt="<?php echo $hln;?>"></div>
+    <div class="start-here-free"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/start-here-free-img.png" alt="<?php echo $hln;?>"></div>
     <form name="form2" id="form2" action="" method="post">
     <div class="col-sm-3">
      <div class="moving-from">
@@ -203,9 +203,9 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
 
 <div class="free-quotes-now">
   <div class="container">
-   <span class="arrow-post"><img src="<?php echo TDU;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+   <span class="arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
    <div class="row quotes-form-con">
-    <div class="start-compare"><img src="<?php echo TDU;?>/lp1/lib/assets/images/start-compare-img.png" alt="<?php echo $hln;?>"></div>
+    <div class="start-compare"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/start-compare-img.png" alt="<?php echo $hln;?>"></div>
     <div class="col-sm-3">
      <div class="moving-from">
               <label>I'm Moving From:</label>
@@ -245,9 +245,9 @@ require(TD.'/lp1/lib/inc/DKIScripts.php');
          
        <div class="logo-tag">
        
-       	  <img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img1.png" alt="">
-          <img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img2.png" alt="">
-          <img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img3.png" alt="">
+       	  <img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img1.png" alt="">
+          <img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img2.png" alt="">
+          <img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img3.png" alt="">
        
 
 	    </div>
@@ -301,4 +301,4 @@ jQuery(function() {
 });
 
 </script>
-<?php require(TD.'/lp1/lib/inc/footer-code.php'); ?>
+<?php require(THEME_PATH_DIR.'/lp1/lib/inc/footer-code.php'); ?>

@@ -8,10 +8,10 @@
 
 <div class="wrap">
 	<h2>
-		<?php echo esc_html( 'Conveyancing Index Quote Form Settings' ); ?>
+		<?php echo esc_html( 'Removals Index Quote Form Settings' ); ?>
 	</h2>
 	
-	<form id="ci_quoteForm_settings" class="validate" name="ci_quoteForm_settings" method="post" action="">
+	<form id="ri_quoteForm_settings" class="validate" name="ri_quoteForm_settings" method="post" action="">
 		<table class="form-table">	
 			<tbody>
 				<tr class="form-required">
@@ -51,7 +51,7 @@
 // 							?>
 <!-- 						</select> -->
 <!-- 						<p class="description"> -->
-<!-- 							Select page which displayed if "Conveyancing Index Quote Form" submit successfully. -->
+<!-- 							Select page which displayed if "Removals Index Quote Form" submit successfully. -->
 <!-- 						</p> -->
 <!-- 					</td> -->
 <!-- 				</tr> -->
@@ -60,7 +60,7 @@
 			</tbody>
 		</table>
 		<p class="submit">
-			<input type="submit" value="Save Changes" class="button button-primary" id="save_ci_quoteForm_settings" name="save_ci_quoteForm_settings">
+			<input type="submit" value="Save Changes" class="button button-primary" id="save_ri_quoteForm_settings" name="save_ri_quoteForm_settings">
 		</p>
 	</form>
 </div>

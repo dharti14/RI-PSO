@@ -1,7 +1,7 @@
 <?php 
 
 //DKI Scripts starts for sidebar.php file
-include(TD.'/lp1/lib/inc/DKIScripts.php');
+include(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
 //DKI Scripts over for sidebar.php file 
 
 ?>
@@ -23,6 +23,6 @@ include(TD.'/lp1/lib/inc/DKIScripts.php');
      </div>
         
      <div class="right-logo">
-     	<img src="<?php echo TDU;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php echo $hln;?>"></a>
-      	<img src="<?php echo TDU;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php echo $hln;?>"></a>
+     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php echo $hln;?>"></a>
+      	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php echo $hln;?>"></a>
      </div>
