@@ -83,6 +83,10 @@ p {
 	background:#e9e9e9;  
 }
 
+.logo {
+	display:none;
+}
+
 .logo { 
 	padding: 9px 0 3px 9px;
 }
@@ -91,15 +95,23 @@ p {
 	width:243px;
 }
 
+.mobile-logo img {
+    width: 238px;
+}
+
 .logo,.mobile-logo{
+	
 	width:100%;
 	padding:12px 0 15px;
+}
+
+.mobile-logo {
+    display: block;
 }
 
 .contact-num { 
 	color:#515151; 
 	font-size:19.55px; 
-	padding:10px 0 0 ; 
 }
 
 .contact-num strong { 
@@ -685,43 +697,6 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 
 }
 
-@media (max-width: 767px) { 
-
-	.client-detail { 
-		min-height: 100px; 
-	}
-	
-	.great-service { 
-		padding: 48px 0px 0; 
-	}
-	
-	.great-service p{ 
-		background:none;
-	}
-	
-	.great-service p span { 
-		padding:0px; 
-		background:none;
-	}
-	
-	.quotes-top h1 {  
-		font-size: 30px;
-	}
-	
-	.quotes-top p {  
-		font-size: 14px;
-	}
-	
-	.contact-num { 
-		font-size:18px;
-		text-align:center; 
-	}
-	
-	span.arrow-post { 
-		margin: 0 0 0 -27px;
-	}
-	
-}
 
 @media (max-width: 640px) {  
 
@@ -778,8 +753,8 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	}
 	
 	.quotes-top p {
-		font-size: 13.35px; 
-		padding:10px 20px 0 20px; 
+		font-size: 13.35px !important; 
+		padding:10px 20px 0 20px !important; 
 	}
 
 	.free-quotes-form { 
@@ -1031,25 +1006,29 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 }
 
 @media(min-width:641px) {
+	
 	.danger {
 		margin:0 40px 0 0;
 	}
 	
-	.mobile-logo {
-		display:none !important;
-	}
-	.contact-num {
-		float:right;
-		padding:10px 0 0;
-	} 
 }
 
 @media(min-width:768px) {
+	
+	.mobile-logo{
+		display: none;
+	}
+	
 	.logo {
 		display:block;
 		padding:9px 0 3px 9px;
 		text-align:left !important;
 	}
+	
+	.contact-num {
+		float:right;
+		padding:10px 0 0;
+	} 
 }
 
 
@@ -1312,7 +1291,7 @@ ul.ticks li {
 
 
 @media (max-width: 767px) { 
-
+	
 	.client-detail { 
 		min-height: 100px;
 	}

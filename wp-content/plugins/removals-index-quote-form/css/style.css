@@ -159,11 +159,6 @@ p {
 	line-height:15px;
 }
 
-.step1 .removing-stress-frm-con { 
-	padding:12px 0; 
-	margin:0px;
-}
-
 .removing-stress-frm-con label { 
 	font-size:14.16px; 
 	color:#359ace; 
@@ -703,23 +698,23 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 	}
 	
 	.bed-radios-container {
-	    width: 85px;
-	    height: 66px;
+	    width: 85px !important;
+	    height: 66px !important;
 	}
 	
 	.img1bed, .img2bed, .img3bed, .img4bed, .img5bed {
-	    background-size: 100% 100%;
-	    width: 32px;
-	    height: 32px;
-	    margin-top: 16px!important;
+	    background-size: 100% 100% !important;
+	    width: 32px !important;
+	    height: 32px !important;
+	    margin-top: 16px !important;
 	}
 	
 	.bed-radios-container div {
-	    margin: 15px 0 0 5px;
+	    margin: 15px 0 0 5px !important;
 	}
 	
 	.bed-radios-container input {
-	    margin: 4px 0 0 58px;
+	    margin: 4px 0 0 58px !important;
 	}
 	
 	.bed-radios-container label {
@@ -728,19 +723,19 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 	}
 	
 	.box_desc.bed-radios-container label {
-	    margin-left: 32px!important;
-	    font-size: 9px!important;
-	    line-height: 10px;
+	    margin-left: 32px !important;
+	    font-size: 9px !important;
+	    line-height: 10px !important;
 	}
 	
 	.box_desc {
-	    margin-left: 8px;
+	    margin-left: 8px !important;
 	}
 	
 	.imgdesc {
 	    background-size: 100% 100%;
-	    height: 32px;
-	    width: 26px;
+	    height: 32px !important;
+	    width: 26px !important;
 	}
 	
 }
@@ -759,7 +754,7 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 	}
 	
 	.box_desc.bed-radios-container label {
-	    font-size: 12px!important;
+	    font-size: 12px;
 	}
 	
 	.bed-radios-container input {
