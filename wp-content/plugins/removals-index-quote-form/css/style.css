@@ -691,6 +691,19 @@ span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.fl
 	font-weight:normal;
 }
 
+
+/* In Mobile View Adjust in checked icon */
+@media (max-width: 358px){
+	
+	.step3 .removing-stress-frm-con .step-3-checkbox label {
+		    padding: 0 9px 0 5px !important;
+	}
+	
+	.removing-stress-frm-con .vaild-check{
+			margin: 3px 0px 0px 0px !important;	
+	}
+}
+
 @media (max-width: 470px){
 	
 	.removing-the-stress .col-sm-8 {

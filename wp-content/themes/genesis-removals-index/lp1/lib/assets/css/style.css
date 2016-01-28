@@ -684,19 +684,6 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 
 }
 
-@media (max-width: 947px) { 
-
-	.container { 
-		margin:0 auto;
-		width:auto !important;
-	}
-	
-	.keyword { 
-		width:auto;
-	}
-
-}
-
 
 @media (max-width: 640px) {  
 
@@ -736,7 +723,8 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	
 	.contact-num { 
 		font-size:15px !important; 
-		text-align: center !important;  
+		text-align: center !important;
+		padding: 0px 0 10px 0; 
 		float:none;
 	}
 	
@@ -1038,7 +1026,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 
 
 .thank-blog  { 
-	padding:20px 0 0 0;
+	padding:20px 0 0 0 !important;
 }
 
 .thank-you-top-img { 
@@ -1269,6 +1257,14 @@ ul.ticks li {
 }
 
 @media (max-width: 947px) { 
+	
+	.page-template-lp1-thanks .site-inner .content-sidebar-wrap {
+		margin-top: 33px;
+	}
+	
+	.page-template-lp1-thanks .mobile-logo, .contact-num {
+		text-align: center;
+	}
 
 	.container{ 
 		margin:0 auto; 

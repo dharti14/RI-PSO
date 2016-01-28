@@ -7,6 +7,7 @@ if ($_POST)
 	$apiKey ='';
 	
 	$referrer = $_SERVER['HTTP_REFERER'];
+	
 			
 	//----------------------------------------------------------------------------
 	//check the source of form submission. /ri/phone 
@@ -14,7 +15,7 @@ if ($_POST)
 	//Same for mobile.
 	//----------------------------------------------------------------------------
 	
-	
+
 	if(isset($_GET['ver']) && $_GET['ver'] == 'mobile')	//source mobile /ri/mobile folder
 	{
 		$apiKey = '715daa9efc6dbe33f19247f8ea6f82b2';
@@ -25,7 +26,7 @@ if ($_POST)
 	}
 	else
 	{
-		$pos =strpos($referrer,'/phone');
+		$pos = strpos($referrer,'/phone');
 		
 		if( $pos === FALSE)
 		{
@@ -38,11 +39,7 @@ if ($_POST)
 			$apiKey = '34dc14b6f06a10f5b3b9c5dec48f4c3a';
 		}
 	}
-	
-	
-	
-	
-	
+		
 	
 	$formType = "";
 	if(isset($_POST['form-type']))
@@ -229,8 +226,15 @@ if ($_POST)
 		
 		if(isset($form))
 		{	
-
+			
+			//For Live Use
 			$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			
+			// $url = $api_url . 'api/lead/create/' . $formId . '/' . $api_key;
+			
+			//For Testing Use 
+			//$url = 'http://pinlocal5.ui.rollingcodes.io/api/lead/create/'.$form.'/'. $apiKey;
+			
 			
 			/* print_r($fields);
 			die(); */
@@ -260,13 +264,14 @@ if ($_POST)
 		    //close connection
 		    curl_close($ch);
 		    
+		    
 		    $obj = json_decode($result);
 		   			
 		    if ($http_code == 201) 	//ALL LOOKS GOOD, LEAD SUBMITED. REDIRECT TO YOUR THANKS PAGE
 		    {
 		    	//please provide the page title/id of thank you page which you want to redirect (in our case its id=40)
 		    	//get_permalink(40);
-				header("Location: " . get_permalink(get_page_by_title('Static Removals-Index Thanks')) . "?form=" . $form . "&h=" . $obj->hash);
+				header("Location: " . get_permalink(get_page_by_title('Current Removals Index Thanks')) . "?form=" . $form . "&h=" . $obj->hash);
 		    	exit();
 		    	
 		    }

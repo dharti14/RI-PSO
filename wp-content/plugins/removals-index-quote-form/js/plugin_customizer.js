@@ -173,9 +173,9 @@ jQuery( document ).ready(function() {
 		if(errors > 0){
 		
 			$("div.danger").show();
-			$("div.danger span").html("You missed "
-			+ errors
-			+ " field. It has been highlighted");
+			$("div.danger span").html("You have missed "
+			+ errors + 
+			(errors>1?" fields":" field")+". Please correct and re-submit.");
 			this.defaultShowErrors();
 		  }
 		  else{
@@ -430,9 +430,9 @@ jQuery( document ).ready(function() {
 					if(errors > 0){
 					
 						$("div.danger").show();
-						$("div.danger span").html("You missed "
-						+ errors
-						+ " field. It has been highlighted");
+						$("div.danger span").html("You have missed "
+						+ errors + 
+						(errors>1?" fields":" field")+". Please correct and re-submit.");
 						this.defaultShowErrors();
 					  }
 					  else{
@@ -653,9 +653,9 @@ jQuery( document ).ready(function() {
 					if(errors > 0){
 					
 						$("div.danger").show();
-						$("div.danger span").html("You missed "
-						+ errors
-						+ " field. It has been highlighted");
+						$("div.danger span").html("You have missed "
+						+ errors + 
+						(errors>1?" fields":" field")+". Please correct and re-submit.");
 						this.defaultShowErrors();
 					  }
 					  else{
