@@ -1,63 +1,74 @@
 // JavaScript Document
 jQuery( document ).ready(function() {
 		
-		function phoneValidation(key) {
-			var error = 0;
-			var phoneLength = jQuery(this).val().length;
-			var firsTwoValue = jQuery(this).val().substring(0, 2);
-			var firsFourValue = jQuery(this).val().substring(0, 4);
-			var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+' ];
-			if(validateArr.indexOf( firsTwoValue )<0){ 
-				error = 1;
-			}else{
-				error = 0;
-			}
-        	if((key.charCode < 48 || key.charCode > 57) && key.charCode != 0 && key.charCode != 43){ 
-				error = 1;
-				return false;
-			}else{
-				error = 0;
-			}
-			if((firsTwoValue == 07 && phoneLength == 11) && key.charCode != 0){
-				error = 1;
-				return false;
-			}else{
-				error = 0;
-			}
-			if((firsFourValue == '+447' && phoneLength == 13) && key.charCode != 0){
-				error = 1;
-				return false;
-			}else{
-				error = 0;
-			}
-			if(error = 1){
-				jQuery(this).removeClass("valid");
-				jQuery(this).addClass("error");
-			}else{
-				jQuery(this).addClass("valid");
-				jQuery(this).removeClass("error");
-			}
-        }
+//	function phoneValidation(key) {
+//		var error = 0;
+//		var phoneLength = $(this).val().length;
+//		var firsTwoValue = $(this).val().substring(0, 2);
+//		var firsFourValue = $(this).val().substring(0, 4);
+//		var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+' ];
+//		if(validateArr.indexOf( firsTwoValue )<0){ 
+//			error = 1;
+//		}else{
+//			error = 0;
+//		}
+//    	if((key.charCode < 48 || key.charCode > 57) && key.charCode != 0 && key.charCode != 43){ 
+//			error = 1;
+//			return false;
+//		}else{
+//			error = 0;
+//		}
+//		if((firsTwoValue == 07 && phoneLength == 11) && key.charCode != 0){
+//			error = 1;
+//			return false;
+//		}else{
+//			error = 0;
+//		}
+//		if((firsFourValue == '+447' && phoneLength == 13) && key.charCode != 0){
+//			error = 1;
+//			return false;
+//		}else{
+//			error = 0;
+//		}
+//		if(error = 1){
+//			$(this).removeClass("valid");
+//			$(this).addClass("error");
+//		}else{
+//			$(this).addClass("valid");
+//			$(this).removeClass("error");
+//		}
+//    }
+//	
+//	$.validator.addMethod("phoneValidate", function (phone_number, element) {
+//        phone_number = phone_number;
+//		
+//		var phoneLength = phone_number.length;
+//		var firsTwoValue = phone_number.substring(0, 2);
+//		var firsOneValue = phone_number.substring(0, 1);
+//		var firsFourValue = phone_number.substring(0, 4);
+//		
+//		var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+'];
+//		//alert(firsTwoValue);
+//		if(firsTwoValue == '07'){
+//			 return this.optional(element) || phoneLength == 11 && validateArr.indexOf( firsTwoValue )>=0;
+//		}else if(firsFourValue == '+447'){
+//			 return this.optional(element) || phoneLength == 13;
+//		}else{
+//			 return this.optional(element) || phoneLength > 8 || validateArr.indexOf( firsOneValue )>=0 && 
+//			 		validateArr.indexOf( firsTwoValue )>=0;
+//		}
+//    }, "Invalid phone number");
 		
-	jQuery.validator.addMethod("phoneValidate", function (phone_number, element) {
-            phone_number = phone_number;
-			
-			var phoneLength = phone_number.length;
-			var firsTwoValue = phone_number.substring(0, 2);
-			var firsOneValue = phone_number.substring(0, 1);
-			var firsFourValue = phone_number.substring(0, 4);
-			
-			var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+'];
-			//alert(firsTwoValue);
-			if(firsTwoValue == '07'){
-				 return this.optional(element) || phoneLength == 11 && validateArr.indexOf( firsTwoValue )>=0;
-			}else if(firsFourValue == '+447'){
-				 return this.optional(element) || phoneLength == 13;
-			}else{
-				 return this.optional(element) || phoneLength > 8 || validateArr.indexOf( firsOneValue )>=0 && 
-				 		validateArr.indexOf( firsTwoValue )>=0;
-			}
-        }, "Invalid phone number");
+	jQuery.validator.addMethod("phoneValidate",function(a){
+		return 
+		e=a,
+		p=e.substring(0,1),
+		r=e.substring(0,4),
+		t=e.substring(0,2),
+		q=e.substring(0,3),
+		i=["01","02","03","05","07","08","44","+1","+2","+3","+5","+7","+8","+44"],
+		-1==i.indexOf(t)&&-1==i.indexOf(q)?!1:("07"!=t||e.match(/^07[0-9]{9}$/))&&("+447"!=r||e.match(/^\+447[0-9]{9}$/))?"+"==p&&e.length<=8?!1:"+"!=p&&(e.length<=8||e.length>13)?!1:e.match(/1{5}|2{5}|3{5}|4{5}|5{5}|6{5}|7{5}|8{5}|9{5}|0{5}/)?!1:e.match(/01234|12345|23456|34567|45678|56789|98765|87654|76543|65432|54321|43210$/g)?!1:!0:!1}
+		,"Invalid phone number");
 		
 	//Validate Date
 	jQuery.validator.addMethod("dateValidate",function(a){
@@ -99,7 +110,7 @@ jQuery( document ).ready(function() {
 	
 	
         //form validation rules
-		jQuery("#form input[name='phone']").keypress(phoneValidation);
+		//jQuery("#form input[name='phone']").keypress(phoneValidation);
         jQuery("#form").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -375,7 +386,7 @@ jQuery( document ).ready(function() {
 
 	//form-business validation rules
 	
-		jQuery("#form-business input[name='phone']").keypress(phoneValidation);
+		//jQuery("#form-business input[name='phone']").keypress(phoneValidation);
         jQuery("#form-business").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -581,7 +592,7 @@ jQuery( document ).ready(function() {
 		});
 		
 	//form-international validation rules
-		jQuery("#form-international input[name='phone']").keypress(phoneValidation);
+		//jQuery("#form-international input[name='phone']").keypress(phoneValidation);
         jQuery("#form-international").validate({
         	
         	invalidHandler: function(event, validator) {

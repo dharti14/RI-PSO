@@ -63,11 +63,11 @@
 
 			<h3>Frequently Asked Questions</h3>
 			<div class="row row_2">
-				<div class="col-sm-7 col-lg-9">
+				<div class="col-sm-8">
 
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 					  
-					  <div class="panel panel-default">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
 					    <div class="panel-heading" role="tab" id="heading1">
 					      <h4 class="panel-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
@@ -85,7 +85,7 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading2">
 					      <h4 class="panel-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
@@ -103,7 +103,7 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading3">
 					      <h4 class="panel-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
@@ -122,7 +122,7 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading4">
 					      <h4 class="panel-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
@@ -141,7 +141,7 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading5">
 					      <h4 class="panel-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
@@ -161,9 +161,13 @@
 					</div>
 				</div>
 
-				<div class="col-sm-5 col-lg-3">
-					<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad0ffdec7e10e686debd7" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="300px" data-style-width="100%" data-theme="light" data-stars="3,4,5">
+				<div class="col-sm-4">
+					<div class="tp_-_box" data-tp-settings="domainId:1157545,fontSize:12,borderRadius:4,borderColor:EEEEEE,width:300,fontFamily:sans-serif">
+					    <a href="http://www.trustpilot.com/review/www.removals-index.com" rel="nofollow" hidden>Removals Index Reviews</a>
 					</div>
+					<script type="text/javascript">
+					    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "http://s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
+					</script>
 				</div>
 			</div>
 		</div>
