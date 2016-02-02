@@ -67,10 +67,10 @@
 
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 					  
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-controls="collapseOne">
 					    <div class="panel-heading" role="tab" id="heading1">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+					        <a role="button">
 					          What questions should I ask a removal company?
 					          <i class="fa fa-caret-down"></i>
 					          <i class="fa fa-caret-up"></i>
@@ -88,7 +88,7 @@
 					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading2">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+					        <a role="button">
 					          Why isn't there an instant quote online?
 					          <i class="fa fa-caret-down"></i>
 					          <i class="fa fa-caret-up"></i>
@@ -106,7 +106,7 @@
 					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading3">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+					        <a role="button">
 					          Should I just choose the cheapest quote?
 					          <i class="fa fa-caret-down"></i>
 					          <i class="fa fa-caret-up"></i>
@@ -125,7 +125,7 @@
 					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading4">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+					        <a role="button">
 					          How far in advance should I book my move?
 					          <i class="fa fa-caret-down"></i>
 					          <i class="fa fa-caret-up"></i>
@@ -144,7 +144,7 @@
 					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					    <div class="panel-heading" role="tab" id="heading5">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+					        <a role="button">
 					          How should I prepare for moving?
 					          <i class="fa fa-caret-down"></i>
 					          <i class="fa fa-caret-up"></i>

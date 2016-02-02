@@ -1,5 +1,8 @@
 <?php
 
+//Remove Default title 
+remove_action( 'genesis_title', 'genesis_do_title' );
+
 //Removing Header and Footer Of Site
 remove_action('genesis_loop', 'loop_for_internal_page_content');
 remove_action('genesis_before_header', 'site_before_header');
