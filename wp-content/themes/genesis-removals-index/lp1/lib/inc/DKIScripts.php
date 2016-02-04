@@ -3,15 +3,20 @@
 
 ob_start('minify_callback');	//minify the output
 
-$nodki = false;
-if(isset($_GET['nodki']) && $_GET['nodki'] == 'true') $nodki = true;
+//$isPageDKI = get_post_meta( get_the_ID(), 'isPageDki', true );
+
+$post_id = get_the_ID();
+
+if(!empty($post_id)){
+	$isPageDKI = get_post_meta( get_the_ID(), 'isPageDKI', true );
+
+}
 
 $loc = getDKIParam("LOC",'your area');
 $typ = getDKIParam("TYP",'');
 $hln = getDKIParam("HLN",'Trusted Local Removal Companies');
 
-
-if($nodki == true)
+if($isPageDKI == 'no')
 {
 	$hln = 'Trusted Local Removal Companies';
 	$loc = 'your area';

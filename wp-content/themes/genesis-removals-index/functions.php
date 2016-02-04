@@ -43,6 +43,70 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 
 
+// ******************Creating Custom Meta Box for DKI Scripts********************************** //
+
+
+//Creating Meta Box For Differentiating between DKI and NonDKI Scripts
+function metaBoxForDKIScripts()
+{
+
+	add_meta_box( 'DKIMetaBox', 'Page Settings', 'add_meta_box_html', 'page', 'side', 'high' );
+}
+
+add_action( 'add_meta_boxes', 'metaBoxForDKIScripts' );
+
+
+//Creating HTML Structure for Meta Box 
+function add_meta_box_html($post)
+{
+	global $post;
+    $values = get_post_custom( $post->ID );
+
+    $isDKIEnabled = isset( $values['isPageDKI'] ) ? esc_attr( $values['isPageDKI'][0] ) : '';
+         
+	// We'll use this nonce field later on when saving.
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	   
+	?>
+
+    <p>
+        <label for="isPageDKI">Enable DKI</label>
+        
+        <select name="isPageDKI" id="isPageDKI">
+            
+            <option value="no" <?php selected( $isDKIEnabled, 'no' ); ?>>No</option>
+            <option value="yes" <?php selected( $isDKIEnabled, 'yes' ); ?>>Yes</option>
+            
+        </select>
+        
+    </p>
+    
+    <?php   
+}
+
+
+add_action( 'save_post', 'saveDKIScriptsValue' );
+function saveDKIScriptsValue( $post_id )
+{
+	// Dont't allow if we're doing an auto save
+	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	 
+	// if our nonce isn't there, or we can't verify it
+	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+	 
+	// if our current user can't edit this post
+	if( !current_user_can( 'edit_post' ) ) return;
+	 
+	if( isset( $_POST['isPageDKI'] ) )
+		update_post_meta( $post_id, 'isPageDKI', esc_attr( $_POST['isPageDKI'] ) );
+	 
+}
+
+// ******************Creating Custom Meta Box for DKI Scripts********************************** //
+
+
+
+
 // Setting Site header and footer for all pages
 require(THEME_PATH_DIR.'/lib/site/common.php');
 require(THEME_PATH_DIR.'/lib/site/header.php');

@@ -1,116 +1,151 @@
 // JavaScript Document
 jQuery( document ).ready(function() {
 		
-//	function phoneValidation(key) {
-//		var error = 0;
-//		var phoneLength = $(this).val().length;
-//		var firsTwoValue = $(this).val().substring(0, 2);
-//		var firsFourValue = $(this).val().substring(0, 4);
-//		var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+' ];
-//		if(validateArr.indexOf( firsTwoValue )<0){ 
-//			error = 1;
-//		}else{
-//			error = 0;
-//		}
-//    	if((key.charCode < 48 || key.charCode > 57) && key.charCode != 0 && key.charCode != 43){ 
-//			error = 1;
-//			return false;
-//		}else{
-//			error = 0;
-//		}
-//		if((firsTwoValue == 07 && phoneLength == 11) && key.charCode != 0){
-//			error = 1;
-//			return false;
-//		}else{
-//			error = 0;
-//		}
-//		if((firsFourValue == '+447' && phoneLength == 13) && key.charCode != 0){
-//			error = 1;
-//			return false;
-//		}else{
-//			error = 0;
-//		}
-//		if(error = 1){
-//			$(this).removeClass("valid");
-//			$(this).addClass("error");
-//		}else{
-//			$(this).addClass("valid");
-//			$(this).removeClass("error");
-//		}
-//    }
-//	
-//	$.validator.addMethod("phoneValidate", function (phone_number, element) {
-//        phone_number = phone_number;
-//		
-//		var phoneLength = phone_number.length;
-//		var firsTwoValue = phone_number.substring(0, 2);
-//		var firsOneValue = phone_number.substring(0, 1);
-//		var firsFourValue = phone_number.substring(0, 4);
-//		
-//		var validateArr = [ '01', '02', '03', '05', '07', '08', '09', '44', '+'];
-//		//alert(firsTwoValue);
-//		if(firsTwoValue == '07'){
-//			 return this.optional(element) || phoneLength == 11 && validateArr.indexOf( firsTwoValue )>=0;
-//		}else if(firsFourValue == '+447'){
-//			 return this.optional(element) || phoneLength == 13;
-//		}else{
-//			 return this.optional(element) || phoneLength > 8 || validateArr.indexOf( firsOneValue )>=0 && 
-//			 		validateArr.indexOf( firsTwoValue )>=0;
-//		}
-//    }, "Invalid phone number");
+	//Custom Validations
+	
+	//Validate Phone Number
+	jQuery.validator.addMethod("phoneValidate", function (phone_number, element) {
+       	
+		e = phone_number;
+		p = e.substring(0, 1);
+		r = e.substring(0, 4);
+        t = e.substring(0, 2);
+    	q = e.substring(0, 3);
+    	
+    	i = ["01", "02", "03", "05", "07", "08", "44", "+1","+2","+3","+5","+7","+8","+44"];
+        
+        if(i.indexOf(t) == -1 && i.indexOf(q) == -1) return false;
+        if((t == "07") && !e.match(/^07[0-9]{9}$/)) return false;
+        if(r == "+447" && !e.match(/^\+447[0-9]{9}$/)) return false;
+        if(p == "+" && e.length <= 8) return false;
+        if((p != "+") && (e.length <= 8 || e.length > 13)) return false;
+        if(e.match(/1{5}|2{5}|3{5}|4{5}|5{5}|6{5}|7{5}|8{5}|9{5}|0{5}/)) return false;
+        if(e.match(/01234|12345|23456|34567|45678|56789|98765|87654|76543|65432|54321|43210$/g)) return false;
+        
+        return true;
 		
-	jQuery.validator.addMethod("phoneValidate",function(a){
-		return 
-		e=a,
-		p=e.substring(0,1),
-		r=e.substring(0,4),
-		t=e.substring(0,2),
-		q=e.substring(0,3),
-		i=["01","02","03","05","07","08","44","+1","+2","+3","+5","+7","+8","+44"],
-		-1==i.indexOf(t)&&-1==i.indexOf(q)?!1:("07"!=t||e.match(/^07[0-9]{9}$/))&&("+447"!=r||e.match(/^\+447[0-9]{9}$/))?"+"==p&&e.length<=8?!1:"+"!=p&&(e.length<=8||e.length>13)?!1:e.match(/1{5}|2{5}|3{5}|4{5}|5{5}|6{5}|7{5}|8{5}|9{5}|0{5}/)?!1:e.match(/01234|12345|23456|34567|45678|56789|98765|87654|76543|65432|54321|43210$/g)?!1:!0:!1}
-		,"Invalid phone number");
+		
+    }, "Invalid phone number");
 		
 	//Validate Date
-	jQuery.validator.addMethod("dateValidate",function(a){
-		
-		var b=a.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-		if(null==b)return!1;
-		if(b.length<3)return!1;
-		var c=parseInt(b[1]),d=parseInt(b[2]),e=parseInt(b[3]),f=new Date;
-		if(!(d>=1&&12>=d))return!1;
-		if(!(c>=1&&31>=c))return!1;
-		if(e<f.getFullYear())return!1;
-		var g=!1;if((e%4||!(e%100))&&e%400||(g=!0),0==g&&2==d&&c>28)return!1;
-		if(2==d&&c>29)return!1;
-		var h=[4,6,9,11];
-		if(jQuery.inArray(d,h)>-1&&c>30)return!1;
-		var i=new Date(e,d-1,c,0,0,0,0);
-		return i.getTime()<f.getTime()?!1:!0
+	jQuery.validator.addMethod("dateValidate", function(value, element, params){
 				
-	},"Invalid moving date. Date must be in mm/dd/yyyy format and must be future date."),
+		var matches = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+		
+		if(matches==null )
+		{
+			return false
+		}
+		
+		
+		if(matches.length<3)
+		{
+			return false;
+		}
+		
+		var day = parseInt(matches[1]);
+		var month = parseInt(matches[2]);
+		var year = parseInt(matches[3]);
+		
+		var dt = new Date();
+		
+		//check month
+		if(!(month>=1 && month <= 12))
+		{
+			
+			return false;
+		}
+		
+		if(!(day>=1 && day <= 31))
+		{
+			
+			return false;
+		}
+		
+		if(year < dt.getFullYear())
+		{
+			
+			return false;
+		}
+		
+		
+		//leap year check
+		var lyear = false;  
+		if ( (!(year % 4) && year % 100) || !(year % 400))   
+		{  
+		  lyear = true;  
+		}
+		
+		if(lyear == false && month == 2 && day > 28)
+		{
+			return false;
+		}
+		
+		if(month == 2 && day > 29)
+		{
+			return false;
+		}
+		
+		
+		var month_days_30 = [4,6,9,11];		
+		if(jQuery.inArray(month, month_days_30) > -1 && day > 30)
+		{
+			
+			return false;
+		}
+		
+		var chkDt = new Date(year, month-1 , day, 0, 0, 0, 0);
+		if(chkDt.getTime() < dt.getTime())
+		{
+			return false;
+		}
+		
+					
+		return true;
+		
+	}, "Invalid moving date. Date must be in mm/dd/yyyy format and must be future date.");
 	
 	
 	//Allow Only Characters
-	jQuery.validator.addMethod("onlyChars",function(a){
-		var b=a.match(/\d+/g);
-		return null!=b&&b.length>0?!1:!0
-	},"Invalid name. Name must be atleast 2 chars long and can not contain digits."),
+	jQuery.validator.addMethod("onlyChars", function(value, element, params){
+		var matches = value.match(/\d+/g);
+		if(matches!=null && matches.length>0)
+		{
+			return false;
+		}
+		return true;
+	}, "Invalid name. Name must be atleast 2 chars long and can not contain digits.");
+	
 	
 	//If Additional Info radio is clicked then validate it
-	jQuery.validator.addMethod("additional_info_valid",function(a,b){
-				
-		var c=jQuery(b).closest("form");
-		return"Yes"==jQuery(c).find("input[name='any_addition_information']:checked").val()&&""==a?!1:!0
-	},"Additional information is required"),
+	jQuery.validator.addMethod("additional_info_valid", function(value, element, params){
+		
+		
+		var frm = jQuery(element).closest('form');
+		
+		if(jQuery(frm).find("input[name='any_addition_information']:checked").val() == "Yes")
+		{
+			if(value == '')
+			{
+				return false;
+			}
+		}			
+		return true;
+		
+	}, "Additional information is required");
+	
+	
 	
 	//If information provided then make it valid
 	jQuery("input[name='any_addition_information']").click(function(){
-		var a=jQuery(this).closest("form");jQuery(a).find("textarea[name='additional_info']").valid();
-	}),
+		
+		var frm = jQuery(this).closest("form"); 
+		jQuery(frm).find("textarea[name='additional_info']").valid();
+		
+	});
 	
 	
         //form validation rules
-		//jQuery("#form input[name='phone']").keypress(phoneValidation);
         jQuery("#form").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -122,7 +157,7 @@ jQuery( document ).ready(function() {
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
 					  
-					  $(window).scrollTo({top:top_offset,left:left_offset});
+					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}
 
@@ -183,15 +218,15 @@ jQuery( document ).ready(function() {
 		var errors = this.numberOfInvalids();
 		if(errors > 0){
 		
-			$("div.danger").show();
-			$("div.danger span").html("You have missed "
+			jQuery("div.danger").show();
+			jQuery("div.danger span").html("You have missed "
 			+ errors + 
-			(errors>1?" fields":" field")+". Please correct and re-submit.");
+			((errors>1)?" fields":" field")+". Please correct and re-submit.");
 			this.defaultShowErrors();
 		  }
 		  else{
-			$("div.danger").hide();
-			this.defaultShowErrors();
+			  jQuery("div.danger").hide();
+			  this.defaultShowErrors();
 		  }				  
 		},
 		
@@ -386,7 +421,6 @@ jQuery( document ).ready(function() {
 
 	//form-business validation rules
 	
-		//jQuery("#form-business input[name='phone']").keypress(phoneValidation);
         jQuery("#form-business").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -440,14 +474,14 @@ jQuery( document ).ready(function() {
 					var errors = this.numberOfInvalids();
 					if(errors > 0){
 					
-						$("div.danger").show();
-						$("div.danger span").html("You have missed "
+						jQuery("div.danger").show();
+						jQuery("div.danger span").html("You have missed "
 						+ errors + 
-						(errors>1?" fields":" field")+". Please correct and re-submit.");
+						((errors>1)?" fields":" field")+". Please correct and re-submit.");
 						this.defaultShowErrors();
 					  }
 					  else{
-						$("div.danger").hide();
+						  jQuery("div.danger").hide();
 						this.defaultShowErrors();
 					  }				  
 					},
@@ -592,7 +626,7 @@ jQuery( document ).ready(function() {
 		});
 		
 	//form-international validation rules
-		//jQuery("#form-international input[name='phone']").keypress(phoneValidation);
+		
         jQuery("#form-international").validate({
         	
         	invalidHandler: function(event, validator) {
@@ -604,7 +638,7 @@ jQuery( document ).ready(function() {
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
 					  
-					  $(window).scrollTo({top:top_offset,left:left_offset});
+					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}
 				},
@@ -663,14 +697,14 @@ jQuery( document ).ready(function() {
 					var errors = this.numberOfInvalids();
 					if(errors > 0){
 					
-						$("div.danger").show();
-						$("div.danger span").html("You have missed "
+						jQuery("div.danger").show();
+						jQuery("div.danger span").html("You have missed "
 						+ errors + 
-						(errors>1?" fields":" field")+". Please correct and re-submit.");
+						((errors>1)?" fields":" field")+". Please correct and re-submit.");
 						this.defaultShowErrors();
 					  }
 					  else{
-						$("div.danger").hide();
+						jQuery("div.danger").hide();
 						this.defaultShowErrors();
 					  }				  
 				},
