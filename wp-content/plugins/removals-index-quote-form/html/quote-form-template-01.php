@@ -3,7 +3,7 @@
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
      
-     include(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
+     $hln = getHLN();
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">

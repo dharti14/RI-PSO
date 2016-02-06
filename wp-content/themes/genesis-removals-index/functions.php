@@ -25,6 +25,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 
+//remove_action( 'genesis_title', 'genesis_do_title' );
+
 remove_action('genesis_header', 'genesis_header_markup_open', 5);
 remove_action('genesis_header', 'genesis_do_header');
 remove_action('genesis_header', 'genesis_header_markup_close', 15);
@@ -114,6 +116,14 @@ require(THEME_PATH_DIR.'/lib/site/footer.php');
 // Setting Site header and footer for all pages
 
 
+
+//Including file for dki and non-dki scripts
+require(THEME_PATH_DIR.'/lp1/lib/inc/common.php');
+//Including file for dki and non-dki scripts
+
+
+
+
 add_action('genesis_loop','loop_for_internal_page_content');
 
 function loop_for_internal_page_content()
@@ -135,8 +145,6 @@ function loop_for_internal_page_content()
 
 <?php
 }
-
-
 
 // ADD DEFER/ASYNC TAG TO LOADED SCRIPTS
 
@@ -334,5 +342,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	}
 	
 }
+
+
 
 ?>

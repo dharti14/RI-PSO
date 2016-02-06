@@ -1,10 +1,5 @@
-<?php 
+<?php $hln = getHLN(); ?>
 
-//DKI Scripts starts for sidebar.php file
-include(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
-//DKI Scripts over for sidebar.php file 
-
-?>
 <h4 class="right-information-heading">YOUR INFORMATION IS SAFE</h4>
      <div class="right-satisfaction">
       <p>We will not sell your personal contact information for any marketing purposes whatsoever.</p>

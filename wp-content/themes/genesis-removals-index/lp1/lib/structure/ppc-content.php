@@ -1,5 +1,6 @@
 <?php
-require(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
+$hln = getHLN();
+$loc = getLOC();
 ?>
 
 <div class="looking-for">

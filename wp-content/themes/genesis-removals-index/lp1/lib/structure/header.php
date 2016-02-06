@@ -16,12 +16,12 @@ function viewport_meta_tag() {
 	  
 	<!--  DKI Scripts in meta tags -->
 	<?php 
-	// Scripts and code  required for dki scripts
-	require(THEME_PATH_DIR.'/lp1/lib/inc/common.php');
 	
-	require(THEME_PATH_DIR.'/lp1/lib/inc/DKIScripts.php');
-	
-	// Dki scripts over
+		//For HLN Parameter
+		$hln = getHLN();
+		
+		//For Meta Keywords
+		$meta_keywords_string = getMetaKeywords();
 	?>
 	  
 	<meta name="description" content="<?php 
@@ -50,19 +50,6 @@ function viewport_meta_tag() {
 	  <script src="js/respond.min.js"></script>
 	<![endif]-->
 	
-	<?php 
-	
-		//experiment code need to be added on DKI version since it is the control page
-		//we are using this page for NON DKI version too, since the experiment code
-		//should not appear when the page is NON DKI
-	
-		$gexp = (isset($_GET['gexp']))?$_GET['gexp']:0;
-		
-		if($gexp == 0): //control page	(index.php)	
-	
-	    elseif($gexp == 5):
-		
-		endif; ?>
 	<!--   DKI Scripts over -->
 	  
   
