@@ -20,31 +20,31 @@ function viewport_meta_tag() {
  function dki_scripts_meta_tag() {
 
 		//For HLN Parameter
-		$hln = dki_get_hln();
+		$dki_hln = dki_get_hln();
 		
 		//For Meta Keywords
-		$meta_keywords_string = dki_get_metakeywords();
+		$dki_meta_keywords_string = dki_get_metakeywords();
 	?>
 	
 	<!--  DKI Scripts in meta tags -->  
 	
 	<meta name="description" content="<?php 
-	if($hln == 'Trusted Local Removal Companies'){
+	if($dki_hln == 'Trusted Local Removal Companies'){
 		echo 'Get up to 6 quotes from trusted removal companies in your area';
 	}else{
-		echo $hln.'. Get up to 6 quotes from trusted removal companies in your area';
+		echo $dki_hln.'. Get up to 6 quotes from trusted removal companies in your area';
 	}
 	?>">
 	
 	<meta name="keywords" content="<?php
-	echo $meta_keywords_string .'removal companies,removals,house removal companies,removal firms,removal quotes,compare removals';
+	echo $dki_meta_keywords_string .'removal companies,removals,house removal companies,removal firms,removal quotes,compare removals';
 	?>">
 	
 	<title><?php 
-	if($hln == 'Trusted Local Removal Companies'){
+	if($dki_hln == 'Trusted Local Removal Companies'){
 		echo 'Get Removal Quotes | Removals Index';
 	}else{
-		echo $hln.' | Get Removal Quotes | Removals Index';
+		echo $dki_hln.' | Get Removal Quotes | Removals Index';
 	}
 	?></title>
 	
@@ -65,7 +65,7 @@ add_action('genesis_header', 'lp1_header');
 
 function lp1_header(){
 	
-	$hln = dki_get_hln();
+	$dki_hln = dki_get_hln();
 ?>
 
   <header class="header">
@@ -76,13 +76,13 @@ function lp1_header(){
         <div class="col-sm-6">
 		     <div class="logo">
 		     	<a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $hln;?>">
+		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $dki_hln;?>">
 		     	</a>
 		     </div>
 		     
 		     <div class="mobile-logo">
 			     <a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $hln;?>">
+			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $dki_hln;?>">
 			     </a>
 		     </div>
 	    </div>

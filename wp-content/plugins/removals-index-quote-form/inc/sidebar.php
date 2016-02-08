@@ -1,4 +1,4 @@
-<?php $hln = dki_get_hln(); ?>
+<?php $dki_hln = dki_get_hln(); ?>
 
 <h4 class="right-information-heading">YOUR INFORMATION IS SAFE</h4>
      <div class="right-satisfaction">
@@ -18,6 +18,6 @@
      </div>
         
      <div class="right-logo">
-     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php echo $hln;?>"></a>
-      	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php echo $hln;?>"></a>
+     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php echo $dki_hln;?>"></a>
+      	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php echo $dki_hln;?>"></a>
      </div>

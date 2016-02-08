@@ -3,7 +3,7 @@
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
      
-     $hln = dki_get_hln();
+     $dki_hln = dki_get_hln();
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -17,9 +17,9 @@
    <form method="post" name="form" id="form">
    		<input type="hidden" value="0" name="form-type">
   		<div class="removing-stress-frm step1">
-            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
+            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
-             <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+             <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
@@ -59,7 +59,7 @@
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
          <h4>Step 2 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -168,7 +168,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 3 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -221,7 +221,7 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 4 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">
@@ -311,9 +311,9 @@
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
-       	<div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
+       	<div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
          <h4>Step 1 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -454,7 +454,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 2 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -520,7 +520,7 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 3 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">
@@ -607,9 +607,9 @@
    <form method="post" name="form" id="form-international">
    		<input type="hidden" name="form-type" value="1">
   		<div class="removing-stress-frm step1">
-            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $hln;?>"></div>
+            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
-             <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+             <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
@@ -649,7 +649,7 @@
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
          <h4>Step 2 : My move</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
            <div class="leftpart">
             
@@ -766,7 +766,7 @@
         
        <div class="removing-stress-frm step3">
          <h4>Step 3 : Things I would also like help with</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
             
               <div class="form-group">
@@ -834,7 +834,7 @@
         
        <div class="removing-stress-frm step4">
          <h4>Step 4 : My contact Information</h4>
-         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $hln;?>"></span>
+         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
           <div class="removing-stress-frm-con">
        
               <div class="form-group">

@@ -52,13 +52,13 @@ function dki_get_hln() {
 		$isPageDKI = get_post_meta( $post_id, 'isPageDKI', true );
 	}
 
-	$hln = 'Trusted Local Removal Companies';
+	$dki_hln = 'Trusted Local Removal Companies';
 	
 	if($isPageDKI == 'yes') {
-		$hln = get_dki_param("HLN",'Trusted Local Removal Companies');
+		$dki_hln = get_dki_param("HLN",'Trusted Local Removal Companies');
 	}
 	
-	return $hln;
+	return $dki_hln;
 
 }
 
@@ -70,35 +70,35 @@ function dki_get_loc() {
 		$isPageDKI = get_post_meta( $post_id, 'isPageDKI', true );
 	}
 
-	$loc = 'your area';
+	$dki_loc = 'your area';
 
 	if($isPageDKI == 'yes') {
-		$loc = get_dki_param("LOC",'your area');
+		$dki_loc = get_dki_param("LOC",'your area');
 	}
 
-	return $loc;
+	return $dki_loc;
 
 }
 
 function dki_get_metakeywords(){
 
-	$meta_keywords = array();
-	$meta_keywords_string = '';
+	$dki_meta_keywords = array();
+	$dki_meta_keywords_string = '';
 
-	$hln = dki_get_hln();
-	$loc = dki_get_loc();
-	$typ = get_dki_param("TYP",'');
+	$dki_hln = dki_get_hln();
+	$dki_loc = dki_get_loc();
+	$dki_typ = get_dki_param("TYP",'');
 
-	if($hln != 'Trusted Local Removal Companies') array_push($meta_keywords,$hln);
-	if($typ != '') array_push($meta_keywords,$typ);
-	if($loc != 'your area') array_push($meta_keywords,$loc);
+	if($dki_hln != 'Trusted Local Removal Companies') array_push($dki_meta_keywords,$dki_hln);
+	if($dki_typ != '') array_push($dki_meta_keywords,$dki_typ);
+	if($dki_loc != 'your area') array_push($dki_meta_keywords,$dki_loc);
 
-	if(count($meta_keywords)>0) {
+	if(count($dki_meta_keywords)>0) {
 		
-		$meta_keywords_string = implode(",", $meta_keywords);
+		$dki_meta_keywords_string = implode(",", $dki_meta_keywords);
 
-		$meta_keywords_string .= ',';
+		$dki_meta_keywords_string .= ',';
 	}
 	
-	return $meta_keywords_string;
+	return $dki_meta_keywords_string;
 }
