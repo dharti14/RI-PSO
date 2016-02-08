@@ -1,11 +1,11 @@
 <?php
-$hln = getHLN();
-$loc = getLOC();
+$hln = dki_get_hln();
+$loc = dki_get_loc();
 ?>
 
 <div class="looking-for">
 <div class="container">
-<div class="keyword"><?php echo exact_string( 'Looking For '. $hln ); ?><span>?</span></div>
+<div class="keyword"><?php echo dki_exact_string( 'Looking For '. $hln ); ?><span>?</span></div>
  
   <div class="quotes-top">
    <h1>Get Your <span>FREE Removal Quotes</span> Today!</h1>
@@ -260,36 +260,6 @@ $loc = getLOC();
 <script>
 
 jQuery(function() {
-
-	jQuery('#date1').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		dateFormat: 'dd/mm/yy',
-		onSelect: function(dateText,inst){
-			jQuery(this).trigger('blur');
-			
-		}
-	});
-	 
-	jQuery('#date2').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		dateFormat: 'dd/mm/yy',
-		onSelect: function(dateText,inst){
-			jQuery(this).trigger('blur');
-			
-		}
-	});
-	
-	jQuery('#date3').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		dateFormat: 'dd/mm/yy',
-		onSelect: function(dateText,inst){
-			jQuery(this).trigger('blur');
-			
-		}
-	});
 
 	/*google analytics event tracking.*/	
 	

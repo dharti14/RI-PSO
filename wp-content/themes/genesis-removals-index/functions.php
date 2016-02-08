@@ -49,25 +49,30 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 
 //Creating Meta Box For Differentiating between DKI and NonDKI Scripts
-function metaBoxForDKIScripts()
+function create_metabox_for_dki_scripts()
 {
 
-	add_meta_box( 'DKIMetaBox', 'Page Settings', 'add_meta_box_html', 'page', 'side', 'high' );
+	add_meta_box( 'DKIMetaBox', 'Page Settings', 'create_html_for_dki_scripts_metabox', 'page', 'side', 'high' );
 }
 
-add_action( 'add_meta_boxes', 'metaBoxForDKIScripts' );
+add_action( 'add_meta_boxes', 'create_metabox_for_dki_scripts' );
 
 
-//Creating HTML Structure for Meta Box 
-function add_meta_box_html($post)
+//Creating HTML Structure for DKI Scripts Meta Box 
+function create_html_for_dki_scripts_metabox($post)
 {
 	global $post;
     $values = get_post_custom( $post->ID );
 
     $isDKIEnabled = isset( $values['isPageDKI'] ) ? esc_attr( $values['isPageDKI'][0] ) : '';
          
+    //wp_nonce_field( $action, $name, $referer, $echo ) 
+    //All are optional parameters
+    //Action name==>give the context to what is taking place
+    //Nounce name==>access nounce via  $_POST[$name].
+    
 	// We'll use this nonce field later on when saving.
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	wp_nonce_field( 'creating_nonce_for_dki_scripts', 'dki_scripts_nonce' );
 	   
 	?>
 
@@ -87,14 +92,16 @@ function add_meta_box_html($post)
 }
 
 
-add_action( 'save_post', 'saveDKIScriptsValue' );
-function saveDKIScriptsValue( $post_id )
+
+//Saving the value of DKI Scripts whether they are enable or not
+add_action( 'save_post', 'save_dki_script_enabled_value' );
+function save_dki_script_enabled_value( $post_id )
 {
 	// Dont't allow if we're doing an auto save
 	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	 
 	// if our nonce isn't there, or we can't verify it
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+	if( !isset( $_POST['dki_scripts_nonce'] ) || !wp_verify_nonce( $_POST['dki_scripts_nonce'], 'creating_nonce_for_dki_scripts' ) ) return;
 	 
 	// if our current user can't edit this post
 	if( !current_user_can( 'edit_post' ) ) return;
@@ -118,13 +125,15 @@ require(THEME_PATH_DIR.'/lib/site/footer.php');
 
 
 //Including file for dki and non-dki scripts
-require(THEME_PATH_DIR.'/lp1/lib/inc/common.php');
+require(THEME_PATH_DIR.'/lib/site/inc/DKIScripts.php');
 //Including file for dki and non-dki scripts
 
 
 
-
+//Adding action (genesis_loop) to get the contents of the page (ex. Terms and Conditions, Private Policy, etc.)
 add_action('genesis_loop','loop_for_internal_page_content');
+
+//Looping through the content for the site pages (Internal Pages)
 
 function loop_for_internal_page_content()
 {
@@ -145,6 +154,10 @@ function loop_for_internal_page_content()
 
 <?php
 }
+
+//Looping through the content for the site pages (Internal Pages)
+
+
 
 // ADD DEFER/ASYNC TAG TO LOADED SCRIPTS
 

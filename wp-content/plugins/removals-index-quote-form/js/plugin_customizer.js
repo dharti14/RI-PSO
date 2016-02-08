@@ -845,4 +845,38 @@ jQuery( document ).ready(function() {
 		
 	});
 	
+	//Date Picker for all forms (Residential,Commercial and international)
+	
+	jQuery('#date1').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
+	 
+	jQuery('#date2').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
+	
+	jQuery('#date3').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'dd/mm/yy',
+		onSelect: function(dateText,inst){
+			jQuery(this).trigger('blur');
+			
+		}
+	});
+	
+	//Date Picker for all forms (Residential,Commercial and international)
+	
 });

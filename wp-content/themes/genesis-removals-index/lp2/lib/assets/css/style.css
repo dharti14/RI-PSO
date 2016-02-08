@@ -663,17 +663,10 @@ header.main #logo {
     display: block;
     text-align: center;
      
-/*     adjust logo as of RI */
+/* adjust logo as of RI */
 
     float: right;
-    padding-right: 70px;
-}
-
-@media only screen and (min-width: 768px) {
-      header.main #logo {
-	        display: inline;
-	        text-align: left; 
-	  } 
+    padding-right: 50px;
 }
 
 header.main #logo_call {
@@ -688,8 +681,7 @@ header.main .call {
 
 @media only screen and (min-width: 768px) {
       header.main .call {
-        font-size: 19px;
-/*         text-align: right;  */
+        	font-size: 19px;
        } 
 }
 
@@ -1730,5 +1722,11 @@ ul.no_list li .fa {
 @media only screen and (min-width:768px) and (max-width: 1200px){
 	header.main .call {
 		padding-top: 0px;
+	}
+}
+
+@media(max-width:470px){
+	#main_article {
+	    padding: 10px 0;
 	}
 }

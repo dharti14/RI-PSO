@@ -3,7 +3,7 @@
 	 $this->loadCss('style');
      $this->loadJs('plugin_customizer');
      
-     $hln = getHLN();
+     $hln = dki_get_hln();
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">

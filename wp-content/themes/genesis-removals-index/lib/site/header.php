@@ -27,12 +27,17 @@ function site_header(){
     <section id="logo_call">
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <a id="logo" href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
               <img width="180" src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/removals-index_logo.svg" alt="<?php bloginfo( 'name' );?>"/>
             </a>
           </div>
-          <div class="col-sm-9 call">
+          <div class="col-sm-4">
+          	<div class="trustpilot-logos">
+          		<img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/Trustpilot.svg" alt="<?php bloginfo( 'name' );?>"/>
+          	</div>
+          </div>
+          <div class="col-sm-4 call">
             <span class="glyphicon glyphicon-earphone"></span>
             Call <strong>FREE</strong> 24/7 on: <span class="green">0333 444 8710</span>
           </div>

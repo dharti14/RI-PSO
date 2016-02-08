@@ -12,18 +12,22 @@ function viewport_meta_tag() {
   <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" href="favicon.png">
-	  
-	  
-	<!--  DKI Scripts in meta tags -->
-	<?php 
-	
+<?php 	  
+}
+  
+ add_action( 'genesis_meta', 'dki_scripts_meta_tag' );
+ 
+ function dki_scripts_meta_tag() {
+
 		//For HLN Parameter
-		$hln = getHLN();
+		$hln = dki_get_hln();
 		
 		//For Meta Keywords
-		$meta_keywords_string = getMetaKeywords();
+		$meta_keywords_string = dki_get_metakeywords();
 	?>
-	  
+	
+	<!--  DKI Scripts in meta tags -->  
+	
 	<meta name="description" content="<?php 
 	if($hln == 'Trusted Local Removal Companies'){
 		echo 'Get up to 6 quotes from trusted removal companies in your area';
@@ -61,6 +65,7 @@ add_action('genesis_header', 'lp1_header');
 
 function lp1_header(){
 	
+	$hln = dki_get_hln();
 ?>
 
   <header class="header">
@@ -71,13 +76,13 @@ function lp1_header(){
         <div class="col-sm-6">
 		     <div class="logo">
 		     	<a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg">
+		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $hln;?>">
 		     	</a>
 		     </div>
 		     
 		     <div class="mobile-logo">
 			     <a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
-			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg">
+			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $hln;?>">
 			     </a>
 		     </div>
 	    </div>
