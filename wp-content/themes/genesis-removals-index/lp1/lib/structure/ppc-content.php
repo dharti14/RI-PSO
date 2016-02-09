@@ -272,4 +272,3 @@ jQuery(function() {
 });
 
 </script>
-<?php require(THEME_PATH_DIR.'/lp1/lib/inc/footer-code.php'); ?>

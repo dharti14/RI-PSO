@@ -1703,7 +1703,7 @@ header.main #logo {
 /* adjust logo as of RI */
 
     float: right;
-    padding-right: 60px;
+    padding-right: 50px;
 }
 
 @media (max-width: 768px){

@@ -8,12 +8,31 @@ remove_action('genesis_after_header', 'site_after_header');
 remove_action('genesis_footer', 'site_footer');
 
 
+//De-queuing Unwanted css file which are applied in site
+add_action('wp_enqueue_scripts','dequeue_unwanted_css',100);
+
+function dequeue_unwanted_css(){
+	
+	wp_dequeue_style('ri-jquery-datepicker-css');
+	wp_deregister_style('ri-jquery-datepicker-css');
+	
+	wp_dequeue_style('bootstrapcss');
+	wp_deregister_style('bootstrapcss');
+	
+	wp_dequeue_style('font_opensans');
+	wp_deregister_style('font_opensans');
+	
+}
+//De-queuing Unwanted css file which are applied in site
+
+
 add_action('wp_enqueue_scripts', 'lp2_load_scripts');
 function lp2_load_scripts() {
 	
 	//De registering styles of site
 	wp_dequeue_style('style_css');
 	wp_dequeue_style('fontawsome');
+	
 	
 	
 	// Enqueuing Scripts and Styles for lp2

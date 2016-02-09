@@ -47,5 +47,10 @@ function lp1_footer(){
  </div>
 </div>
 	
-<?php  } 
+<?php  
+
+require(THEME_PATH_DIR.'/lib/site/inc/footer-code.php');
+} 
+
+
 ?>

@@ -69,7 +69,7 @@ function create_html_for_dki_scripts_metabox($post)
     //wp_nonce_field( $action, $name, $referer, $echo ) 
     //All are optional parameters
     //Action name==>give the context to what is taking place
-    //Nounce name==>access nounce via  $_POST[$name].
+    //Nonce name==>access nonce via  $_POST[$name].
     
 	// We'll use this nonce field later on when saving.
 	wp_nonce_field( 'creating_nonce_for_dki_scripts', 'dki_scripts_nonce' );

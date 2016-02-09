@@ -161,14 +161,21 @@
 					</div>
 				</div>
 
+<!-- 				Code for trust pilot widget -->
+				
 				<div class="col-sm-4">
-					<div class="tp_-_box" data-tp-settings="domainId:1157545,fontSize:12,borderRadius:4,borderColor:EEEEEE,width:300,fontFamily:sans-serif">
+					<div class="tp_-_box" data-tp-settings="domainId:1157545,fontSize:13,borderRadius:4,borderColor:EEEEEE,width:300,fontFamily:sans-serif">
 					    <a href="http://www.trustpilot.com/review/www.removals-index.com" rel="nofollow" hidden>Removals Index Reviews</a>
 					</div>
+					
 					<script type="text/javascript">
 					    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "http://s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
 					</script>
+					
 				</div>
+				
+<!-- 				Code for trust pilot widget -->
+				
 			</div>
 		</div>
 	</article>
