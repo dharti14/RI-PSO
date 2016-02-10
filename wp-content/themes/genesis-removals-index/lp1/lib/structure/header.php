@@ -40,14 +40,6 @@ function viewport_meta_tag() {
 	echo $dki_meta_keywords_string .'removal companies,removals,house removal companies,removal firms,removal quotes,compare removals';
 	?>">
 	
-	<title><?php 
-	if($dki_hln == 'Trusted Local Removal Companies'){
-		echo 'Get Removal Quotes | Removals Index';
-	}else{
-		echo $dki_hln.' | Get Removal Quotes | Removals Index';
-	}
-	?></title>
-	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	  <script src="js/html5shiv.min.js"></script>
@@ -59,6 +51,21 @@ function viewport_meta_tag() {
   
   
   <?php 
+}
+
+add_filter( 'wp_title', 'set_custom_page_title', 150, 1 );
+
+function set_custom_page_title($title){
+
+	//For HLN Parameter
+	$dki_hln = dki_get_hln();
+
+	if($dki_hln == 'Trusted Local Removal Companies'){
+		return $title;
+	}else{
+		return $dki_hln.' | '.$title;
+	}
+
 }
 
 add_action('genesis_header', 'lp1_header');
