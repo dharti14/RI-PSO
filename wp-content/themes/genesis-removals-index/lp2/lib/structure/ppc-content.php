@@ -4,7 +4,7 @@
 		<div class="container">
 			<h1 class="title">Looking For <span class="blue">Trusted Local Removal Companies?</span></h1>
 		</div>
-	</div>
+</div>
 
 	<section id="hero">
 
@@ -175,7 +175,7 @@
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">Get My Free Quotes <span>You'll be done in less than 60 seconds..</span></button>
+							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
 						</div>
 					</div>
 
@@ -267,7 +267,7 @@
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">Get My Free Quotes <span>You'll be done in less than 60 seconds..</span></button>
+							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
 						</div>
 					</div>
 

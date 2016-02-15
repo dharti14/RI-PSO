@@ -67,8 +67,8 @@
 
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 					  
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-controls="collapseOne">
-					    <div class="panel-heading" role="tab" id="heading1">
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="heading1" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-controls="collapseOne">
 					      <h4 class="panel-title">
 					        <a role="button">
 					          What questions should I ask a removal company?
@@ -85,8 +85,8 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-					    <div class="panel-heading" role="tab" id="heading2">
+					  <div class="panel panel-default">
+					    <div class="panel-heading collapsed" role="tab" id="heading2" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne" class="">
 					      <h4 class="panel-title">
 					        <a role="button">
 					          Why isn't there an instant quote online?
@@ -103,8 +103,8 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-					    <div class="panel-heading" role="tab" id="heading3">
+					  <div class="panel panel-default">
+					    <div class="panel-heading collapsed" role="tab" id="heading3" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
 					      <h4 class="panel-title">
 					        <a role="button">
 					          Should I just choose the cheapest quote?
@@ -122,8 +122,8 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-					    <div class="panel-heading" role="tab" id="heading4">
+					  <div class="panel panel-default">
+					    <div class="panel-heading collapsed" role="tab" id="heading4" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					      <h4 class="panel-title">
 					        <a role="button">
 					          How far in advance should I book my move?
@@ -141,8 +141,8 @@
 					    </div>
 					  </div>
 
-					  <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-					    <div class="panel-heading" role="tab" id="heading5">
+					  <div class="panel panel-default">
+					    <div class="panel-heading collapsed" role="tab" id="heading5"  data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 					      <h4 class="panel-title">
 					        <a role="button">
 					          How should I prepare for moving?

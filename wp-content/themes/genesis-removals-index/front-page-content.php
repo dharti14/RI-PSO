@@ -11,13 +11,13 @@
 							<div class="quote_box">
 								<h3 class="title">SAVE Up To 40% On Your Move</h3>
 
-								<form class="">
+								<form class="" method="post" id="form1">
 									<div class="row">
-										<div class="form-group col-sm-6" id="movingFrom">
+										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
 											<input type="text" class="form-control" placeholder="Enter Postcode"/>
 										</div>
-										<div class="form-group col-sm-6" id="movingTo">
+										<div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
 											<input type="text" class="form-control" placeholder="Enter Postcode"/>
 										</div>
@@ -25,18 +25,18 @@
 									<div class="checkbox align_center">
 										<div class="row">
 											<label class="col-sm-4">
-												<input type="radio" checked name="h_type"  id="residential"/> Residential
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="h_type"/> Residential
 											</label>
 											<label class="col-sm-4">
-												<input type="radio" name="h_type" id="commercial"/> Commercial
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="h_type"/> Commercial
 											</label>
-											<label class="col-sm-4" >
-												<input type="radio" name="h_type" id="international"/> International
+											<label class="col-sm-4">
+												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="h_type"/> International
 											</label>
 										</div>
 									</div>
 
-									<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds</span></button>
+									<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
 									<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 
 									<figure class="sh1"></figure>
@@ -163,7 +163,7 @@
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">Get My Free Quotes <span>You'll be done in less than 60 seconds</span></button>
+							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
 						</div>
 					</div>
 

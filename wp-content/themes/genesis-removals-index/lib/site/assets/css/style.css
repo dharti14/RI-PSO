@@ -110,12 +110,12 @@
 .btn-quote {
 	  display: block;
 	  width: 100%;
-	  letter-spacing: 1px;
+/* 	  letter-spacing: 1px; */
 	  font-size: 20px;
 	  font-weight: bold;
 	  color: #fff;
 	  background-color: #76b751;
-	  text-shadow: 2px 2px #5e9241;
+/* 	  text-shadow: 2px 2px #5e9241; */
 	  box-shadow: 4px 4px #24467f;
 	  padding-bottom: 14px;
 	  height: 64px;
@@ -140,8 +140,9 @@
 
 @media only screen and (min-width: 768px) {
       .btn-quote span {
-        font-size: 12px;
-        font-weight: bold; 
+        font-size: 14.17px;
+	    display: block;
+	    font-weight: 400;
        } 
 }
 
@@ -769,18 +770,14 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 }
 
 #hero {
-	  background-repeat: no-repeat;
-	  background-position: center;
 	  border-bottom: 6px solid #f5f5f5;
-	  padding-bottom: 15px;
 	  padding-top: 10px;
-	  background-size: cover; 
 }
 
 @media only screen and (min-width: 768px) {
     #hero {
-      background-image: url("../images/home_hero.jpg"); 
-    } 
+		background:url(../images/home_hero.jpg) 50% 100% no-repeat;
+	}
 }
 
 #hero h1 {
@@ -1351,8 +1348,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 @media only screen and (min-width: 768px) {
     .quote_box_holder {
 	      width: 475px;
-	      float: right;
-	      padding-top: 50px; 
+	      float: right; 
 	 } 
 }
 
@@ -1361,6 +1357,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 	    font-size: 16px;
 	    text-align: center;
 	    margin-top: 25px; 
+	    font-weight: bold;
 }
 
 .quote_box {
@@ -1532,7 +1529,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 768px) {
       #get_quotes .btn {
-	        font-size: 25px;
+	        font-size: 30px;
 	        padding: 13px 10px 20px;
 	        height: 90px;
 	        margin-top: 0; 
