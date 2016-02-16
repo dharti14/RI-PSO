@@ -14,9 +14,7 @@ function site_before_header(){
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-	<body <?php body_class();?>>
-
-  <header class="main">
+ <header class="main">
  <?php 
   }
 
