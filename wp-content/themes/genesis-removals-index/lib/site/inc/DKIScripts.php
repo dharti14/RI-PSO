@@ -46,11 +46,7 @@ function dki_get_var($var_name, $default_value) {
 
 function dki_get_hln() {
 
-	$post_id = get_the_ID();
-
-	if(!empty($post_id)) {
-		$isPageDKI = get_post_meta( $post_id, 'isPageDKI', true );
-	}
+	$isPageDKI = genesis_get_custom_field( '_is_page_dki' );
 
 	$dki_hln = 'Trusted Local Removal Companies';
 	
@@ -58,17 +54,16 @@ function dki_get_hln() {
 		$dki_hln = get_dki_param("HLN",'Trusted Local Removal Companies');
 	}
 	
+	$dki_hln = sanitize_text_field($dki_hln);
+	
+	
 	return $dki_hln;
 
 }
 
 function dki_get_loc() {
 
-	$post_id = get_the_ID();
-
-	if(!empty($post_id)) {
-		$isPageDKI = get_post_meta( $post_id, 'isPageDKI', true );
-	}
+	$isPageDKI = genesis_get_custom_field( '_is_page_dki' );
 
 	$dki_loc = 'your area';
 

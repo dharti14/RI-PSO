@@ -45,49 +45,42 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 
 
-// ******************Creating Custom Meta Box for DKI Scripts********************************** //
+// ******************Creating Custom Meta Box for Page Settings********************************** //
 
 
 //Creating Meta Box For Differentiating between DKI and NonDKI Scripts
-function create_metabox_for_dki_scripts()
+function create_metabox_for_page_settings()
 {
 
-	add_meta_box( 'DKIMetaBox', 'Page Settings', 'create_html_for_dki_scripts_metabox', 'page', 'normal', 'high' );
+	add_meta_box( 'DKIMetaBox', 'Page Settings', 'create_html_for_page_settings_metabox', 'page', 'normal', 'high' );
 }
 
-add_action( 'add_meta_boxes', 'create_metabox_for_dki_scripts' );
+add_action( 'add_meta_boxes', 'create_metabox_for_page_settings' );
 
 
 //Creating HTML Structure for DKI Scripts Meta Box 
-function create_html_for_dki_scripts_metabox($post)
-{
-	global $post;
-    $values = get_post_custom( $post->ID );
-
-    $is_DKI_enabled = isset( $values['isPageDKI'] ) ? esc_attr( $values['isPageDKI'][0] ) : '';
-    $is_conversion_page = isset( $values['is_conversion_page'] ) ? esc_attr( $values['is_conversion_page'][0] ) : '';
-    $tracking_code = isset( $values['tracking_code'] ) ? esc_textarea( $values['tracking_code'][0] ) : '';
-         
+function create_html_for_page_settings_metabox($post)
+{        
     //wp_nonce_field( $action, $name, $referer, $echo ) 
     //All are optional parameters
     //Action name==>give the context to what is taking place
     //Nonce name==>access nonce via  $_POST[$name].
     
 	// We'll use this nonce field later on when saving.
-	wp_nonce_field( 'creating_nonce_for_dki_scripts', 'dki_scripts_nonce' );
+	wp_nonce_field( 'creating_nonce_for_custom_page_settings', 'custom_page_settings_nonce' );
 	   
 	?>
 
 	<table>
 	<tr>
 		<td>
-			<label for="isPageDKI">Enable DKI</label>
+			<label for="is_page_dki">Enable DKI</label>
 		</td>
 		<td>
-			<select name="isPageDKI" id="isPageDKI">
+			<select name="page_settings[_is_page_dki]" id="_is_page_dki">
             
-            <option value="no" <?php selected( $is_DKI_enabled, 'no' ); ?>>No</option>
-            <option value="yes" <?php selected( $is_DKI_enabled, 'yes' ); ?>>Yes</option>
+            <option value="no" <?php selected ( genesis_get_custom_field( '_is_page_dki' ), 'no' ); ?>>No</option>
+            <option value="yes" <?php selected ( genesis_get_custom_field( '_is_page_dki' ), 'yes' ); ?>>Yes</option>
             
         	</select>
         </td>
@@ -98,10 +91,10 @@ function create_html_for_dki_scripts_metabox($post)
 			<label for="is_conversion_page">Is Conversion Page ?</label>
 		</td>
 		<td>
-			<select name="is_conversion_page" id="is_conversion_page">
+			<select name="page_settings[_is_conversion_page]" id="_is_conversion_page">
             
-            <option value="no" <?php selected( $is_conversion_page, 'no' ); ?>>No</option>
-            <option value="yes" <?php selected( $is_conversion_page, 'yes' ); ?>>Yes</option>
+            <option value="no" <?php selected ( genesis_get_custom_field( '_is_conversion_page' ), 'no' ); ?>>No</option>
+            <option value="yes" <?php selected ( genesis_get_custom_field( '_is_conversion_page' ), 'yes' ); ?>>Yes</option>
             
         </select>
         </td>
@@ -112,7 +105,7 @@ function create_html_for_dki_scripts_metabox($post)
 	    	<label for="tracking_code">Conversion Code</label>
 	    </td>
 	    <td>   	
-	    	<textarea  placeholder="Please provide conversion code here" name="tracking_code" id="tracking_code" rows="5" cols="60"><?php echo $tracking_code; ?></textarea>
+	    	<textarea placeholder="Please provide conversion code here" name="page_settings[_tracking_code]" id="_tracking_code" rows="5" cols="60"><?php echo esc_textarea( genesis_get_custom_field( '_tracking_code' ) );  ?></textarea>
 	    </td>
     </tr>
     
@@ -123,36 +116,27 @@ function create_html_for_dki_scripts_metabox($post)
 
 
 //Saving the value of DKI Scripts whether they are enable or not
-add_action( 'save_post', 'save_dki_script_enabled_value' );
-function save_dki_script_enabled_value( $post_id )
+add_action( 'save_post', 'save_custom_page_settings_value' );
+function save_custom_page_settings_value( $post_id )
 {
-	// Dont't allow if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	 
-	// if our nonce isn't there, or we can't verify it
-	if( !isset( $_POST['dki_scripts_nonce'] ) || !wp_verify_nonce( $_POST['dki_scripts_nonce'], 'creating_nonce_for_dki_scripts' ) ) return;
-	 
-	// if our current user can't edit this post
-	if( !current_user_can( 'edit_post' ) ) return;
 	
+	if ( ! isset( $_POST['page_settings'] ) )
+		return;
 	
-	//Save is_page_dki value
-	if( isset( $_POST['isPageDKI'] ) )
-		update_post_meta( $post_id, 'isPageDKI', esc_attr( $_POST['isPageDKI'] ) );
+	//* Merge user submitted options with fallback defaults
+	$data = wp_parse_args( $_POST['page_settings'], array(
+			'_is_conversion_page'   => '',
+			'_tracking_code'        => '',
+			'_is_page_dki'      => '',
+	) );
+		
+	//Please see genesis/lib/functions/options.php for more info. about genesis_save_custom_fields
+	genesis_save_custom_fields( $data, 'creating_nonce_for_custom_page_settings', 'custom_page_settings_nonce', $post );
 	
-	
-	//Save is_conversion_page value
-	if( isset( $_POST['is_conversion_page'] ) )
-		update_post_meta( $post_id, 'is_conversion_page', esc_attr( $_POST['is_conversion_page'] ) );
-	
-	
-	//Save tracking code if entered
-	if( isset( $_POST['tracking_code'] ) )
-		update_post_meta( $post_id, 'tracking_code', esc_attr( $_POST['tracking_code'] ) );
 	 
 }
 
-// ******************Creating Custom Meta Box for DKI Scripts********************************** //
+// ******************Creating Custom Meta Box for Page Settings********************************** //
 
 
 
@@ -169,19 +153,16 @@ require(THEME_PATH_DIR.'/lib/site/footer.php');
 require(THEME_PATH_DIR.'/lib/site/inc/DKIScripts.php');
 //Including file for dki and non-dki scripts
 
-//Checking for page is conversion? If yes then get the conversion(tracking) scripts
-function get_conversion_code_scripts(){
 
-	$post_id = get_the_ID();
+//Checking for page is conversion? If yes then get the conversion(tracking) scripts
+function get_conversion_page_scripts(){
+
+	$is_conversion_page = genesis_get_custom_field('_is_conversion_page');
 	
-	if(!empty($post_id)) {
-		$is_conversion_page = get_post_meta( $post_id, 'is_conversion_page', true );
-	}
-	
-	$conversion_scripts = '';
+	$conversion_scripts='';
 	
 	if($is_conversion_page == 'yes'){
-		$conversion_scripts = get_post_meta( $post_id, 'tracking_code', true );
+		$conversion_scripts = genesis_get_custom_field('_tracking_code');
 	}
 	
 	return $conversion_scripts;
@@ -215,8 +196,6 @@ function loop_for_internal_page_content()
 
 //Looping through the content for the site pages (Internal Pages)
 
-
-
 // ADD DEFER/ASYNC TAG TO LOADED SCRIPTS
 
 add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
@@ -242,7 +221,7 @@ register_nav_menus( array(
 add_theme_support ( 'genesis-menus' , array (
 		'primary' => __( 'Primary Navigation', 'genesis' ),
 		'secondary' => __( 'Secondary Navigation', 'genesis' ),
-		'ppc_footer' => __( 'PPC Footer Navigation', 'genesis' )
+		'ppc_footer' => __( 'Footer Navigation', 'genesis' )
 ) );
 
 /**
