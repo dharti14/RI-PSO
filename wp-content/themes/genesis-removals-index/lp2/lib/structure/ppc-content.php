@@ -19,7 +19,7 @@
 							<div class="quote_box">
 								<h3 class="title">SAVE Up To 40% On Your Move</h3>
 
-								<form class="" method="post" id="form1">
+								<form id="form1">
 									<div class="row">
 										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
@@ -44,7 +44,7 @@
 										</div>
 									</div>
 
-									<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
+									<div id="get-my-quote-top" class="btn btn-quote get-my-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 									<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 
 									<figure class="sh1"></figure>
@@ -105,7 +105,7 @@
 	
 	
 	<!--form -->
-        <?php //do_shortcode('[ri_quote_form template_name="quote-form-template-01"]'); ?>
+        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-02"]'); ?>
     <!--form -->
 
 	<section id="how_will">
@@ -332,3 +332,18 @@
             ?>
 		</div>
 	</section>
+	<script>
+
+jQuery(function() {
+
+	/*google analytics event tracking.*/	
+	
+	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
+
+	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
+
+	jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
+	
+});
+
+</script>

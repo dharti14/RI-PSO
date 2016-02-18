@@ -37,6 +37,7 @@ function lp2_load_scripts() {
 	
 	// Enqueuing Scripts and Styles for lp2
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('lp2_customizer', THEME_PATH_URI.'/lp2/lib/assets/js/customizer.js' );
 	wp_enqueue_script('lp2_bootstrapjs', THEME_PATH_URI.'/lp2/lib/assets/js/bootstrap.min.js' );
 	wp_enqueue_script('trustpilot', '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js', '', '', true);
 

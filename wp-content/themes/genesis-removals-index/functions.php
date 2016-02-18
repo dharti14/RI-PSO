@@ -207,7 +207,7 @@ function add_async_attribute($tag, $handle) {
 /*
 register_nav_menus( array(
 	'primary' => __( 'Primary Navigation', 'genesis' ),
-	'footer' => __( 'PPC Footer Navigation', 'genesis' ),
+	'ppc_footer' => __( 'PPC Footer Navigation', 'genesis' ),
 	'secondary' => __('Secondary Navigation', 'genesis')
 ) );
 */
