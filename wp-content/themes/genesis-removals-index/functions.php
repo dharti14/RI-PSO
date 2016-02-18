@@ -48,19 +48,18 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 // ******************Creating Custom Meta Box for Page Settings********************************** //
 
 
-//Creating Meta Box For Differentiating between DKI and NonDKI Scripts
-function create_metabox_for_page_settings()
-{
+//Creating Meta Box For Differentiating between DKI and NonDKI Scripts, also used for detecting conversion page and its scripts
+function create_metabox_for_page_settings() {
 
-	add_meta_box( 'DKIMetaBox', 'Page Settings', 'create_html_for_page_settings_metabox', 'page', 'normal', 'high' );
+	add_meta_box( 'page_settings_meta_box', 'Page Settings', 'create_html_for_page_settings_metabox', 'page', 'normal', 'high' );
 }
 
 add_action( 'add_meta_boxes', 'create_metabox_for_page_settings' );
 
 
-//Creating HTML Structure for DKI Scripts Meta Box 
-function create_html_for_page_settings_metabox($post)
-{        
+//Creating HTML Structure for Page Setings Meta Box 
+function create_html_for_page_settings_metabox() {
+	        
     //wp_nonce_field( $action, $name, $referer, $echo ) 
     //All are optional parameters
     //Action name==>give the context to what is taking place
@@ -114,24 +113,24 @@ function create_html_for_page_settings_metabox($post)
 }
 
 
-
-//Saving the value of DKI Scripts whether they are enable or not
+//Saving the value of fields of page settings meta box
 add_action( 'save_post', 'save_custom_page_settings_value' );
-function save_custom_page_settings_value( $post_id )
-{
+function save_custom_page_settings_value() {
 	
 	if ( ! isset( $_POST['page_settings'] ) )
 		return;
 	
-	//* Merge user submitted options with fallback defaults
-	$data = wp_parse_args( $_POST['page_settings'], array(
+	$field_names = wp_parse_args( $_POST['page_settings'], array(
+			
+			'_is_page_dki'          => '',
 			'_is_conversion_page'   => '',
 			'_tracking_code'        => '',
-			'_is_page_dki'      => '',
+			
 	) );
-		
+	
+
 	//Please see genesis/lib/functions/options.php for more info. about genesis_save_custom_fields
-	genesis_save_custom_fields( $data, 'creating_nonce_for_custom_page_settings', 'custom_page_settings_nonce', $post );
+	genesis_save_custom_fields( $field_names, 'creating_nonce_for_custom_page_settings', 'custom_page_settings_nonce', $post );
 	
 	 
 }
@@ -155,7 +154,7 @@ require(THEME_PATH_DIR.'/lib/site/inc/DKIScripts.php');
 
 
 //Checking for page is conversion? If yes then get the conversion(tracking) scripts
-function get_conversion_page_scripts(){
+function get_conversion_page_scripts() {
 
 	$is_conversion_page = genesis_get_custom_field('_is_conversion_page');
 	
@@ -174,8 +173,7 @@ add_action('genesis_loop','loop_for_internal_page_content');
 
 //Looping through the content for the site pages (Internal Pages)
 
-function loop_for_internal_page_content()
-{
+function loop_for_internal_page_content() {
 	?>
 
 <article id="main_article">
@@ -209,7 +207,7 @@ function add_async_attribute($tag, $handle) {
 /*
 register_nav_menus( array(
 	'primary' => __( 'Primary Navigation', 'genesis' ),
-	'ppc_footer' => __( 'PPC Footer Navigation', 'genesis' ),
+	'footer' => __( 'PPC Footer Navigation', 'genesis' ),
 	'secondary' => __('Secondary Navigation', 'genesis')
 ) );
 */
@@ -221,7 +219,7 @@ register_nav_menus( array(
 add_theme_support ( 'genesis-menus' , array (
 		'primary' => __( 'Primary Navigation', 'genesis' ),
 		'secondary' => __( 'Secondary Navigation', 'genesis' ),
-		'ppc_footer' => __( 'Footer Navigation', 'genesis' )
+		'footer' => __( 'Footer Navigation', 'genesis' )
 ) );
 
 /**

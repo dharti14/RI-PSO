@@ -312,7 +312,7 @@
 
 			<?php
             $defaults = array(
-              'theme_location'  => 'ppc_footer',
+              'theme_location'  => 'footer',
               'menu'            => '',
               'container'       => false,
               'container_class' => '',
@@ -324,7 +324,7 @@
               'before'          => '',
               'link_before'     => '',
               'after'      		=> '<span class="div">|</span>',
-              'items_wrap'      => '<ul id="ppc_footer" class="nav navbar-nav">%3$s</ul>',
+              'items_wrap'      => '<ul id="footer" class="nav navbar-nav">%3$s</ul>',
               'depth'           => 1
             );
 

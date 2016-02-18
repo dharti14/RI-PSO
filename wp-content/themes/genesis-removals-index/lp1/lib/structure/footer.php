@@ -24,11 +24,11 @@ function lp1_footer(){
     
     /*
 		            $defaults = array(
-		              'theme_location'  => 'ppc_footer',
+		              'theme_location'  => 'footer',
 		              'container'       => false,
 		              'menu_class'      => 'menu',
 		              'echo'            => true,
-		              'items_wrap'      => '<ul id="ppc_footer">%3$s</ul>',
+		              'items_wrap'      => '<ul id="footer">%3$s</ul>',
 		              'depth'           => 1
 		            );
 		

@@ -457,27 +457,27 @@ form input[type="radio"]:checked::after {
       } 
 }
 
-#find_out_more #ppc_footer {
+#find_out_more #footer {
     display: inline-block;
     float: none;
     font-size: 14px;
     color: #686868; 
 }
 
-#find_out_more #ppc_footer > li > a {
+#find_out_more #footer > li > a {
       padding-left: 3px;
       padding-right: 3px; 
 }
 
-#find_out_more #ppc_footer a {
+#find_out_more #footer a {
       color: #686868;
 }
       
-#find_out_more #ppc_footer li, #find_out_more #ppc_footer .div, #find_out_more #ppc_footer li a {
+#find_out_more #footer li, #find_out_more #footer .div, #find_out_more #footer li a {
       display: inline-block; 
 }
 
-#find_out_more #ppc_footer li:last-child .div {
+#find_out_more #footer li:last-child .div {
       display: none; 
 }
 
