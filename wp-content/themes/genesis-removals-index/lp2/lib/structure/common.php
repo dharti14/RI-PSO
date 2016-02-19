@@ -13,9 +13,6 @@ add_action('wp_enqueue_scripts','dequeue_unwanted_css',100);
 
 function dequeue_unwanted_css(){
 	
-	wp_dequeue_style('ri-jquery-datepicker-css');
-	wp_deregister_style('ri-jquery-datepicker-css');
-	
 	wp_dequeue_style('bootstrapcss');
 	wp_deregister_style('bootstrapcss');
 	

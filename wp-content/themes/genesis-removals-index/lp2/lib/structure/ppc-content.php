@@ -23,23 +23,23 @@
 									<div class="row">
 										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
-											<input type="text" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_from" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 										<div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
-											<input type="text" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_to" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 									</div>
 									<div class="checkbox align_center">
 										<div class="row">
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="h_type"/> Residential
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="business_type" value="Residential" /> Residential
 											</label>
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="h_type"/> Commercial
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="business_type" value="Business Removal" /> Commercial
 											</label>
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="h_type"/> International
+												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="business_type" value="International" /> International
 											</label>
 										</div>
 									</div>
@@ -175,7 +175,7 @@
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
+							<div id="get-my-quote-middle" class="btn btn-quote get-my-quote2">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 						</div>
 					</div>
 
@@ -267,7 +267,7 @@
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
+							<div id="get-my-quote-bottom" class="btn btn-quote get-my-quote3">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 						</div>
 					</div>
 
