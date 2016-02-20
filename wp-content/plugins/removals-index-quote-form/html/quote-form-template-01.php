@@ -15,7 +15,10 @@
     <p>... And Saving Up To 40% With Vetted, Hand Checked, Removal Companies</p>
    </div>
    <form method="post" name="form" id="form">
+   
    		<input type="hidden" value="0" name="form-type">
+   		<input type="hidden" value="current-design" name="form_design">
+   		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
@@ -307,7 +310,10 @@
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, Commercial Removal Companies</p>
    </div>
    <form method="post" name="form" id="form-business">
+   
    	<input type="hidden" name="form-type" value="2">
+   	<input type="hidden" value="current-design" name="form_design">
+   	
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
@@ -605,7 +611,10 @@
     <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, International Removal Companies</p>
    </div>
    <form method="post" name="form" id="form-international">
+   
    		<input type="hidden" name="form-type" value="1">
+   		<input type="hidden" value="current-design" name="form_design">
+   		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
