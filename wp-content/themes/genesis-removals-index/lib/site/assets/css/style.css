@@ -1,3 +1,4 @@
+
 .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15 {
 	  position: relative;
 	  min-height: 1px;
@@ -163,7 +164,7 @@
 
 form .form-control {
   padding: 9px 12px;
-  height: 40px; 
+  height: 35px; 
 }
 
 form label {
@@ -195,51 +196,18 @@ form .checkbox label {
 }
 
 form input[type="radio"] {
-  visibility: hidden;
-  left: 0px;
-  margin: 0px;
-  z-index: 99;
-  position: relative;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  margin-right: 4px; 
+
+	  z-index: 99;
+	  position: relative;
+	  cursor: pointer;
+	  width: 20px;
+	  height: 18px;
+	  margin-right: 4px; 
+      top: 6px;
 }
 
-form input[type="radio"]:before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -o-border-radius: 50%;
-    background: #fff;
-    visibility: visible;
-    top: 3px;
-    margin-right: 8px; 
-}
-
-form input[type="radio"]:checked::after {
-    content: '';
-    position: absolute;
-    background: #76b751;
-    width: 10px;
-    height: 10px;
-    left: 0px;
-    top: 0px;
-    visibility: visible;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -o-border-radius: 50%;
-    left: 5px;
-    top: 8px;
-    transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s; 
+blockquote:after,blockquote:before,label.error:after,q:after,q:before {
+	content:""
 }
 
 .panel-group .panel-default {
@@ -402,6 +370,12 @@ form input[type="radio"]:checked::after {
 .green_section ul li {
       position: relative;
       padding-left: 45px; 
+}
+
+@media (max-width: 640px) {
+	.step1 span.arrow-post2 {
+	    left: 50% !important;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -1708,4 +1682,9 @@ header.main #logo {
 	    float: none;
 	    padding-right: 0px;
 	    margin-bottom: 15px;
+	}
+	
+	#form1 .mg-b-10 {
+		margin-bottom: 10px !important;
+	}
 }

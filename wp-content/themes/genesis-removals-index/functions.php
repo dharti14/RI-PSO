@@ -234,8 +234,7 @@ function get_conversion_page_scripts() {
 	$is_conversion_page = genesis_get_custom_field('_is_conversion_page');
 	
 	$conversion_scripts='';
-	echo $is_conversion_page;
-	die();
+
 	if($is_conversion_page == 'yes'){
 		$conversion_scripts = genesis_get_custom_field('_conversion_script');
 	}
@@ -243,7 +242,7 @@ function get_conversion_page_scripts() {
 	return $conversion_scripts;
 }
 
-function get_conversion_page_id(){
+function get_conversion_page_id() {
 	$conversion_page_id =  genesis_get_custom_field('_conversion_page');
 	return $conversion_page_id;
 }

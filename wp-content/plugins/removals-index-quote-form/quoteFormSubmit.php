@@ -42,11 +42,11 @@ if ($_POST)
 		
 	
 	$formType = "";
-	$form_design = "";
-	if( (isset($_POST['form-type'])) && (isset($_POST['form_design'])) )
+	$ri_thanks_page_id = "";
+	if( (isset($_POST['form-type'])) && (isset($_POST['ri_thanks_page_id'])) )
 	{
 		$formType = $_POST['form-type'];
-		$form_design = $_POST['form_design'];
+		$ri_thanks_page_id = $_POST['ri_thanks_page_id'];
 	
 		$storage = "";	//possible values "Yes/No"
 		$asembly = "";	//possible values "Yes/No"
@@ -221,8 +221,9 @@ if ($_POST)
 			);
 		}	
 		
-		echo "<pre>";
-		print_r($fields);
+// 		echo "<pre>";
+// 		print_r($fields);
+// 		echo get_permalink($ri_thanks_page_id);
 // 		die();
 
 		//READY TO SUBMIT THE DATA. WE USE CURL TO CALL THE API
@@ -231,7 +232,7 @@ if ($_POST)
 		{	
 			
 			//For Live Use
-			//$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
 			
 			// $url = $api_url . 'api/lead/create/' . $formId . '/' . $api_key;
 			
@@ -272,25 +273,10 @@ if ($_POST)
 		   			
 		    if ($http_code == 201) 	//ALL LOOKS GOOD, LEAD SUBMITED. REDIRECT TO YOUR THANKS PAGE
 		    {
-		    	//please provide the page title/id of thank you page which you want to redirect (in our case its id=40)
-		    	//get_permalink(40);
-				
-		    	
-		    	if($form_design == "current-design"){
-		    		echo 'form will submit to current design thank you page';
-		    		die();
-		    		
-		    		header("Location: " . get_permalink(get_page_by_title('Current Removals Index Thanks')) . "?form=" . $form . "&h=" . $obj->hash);
+
+		    		header("Location: " . get_permalink($ri_thanks_page_id) . "?form=" . $form . "&h=" . $obj->hash);
 		    		exit();
-		    	}
-		    	
-		    	if($form_design == "new-design"){
-		    		echo 'form will submit to new design thank you page';
-		    		die();
-		    		//header("Location: " . get_permalink(get_page_by_title('Current Removals Index Thanks')) . "?form=" . $form . "&h=" . $obj->hash);
-		    		exit();
-		    	}
-		    	
+
 		    }
 		    elseif ($http_code == 406) //ERRORS DETECTED BY PINLOCAL SYSTEM IN DATA
 		    {

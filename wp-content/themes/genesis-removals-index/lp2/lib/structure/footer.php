@@ -3,6 +3,8 @@
 add_action('genesis_footer', 'lp2_footer');
 
 function lp2_footer(){
+	
+	wp_enqueue_style('lp2_font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800,700');
 ?>	
 	<footer class="main">
 		<div class="container">

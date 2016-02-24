@@ -20,6 +20,9 @@ function dequeue_unwanted_css(){
 
 	wp_dequeue_style('font_opensans');
 	wp_deregister_style('font_opensans');
+	
+	wp_dequeue_script('site_customizer');
+	wp_deregister_script('site_customizer');
 
 }
 //De-queuing Unwanted css file which are applied in site

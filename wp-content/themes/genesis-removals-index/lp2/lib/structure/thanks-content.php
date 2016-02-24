@@ -1,5 +1,31 @@
-<?php
-?>
+<!-- Displaying Customer Name -->
+
+<script type="text/javascript">	     
+		function pl_displayCallback(data,elementId)
+		{  
+			//code for add name in "thank you" heading
+			if(typeof(data)!='undefined')
+			{
+				if(typeof(data.firstName)!='undefined')
+				{
+					if(typeof(data.firstName.value)!='undefined')
+					{
+						jQuery('span#customername').html(data.firstName.value);
+					}
+				}
+			}
+		}
+		var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
+		var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
+		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
+		document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));	
+	</script>
+	
+<!-- Displaying Customer Name -->
+
+
+
+
 <aside class="steps thanks_steps">
       <div class="container">
         <div class="row">
@@ -43,7 +69,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
-					<h1 class="h2">Thank you</h1>
+					<h1 class="h2">Thank you <span id="customername"></span></h1>
 					<p>To provide accurate quotes and the best prices, trusted removal companies will contacted you shortly by phone and email.</p>
 					<p>Thousands of people use Removals Index every month for the following reasons.</p>
 
@@ -180,3 +206,10 @@
 		</div>
 	</article>
 	<!-- /#main_article -->
+	
+<!-- 	Conversion page scripts   -->
+  <?php 
+	  $conversion_page_scripts = get_conversion_page_scripts();
+	  echo  $conversion_page_scripts;
+  ?>
+<!-- 	Conversion page scripts   -->

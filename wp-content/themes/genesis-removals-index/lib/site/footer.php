@@ -3,6 +3,8 @@
 add_action('genesis_footer', 'site_footer');
 
 function site_footer(){
+	
+	wp_enqueue_style('site_font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800,700');
 ?>	
 	<footer class="main">
 		<div class="container">

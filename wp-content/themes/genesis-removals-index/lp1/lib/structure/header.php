@@ -53,9 +53,9 @@ function viewport_meta_tag() {
   <?php 
 }
 
-add_filter( 'wp_title', 'set_custom_page_title', 150, 1 );
+add_filter( 'wp_title', 'set_page_title', 150, 1 );
 
-function set_custom_page_title($title){
+function set_page_title($title){
 
 	//For HLN Parameter
 	$dki_hln = dki_get_hln();

@@ -15,17 +15,6 @@ jQuery(window).load(function(){
 
 <script async type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
 
-
-
-<!-- 	Conversion page scripts   -->
-  <?php 
-	  $conversion_page_scripts = get_conversion_page_scripts();
-	  echo  $conversion_page_scripts;
-  ?>
-<!-- 	Conversion page scripts   -->
-  
-  
-
 <!-- Displaying Customer Name -->
 
 <script type="text/javascript">	     
@@ -154,3 +143,11 @@ jQuery(window).load(function(){
   
 </div>
 </div>
+
+
+<!-- 	Conversion page scripts   -->
+  <?php 
+	  $conversion_page_scripts = get_conversion_page_scripts();
+	  echo  $conversion_page_scripts;
+  ?>
+<!-- 	Conversion page scripts   -->

@@ -11,32 +11,32 @@
 							<div class="quote_box">
 								<h3 class="title">SAVE Up To 40% On Your Move</h3>
 
-								<form class="" method="post" id="form1">
+								<form id="form1">
 									<div class="row">
 										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
-											<input type="text" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_from" name="postcode_from" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 										<div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
-											<input type="text" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 									</div>
 									<div class="checkbox align_center">
 										<div class="row">
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="h_type"/> Residential
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="business_type" value="Residential" /> Residential
 											</label>
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="h_type"/> Commercial
+												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="business_type" value="Business Removal" /> Commercial
 											</label>
 											<label class="col-sm-4">
-												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="h_type"/> International
+												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="business_type" value="International" /> International
 											</label>
 										</div>
 									</div>
 
-									<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
+									<div id="get-my-quote-top" class="btn btn-quote get-my-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 									<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 
 									<figure class="sh1"></figure>
@@ -65,6 +65,10 @@
 			<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 		</div>
 	</section>
+	
+	<!--form -->
+        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-02"]'); ?>
+    <!--form -->
 
 	<section id="how_will">
 		<div class="container">
@@ -153,17 +157,17 @@
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label>I'm Moving From:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<button class="btn btn-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></button>
+							<div id="get-my-quote-middle" class="btn btn-quote get-my-quote2">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 						</div>
 					</div>
 
@@ -223,3 +227,20 @@
 		</div>
 	</section>
 	<!-- /#locations -->
+	
+
+    <script>
+
+jQuery(function() {
+
+	/*google analytics event tracking.*/	
+	
+	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
+
+	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
+
+	//jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
+	
+});
+
+</script>

@@ -1,8 +1,10 @@
 <?php
+$dki_hln = dki_get_hln();
+$dki_loc = dki_get_loc();
 ?>
 <div id="dki">
 		<div class="container">
-			<h1 class="title">Looking For <span class="blue">Trusted Local Removal Companies?</span></h1>
+			<h1 class="title blue"><?php echo dki_exact_string( 'Looking For '. $dki_hln ); ?><span>?</span></h1>
 		</div>
 </div>
 
@@ -23,22 +25,22 @@
 									<div class="row">
 										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
-											<input type="text" id="postcode_from" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_from" name="postcode_from" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 										<div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
-											<input type="text" id="postcode_to" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode"/>
 										</div>
 									</div>
 									<div class="checkbox align_center">
 										<div class="row">
-											<label class="col-sm-4">
+											<label class="col-sm-4 mg-b-10">
 												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="business_type" value="Residential" /> Residential
 											</label>
-											<label class="col-sm-4">
+											<label class="col-sm-4 mg-b-10">
 												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="business_type" value="Business Removal" /> Commercial
 											</label>
-											<label class="col-sm-4">
+											<label class="col-sm-4 mg-b-10">
 												<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="business_type" value="International" /> International
 											</label>
 										</div>
@@ -165,11 +167,11 @@
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label>I'm Moving From:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
@@ -257,11 +259,11 @@
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label>I'm Moving From:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_from3" name="postcode_from3" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
-									<input type="text" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_to3" name="postcode_to3" class="form-control" placeholder="Enter Postcode"/>
 								</div>
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>

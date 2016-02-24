@@ -4,6 +4,7 @@
      $this->loadJs('ri_quote_form_1');
      
      $dki_hln = dki_get_hln();
+     $ri_thanks_page_id = get_conversion_page_id();
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -17,7 +18,7 @@
    <form method="post" name="form" id="form">
    
    		<input type="hidden" value="0" name="form-type">
-   		<input type="hidden" value="current-design" name="form_design">
+   		<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
    		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
@@ -26,27 +27,27 @@
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed1" value="1" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed1" value="1" name="bedrooms">
                   <label for="bed1">1<br>bed</label>
                 </div>
                 <div rel="bed2" class="bed-radios-container">
                   <div class="img2bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed2" value="2" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed2" value="2" name="bedrooms">
                   <label for="bed2">2<br>bed</label>
                 </div>
                 <div rel="bed3" class="bed-radios-container">
                   <div class="img3bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed3" value="3" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed3" value="3" name="bedrooms">
                   <label for="bed3">3<br>bed</label>
                 </div>
                 <div rel="bed4" class="bed-radios-container">
                   <div class="img4bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed4" value="4" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed4" value="4" name="bedrooms">
                   <label for="bed4">4<br>bed</label>
                 </div>
                 <div rel="bed5" class="bed-radios-container">
                   <div class="img5bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed5" value="5" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
                   <label for="bed5">5<br>bed</label>
                 </div>
                 <div rel="bed0" class="bed-radios-container box_desc">
@@ -312,7 +313,7 @@
    <form method="post" name="form" id="form-business">
    
    	<input type="hidden" name="form-type" value="2">
-   	<input type="hidden" value="current-design" name="form_design">
+   	<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
    	
    	<div class="row">
      <div class="col-sm-8">
@@ -613,7 +614,7 @@
    <form method="post" name="form" id="form-international">
    
    		<input type="hidden" name="form-type" value="1">
-   		<input type="hidden" value="current-design" name="form_design">
+   		<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
    		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
@@ -622,27 +623,27 @@
               <div class="removing-stress-frm-con">
                 <div rel="bed1" class="bed-radios-container">
                   <div class="img1bed" rel="bed1">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed1" value="1" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed1" value="1" name="bedrooms">
                   <label for="bed1">1<br>bed</label>
                 </div>
                 <div rel="bed2" class="bed-radios-container">
                   <div class="img2bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed2" value="2" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed2" value="2" name="bedrooms">
                   <label for="bed2">2<br>bed</label>
                 </div>
                 <div rel="bed3" class="bed-radios-container">
                   <div class="img3bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed3" value="3" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed3" value="3" name="bedrooms">
                   <label for="bed3">3<br>bed</label>
                 </div>
                 <div rel="bed4" class="bed-radios-container">
                   <div class="img4bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed4" value="4" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed4" value="4" name="bedrooms">
                   <label for="bed4">4<br>bed</label>
                 </div>
                 <div rel="bed5" class="bed-radios-container">
                   <div class="img5bed">&nbsp;</div>
-                  <input type="radio" class="rad" id="bed5" value="5" name="bedrooms">
+                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
                   <label for="bed5">5<br>bed</label>
                 </div>
                 <div rel="bed0" class="bed-radios-container box_desc">
