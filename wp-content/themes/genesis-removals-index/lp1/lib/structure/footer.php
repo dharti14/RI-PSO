@@ -5,15 +5,15 @@ add_action('genesis_footer', 'lp1_footer');
 function lp1_footer(){
 ?>	
 	<div class="footer">
- <div class="container">
-  <div class="footer-link"> 
+	 <div class="container">
+	  <div class="footer-link"> 
   
   <!-- If you don't want hard code menu then please remove this part of code -->
 	   <ul>
-	    <li><a href="#">Removal Companies Join Us</a></li>
+	    <li><a href="http://www.pinlocal.com/removals.html">Removal Companies Join Us</a></li>
 	    <li><a href="<?php echo get_permalink(get_page_by_title('Terms and conditions')); ?>" target="_blank" />Terms and Conditions</a></li>
-	    <li><a href="#">Privacy Policy</a></li>
-	    <li><a href="#">Removals Price Guide</a> </li>
+	    <li><a href="<?php echo get_permalink(get_page_by_title('Removals index privacy policy')); ?>">Privacy Policy</a></li>
+	    <li><a href="<?php echo get_permalink(get_page_by_title('Removals Price Guide and Moving Tips')); ?>">Removals Price Guide</a> </li>
 	   </ul>
    <!-- If you don't want hard code menu then please remove this part of code -->
     

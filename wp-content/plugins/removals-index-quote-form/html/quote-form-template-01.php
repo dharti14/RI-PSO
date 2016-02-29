@@ -1,7 +1,7 @@
 <?php
 	//Load css and js of the form here
-	 $this->loadCss('ri_quote_form_1');
-     $this->loadJs('ri_quote_form_1');
+	 $this->ri_load_css('ri_quote_form_1');
+     $this->ri_load_js('ri_quote_form_1');
      
      $dki_hln = dki_get_hln();
      $ri_thanks_page_id = get_conversion_page_id();
@@ -77,7 +77,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Property Type:</h5>
                 <label>
                   <input type="radio" name="property_type_from" value="House"> House
@@ -102,7 +102,7 @@
                </select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label>
                   <input type="radio" name="lift_available_from" value="Yes"> Yes 
@@ -127,7 +127,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Property Type:</h5>
                 <label for="house">
                   <input type="radio" name="property_type_to" id="house" value="House"> House
@@ -151,7 +151,7 @@
                     <option value="5+">5+</option></select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label for="lift-available-to-n">
                   <input type="radio" name="lift_available_to" id="lift-available-to-n" value="Yes"> Yes 
@@ -334,7 +334,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Access :</h5>
               </div>
               <div id="appartment-floor-from">
@@ -350,7 +350,7 @@
                </select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label>
                   <input type="radio" name="lift_available_from" value="Yes"> Yes 
@@ -361,7 +361,7 @@
                 </label>
               </div>
               
-              <div class="form-group redio-with-text3">
+              <div class="form-group radio-with-text3">
                <h5>Parking Available? </h5>
                 <label>
                   <input type="radio" onClick="jQuery('.parking-issues-from').hide();" name="parking_available_from" value="Yes"> Yes 
@@ -395,7 +395,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Access :</h5>
               </div>
               <div id="appartment-floor-to">
@@ -410,7 +410,7 @@
                     <option value="5+">5+</option></select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label>
                   <input type="radio" name="lift_available_to" id="lift-available-to-n" value="Yes"> Yes 
@@ -420,7 +420,7 @@
                 </label>
               </div>
               
-              <div class="form-group redio-with-text3">
+              <div class="form-group radio-with-text3">
                <h5>Parking Available? </h5>
                 <label for="parking-available-to-n">
                   <input type="radio" onClick="jQuery('.parking-issues-to').hide();" name="parking_available_to" id="parking-available-to-n" value="Yes"> Yes 
@@ -673,7 +673,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Property Type:</h5>
                 <label>
                   <input type="radio" name="property_type_from" value="House"> House
@@ -698,7 +698,7 @@
                </select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label>
                   <input type="radio" name="lift_available_from" value="Yes"> Yes 
@@ -731,7 +731,7 @@
               </div>
               
               
-              <div class="form-group redio-with-text">
+              <div class="form-group radio-with-text">
                <h5>Property Type: </h5>
                 <label>
                   <input type="radio" name="property_type_to" id="house" value="House"> House
@@ -755,7 +755,7 @@
                     <option value="5+">5+</option></select>
               </div>
               
-              <div class="form-group redio-with-text2">
+              <div class="form-group radio-with-text2">
                <h5>Lift Available? </h5>
                 <label>
                   <input type="radio" name="lift_available_to" id="lift-available-to-n" value="Yes"> Yes 

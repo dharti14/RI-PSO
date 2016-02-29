@@ -36,34 +36,32 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		public function __construct( ) {
 			
 			/* Admin page action */
-			add_action( 'admin_menu', array( &$this, 'quoteFormAdminMenu' ) );
+			add_action( 'admin_menu', array( &$this, 'quote_form_admin_menu' ) );
 			
 			
 						
 			/* Fron page action */
 			
 			$defaults = array(
-				'apiUrl'		=> '',
-				'apiKey'		=> '',
+				'apiUrl'		=> ''
+				
 			);
 			
 			$options = get_option('ri_quote_form', $defaults);
 		
 			$this->apiUrl = $options['apiUrl'];
-			
-			$this->apiKey = $options['apiKey'];
-			
+					
 			define( 'RI_QUOTE_FORM_URL' , plugin_dir_url( __FILE__ ) );
 			
 			define( 'RI_QUOTE_FORM_PATH' ,plugin_dir_path( __FILE__ ) );
 			
-			add_action('wp_enqueue_scripts', array( &$this, 'quoteFormAssets' ) );
+			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ) );
 			
 			//Ajax action fo all users(no-priviledges are set)
 			// also use wp_ajax_action_name for logged in users only
-			add_action( 'wp_ajax_nopriv_getAddressByPostCode',  array( &$this, 'getAddressByPostCode'));
+			add_action( 'wp_ajax_nopriv_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			
-			add_shortcode('ri_quote_form', array( &$this, 'quoteFormHtml' ) );
+			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
 		}
 		
@@ -71,37 +69,36 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 * Include file for crafty Api
 		*/
 		
-		function getAddressByPostCode() {
+		function get_address_by_postcode() {
 		
-			include 'inc/ajaxaddress.php';
+			include 'inc/crafty_click.php';
 		
 		}
 		
 		/**
 		 * Add "Removals Quotes" menu under "Settings" menu.
 		 */
-		public function quoteFormAdminMenu( ) {
+		public function quote_form_admin_menu( ) {
 			
-			add_options_page('Removals Index Quote Form Settings', 'RI Quote Form', 'manage_options', 'ri-quote-form', array( &$this, 'quoteFormOptions' ) );
+			add_options_page('Removals Index Quote Form Settings', 'RI Quote Form', 'manage_options', 'ri-quote-form', array( &$this, 'quote_form_options' ) );
 		}
 		
 		/**
 		 * 
 		 */
-		public function quoteFormOptions( ) {
+		public function quote_form_options( ) {
 			
 			$message = "";
 			
 			$defaults = array(
-				'apiUrl'		=> '',
-				'apiKey'		=> '',
+				'apiUrl'		=> ''
+				
 			);
 				
 			if($_POST) {
 				
 				$options = array(
-					'apiUrl'		=> $_POST['apiUrl'],
-					'apiKey'		=> $_POST['apiKey'],
+					'apiUrl'		=> $_POST['apiUrl']
 				);
 				
 				if( get_option('ri_quote_form') )
@@ -121,7 +118,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		/**
 		 * insert js and css files.
 		 */
-		public function quoteFormAssets( ) {		
+		public function quote_form_assets( ) {		
 				
 			wp_enqueue_script( 'ri-jquery', RI_QUOTE_FORM_URL.'js/jquery.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
@@ -129,23 +126,18 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
 			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.css' );
-			
-			//Minified Version of JS and CSS
-			//wp_enqueue_script( 'ri-jquery-min-js', RI_QUOTE_FORM_URL.'js/site.min.js', array( 'jquery' ), '', true );
-			//wp_enqueue_style( 'ri-jquery-min-css', RI_QUOTE_FORM_URL.'css/site.min.css' );
-							
-			
+				
 		}
 		
 
 		/**
 		 * function to display Removals Index Quote Form.
 		 */
-		public function quoteFormHtml( $atts ) {
+		public function quote_form_html( $atts ) {
 					
 			if( $_POST ) {	
 				
-				include 'quoteFormSubmit.php';
+				include 'quote_form_submit.php';
 			}
        
 			if(isset($atts['template_name']) && !empty($atts['template_name'])) {
@@ -168,34 +160,19 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
                                   
 		}
                    
-		 public function loadCss($css) {
+		 public function ri_load_css($css) {
 		 	
 			 wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css.'.css' );
 			 
 		 } 
 		 
-		 public function loadJs($js) {
+		 public function ri_load_js($js) {
 		 	
 			wp_enqueue_script( 'ri-quote-form-js', RI_QUOTE_FORM_URL.'js/'.$js.'.js'); 
 			
-			wp_localize_script('ri-quote-form-js', 'addressObject', array('ajaxurl' => admin_url("admin-ajax.php")));
+			wp_localize_script('ri-quote-form-js', 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
 			
-		 }
-
-		 public function setContext($context_name) {
-		 	
-		 	$this->context = $context_name;
-		 }
-		 
-		 public function getContext() {
-		 	
-		 	echo  $this->context;
-		 }
-		 
-		 public function getInputId($id) {
-		 	
-		 	return $this->context ."_". $id;
-		 }
+		 }	
 		 		 
 	}
 	
