@@ -6,7 +6,7 @@
 
 h2.align_center {
 	margin-top: 0px;
-	line-height: 1;	
+/* 	line-height: 1;	 */
 }
 
 p.align_center {
@@ -24,6 +24,14 @@ p.align_center {
 .col-xs-15 {
   width: 20%;
   float: left; 
+}
+
+span.arrow-post {
+    display: block;
+    position: absolute;
+    bottom: -35px;
+    left: 52%;
+    margin: 0 0 0 -77px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -352,6 +360,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	  font-size: 16px;
 	  padding-top: 20px;
 	  padding-bottom: 20px; 
+	  border-top: #c9c9c9 solid 7px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -413,7 +422,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	  text-align: center;
 	  padding-bottom: 25px;
 	  padding-top: 25px;
-	  border-top: 6px solid #f5f5f5; 
+/* 	  border-top: 6px solid #f5f5f5;  */
 }
 
 @media only screen and (min-width: 768px) {
@@ -624,7 +633,7 @@ h4, .h4 {
 }
 
 header.main {
-  	border-bottom: 6px solid #f5f5f5; 
+/*   	border-bottom: 6px solid #f5f5f5;  */
 }
 
 header.main #logo {
@@ -754,7 +763,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 }
 
 #hero {
-	  border-bottom: 6px solid #f5f5f5;
+/* 	  border-bottom: 6px solid #f5f5f5; */
 	  padding-top: 10px;
 }
 
@@ -1461,7 +1470,9 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 #get_quotes {
 	  background-color: #305eaa;
 	  padding-top: 40px;
-	  padding-bottom: 35px; 
+	  padding-bottom: 35px;
+	  border-top: #c9c9c9 solid 7px;
+      border-bottom: #c9c9c9 solid 7px; 
 }
 
 #get_quotes form {
@@ -1585,12 +1596,17 @@ ul.no_list li .fa {
 }
 
 #testimonials {
-	  font-size: 14px;
-	  font-style: italic;
-	  color: #76b751;
-	  font-weight: bold;
-	  padding: 40px 0;
-	  border-bottom: 6px solid #f5f5f5; 
+	
+	        font-size: 14px;
+		    font-style: italic;
+		    color: #76b751;
+		    font-weight: bold;
+		    border-top: #c9c9c9 solid 7px;
+		    border-bottom: #c9c9c9 solid 7px;
+		    position: relative;
+		    clear: both;
+		    padding: 15px 0 11px;
+		    
 }
 
 #testimonials .wrap {

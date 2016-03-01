@@ -23,6 +23,10 @@ function dequeue_unwanted_css(){
 	
 	wp_dequeue_script('site_customizer');
 	wp_deregister_script('site_customizer');
+	
+	wp_dequeue_style('open-sans');
+ 	wp_deregister_style('open-sans');
+
 
 }
 //De-queuing Unwanted css file which are applied in site
@@ -45,7 +49,7 @@ function lp1_load_scripts() {
 	wp_enqueue_style('lp1_bootstrapcss', THEME_PATH_URI.'/lp1/lib/assets/css/bootstrap.min.css');
 	wp_enqueue_style('lp1_style_css', THEME_PATH_URI.'/lp1/lib/assets/css/style.css');
 	wp_enqueue_style('lp1_fontawsome', THEME_PATH_URI.'/lp1/lib/assets/css/font-awesome.min.css');
-	wp_enqueue_style('lp1_font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300');
+	
 
 }
 ?>

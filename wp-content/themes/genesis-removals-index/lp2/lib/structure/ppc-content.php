@@ -66,6 +66,7 @@ $dki_loc = dki_get_loc();
 
 	<section id="testimonials">
 		<div class="container">
+		<span class="arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="wrap">
@@ -251,6 +252,7 @@ $dki_loc = dki_get_loc();
 
 	<section id="get_quotes" class="get_quotes2">
 		<div class="container">
+		
 			<div class="pad65">
 				
 				<form>

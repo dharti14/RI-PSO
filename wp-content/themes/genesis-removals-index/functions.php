@@ -242,6 +242,8 @@ function get_conversion_page_scripts() {
 	return $conversion_scripts;
 }
 
+
+//Getting the Conversion page id which was set for the landing page
 function get_conversion_page_id() {
 	$conversion_page_id =  genesis_get_custom_field('_conversion_page');
 	return $conversion_page_id;
