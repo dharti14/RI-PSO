@@ -19,6 +19,9 @@ function dequeue_unwanted_css(){
 	wp_dequeue_style('font_opensans');
 	wp_deregister_style('font_opensans');
 	
+	wp_dequeue_style('open-sans');
+	wp_deregister_style('open-sans');
+	
 	wp_dequeue_script('site_customizer');
 	wp_deregister_script('site_customizer');
 	

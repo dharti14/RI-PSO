@@ -286,6 +286,7 @@ $dki_loc = dki_get_loc();
 
 	<section id="find_out_more">
 		<div class="container">
+		<span class="arrow-post1"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 			<h3 class="i1">To find out more, speak to our removal experts:</h3>
 			<p class="call">Call Free <br>0333 444 8710</p>
 
@@ -336,18 +337,3 @@ $dki_loc = dki_get_loc();
             ?>
 		</div>
 	</section>
-	<script>
-
-jQuery(function() {
-
-	/*google analytics event tracking.*/	
-	
-	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
-
-	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
-
-	jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
-	
-});
-
-</script>

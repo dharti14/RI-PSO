@@ -1,6 +1,10 @@
 <?php
 add_action('wp_enqueue_scripts', 'site_load_scripts');
 function site_load_scripts() {
+	
+	wp_dequeue_style('open-sans');
+	wp_deregister_style('open-sans');
+	
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('site_customizer', THEME_PATH_URI.'/lib/site/assets/js/customizer.js' );
 	wp_enqueue_script('bootstrapjs', THEME_PATH_URI.'/lib/site/assets/js/bootstrap.min.js' );
