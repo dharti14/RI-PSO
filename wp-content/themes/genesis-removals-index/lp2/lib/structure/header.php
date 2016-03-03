@@ -11,7 +11,7 @@ function viewport_meta_tag() {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no" />
 
-  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="<?php echo THEME_PATH_URI; ?>/images/favicon.png" type="image/x-icon" />
 <?php 	  
 }
   
@@ -79,7 +79,12 @@ function lp2_header(){
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <a id="logo" href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
+            <a id="logo" href="<?php if ( is_page_template('lp2/lp2-ppc.php')) {
+            		echo get_permalink(get_the_ID());
+		     	}else{
+		     		echo bloginfo( 'url' );
+		     	}
+		     	?>" title="<?php bloginfo( 'name' );?>">
               <img width="180" src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/removals-index_logo.svg" alt="<?php echo $dki_hln;?>"/>
             </a>
           </div>

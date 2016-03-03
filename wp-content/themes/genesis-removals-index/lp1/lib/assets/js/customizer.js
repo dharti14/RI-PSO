@@ -1,6 +1,23 @@
 // JavaScript Document
+
+
+function pl_displayCallback(data,elementId) {  
+		//code for add name in "thank you" heading
+		if(typeof(data)!='undefined')
+		{
+			if(typeof(data.firstName)!='undefined')
+			{
+				if(typeof(data.firstName.value)!='undefined')
+				{
+					jQuery('span#customername').html(data.firstName.value);
+				}
+			}
+		}
+}
+
+
 jQuery( document ).ready(function() {
-	
+		
 	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 
 	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
@@ -180,4 +197,17 @@ jQuery( document ).ready(function() {
 				
 	});
 	
+});
+
+
+
+jQuery(window).load(function(){
+	jQuery('dd').hide();
+
+	jQuery('dt').click(
+    function() {
+        var toggle = jQuery(this).nextUntil('dt');
+        toggle.slideToggle();
+        jQuery('dd').not(toggle).slideUp();
+    });
 });

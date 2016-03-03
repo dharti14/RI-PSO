@@ -1,42 +1,14 @@
-<?php   ?>
-<script type='text/javascript'>//<![CDATA[ 
-jQuery(window).load(function(){
-	jQuery('dd').hide();
 
-	jQuery('dt').click(
-    function() {
-        var toggle = jQuery(this).nextUntil('dt');
-        toggle.slideToggle();
-        jQuery('dd').not(toggle).slideUp();
-    });
-});//]]>  
-
-</script>
-
-<script async type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
 
 <!-- Displaying Customer Name -->
 
 <script type="text/javascript">	     
-		function pl_displayCallback(data,elementId)
-		{  
-			//code for add name in "thank you" heading
-			if(typeof(data)!='undefined')
-			{
-				if(typeof(data.firstName)!='undefined')
-				{
-					if(typeof(data.firstName.value)!='undefined')
-					{
-						jQuery('span#customername').html(data.firstName.value);
-					}
-				}
-			}
-		}
-		var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
-		var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
-		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
-		document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));	
-	</script>
+var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
+var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
+var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
+document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));
+</script>
 	
 <!-- Displaying Customer Name -->
 
@@ -131,9 +103,12 @@ jQuery(window).load(function(){
 	 
      <div class="col-sm-4"> 
         <div id="testimonials">
-			<div class="tp_-_box" data-tp-settings="domainId:1157545,fontSize:12,borderRadius:4,borderColor:EEEEEE,width:300,fontFamily:Verdana">
-			    <a href="http://www.trustpilot.com/review/www.removals-index.com" rel="nofollow" hidden>Removals Index Reviews</a>
+		
+			<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="830px" data-style-width="100%" data-stars="4,5,3"> 
+				<a href="https://www.trustpilot.com/review/www.removals-index.com" target="_blank" rel="nofollow" hidden>Removals Index Reviews</a> 
 			</div>
+			
+			
 			<script type="text/javascript">
 			    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "http://s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
 			</script>

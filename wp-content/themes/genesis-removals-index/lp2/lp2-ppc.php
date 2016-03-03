@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: LP2
+* Template Name: LP2 - New Design
 */
 
 require(THEME_PATH_DIR.'/lp2/lib/structure/common.php');
@@ -16,5 +16,6 @@ function lp2_content_genesis_loop()
 
 require(THEME_PATH_DIR.'/lp2/lib/structure/footer.php');
 
+//Initialize the genesis framework
 genesis();
 ?>

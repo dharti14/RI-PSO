@@ -1,20 +1,9 @@
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+
+
 <!-- Displaying Customer Name -->
 
 <script type="text/javascript">	     
-		function pl_displayCallback(data,elementId)
-		{  
-			//code for add name in "thank you" heading
-			if(typeof(data)!='undefined')
-			{
-				if(typeof(data.firstName)!='undefined')
-				{
-					if(typeof(data.firstName.value)!='undefined')
-					{
-						jQuery('span#customername').html(data.firstName.value);
-					}
-				}
-			}
-		}
 		var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
 		var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
 		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
@@ -22,9 +11,6 @@
 	</script>
 	
 <!-- Displaying Customer Name -->
-
-
-
 
 <aside class="steps thanks_steps">
       <div class="container">
@@ -190,8 +176,8 @@
 <!-- 				Code for trust pilot widget -->
 				
 				<div class="col-sm-4">
-					<div class="tp_-_box" data-tp-settings="domainId:1157545,fontSize:13,borderRadius:4,borderColor:EEEEEE,width:300,fontFamily:sans-serif">
-					    <a href="http://www.trustpilot.com/review/www.removals-index.com" rel="nofollow" hidden>Removals Index Reviews</a>
+					<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="830px" data-style-width="100%" data-stars="4,5,3"> 
+						<a href="https://www.trustpilot.com/review/www.removals-index.com" target="_blank" rel="nofollow" hidden>Removals Index Reviews</a> 
 					</div>
 					
 					<script type="text/javascript">

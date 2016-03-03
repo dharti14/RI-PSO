@@ -1,3 +1,6 @@
+#logo_call {
+	border-bottom: #c9c9c9 solid 7px;
+}
 
 .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15 {
 	  position: relative;
@@ -1505,10 +1508,10 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 768px) {
       #get_quotes .btn {
-	        font-size: 30px;
+	        font-size: 25px;
 	        padding: 13px 10px 20px;
 	        height: 90px;
-	        margin-top: 0; 
+	        margin: 0 auto; 
 	   } 
 }
 
@@ -1532,12 +1535,17 @@ header.main .navbar-default .navbar-nav > li > a .caret {
       color: #a6a6a6; 
 }
 
+#footer {
+	    list-style: none;
+}
+
 footer.main {
 	  background-color: #305eaa;
 	  color: #fff;
 	  text-align: center;
 	  font-size: 12px;
-	  padding: 18px 0; 
+	  padding: 18px 0;
+	  clear: both; 
 }
 
 @media only screen and (min-width: 768px) {
@@ -1551,9 +1559,10 @@ footer.main p {
 }
 
 footer.main a {
-    color: #76b751;
+    color:#76b751;
     text-decoration: underline; 
 }
+
 
 ul {
 	  margin-bottom: 15px; 
@@ -1690,6 +1699,86 @@ header.main #logo {
 		margin-bottom: 10px !important;
 	}
 }
+
+
+/* Footer Menu */
+
+footer.main .container {
+	 margin-top: 10px;
+}
+
+ul#footer li {
+	 display: inline-block;
+	 padding-left: 5px;
+	 padding-top: 10px;
+}
+
+footer.main ul#footer li a:hover {
+	text-decoration: underline;
+}
+
+
+footer.main ul#footer li a {
+	margin: 0 4px 0 0;
+}
+
+footer.main ul#footer li:after {
+	content:" | ";
+}
+
+footer.main ul#footer li:last-child:after {
+	content:"";
+}
+	
+.copyright { 
+	text-align:center; 
+	padding:12px 0 0 0;
+}
+
+.copyright p { 
+	margin-bottom: 0px;
+}
+
+@media (max-width: 640px) {  
+	
+	.copyright p { 
+		font-size:10px; 
+		padding:0 0 10px 0;
+	}
+		
+}
+
+
+
+@media(max-width:768px) {
+	
+	ul#footer {
+		padding-left: 0px;
+	}
+	
+	ul#footer li {
+		margin-bottom:10px !important;
+	}
+	
+	ul#footer li {
+		display:block;
+		text-align:left;
+		padding-bottom:10px;
+		border-bottom:1px solid #ccc
+	}
+	
+	footer.main ul#footer li:after {
+		content:""
+	}
+	
+	ul#footer li a {
+		font-size:12px;
+		text-decoration: none;
+	}
+
+}
+/* Footer Menu */
+
 
 
 

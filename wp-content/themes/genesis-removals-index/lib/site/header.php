@@ -1,5 +1,7 @@
 <?php 
-
+// echo THEME_PATH_URI.'/lib/site/assets/images/favicon.png';
+// echo bloginfo('url');
+// die();
 add_action('genesis_before_header', 'site_before_header');
 
 function site_before_header(){
@@ -7,7 +9,7 @@ function site_before_header(){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no" />
 
-  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="<?php echo THEME_PATH_URI; ?>/images/favicon.png" type="image/x-icon" />
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

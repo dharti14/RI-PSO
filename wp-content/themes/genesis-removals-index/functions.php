@@ -19,7 +19,7 @@ add_theme_support( 'html5' );
 
 //* Add HTML5 responsive recognition
 add_theme_support( 'genesis-responsive-viewport' );
-
+remove_action('genesis_meta', 'genesis_load_favicon');
 
 // remove default genesis action.....................................
 
@@ -106,6 +106,16 @@ function create_html_for_landing_page_settings(){
 	        	</select>
 	        </td>
 		</tr>
+		
+		
+		<tr>
+			<td>
+				<label for="pinlocal_source_key">Pinlocal Source Key</label>
+			</td>
+			<td>	            
+	           <input type="text" name="landing_page_settings[_pinlocal_source_key]" style="width: 400px;height: 40px;" id="_pinlocal_source_key" value="<?php echo esc_attr( genesis_get_custom_field( '_pinlocal_source_key' ) );  ?>">
+	        </td>
+		</tr>
 	
 	</table>
 	
@@ -124,7 +134,8 @@ function save_landing_page_settings_value() {
 	$field_names = wp_parse_args( $_POST['landing_page_settings'], array(
 				
 			'_is_page_dki'          => '',
-			'_conversion_page'   => '',
+			'_conversion_page'   	=> '',
+			'_pinlocal_source_key'  =>'',
 				
 	) );
 
@@ -243,10 +254,9 @@ function get_conversion_page_scripts() {
 }
 
 
-//Getting the Conversion page id which was set for the landing page
-function get_conversion_page_id() {
-	$conversion_page_id =  genesis_get_custom_field('_conversion_page');
-	return $conversion_page_id;
+//Getting the Page Id and from that we will get the pinlocal source key and thanks page id
+function ri_get_page_id(){
+	return get_the_ID();
 }
 
 

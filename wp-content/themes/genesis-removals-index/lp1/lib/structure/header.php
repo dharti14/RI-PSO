@@ -12,6 +12,8 @@ function viewport_meta_tag() {
   <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" href="favicon.png">
+  
+  <link rel="icon" href="<?php echo THEME_PATH_URI; ?>/images/favicon.png" type="image/x-icon" />
 <?php 	  
 }
   
@@ -82,13 +84,24 @@ function lp1_header(){
         
         <div class="col-sm-6">
 		     <div class="logo">
-		     	<a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
+		     	<a href="<?php 
+		     	if ( is_page_template('lp1/lp1-ppc.php')) {
+		     		echo get_permalink(get_the_ID());
+		     	}else{
+		     		echo bloginfo( 'url' );
+		     	}
+		        ?>" title="<?php bloginfo( 'name' );?>">
 		     		<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $dki_hln;?>">
 		     	</a>
 		     </div>
 		     
 		     <div class="mobile-logo">
-			     <a href="<?php bloginfo('url');?>" title="<?php bloginfo( 'name' );?>">
+			     <a href="<?php if ( is_page_template('lp1/lp1-ppc.php')) {
+		     		
+		     	}else{
+		     		echo bloginfo( 'url' );
+		     	}
+		     	?>" title="<?php bloginfo( 'name' );?>">
 			     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/logo.svg" alt="<?php echo $dki_hln;?>">
 			     </a>
 		     </div>

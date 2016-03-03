@@ -4,7 +4,7 @@
      $this->ri_load_js('ri_quote_form_1');
      
      $dki_hln = dki_get_hln();
-     $ri_thanks_page_id = get_conversion_page_id();
+     $ri_page_id = ri_get_page_id();
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -18,7 +18,7 @@
    <form method="post" name="form" id="form">
    
    		<input type="hidden" value="0" name="form-type">
-   		<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
+   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
    		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
@@ -313,7 +313,7 @@
    <form method="post" name="form" id="form-business">
    
    	<input type="hidden" name="form-type" value="2">
-   	<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
+   	<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
    	
    	<div class="row">
      <div class="col-sm-8">
@@ -614,7 +614,7 @@
    <form method="post" name="form" id="form-international">
    
    		<input type="hidden" name="form-type" value="1">
-   		<input type="hidden" value="<?php echo $ri_thanks_page_id;?>" name="ri_thanks_page_id">
+   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
    		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>

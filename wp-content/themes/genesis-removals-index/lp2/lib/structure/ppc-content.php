@@ -315,25 +315,5 @@ $dki_loc = dki_get_loc();
 				</div>
 			</div>
 
-			<?php
-            $defaults = array(
-              'theme_location'  => 'footer',
-              'menu'            => '',
-              'container'       => false,
-              'container_class' => '',
-              'container_id'    => '',
-              'menu_class'      => 'menu',
-              'menu_id'         => '',
-              'echo'            => true,
-              'fallback_cb'     => false,
-              'before'          => '',
-              'link_before'     => '',
-              'after'      		=> '<span class="div">|</span>',
-              'items_wrap'      => '<ul id="footer" class="nav navbar-nav">%3$s</ul>',
-              'depth'           => 1
-            );
-
-            genesis_nav_menu( $defaults );
-            ?>
 		</div>
 	</section>

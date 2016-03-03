@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: LP1
+* Template Name: LP1 - Old Design
 */
 
 require(THEME_PATH_DIR.'/lp1/lib/structure/common.php');

@@ -11,10 +11,35 @@ function site_footer(){
 
 <!-- W3TC-include-js-head -->
 
-	<footer class="main">
-		<div class="container">
-			<p><strong>Removals-Index by <a href="https://www.pinlocal.com/" target="_blank">Pinlocal</a></strong> | &copy; PinLocal Leads Ltd 2012-<?php echo date('Y');?>. All rights reservered.</p>
-		</div>
-	</footer>
+<footer class="main">
+	 <div class="container">
+
+    
+    <?php 
+
+	     $defaults = array(
+		              'theme_location'  => 'footer',
+		              'container'       => false,
+		              'menu_class'      => 'menu',
+		              'echo'            => true,
+		              'items_wrap'      => '<ul id="footer">%3$s</ul>',
+		              'depth'           => 1
+		 );
+	    
+	    genesis_nav_menu( $defaults );
+     
+		?>
+   
+
+  
+	  <div class="copyright">
+	  
+		   <p>Copyright &copy; 2013 removals-index.com All rights reserved</p>
+		   <p>Removals Index, Communications House, 26 York St, London, W1U 6PZ</p>
+		   
+	  </div>
+   
+ </div>
+</div>
 	
 <?php  } ?>
