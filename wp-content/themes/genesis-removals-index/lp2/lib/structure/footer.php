@@ -35,7 +35,7 @@ function lp2_footer(){
   
   <div class="copyright">
   
-   <p>Copyright &copy; 2013 removals-index.com All rights reserved</p>
+   <p>Copyright &copy; <?php echo date("Y");?> removals-index.com All rights reserved</p>
    <p>Removals Index, Communications House, 26 York St, London, W1U 6PZ</p>
    
   </div>

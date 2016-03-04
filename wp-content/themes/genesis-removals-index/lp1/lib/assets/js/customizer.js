@@ -29,7 +29,7 @@ jQuery( document ).ready(function() {
 		
 		jQuery(".looking-for").hide();
 		jQuery(".will-removal").hide();
-		//jQuery("#hide-after-get").hide();
+
 		jQuery(".free-quotes-now").hide();
 		jQuery(".slide-main").hide();
 		jQuery(".companies").hide();
@@ -39,9 +39,7 @@ jQuery( document ).ready(function() {
 		var postcode_to = jQuery("#postcode_to").val();
 		var buseness_type = jQuery("input[name=buseness_type]:checked").val();
 			if(buseness_type == "International"){ postcode_to = ''; }
-		//var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
+			
 		if(buseness_type == "Business Removal"){
 			jQuery("#show-after-get-business").css("display","block");
 			jQuery('html, body').animate({
@@ -94,23 +92,18 @@ jQuery( document ).ready(function() {
 
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();
-		//var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
+
 		jQuery(".looking-for").hide();
 		jQuery(".will-removal").hide();
-		//jQuery("#hide-after-get").hide();
 		jQuery(".free-quotes-now").hide();
 		jQuery(".slide-main").hide();
 		jQuery(".companies").hide();
 		jQuery(".find-experts").hide();
+		jQuery(".footer").hide();
 		jQuery("#show-after-get").css("display","block");
 		jQuery('html, body').animate({
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
-		
-		//display footer and menu below plugin
-		jQuery(".footer").css("display","block");
 		
 		
 		jQuery.ajax({
@@ -147,26 +140,21 @@ jQuery( document ).ready(function() {
 
 		var postcode_from = jQuery("#postcode_from3").val();
 		var postcode_to = jQuery("#postcode_to3").val();
-		//var dataString = 'postcode_from='+ postcode_from + '&postcode_to='+ postcode_to;
-		// AJAX Code To Submit Form.
-		//alert(dataString);
+
 		jQuery(".looking-for").hide();
 		jQuery(".will-removal").hide();
-		//jQuery("#hide-after-get").hide();
+
 		jQuery(".free-quotes-now").hide();
 		jQuery(".slide-main").hide();
 		jQuery(".companies").hide();
 		jQuery(".find-experts").hide();
+		jQuery(".footer").hide();
 		jQuery("#show-after-get").css("display","block");
 		jQuery('html, body').animate({
         	scrollTop: jQuery('#show-after-get').offset().top
     	}, 300);
 		
-		
-		//display footer and menu below plugin
-		jQuery(".footer").css("display","block");
-		
-		
+				
 		jQuery.ajax({
 			//type: 'post',
 			dataType: 'json',

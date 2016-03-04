@@ -15,7 +15,7 @@
 <aside class="steps thanks_steps">
       <div class="container">
         <div class="row">
-          
+          <div class="progress_bar">
           <div class="col-sm-4 col_1">
             <div class="num_wrap num1">
               <i class="num">1</i>
@@ -45,7 +45,7 @@
               <p class="t">Compare services and prices. <br class="show_md">When you are ready you can book directly with <br class="show_md">your preferred company.</p>
             </div>
           </div>
-
+		</div>
         </div>
       </div>
     </aside>

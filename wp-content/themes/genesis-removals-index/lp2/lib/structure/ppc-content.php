@@ -136,7 +136,7 @@ $dki_loc = dki_get_loc();
 		            </div>
 		            <div class="a">
 		              <p class="step">2. Compare Prices</p>
-		              <p class="t">Get multiple FREE quotes from local removal firms in your area, so you never need to haggle on price</p>
+		              <p class="t">Get multiple FREE quotes from local removal firms in <?php echo $dki_loc;?>, so you never need to haggle on price</p>
 		            </div>
 		          </div>
 
@@ -207,7 +207,7 @@ $dki_loc = dki_get_loc();
 						<li>
 							<i class="fa fa-check-circle"></i>
 							<strong>Never Haggle On Price Again</strong>
-							<p>You'll get a full list of quotes from removal firms in your area that will all be <u>competing for your</u> move.</p>
+							<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your</u> move.</p>
 						</li>
 
 						<li>

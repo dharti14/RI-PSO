@@ -922,7 +922,11 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 @media only screen and (min-width: 768px) {
       .steps.thanks_steps .num_wrap {
       	  height: 80px; 
-      } 
+      }
+      
+      .steps.thanks_steps .num_wrap.num3 {
+      		padding-left: 9px;
+      }
 }
 
 .steps.thanks_steps .col-sm-4 {
@@ -931,11 +935,19 @@ header.main .navbar-default .navbar-nav > li > a .caret {
     margin-bottom: 30px; 
 }
 
+
+.steps.thanks_steps .col-sm-4:last .a {
+	        padding-left: 9px !important; 
+	   } 
+	   
+	   
 @media only screen and (min-width: 768px) {
       .steps.thanks_steps .col-sm-4 {
         margin-bottom: 0;
         text-align: center; 
        } 
+       
+
 }
 
 .steps.thanks_steps .col-sm-4 .a {
@@ -952,7 +964,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
       .steps.thanks_steps .num_wrap.num1:after {
 	        margin-top: -9px;
 	        margin-left: 34px;
-	        width: 182px;
+	        width: 189px;
 	        height: 18px;
 	        display: block; 
 	   } 
@@ -962,7 +974,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
       .steps.thanks_steps .num_wrap.num1:after {
 	        margin-top: -9px;
 	        margin-left: 34px;
-	        width: 255px; 
+	        width: 262px; 
 	   } 
 }
 
@@ -970,7 +982,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
       .steps.thanks_steps .num_wrap.num1:after {
 	        margin-top: -9px;
 	        margin-left: 34px;
-	        width: 322px; 
+	        width: 276px; 
 	    } 
 }
 
@@ -1229,10 +1241,13 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 }
 
 @media only screen and (min-width: 768px) {
+		
       .steps .col-sm-4 .a {
 	        display: block;
 	        padding-left: 0px; 
 	   } 
+	   
+	 
 }
 
 .steps .col-sm-4 p {
@@ -1881,7 +1896,48 @@ footer.main ul#footer li:last-child:after {
 
 
 
+/* Thanks page tweaks */
 
+       .steps.thanks_steps .col_1 {
+       		padding-left: 73px;
+       }
+
+@media (min-width: 992px){
+	#main_article .container {
+	    padding-left: 78px;
+	}
+}
+
+@media (min-width: 1200px){
+	#main_article .container {
+	    padding-left: 145px;
+	}
+}
+
+div.progress_bar {
+	    width: auto;
+	    overflow: hidden;
+	    padding-left: 50px;
+}
+
+@media only screen and (max-width: 1200px) {
+	div.progress_bar {
+		padding-left: 0px;
+	}
+	
+	.steps.thanks_steps .col_1 {
+		padding-left: 0px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.steps.thanks_steps .col_1 {
+		padding-left: 15px;
+	}
+}
+
+
+/* Thanks page tweaks */
 
 /* cyrillic-ext */
 @font-face {
