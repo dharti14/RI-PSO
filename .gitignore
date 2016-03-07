@@ -11,7 +11,10 @@ xmlrpc.php
 .htaccess
 readme.html
 *.txt
-wp-content
+wp-content/cache
+wp-content/uploads
+wp-content/w3tc-config
+
 wp-content/plugins/*
 #include the plugins with a negate pattern (!)
 !wp-content/plugins/removals-index-quote-form
