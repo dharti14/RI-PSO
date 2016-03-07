@@ -18,6 +18,6 @@
      </div>
         
      <div class="right-logo">
-     	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/footer-img1.png" alt="<?php echo $dki_hln;?>"></a>
-      	<img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/privecy-img.png" alt="<?php echo $dki_hln;?>"></a>
+     	<img src="<?php echo RI_QUOTE_FORM_URL;?>images/footer-img1.png" alt="<?php echo $dki_hln;?>"></a>
+      	<img src="<?php echo RI_QUOTE_FORM_URL;?>images/privacy-img.png" alt="<?php echo $dki_hln;?>"></a>
      </div>

@@ -21,13 +21,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		protected $apiUrl = '';
 		
-		protected $apiKey = '';
-		
-		protected $successPage = '';
-		
-		private $context = '';
-		
-		
+		protected $api_key = '';
 		
 		
 		/**
@@ -71,7 +65,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		function get_address_by_postcode() {
 		
-			include 'inc/crafty_click.php';
+			include 'inc/crafty-click.php';
 		
 		}
 		
@@ -137,7 +131,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 					
 			if( $_POST ) {	
 				
-				include 'quote_form_submit.php';
+				include 'quote-form-submit.php';
 			}
        
 			if(isset($atts['template_name']) && !empty($atts['template_name'])) {

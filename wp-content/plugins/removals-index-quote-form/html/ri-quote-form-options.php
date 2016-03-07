@@ -1,12 +1,12 @@
 <?php if($message != "") : ?>
-	<div id="message" class="updated">
+	<div id="message">
 		<p>
 			<?php echo $message; ?>
 		</p>
 	</div>
 <?php endif; ?>
 
-<div class="wrap">
+<div>
 	<h2>
 		<?php echo esc_html( 'Removals Index Quote Form Settings' ); ?>
 	</h2>
