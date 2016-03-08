@@ -4,59 +4,29 @@ ob_start();
 if ($_POST) 
 {
 
-	$apiKey ='';
-	
-	$referrer = $_SERVER['HTTP_REFERER'];
-	
-			
-	//----------------------------------------------------------------------------
-	//check the source of form submission. /ri/phone 
-	//is to be treated separate source and hence separate apiKey
-	//Same for mobile.
-	//----------------------------------------------------------------------------
-	
-
-	if(isset($_GET['ver']) && $_GET['ver'] == 'mobile')	//source mobile /ri/mobile folder
-	{
-		$apiKey = '715daa9efc6dbe33f19247f8ea6f82b2';
-	}
-	else if(isset($_GET['ver']) && $_GET['ver'] == 'fb')	//source facebook /ri/fb folder
-	{
-		$apiKey = '484590a911cc40d4b121dcf01fa2a044';
-	}
-	else
-	{
-		$pos = strpos($referrer,'/phone');
+	$apiKey ="";
 		
-		if( $pos === FALSE)
-		{
-		
-			$apiKey = '0acc26782cf67d425ab0476c0e948db3';
-		
-		}
-		else
-		{
-			$apiKey = '34dc14b6f06a10f5b3b9c5dec48f4c3a';
-		}
-	}
-		
-	
 	$formType = "";
 	
 	$ri_page_id = "";
 		
 	if( isset($_POST['form-type']) && isset($_POST['ri_page_id']) )
 	{
-		
+		//Getting the api url from the admin panel ( settings>>RI Quote Form )
 		$api_url = $this->apiUrl;
 		
 		$ri_form_type = $_POST['form-type'];
+
 		
-		
+		//Getting the page id from hidden field in the form
 		$ri_page_id = $_POST['ri_page_id'];
 		
+		
+		//Using the page id getting the associated thank you (conversion) page id
 		$ri_thanks_page_id = get_post_meta( $ri_page_id, '_conversion_page', true );
 		
+		
+		//Using the page id getting the pinlocal source key (used to identify the lead source)
 		$apiKey = get_post_meta( $ri_page_id, '_pinlocal_source_key', true );
 		
 	
@@ -98,6 +68,7 @@ if ($_POST)
 			$property_type_to = $_POST["property_type_to"];
 		if(isset($_POST["out_of_business"]))
 			$out_of_business = urlencode($_POST["out_of_business"]);
+		
 		//split full name to first name and last name
 		$firstName = "";
 		$lastName = "";
@@ -243,7 +214,7 @@ if ($_POST)
 		{	
 			
 			
-			//Getting the api_url(pinlocal.com) from admin menu
+			//Getting api_url ( settings>>RI Quote Form ) and api key, both from admin panel
 			 $url = $api_url . '' . $form . '/' . $apiKey;
 						
 		    //url-ify the data for the POST

@@ -95,7 +95,7 @@ function lp2_header(){
           </div>
           <div class="col-sm-4 call">
             <span class="glyphicon glyphicon-earphone"></span>
-            Call <strong>FREE</strong> 24/7 on: <span class="green">0333 444 8710</span>
+            Call <strong>FREE</strong> 24/7 on: <span class="green"><?php echo ri_display_phone_number();?></span>
           </div>
         </div>
       </div>

@@ -9,7 +9,12 @@ function lp2_footer(){
 	
 ?>	
 
+
+<?php //Please don't remove this piece of code as it is used to include js file at the bottom of page before </body> ?> 
 <!-- W3TC-include-js-head -->
+<?php //Please don't remove this piece of code as it is used to include js file at the bottom of page before </body> ?>
+
+
 
 <footer class="main">
 	 <div class="container">
@@ -35,8 +40,12 @@ function lp2_footer(){
   
   <div class="copyright">
   
-   <p>Copyright &copy; <?php echo date("Y");?> removals-index.com All rights reserved</p>
-   <p>Removals Index, Communications House, 26 York St, London, W1U 6PZ</p>
+    <?php //Displaying copyright information and ri address, getting from functions.php ?>
+    
+		   <p><?php echo ri_copyright_information(); ?></p>
+		   <p><?php echo ri_display_address(); ?></p>
+		   
+	<?php //Displaying copyright information and ri address, getting from functions.php ?>
    
   </div>
  </div>
