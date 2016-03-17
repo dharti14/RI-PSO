@@ -76,9 +76,9 @@ function ri_display_address(){
 
 
 // Setting Site header and footer for all pages
-require(THEME_PATH_DIR.'/lib/site/common.php');
-require(THEME_PATH_DIR.'/lib/site/header.php');
-require(THEME_PATH_DIR.'/lib/site/footer.php');
+require(THEME_PATH_DIR.'/lib/site/structure/common.php');
+require(THEME_PATH_DIR.'/lib/site/structure/header.php');
+require(THEME_PATH_DIR.'/lib/site/structure/footer.php');
 // Setting Site header and footer for all pages
 
 
