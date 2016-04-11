@@ -54,6 +54,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			//Ajax action fo all users(no-priviledges are set)
 			// also use wp_ajax_action_name for logged in users only
 			add_action( 'wp_ajax_nopriv_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
+			add_action( 'wp_ajax_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
@@ -64,7 +65,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		*/
 		
 		function get_address_by_postcode() {
-		
+			
 			include 'inc/crafty-click.php';
 		
 		}

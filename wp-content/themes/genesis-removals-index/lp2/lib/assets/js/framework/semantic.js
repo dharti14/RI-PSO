@@ -1,14 +1,14 @@
 /**
- * FormValidation (http://formvalidation.io)
+ * FormValidation (//formvalidation.io)
  * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
  *
  * @author      https://twitter.com/formvalidation
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
- * @license     http://formvalidation.io/license/
+ * @license     //formvalidation.io/license/
  */
 
 /**
- * This class supports validating SemanticUI form (http://semantic-ui.com/)
+ * This class supports validating SemanticUI form (//semantic-ui.com/)
  */
 (function($) {
     FormValidation.Framework.Semantic = function(element, options) {
@@ -16,7 +16,7 @@
             button: {
                 selector: '[type="submit"]:not([formnovalidate])',
                 // CSS class of disabled button
-                // http://semantic-ui.com/elements/button.html#disabled
+                // //semantic-ui.com/elements/button.html#disabled
                 disabled: 'disabled'
             },
             control: {
@@ -24,7 +24,7 @@
                 invalid: ''
             },
             err: {
-                // http://semantic-ui.com/elements/label.html#pointing
+                // //semantic-ui.com/elements/label.html#pointing
                 clazz: 'ui red pointing label transition',
                 parent: '^.*(field|column).*$'
             },
@@ -32,16 +32,16 @@
             //  <div class="ui input icon">
             //      <input type="text" />
             //  </div>
-            // See http://semantic-ui.com/elements/input.html#icon
+            // See //semantic-ui.com/elements/input.html#icon
             icon: {
-                // http://semantic-ui.com/elements/icon.html
+                // //semantic-ui.com/elements/icon.html
                 valid: null,        // 'checkmark icon'
                 invalid: null,      // 'remove icon'
                 validating: null,   // 'refresh icon'
                 feedback: 'fv-control-feedback'
             },
             row: {
-                // http://semantic-ui.com/collections/form.html
+                // //semantic-ui.com/collections/form.html
                 selector: '.field',
                 valid: 'fv-has-success',
                 invalid: 'error',
@@ -86,7 +86,7 @@
                          .popup('destroy');
                 }
 
-                // http://semantic-ui.com/modules/popup.html
+                // //semantic-ui.com/modules/popup.html
                 switch (type) {
                     case 'popover':
                         $icon

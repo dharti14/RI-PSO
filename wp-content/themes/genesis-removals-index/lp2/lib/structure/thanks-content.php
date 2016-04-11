@@ -6,7 +6,7 @@
 <script type="text/javascript">	     
 		var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
 		var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
-		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
+		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "//"); 
 		document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));	
 	</script>
 	
@@ -181,7 +181,7 @@
 					</div>
 					
 					<script type="text/javascript">
-					    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "http://s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
+					    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "//s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
 					</script>
 					
 				</div>

@@ -1,14 +1,14 @@
 /**
- * FormValidation (http://formvalidation.io)
+ * FormValidation (//formvalidation.io)
  * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
  *
  * @author      https://twitter.com/formvalidation
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
- * @license     http://formvalidation.io/license/
+ * @license     //formvalidation.io/license/
  */
 
 /**
- * This class supports validating Foundation form (http://foundation.zurb.com/)
+ * This class supports validating Foundation form (//foundation.zurb.com/)
  */
 /* global Foundation: false */
 (function($) {
@@ -17,11 +17,11 @@
             button: {
                 selector: '[type="submit"]:not([formnovalidate])',
                 // The class for disabled button
-                // http://foundation.zurb.com/docs/components/buttons.html#button-colors
+                // //foundation.zurb.com/docs/components/buttons.html#button-colors
                 disabled: 'disabled'
             },
             err: {
-                // http://foundation.zurb.com/docs/components/forms.html#error-states
+                // //foundation.zurb.com/docs/components/forms.html#error-states
                 clazz: 'error',
                 parent: '^.*((small|medium|large)-[0-9]+)\\s.*(columns).*$'
             },
@@ -33,7 +33,7 @@
                 feedback: 'fv-control-feedback'
             },
             row: {
-                // http://foundation.zurb.com/docs/components/forms.html
+                // //foundation.zurb.com/docs/components/forms.html
                 selector: '.row',
                 valid: 'fv-has-success',
                 invalid: 'error',

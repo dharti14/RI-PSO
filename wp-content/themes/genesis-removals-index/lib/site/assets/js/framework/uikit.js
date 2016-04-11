@@ -1,14 +1,14 @@
 /**
- * FormValidation (http://formvalidation.io)
+ * FormValidation (//formvalidation.io)
  * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
  *
  * @author      https://twitter.com/formvalidation
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
- * @license     http://formvalidation.io/license/
+ * @license     //formvalidation.io/license/
  */
 
 /**
- * This class supports validating UIKit form (http://getuikit.com/)
+ * This class supports validating UIKit form (//getuikit.com/)
  */
 (function($) {
     FormValidation.Framework.Uikit = function(element, options) {
@@ -16,7 +16,7 @@
             button: {
                 selector: '[type="submit"]:not([formnovalidate])',
                 // The class for disabled button
-                // http://getuikit.com/docs/button.html
+                // //getuikit.com/docs/button.html
                 disabled: 'disabled'
             },
             control: {
@@ -24,7 +24,7 @@
                 invalid: 'uk-form-danger'
             },
             err: {
-                // http://getuikit.com/docs/text.html#text-styles
+                // //getuikit.com/docs/text.html#text-styles
                 clazz: 'uk-text-danger',
                 parent: '^.*(uk-form-controls|uk-width-[\\d+]-[\\d+]).*$'
             },
@@ -36,7 +36,7 @@
                 feedback: 'fv-control-feedback'
             },
             row: {
-                // http://getuikit.com/docs/form.html
+                // //getuikit.com/docs/form.html
                 selector: '.uk-form-row',
                 valid: 'fv-has-success',
                 invalid: 'fv-has-error',

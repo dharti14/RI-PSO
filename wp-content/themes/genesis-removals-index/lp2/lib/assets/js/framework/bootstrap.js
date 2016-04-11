@@ -1,14 +1,14 @@
 /**
- * FormValidation (http://formvalidation.io)
+ * FormValidation (//formvalidation.io)
  * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
  *
  * @author      https://twitter.com/formvalidation
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
- * @license     http://formvalidation.io/license/
+ * @license     //formvalidation.io/license/
  */
 
 /**
- * This class supports validating Bootstrap form (http://getbootstrap.com/)
+ * This class supports validating Bootstrap form (//getbootstrap.com/)
  */
 (function($) {
     FormValidation.Framework.Bootstrap = function(element, options, namespace) {
@@ -16,15 +16,15 @@
             button: {
                 selector: '[type="submit"]:not([formnovalidate])',
                 // The class of disabled button
-                // http://getbootstrap.com/css/#buttons-disabled
+                // //getbootstrap.com/css/#buttons-disabled
                 disabled: 'disabled'
             },
             err: {
-                // http://getbootstrap.com/css/#forms-help-text
+                // //getbootstrap.com/css/#forms-help-text
                 clazz: 'help-block',
                 parent: '^(.*)col-(xs|sm|md|lg)-(offset-){0,1}[0-9]+(.*)$'
             },
-            // This feature requires Bootstrap v3.1.0 or later (http://getbootstrap.com/css/#forms-control-validation).
+            // This feature requires Bootstrap v3.1.0 or later (//getbootstrap.com/css/#forms-control-validation).
             // Since Bootstrap doesn't provide any methods to know its version, this option cannot be on/off automatically.
             // In other word, to use this feature you have to upgrade your Bootstrap to v3.1.0 or later.
             //
@@ -51,7 +51,7 @@
             },
             row: {
                 // By default, each field is placed inside the <div class="form-group"></div>
-                // http://getbootstrap.com/css/#forms
+                // //getbootstrap.com/css/#forms
                 selector: '.form-group',
                 valid: 'has-success',
                 invalid: 'has-error',

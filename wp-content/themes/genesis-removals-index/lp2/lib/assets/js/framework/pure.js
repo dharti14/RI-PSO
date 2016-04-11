@@ -1,14 +1,14 @@
 /**
- * FormValidation (http://formvalidation.io)
+ * FormValidation (//formvalidation.io)
  * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
  *
  * @author      https://twitter.com/formvalidation
  * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
- * @license     http://formvalidation.io/license/
+ * @license     //formvalidation.io/license/
  */
 
 /**
- * This class supports validating Pure framework (http://purecss.io/)
+ * This class supports validating Pure framework (//purecss.io/)
  */
 (function($) {
     FormValidation.Framework.Pure = function(element, options) {
@@ -16,7 +16,7 @@
             button: {
                 selector: '[type="submit"]:not([formnovalidate])',
                 // The class of disabled button
-                // http://purecss.io/buttons/#disabled-buttons
+                // //purecss.io/buttons/#disabled-buttons
                 disabled: 'pure-button-disabled'
             },
             err: {
@@ -31,7 +31,7 @@
                 feedback: 'fv-control-feedback'
             },
             row: {
-                // http://purecss.io/forms/#aligned-form
+                // //purecss.io/forms/#aligned-form
                 selector: '.pure-control-group',
                 valid: 'fv-has-success',
                 invalid: 'fv-has-error',

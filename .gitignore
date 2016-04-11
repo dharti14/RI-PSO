@@ -14,6 +14,9 @@ readme.html
 wp-content/cache
 wp-content/uploads
 wp-content/w3tc-config
+wp-content/advanced-cache.php
+wp-content/db.php
+wp-content/object-cache.php
 
 wp-content/plugins/*
 #include the plugins with a negate pattern (!)
