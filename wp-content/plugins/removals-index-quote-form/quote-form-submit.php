@@ -185,7 +185,7 @@ if ($_POST)
 					'from_floor'=>urlencode($_POST["floor_from"]),			
 					'lift_available[]' => urlencode($lift_available_from),	//possible values: Yes/No
 					'to_address_line1'=>urlencode($_POST["houseno_to"]),						//moving to house no or address line1
-					'to_address_line2 '=>urlencode($_POST["address_to"]),			//moving to address line 2
+					'to_address_line2'=>urlencode($_POST["address_to"]),			//moving to address line 2
 					'to_city'=>urlencode($_POST["city_to"]),						//moving to city
 					'to_postcode'=>urlencode($_POST["postcode_to"]),						//moving to post code 				
 					'to_floor' => urlencode($_POST["floor_to"]),	
