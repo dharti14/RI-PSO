@@ -96,22 +96,22 @@ if ($_POST)
 					'from_property_type' => urlencode($property_type_from),		//possible values: House,Appartment/Flat,Bungalow
 					'from_floor'=> urlencode($_POST["floor_from"]),			
 					'from_lift_available' => urlencode($lift_available_from),//possible values: Yes/No
-					'f16'=>urlencode($_POST["bedrooms"]),						// *required field
+					'no_of_bedrooms'=>urlencode($_POST["bedrooms"]),						// *required field
 					
-					'f18'=>urlencode($_POST["postcode_to"]),						//moving to post code 
-					'f19'=>urlencode($_POST["city_to"]),							//moving to city
+					'to_postcode'=>urlencode($_POST["postcode_to"]),						//moving to post code 
+					'to_city'=>urlencode($_POST["city_to"]),							//moving to city
 					'to_address_line1'=>urlencode($_POST["houseno_to"]),		//moving to house no or address line1
 					'to_address_line2'=>urlencode($_POST["address_to"]),		//moving to address line 2
 					'to_property_type' => urlencode($property_type_to),		//possible values: House,Appartment/Flat,Bungalow
 					'to_floor' => urlencode($_POST["floor_to"]),	
 					'to_lift_available' => urlencode($lift_available_to),			//possible values: Yes/No
 					
-					'f23[]'=>$storage,
-					'f24[]'=>$asembly,
-					'f25[]'=>$packing,
+					'storage_service'=>$storage,
+					'assembly_service'=>$asembly,
+					'packing_service'=>$packing,
 					
-					'f28'=>urlencode($_POST["date"]),							//approx moving date
-					'f27'=>urlencode($_POST["additional_info"]),						//additional info or instructions
+					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
+					'special_instructions'=>urlencode($_POST["additional_info"]),						//additional info or instructions
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
@@ -139,23 +139,23 @@ if ($_POST)
 					
 					'to_address_line1'=>urlencode($_POST["address_to"]),			//moving to house no or address line1
 					'to_address_line2'=>urlencode($_POST["address_to"]),		//moving to address line 2
-					'f9'=>urlencode($_POST["city_to"]),							//moving to city
-					'f10'=>urlencode($_POST["postcode_to"]),						//moving to post code 
-					'f11'=>urlencode($_POST["countryTo"]),						//moving to country
+					'to_city'=>urlencode($_POST["city_to"]),							//moving to city
+					'to_postcode'=>urlencode($_POST["postcode_to"]),						//moving to post code 
+					'to_country'=>urlencode($_POST["countryTo"]),						//moving to country
 					
 					
 					'to_property_type' => urlencode($property_type_to),			//possible values: House,Appartment/Flat,Bungalow
 					'to_floor' => urlencode($_POST["floor_to"]),	
 					'to_lift_available' => urlencode($lift_available_to),			//possible values: Yes/No
 
-					'f13'=>urlencode($_POST["date"]),							//approx moving date
-					'f14[]'=>$storage,
-					'f15[]'=>$packing,
-					'f16[]'=>$asembly,
+					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
+					'storage_service'=>$storage,
+					'packing_service'=>$packing,
+					'assembly_service'=>$asembly,
 					
 					'preferred_shipping_method' => urlencode($_POST['shipping_method']),	//preferred shipping method
 
-					'f17' => urlencode($_POST["additional_info"]),						//additional info or instructions				
+					'special_instructions' => urlencode($_POST["additional_info"]),						//additional info or instructions				
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
@@ -184,21 +184,21 @@ if ($_POST)
 					'floor_area'=>urlencode($_POST["approx_floor_area"]),			
 					'from_floor'=>urlencode($_POST["floor_from"]),			
 					'lift_available[]' => urlencode($lift_available_from),	//possible values: Yes/No
-					'f4'=>urlencode($_POST["houseno_to"]),						//moving to house no or address line1
-					'address_line_2 '=>urlencode($_POST["address_to"]),			//moving to address line 2
+					'to_address_line1'=>urlencode($_POST["houseno_to"]),						//moving to house no or address line1
+					'to_address_line2 '=>urlencode($_POST["address_to"]),			//moving to address line 2
 					'to_city'=>urlencode($_POST["city_to"]),						//moving to city
-					'f19'=>urlencode($_POST["postcode_to"]),						//moving to post code 				
-					'floor_to' => urlencode($_POST["floor_to"]),	
-					'lift_available_to[]' => urlencode($lift_available_to),			//possible values: Yes/No
-					'parking_available_to[]'=>urlencode($parking_available_to),	 //possible values: Yes/No
-					'parking_issues_to'=>urlencode($_POST["parking_issues_to"]),	 //possible values: Yes/No
-					'f14[]'=>$storage,
-					'f15[]'=>$packing,
-					'f16[]'=>$asembly,
+					'to_postcode'=>urlencode($_POST["postcode_to"]),						//moving to post code 				
+					'to_floor' => urlencode($_POST["floor_to"]),	
+					'to_lift_available' => urlencode($lift_available_to),			//possible values: Yes/No
+					'to_parking_available'=>urlencode($parking_available_to),	 //possible values: Yes/No
+					'to_parking_issues'=>urlencode($_POST["parking_issues_to"]),	 //possible values: Yes/No
+					'storage_service'=>$storage,
+					'packing_service'=>$packing,
+					'assembly_service'=>$asembly,
 					'out_of_buisness_hours_removal[]'=>$out_of_business,
 					
-					'f18'=>urlencode($_POST["date"]),							//approx moving date
-					'f17' => urlencode($_POST["additional_info"]),				//additional info or instructions
+					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
+					'special_instructions' => urlencode($_POST["additional_info"]),				//additional info or instructions
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
