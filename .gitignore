@@ -11,6 +11,10 @@ xmlrpc.php
 .htaccess
 readme.html
 *.txt
+
+#Not including the static RI site folder
+ri
+
 wp-content/cache
 wp-content/uploads
 wp-content/w3tc-config
