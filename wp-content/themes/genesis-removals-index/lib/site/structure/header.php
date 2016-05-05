@@ -48,6 +48,17 @@ function site_header(){
   add_action('genesis_after_header', 'site_after_header');
 
   function site_after_header(){
+  	
+  	$menu_to_count = wp_nav_menu(array(
+  			'echo' => false,
+  			'theme_location' => 'primary'
+  	));
+  	
+  	//Checking for the menu items if there is no menu items in menu then hide the navigation menu
+  	$menu_items = substr_count($menu_to_count,'class="menu-item');
+  	
+  	if($menu_items>0){  
+  		
   	?>
     <nav class="navbar navbar-default">
       <div class="container">
@@ -84,12 +95,16 @@ function site_header(){
             );
 
             wp_nav_menu( $defaults );
+            
             ?>
           
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
+    
+<?php 
+  	} // if ($menu_items > 0) ends
+?>
   </header>
   <?php 
   } ?>

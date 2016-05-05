@@ -7,6 +7,8 @@ function lp1_footer(){
 	
 	wp_register_style('open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600&subset=latin,latin-ext');
 	wp_enqueue_style('open-sans');
+	
+	wp_enqueue_style('lp1_font_opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300');
 ?>
 
 
