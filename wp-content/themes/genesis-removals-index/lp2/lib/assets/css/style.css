@@ -1437,7 +1437,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 .quote_box_holder .tag2 {
 	    font-style: italic;
-	    font-size: 16px;
+	    font-size: 20px;
 	    text-align: center;
 	    margin-top: 25px;
 	    font-weight: bold;
@@ -1510,6 +1510,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
     font-size: 11px;
     margin-top: 10px;
     margin-bottom: 0; 
+    color: #D3D3D3;
 }
 
 .quote_box .security .glyphicon {
@@ -1597,7 +1598,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
       font-size: 11px;
       margin-top: 5px;
       margin-bottom: 0;
-      color: #fff; 
+      color: #D3D3D3; 
 }
 
 #get_quotes form .security .glyphicon {
@@ -1938,3 +1939,92 @@ div.progress_bar {
 
 
 /* Thanks page tweaks */
+
+
+
+
+/* RI Width changes */
+
+
+
+.inner-container {
+	margin: 0 auto;
+    width: 948px !important;
+}
+
+
+.testimonial-pad {
+	 padding: 0 10px;
+}
+
+.green_section ul {
+	    padding: 0px 32px 0 32px;
+}
+
+.green_section ul li p{
+	    line-height: 18px;
+	    margin-top: 5px;
+	    font-size: 16px;
+	
+}
+
+
+@media (min-width:768px) and  (max-width: 1200px){
+	
+	p.tag2 {
+		    padding-left: 90px;
+	}	
+}
+
+@media (max-width: 992px){
+	
+	.inner-container {
+		    margin: 0 auto;
+            width: auto !important;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.pad65 {
+	
+			padding: 0px;
+		    padding-left: 50px !important;
+	}
+}
+
+@media (max-width: 947px) { 
+
+	
+	
+	.green_section ul {
+		padding: 0px;
+	}
+	
+	.green_section ul li {
+		    padding-bottom: 15px;
+	}
+	
+	.testimonial-pad {
+		padding: 0px;
+	}
+
+}
+
+
+@media only screen and (min-width: 768px){
+	.green_section {
+		    padding-bottom: 20px;	
+	}
+}	
+	
+@media only screen and (min-width: 768px) {
+.green_section ul li {
+	    padding: 0 0 20px 65px;
+	
+	}
+}
+
+
+/* RI Width changes */
+
+

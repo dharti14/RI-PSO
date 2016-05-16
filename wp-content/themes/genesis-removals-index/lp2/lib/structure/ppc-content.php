@@ -11,7 +11,7 @@ $dki_loc = dki_get_loc();
 	<section id="hero">
 
 		<div class="container">
-			<h2 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Today!</h2>
+			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Today!</h1>
 			<p class="align_center tagline">You're Seconds Away From Removing The Stress, Hassle &amp; Headache From Your Move</p>
 
 			<div class="pad80">
@@ -19,17 +19,17 @@ $dki_loc = dki_get_loc();
 					<div class="col-xs-12">
 						<div class="quote_box_holder">
 							<div class="quote_box">
-								<h3 class="title">SAVE Up To 40% On Your Move</h3>
+								<h3 class="title">SAVE Up To 40% On Your Move!</h3>
 
 								<form id="form1">
 									<div class="row">
 										<div class="form-group col-sm-6 moving-from">
 											<label>I'm Moving From:</label>
-											<input type="text" id="postcode_from" name="postcode_from" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_from" name="postcode_from" class="form-control" placeholder="Enter Postcode..."/>
 										</div>
 										<div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
-											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode"/>
+											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode..."/>
 										</div>
 									</div>
 									<div class="checkbox align_center">
@@ -66,6 +66,7 @@ $dki_loc = dki_get_loc();
 
 	<section id="testimonials">
 		<div class="container">
+		<div class="inner-container testimonial-pad">
 		<span class="arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 			<div class="row">
 				<div class="col-sm-4">
@@ -102,6 +103,7 @@ $dki_loc = dki_get_loc();
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
 	</section>
 	<!-- /#testimonials -->
@@ -113,11 +115,12 @@ $dki_loc = dki_get_loc();
 
 	<section id="how_will">
 		<div class="container">
-
+			
 			<h2 class="align_center">How Will Removals Index <br class="show_sm"/>Take The Stress Out Of My Move?</h2>
 
 			<aside class="steps">
 		      <div class="container">
+		      <div class="inner-container">
 		        <div class="row">
 		          
 		          <div class="col-sm-4 col_1">
@@ -151,6 +154,7 @@ $dki_loc = dki_get_loc();
 		          </div>
 
 		        </div>
+		        </div>
 		      </div>
 		    </aside>
 		    <!-- /#steps -->
@@ -160,6 +164,7 @@ $dki_loc = dki_get_loc();
 
 	<section id="get_quotes">
 		<div class="container">
+		<div class="inner-container">
 			<div class="pad65">
 				
 				<form>
@@ -185,7 +190,7 @@ $dki_loc = dki_get_loc();
 					<figure class="sh2"></figure>
 				</form>
 
-					
+				</div>	
 			</div>
 		</div>
 	</section>
@@ -193,12 +198,16 @@ $dki_loc = dki_get_loc();
 
 	<section id="tp">
 		<div class="container">
-			<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="4,5"></div>
+			<div class="inner-container">
+				<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="4,5"></div>
+			</div>
 		</div>
 	</section>
 
 	<section class="green_section">
 		<div class="container">
+		
+			<div class="inner-container">
 			<h2 class="title">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h2>
 			<p class="intro">We can help you move house quickly and affordably, even if you're booking last <br class="show_md">minute, only have one or two boxes or simply just hate packing!</p>
 			<div class="row">
@@ -207,7 +216,7 @@ $dki_loc = dki_get_loc();
 						<li>
 							<i class="fa fa-check-circle"></i>
 							<strong>Never Haggle On Price Again</strong>
-							<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your</u> move.</p>
+							<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your move.</u></p>
 						</li>
 
 						<li>
@@ -247,12 +256,13 @@ $dki_loc = dki_get_loc();
 					</ul>
 				</div>
 			</div>
+			</div>
 		</div>
 	</section>
 
 	<section id="get_quotes" class="get_quotes2">
 		<div class="container">
-		
+			<div class="inner-container">
 			<div class="pad65">
 				
 				<form>
@@ -279,6 +289,7 @@ $dki_loc = dki_get_loc();
 				</form>
 
 					
+			</div>
 			</div>
 		</div>
 	</section>

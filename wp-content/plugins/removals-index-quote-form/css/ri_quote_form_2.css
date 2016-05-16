@@ -44,6 +44,7 @@ span.vaild-check.floor_from , span.vaild-check.floor_to {
       margin-top: 15px;
       margin-bottom: 0;
       color: #8d8d8d; 
+      font-weight: 600;
 }
 
 .security .glyphicon {
