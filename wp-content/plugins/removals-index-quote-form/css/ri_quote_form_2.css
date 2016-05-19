@@ -333,7 +333,7 @@ blockquote,q {
 }
 
 h4.right-satisfaction-heading { 
-	color:#1ec279; 
+	color:#76b751; 
 	font-size:16px; 
 	padding:32px 0 8px 35px; 
 	text-transform:uppercase; 
@@ -357,11 +357,11 @@ h4.right-satisfaction-heading {
 	list-style:none; 
 	color:#575757; 
 	padding:14px 0 0 30px; 
-	background:url(../images/check-icon-2.png) 0 18px no-repeat;
+	background:url(../images/check-icon-2-new.png) 0 18px no-repeat;
 }
 
 h4.right-information-heading { 
-	color:#1ec279; 
+	color:#76b751; 
 	font-size:16px; 
 	padding: 35px 0px 8px 40px; 
 	text-transform:uppercase; 
@@ -371,7 +371,7 @@ h4.right-information-heading {
 }
 
 .right-help-heading {
-	color:#1ec279; 
+	color:#76b751; 
 	font-size:16px; 
 	padding: 35px 0px 16px 40px; 
 	text-transform:uppercase; 
@@ -403,7 +403,7 @@ span.arrow-post2 img {
 }
 
 .nearly { 
-	left: -114px;  
+	left: -177px;  
 	position: absolute;  
 	top: -66px;
 }

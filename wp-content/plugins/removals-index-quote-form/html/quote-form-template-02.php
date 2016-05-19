@@ -34,7 +34,7 @@
 					   		<!-- Step 1 -->
 					  		<div class="removing-stress-frm step1">
 					  		<span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-					            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
+					            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
 					             <h4 class="property">Step 1 : Size of my current property</h4>
 					             
 					             
