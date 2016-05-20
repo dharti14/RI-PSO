@@ -173,11 +173,11 @@ $dki_loc = dki_get_loc();
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label>I'm Moving From:</label>
-									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
 								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
-									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
@@ -209,7 +209,7 @@ $dki_loc = dki_get_loc();
 		
 			<div class="inner-container">
 			<h2 class="title">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h2>
-			<p class="intro">We can help you move house quickly and affordably, even if you're booking last <br class="show_md">minute, only have one or two boxes or simply just hate packing!</p>
+			<p class="intro">We can help you move house quickly and affordably, even if you're booking <br class="show_md">last minute, only have one or two boxes or simply just hate packing!</p>
 			<div class="row">
 				<div class="col-sm-6">
 					<ul>
@@ -271,11 +271,11 @@ $dki_loc = dki_get_loc();
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label>I'm Moving From:</label>
-									<input type="text" id="postcode_from3" name="postcode_from3" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_from3" name="postcode_from3" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
 								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
-									<input type="text" id="postcode_to3" name="postcode_to3" class="form-control" placeholder="Enter Postcode"/>
+									<input type="text" id="postcode_to3" name="postcode_to3" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
