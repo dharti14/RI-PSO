@@ -29,6 +29,8 @@
 					   		<input type="hidden" value="0" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
 					   		
+					   		<?php echo $this->get_plocal_tags_var(); ?> 
+					   		
 					   		<div class="row">
 							<div class="col-md-12">
 					   		<!-- Step 1 -->

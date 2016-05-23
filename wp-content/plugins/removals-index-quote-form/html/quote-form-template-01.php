@@ -20,6 +20,8 @@
    		<input type="hidden" value="0" name="form-type">
    		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
    		
+   		<?php echo $this->get_plocal_tags_var(); ?>
+   		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>

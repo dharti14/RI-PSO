@@ -205,7 +205,17 @@ if ($_POST)
 		}	
 		
 		
-			
+		//set tag fields
+		if(isset($_POST['static_tags'])) {
+		
+			foreach($_POST['static_tags'] as $key => $val)
+			{
+				$tagValue = preg_replace('/\+/','',trim($val));
+				$tagValue = preg_replace('/\[|\]/','',$tagValue);
+				$fields[$key] = urlencode($tagValue);
+			}
+		
+		}
 		
 				
 		//READY TO SUBMIT THE DATA. WE USE CURL TO CALL THE API
@@ -215,8 +225,8 @@ if ($_POST)
 			
 			
 			//Getting api_url ( settings>>RI Quote Form ) and api key, both from admin panel
-			 $url = $api_url . '' . $form . '/' . $apiKey;
-						
+			 $url = rtrim($api_url,'/') . '/api/lead/create/' . $form . '/' . $apiKey;
+			 
 		    //url-ify the data for the POST
 		    $fields_string = '';
 		    foreach($fields as $key=>$value) {

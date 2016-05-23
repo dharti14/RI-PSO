@@ -167,7 +167,24 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			wp_localize_script('ri-quote-form-js', 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
 			
-		 }	
+		 }
+
+		 public function get_plocal_tags_var() {
+		 	
+		 	$hiddenVars = '';
+		 	
+		 	if(!empty($_GET)) {
+		 		
+		 		foreach($_GET as $key => $val) {
+		 			$val = urldecode($val);
+		 			$hiddenVars .= "<input type='hidden' name='static_tags[$key]' value='{$val}' />";
+		 		}
+		 		
+		 	}
+		 	
+		 	return $hiddenVars;
+		 	
+		 }
 		 		 
 	}
 	
