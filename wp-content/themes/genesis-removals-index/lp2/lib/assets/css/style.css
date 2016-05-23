@@ -2044,3 +2044,74 @@ div.progress_bar {
 /* RI Width changes */
 
 
+/* Mobile Changes */
+
+
+#get_quotes .mobile-security.security {
+	display: none;
+	padding-top: 10px;
+}
+
+.quote_box_holder .tag2.mobile-tag {
+	display: none;
+}
+
+
+@media (max-width: 768px){
+	
+	
+	#hero p.align_center.tagline{
+	    font-size: 13.35px !important;
+	    padding: 10px 25px 0 25px !important;
+	    line-height: 1.5;
+	}
+	
+	
+	.quote_box_holder .tag2 {
+		display: none;
+	}
+	
+	#get_quotes p.security {
+		display: none;
+	}
+	
+	header.main .trustpilot-logos {
+		display: none;
+	}
+	
+	#get_quotes .btn {
+		margin-top: 10px;
+	}
+	
+	#testimonials .wrap {
+		margin: 25px 0px;
+	}
+	
+	.foot_imgs .footer-images {
+		display: inline-block;
+	}
+	
+	p.mobile-security.security {
+		display: block !important;
+	}
+	
+	
+	.quote_box_holder .tag2.mobile-tag{
+		display: block !important;
+	}
+	
+}
+
+@media (max-width: 420px){
+	.foot_imgs .footer-images {
+		float: left;
+		padding-right: 0px;
+		padding-left: 11px;
+	}
+}
+
+
+/* Mobile Changes */
+
+
+

@@ -55,6 +55,7 @@ $dki_loc = dki_get_loc();
 							</div>
 
 							<p class="tag2">"We help thousands of people, just like <br>you, move every month.."</p>
+							<p class="tag2 mobile-tag">"We help thousands of people,<br> just like you, move every month..."</p>
 
 						</div>
 					</div>
@@ -186,7 +187,9 @@ $dki_loc = dki_get_loc();
 							<div id="get-my-quote-middle" class="btn btn-quote get-my-quote2">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 						</div>
 					</div>
-
+					
+						<p class="mobile-security security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+					
 					<figure class="sh2"></figure>
 				</form>
 
@@ -285,6 +288,8 @@ $dki_loc = dki_get_loc();
 						</div>
 					</div>
 
+						<p class="mobile-security security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+						
 					<figure class="sh2"></figure>
 				</form>
 
@@ -314,13 +319,13 @@ $dki_loc = dki_get_loc();
 
 			<div class="foot_imgs">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-4 footer-images">
 						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img1.png" alt="Hacker Safe"/>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4 footer-images">
 						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img2.png" alt="SSL"/>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4 footer-images">
 						<img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/footer-img3.png" alt="SSL Secure Connection"/>
 					</div>
 				</div>
