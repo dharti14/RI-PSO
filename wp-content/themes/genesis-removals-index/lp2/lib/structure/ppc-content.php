@@ -12,7 +12,7 @@ $dki_loc = dki_get_loc();
 
 		<div class="container">
 			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Today!</h1>
-			<p class="align_center tagline">You're Seconds Away From Removing The Stress, Hassle &amp; Headache From Your Move</p>
+			<p class="align_center tagline">You're Seconds Away From Removing The Stress, Hassle &amp; Headache From Your Move!</p>
 
 			<div class="pad80">
 				<div class="row">
