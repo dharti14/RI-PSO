@@ -176,8 +176,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 	if(!empty($_GET)) {
 		 		
 		 		foreach($_GET as $key => $val) {
-		 			$val = urldecode($val);
-		 			$hiddenVars .= "<input type='hidden' name='static_tags[$key]' value='{$val}' />";
+		 			
+		 			$val = sanitize_text_field(urldecode($val));
+		 			$val = preg_replace('/\\\"/','',$val);
+		 			$hiddenVars .= '<input type="hidden" name="static_tags['.$key.']" value="'.$val.'" />';
 		 		}
 		 		
 		 	}
