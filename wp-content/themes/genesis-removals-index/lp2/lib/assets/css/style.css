@@ -225,7 +225,7 @@ span.arrow-post1 {
 	  -o-transition: all 0.3s; 
 }
 
- @media only screen and (min-width: 768px) {
+ @media only screen and (min-width: 640px) {
     .btn-quote {
 	      font-size: 30px;
 	      height: 84px; 
@@ -286,7 +286,7 @@ form .checkbox label {
     padding-left: 15px; 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
       form .checkbox label {
 	        margin: 0px;
 	        display: inline;
@@ -745,9 +745,10 @@ header.main .call .glyphicon {
       font-size: 23px; 
 }
 
-header.main .call .green {
+header.main .call .green a {
       font-weight: bold;
       color: #76b751; 
+      text-decoration: none;
 }
 
 header.main .navbar-default {
@@ -844,7 +845,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 	  padding-top: 10px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
     #hero {
 		background:url(../images/home_hero.jpg) 50% 100% no-repeat;
 	}
@@ -1431,12 +1432,18 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 	  padding-top: 25px; 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
     .quote_box_holder {
 	      width: 475px;
 	      float: right;
 /* 	      padding-top: 25px;  */
 	  } 
+}
+
+@media (max-width: 767px) {
+	.quote_box h3.title {
+		font-size: 23px !important;
+	}	
 }
 
 .quote_box_holder .tag2 {
@@ -1800,7 +1807,7 @@ ul.no_list li .fa {
 	header.main #logo {
 		float: none;
 		padding-right: 0px;
-		margin-bottom: 15px;
+/* 		margin-bottom: 15px; */
 	}
 	
 	header.main .trustpilot-logos{
@@ -2042,5 +2049,199 @@ div.progress_bar {
 
 
 /* RI Width changes */
+
+
+/* Mobile Changes */
+
+
+#get_quotes .mobile-security.security {
+	display: none;
+	padding-top: 10px;
+}
+
+.quote_box_holder .tag2.mobile-tag {
+	display: none;
+}
+
+
+@media (max-width: 905px) {
+	
+	#hero .h1 {
+		    font-size: 36px;
+	}
+	
+	#hero .tagline {
+		font-size: 16px;
+	}
+}
+
+
+@media (max-width: 768px){
+	
+	#hero .h1 {
+	    font-size: 30px;
+	}
+	
+	
+	#hero p.align_center.tagline{
+	    font-size: 13.35px !important;
+	    line-height: 1.5;
+	}
+	
+	h1.title.blue {
+		line-height: 1.5;
+	}
+	
+	
+	.quote_box_holder .tag2 {
+		display: none;
+	}
+	
+	#get_quotes p.security {
+		display: none;
+	}
+	
+	header.main .trustpilot-logos {
+		display: none;
+	}
+	
+	#get_quotes .btn {
+		margin-top: 10px;
+	}
+	
+	#testimonials p {
+		margin: 0px !important;
+		font-weight: 600;
+		font-size: 15px;
+	}
+	
+	#testimonials .wrap {
+		padding: 15px 0px;
+		padding-top: 0px;
+	}
+	
+	#testimonials .testimonial .name {
+	
+		font-size: 12px;
+	}
+	
+	.foot_imgs .footer-images {
+		display: inline-block;
+	}
+	
+	p.mobile-security.security {
+		display: block !important;
+	}
+	
+	
+	.quote_box_holder .tag2.mobile-tag{
+		display: block !important;
+		font-size: 14.27px;
+		padding-bottom: 10px;
+	}
+	
+}
+
+
+@media (min-width: 640px){
+	
+	.quote_box_holder .moving-from {
+		width: 50% !important;
+		float:left;
+	}
+	
+	.quote_box_holder .moving-to {
+		width: 50% !important;
+		float:left;
+	}
+}
+
+@media (max-width: 640px){
+	
+	
+	
+	#hero .h1 {
+	    font-size: 26.59px !important;
+	}
+	
+	#hero p.align_center.tagline{
+	    font-size: 13.35px !important;
+	    padding: 10px 25px 0 25px !important;
+	}
+	
+	#dki .title {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 576px) {
+	#testimonials p {
+		  line-height: 17px;
+	}
+}
+
+@media (max-width: 470px) {
+	#dki .title {
+		font-size: 14px;
+	}
+}
+
+
+
+@media (max-width: 420px){
+	
+	#find_out_more .foot_imgs {
+		padding-top: 0px;
+	}
+	
+}
+
+@media (max-width: 360px){
+	.foot_imgs .footer-images {
+		float: none !important;
+	}
+}
+
+@media (max-width: 947px) {
+	#dki {
+	     width: auto;
+	}
+}
+
+@media (min-width:  320px)  and (max-width: 768px) {
+	#dki {
+	     padding: 3px 46px;
+	}
+	
+}
+
+@media (min-width: 375px)  and (max-width: 768px) {
+	#dki {
+	     padding: 3px 71px;
+	}
+}
+	
+@media (min-width: 414px) and (max-width: 768px) {
+	#dki {
+	     padding: 3px 73px;
+	}
+	
+}
+
+
+@media(max-width:768px) {
+	
+	#how_will .steps {
+		margin-top: 30px;
+	}
+		
+	#how_will .steps .num_wrap {
+		margin-bottom: 0px;
+	}
+}
+
+
+/* Mobile Changes */
+
 
 
