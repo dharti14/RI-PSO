@@ -649,9 +649,10 @@ header.main .call .glyphicon {
       font-size: 23px; 
 }
 
-header.main .call .green {
+header.main .call .green a {
       font-weight: bold;
       color: #76b751; 
+      text-decoration: none;
 }
 
 header.main .navbar-default {

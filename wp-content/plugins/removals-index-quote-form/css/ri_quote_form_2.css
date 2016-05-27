@@ -869,7 +869,7 @@ label.error:after {
 
 @media (min-width: 641px){
 	.danger {
-	    margin: 30px 25px 0 0;
+	    margin: 30px 0 0 0;
 	}
 }
 
