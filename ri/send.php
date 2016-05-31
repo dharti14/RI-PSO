@@ -5,11 +5,9 @@ ob_start();
 if ($_POST) 
 {
 	
-	
 	$apiKey ='';
 	
 	$referrer = $_SERVER['HTTP_REFERER'];
-
 	
 			
 	//----------------------------------------------------------------------------
@@ -42,8 +40,6 @@ if ($_POST)
 			$apiKey = '34dc14b6f06a10f5b3b9c5dec48f4c3a';
 		}
 	}
-	
-	
 	
 	
 	
@@ -225,7 +221,6 @@ if ($_POST)
 						
 			);
 		}
-
 		
 		//set tag fields
 		if(isset($_POST['static_tags'])) {
@@ -240,6 +235,7 @@ if ($_POST)
 		}
 		
 		
+		
 		//echo "<pre>";print_r($fields);
 
 		//READY TO SUBMIT THE DATA. WE USE CURL TO CALL THE API
@@ -247,7 +243,7 @@ if ($_POST)
 		if(isset($form))
 		{	
 
-			$url = 'http://www.local-dev02.pinlocalv5.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
 			
 			/* print_r($fields);
 			die(); */
