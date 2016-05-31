@@ -317,6 +317,8 @@
    	<input type="hidden" name="form-type" value="2">
    	<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
    	
+   	<?php echo $this->get_plocal_tags_var(); ?>
+   	
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
@@ -617,6 +619,8 @@
    
    		<input type="hidden" name="form-type" value="1">
    		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
+   		
+   		<?php echo $this->get_plocal_tags_var(); ?>
    		
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/lp1/lib/assets/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>

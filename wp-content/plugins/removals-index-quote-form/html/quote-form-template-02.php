@@ -26,6 +26,7 @@
 			</div>
 					   
 					   <form method="post" name="form" id="form">
+					   
 					   		<input type="hidden" value="0" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
 					   		
@@ -333,20 +334,23 @@
  <div class="container">
 
 		
-			<div class="row">
-				<div class="col-xs-12">
-					
-					   <div class="removing-stress-top">
-						    <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
-						    <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, Commercial Removal Companies</p>
-					   </div>
-					
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-xs-12">
+			
+			   <div class="removing-stress-top">
+				    <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
+				    <p>... And Saving 40% On Your Moving Costs With Vetted, Hand Checked, Commercial Removal Companies</p>
+			   </div>
+			
+		</div>
+	</div>
 
    <form method="post" name="form" id="form-business">
+   
    	<input type="hidden" name="form-type" value="2">
    	<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
+   	
+   	<?php echo $this->get_plocal_tags_var(); ?>
    	
    	<div class="row">
      <div class="col-sm-8">
@@ -656,6 +660,8 @@
    
    		<input type="hidden" name="form-type" value="1">
    		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
+   		
+   		<?php echo $this->get_plocal_tags_var(); ?>
    		
   		<div class="row">
 							<div class="col-md-12">
