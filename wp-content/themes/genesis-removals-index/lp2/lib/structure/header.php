@@ -12,6 +12,8 @@ function viewport_meta_tag() {
   <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" href="<?php echo THEME_PATH_URI; ?>/images/favicon.png" type="image/x-icon" />
+  
+ 
 <?php 	  
 }
   
@@ -73,7 +75,7 @@ function lp2_header(){
 	
 	$dki_hln = dki_get_hln();
 	
-	?>
+	?>	
   <header class="main">
     <section id="logo_call">
       <div class="container">
