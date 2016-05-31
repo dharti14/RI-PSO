@@ -13,7 +13,7 @@ readme.html
 *.txt
 
 #Not including the static RI site folder
-ri
+#ri
 
 wp-content/cache
 wp-content/uploads
