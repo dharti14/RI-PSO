@@ -1,7 +1,8 @@
 <?php
 include("../inc/common.php");
 ob_start('minify_callback');	//minify the output
-	
+
+
 $nodki = false;
 if(isset($_GET['nodki']) && $_GET['nodki'] == 'true') $nodki = true;
 
@@ -218,6 +219,7 @@ if($hln == 'Trusted Local Removal Companies'){
    </div>
    <form action="../send.php" method="post" name="form" id="form">
    		<input type="hidden" value="0" name="form-type">
+   		<?php echo get_plocal_tags_var(); ?>
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="images/nearly-img.png" alt="<?php echo $hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>
@@ -511,6 +513,7 @@ if($hln == 'Trusted Local Removal Companies'){
    </div>
    <form action="../send.php" method="post" name="form" id="form-business">
    	<input type="hidden" name="form-type" value="2">
+   	<?php echo get_plocal_tags_var(); ?>
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
@@ -810,6 +813,7 @@ if($hln == 'Trusted Local Removal Companies'){
    </div>
    <form action="../send.php" method="post" name="form" id="form-international">
    		<input type="hidden" name="form-type" value="1">
+   		<?php echo get_plocal_tags_var(); ?>
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="images/nearly-img.png" alt="<?php echo $hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>

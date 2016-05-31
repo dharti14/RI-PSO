@@ -224,7 +224,21 @@ if ($_POST)
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
-		}	
+		}
+
+		
+		//set tag fields
+		if(isset($_POST['static_tags'])) {
+		
+			foreach($_POST['static_tags'] as $key => $val)
+			{
+				$tagValue = preg_replace('/\+/','',trim($val));
+				$tagValue = preg_replace('/\[|\]/','',$tagValue);
+				$fields[$key] = urlencode($tagValue);
+			}
+		
+		}
+		
 		
 		//echo "<pre>";print_r($fields);
 
@@ -233,7 +247,7 @@ if ($_POST)
 		if(isset($form))
 		{	
 
-			$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			$url = 'http://www.local-dev02.pinlocalv5.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
 			
 			/* print_r($fields);
 			die(); */
