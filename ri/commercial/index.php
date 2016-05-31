@@ -189,6 +189,7 @@ display:none;
    </div>
    <form action="../send.php" method="post" name="form" id="form-business">
    	<input type="hidden" value="2" name="form-type">
+   	<?php echo get_plocal_tags_var(); ?>
    	<div class="row">
      <div class="col-sm-8">
        <div class="removing-stress-frm step2">
