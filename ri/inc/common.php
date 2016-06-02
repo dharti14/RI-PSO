@@ -151,19 +151,18 @@ function load_css_files($timestamp)
 //returns tags parameter hidden html
 function get_plocal_tags_var() {
 
+	$requestUrl = explode('?', $_SERVER['REQUEST_URI']);
+	$pageUrl = $_SERVER['HTTP_HOST'].$requestUrl[0];
+	$params = array_merge(array('sourcepage' => $pageUrl),$_GET);
+	
 	$hiddenVars = '';
-
-	if(!empty($_GET)) {
-		 
-		foreach($_GET as $key => $val) {
-			
-			$val = addslashes(urldecode($val));
- 			$val = strip_tags($val);
- 			$val = preg_replace('/\\\"/','',$val);
-			$val = preg_replace('/\\\"/','',$val);
-			$hiddenVars .= '<input type="hidden" name="static_tags['.$key.']" value="'.$val.'" />';
-		}
-		 
+	foreach($params as $key => $val) 
+	{
+		$val = addslashes(urldecode($val));
+		$val = strip_tags($val);
+		$val = preg_replace('/\\\"/','',$val);
+		$val = preg_replace('/\\\"/','',$val);
+		$hiddenVars .= '<input type="hidden" name="static_tags['.$key.']" value="'.$val.'" />';
 	}
 
 	return $hiddenVars;
