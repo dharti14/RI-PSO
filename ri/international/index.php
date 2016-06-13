@@ -277,6 +277,7 @@ display:none;
    </div>
    <form action="../send.php?ver=international_lp" method="post" name="form" id="form-international">
    		<input type="hidden" value="1" name="form-type">
+   		<?php echo get_plocal_tags_var(); ?>
   		<div class="removing-stress-frm step1">
             <div class="nearly"><img src="images/nearly-img.png" alt="<?php echo $hln;?>"></div>
              <h4 class="property">Step 1 : Size of my current property</h4>

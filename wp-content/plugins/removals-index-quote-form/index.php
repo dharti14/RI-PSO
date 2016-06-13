@@ -171,18 +171,18 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		 public function get_plocal_tags_var() {
 		 	
-		 	$hiddenVars = '';
 		 	
-		 	if(!empty($_GET)) {
-		 		
-		 		foreach($_GET as $key => $val) {
-		 			
-		 			$val = sanitize_text_field(urldecode($val));
-		 			$val = preg_replace('/\\\"/','',$val);
-		 			$hiddenVars .= '<input type="hidden" name="static_tags['.$key.']" value="'.$val.'" />';
-		 		}
-		 		
-		 	}
+		 	$requestUrl = explode('?', $_SERVER['REQUEST_URI']);
+		 	$pageUrl = $_SERVER['HTTP_HOST'].$requestUrl[0];
+		 	$params = array_merge(array('sourcepage' => $pageUrl),$_GET);
+		 	
+		 	$hiddenVars = '';
+	 		foreach($params as $key => $val) 
+	 		{
+	 			$val = sanitize_text_field(urldecode($val));
+	 			$val = preg_replace('/\\\"/','',$val);
+	 			$hiddenVars .= '<input type="hidden" name="static_tags['.$key.']" value="'.$val.'" />';
+	 		}
 		 	
 		 	return $hiddenVars;
 		 	

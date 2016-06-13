@@ -45,6 +45,42 @@ remove_action('genesis_footer', 'genesis_footer_markup_open',5);
 remove_action('genesis_footer', 'genesis_do_footer');
 remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
+
+
+
+function ri_get_id_by_slug($page_slug) {
+	$page = get_page_by_path($page_slug);
+	if ($page) {
+		return $page->ID;
+	} else {
+		return null;
+	}
+}
+
+
+//* Rewrite url
+
+function ri_rewrite_rules($rules) {
+	$newrules = array();
+	$newrules["^2\/thanks/?$"] 		=  'index.php?page_id='.ri_get_id_by_slug('/2thanks');
+	$rules = $newrules + $rules;
+
+	return $rules;
+}
+add_filter('rewrite_rules_array', 'ri_rewrite_rules' , 1 , 1);
+
+
+function ri_page_template_redirect(){
+	$req_uri = $_SERVER['REQUEST_URI'];
+	$req_uri_array = explode('?', $req_uri);
+    if( $req_uri_array[0] == '/2thanks/' ) {
+    	wp_redirect(home_url().'/2/thanks/');
+        exit();
+    }
+}
+add_action( 'template_redirect', 'ri_page_template_redirect' );
+
+
 //********************* remove default genesis action *********************//
 
 
@@ -242,6 +278,9 @@ function add_async_attribute($tag, $handle) {
         return $tag;
     return str_replace( ' src', ' async="async" src', $tag );
 }
+
+
+
 
 //Register nav menus by wordpress way
 /*
