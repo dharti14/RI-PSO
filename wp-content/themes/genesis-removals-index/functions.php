@@ -73,6 +73,101 @@ function ri_display_address(){
 
 //*************** Copyright Section *****************//
 
+function ri_minify_css_files($cssFile) {		
+
+	$search = array(
+			'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+			'/[^\S ]+\</s',  // strip whitespaces before tags, except space
+			'/(\s)+/s'       // shorten multiple whitespace sequences
+	);
+
+	$replace = array(
+			'>',
+			'<',
+			'\\1'
+	);
+
+	$cssFile = preg_replace($search, $replace, $cssFile);
+
+	return $cssFile;
+
+}
+
+
+function ri_get_all_css_files() {
+
+	global $wp_styles, $wp_query;
+
+	//Getting the template name
+	$templateName = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
+	
+	//Extracting directory name from templateName
+	$path = explode('/',$templateName);
+	$directory = $path[0];
+
+	
+	//Setting Fonts path with absolute path
+	$replaceFonts = '../fonts/';
+	$replaceFontsWith = '/wp-content/themes/genesis-removals-index/'.$directory.'/lib/assets/fonts/';
+	
+	
+	//Setting Images path with absolute path
+	$replaceImages = '../images/';
+	$replaceImagesWith = '/wp-content/themes/genesis-removals-index/'.$directory.'/lib/assets/images/';
+	
+	
+	//For site and its internal pages
+	if($lp == "default"){
+		$lp = "site";
+		$replaceFontsWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/fonts/';
+		$replaceImagesWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/images/';
+	}
+	//For site and its internal pages
+	
+	
+	echo '<style>';
+
+	foreach( $wp_styles->queue as $handleName ){
+
+		 $file = $wp_styles->registered[$handleName]->src;
+		
+		 
+		 //Ignoring admin-bar.css 
+		 if($handleName !="admin-bar"){
+		 	
+		 	//reads entire file into string
+		 	$cssFile = file_get_contents($file);
+		 	
+		 	//Handling the plugin date-picker.css file
+		 	if($handleName == "ri-jquery-datepicker-css"){
+		 		$cssFile = str_replace('images/','/wp-content/plugins/removals-index-quote-form/images/',$cssFile);
+		 	}
+		 	//Handling the plugin date-picker.css file
+		 	
+		 	
+		 	//Replacing Fonts path
+		 	$cssFile = str_replace($replaceFonts,$replaceFontsWith,$cssFile);
+		 	
+		 	//Replacing Images path
+		 	$cssFile = str_replace($replaceImages,$replaceImagesWith,$cssFile);
+
+			echo $minifiedCssFile =  ri_minify_css_files($cssFile);
+		 }
+	}
+	echo '</style>';
+	
+	
+	//Dequeuing the css files after reading it and dumping to style tag
+	foreach( $wp_styles->queue as $handleName ){
+			
+		if($handleName !="admin-bar")
+			wp_dequeue_style( $handleName );
+	}
+	//Dequeuing the css files after reading it and dumping to style tag
+
+}
+
+add_action( 'wp_print_styles', 'ri_get_all_css_files' );
 
 
 // Setting Site header and footer for all pages
@@ -167,5 +262,20 @@ add_theme_support ( 'genesis-menus' , array (
 		'footer' => __( 'Footer Navigation', 'genesis' )
 ) );
 
+
+add_action('genesis_footer', 'lp2_dequeue_scripts',9999);
+add_action('wp_enqueue_scripts', 'lp2_dequeue_scripts',9999);
+
+
+function lp2_dequeue_scripts(){
+	global $wp_styles;
+
+	foreach( $wp_styles->queue as $handleName ){
+// 		echo $handleName;
+
+		//wp_dequeue_style( $handleName );
+		//wp_deregister_style( $handleName );
+	}
+}
 
 ?>

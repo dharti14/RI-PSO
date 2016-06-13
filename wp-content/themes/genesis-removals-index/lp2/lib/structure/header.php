@@ -12,11 +12,11 @@ function viewport_meta_tag() {
   <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" href="<?php echo THEME_PATH_URI; ?>/images/favicon.png" type="image/x-icon" />
+
   
- 
 <?php 	  
 }
-  
+ 
  add_action( 'genesis_meta', 'dki_scripts_meta_tag' );
  
  function dki_scripts_meta_tag() {
@@ -69,6 +69,7 @@ function set_page_title($title){
 	}
 
 }
+
 
 add_action('genesis_header', 'lp2_header');
 function lp2_header(){

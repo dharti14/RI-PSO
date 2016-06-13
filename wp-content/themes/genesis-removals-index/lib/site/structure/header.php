@@ -17,7 +17,8 @@ function site_before_header(){
  <header class="main">
  <?php 
   }
-
+  
+  
 add_action('genesis_header', 'site_header');
 function site_header(){
 	?>
