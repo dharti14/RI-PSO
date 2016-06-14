@@ -153,8 +153,8 @@ function ri_get_all_css_files() {
 	
 	
 	//For site and its internal pages
-	if($lp == "default"){
-		$lp = "site";
+	if($directory == "default"){
+		$directory = "site";
 		$replaceFontsWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/fonts/';
 		$replaceImagesWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/images/';
 	}
