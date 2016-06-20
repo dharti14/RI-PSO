@@ -13,6 +13,10 @@ define( 'Child_Theme_Version', '2.1.2' );
 define('THEME_PATH_DIR', get_stylesheet_directory()); 
 define('THEME_PATH_URI', get_stylesheet_directory_uri()); 
 
+define('RI_SITE_URL',get_site_url());
+
+define('THEME_PATH',get_template_directory());
+
 
 //* Add HTML5 markup structure from Genesis
 add_theme_support( 'html5' );
@@ -133,7 +137,7 @@ function ri_minify_css_files($cssFile) {
 function ri_get_all_css_files() {
 
 	global $wp_styles, $wp_query;
-
+	
 	//Getting the template name
 	$templateName = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
 	
@@ -141,44 +145,79 @@ function ri_get_all_css_files() {
 	$path = explode('/',$templateName);
 	$directory = $path[0];
 
-	
-	//Setting Fonts path with absolute path
-	$replaceFonts = '../fonts/';
-	$replaceFontsWith = '/wp-content/themes/genesis-removals-index/'.$directory.'/lib/assets/fonts/';
-	
-	
-	//Setting Images path with absolute path
-	$replaceImages = '../images/';
-	$replaceImagesWith = '/wp-content/themes/genesis-removals-index/'.$directory.'/lib/assets/images/';
-	
-	
-	//For site and its internal pages
-	if($directory == "default"){
-		$directory = "site";
-		$replaceFontsWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/fonts/';
-		$replaceImagesWith = '/wp-content/themes/genesis-removals-index/lib/'.$directory.'/assets/images/';
-	}
-	//For site and its internal pages
-	
-	
 	echo '<style>';
 
 	foreach( $wp_styles->queue as $handleName ){
 
 		 $file = $wp_styles->registered[$handleName]->src;
-		
-		 
+		 		 
 		 //Ignoring admin-bar.css 
 		 if($handleName !="admin-bar"){
 		 	
+		 	//Checking for plugins directory from full path($file)
+		 	if (strpos($file, '/plugins/') !== false){ //For PLUGIN
+		 				
+		 		
+		 		/* get_option('active_plugins') will give the list of all activate plugins
+		 		 * Reference :- http://wordpress.stackexchange.com/questions/54742/how-to-do-i-get-a-list-of-active-plugins-on-my-wordpress-blog-programmatically
+		 		 * 
+		 		 * 
+		 		 * get_plugins() will give list of all plugins (activated and deactivated)
+		 		 * Reference :- https://codex.wordpress.org/Function_Reference/get_plugins
+		 		 * 
+		 		 */
+		 		
+			 		/*
+			 		foreach (get_option('active_plugins') as $activePluginsList){
+			 			$pluginspath = explode('/', $activePluginsList);
+			 			$pluginDirectory =  $pluginspath[0];
+			 		}
+			 		
+			 		$cssFile = str_replace('images/','/wp-content/plugins/'.$pluginDirectory.'/images/',$cssFile);
+			 		*/
+		 		
+		 		
+		 		//handle the plugin files and directory path dynamically
+		 		
+		 	}else { // For THEME
+		 		
+		 		//getting child theme path, i.e /wp-content/themes/genesis-removals-index
+			    $themePath = str_replace(RI_SITE_URL, '', THEME_PATH_URI);
+		 		
+		 		//Setting Fonts path with absolute path
+		 		$replaceFonts = '../fonts/';
+		 		$replaceFontsWith = $themePath.'/'.$directory.'/lib/assets/fonts/';
+		 		
+		 		
+		 		//Setting Images path with absolute path
+		 		$replaceImages = '../images/';
+		 		$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
+		 		
+		 		
+		 		//For site and its internal pages
+		 		if($directory == "default"){
+		 			$directory = "site";
+		 			$replaceFontsWith = $themePath.'/'.$directory.'/assets/fonts/';
+		 			$replaceImagesWith = $themePath.'/'.$directory.'/assets/images/';
+		 		}
+		 		//For site and its internal pages
+		 		
+		 	}
+		 			 	
 		 	//reads entire file into string
 		 	$cssFile = file_get_contents($file);
 		 	
-		 	//Handling the plugin date-picker.css file
+		 	
+		 	
+		 	
+		 	//Handling the plugin date-picker.css file for our plugin only
 		 	if($handleName == "ri-jquery-datepicker-css"){
-		 		$cssFile = str_replace('images/','/wp-content/plugins/removals-index-quote-form/images/',$cssFile);
+		 		$cssFile = str_replace('images/','/wp-content/plugins/removals-index-quote-form/images/',$cssFile);	 
 		 	}
-		 	//Handling the plugin date-picker.css file
+		 	//Handling the plugin date-picker.css file for our plugin only
+		 	
+		 	
+		 	
 		 	
 		 	
 		 	//Replacing Fonts path
@@ -195,7 +234,7 @@ function ri_get_all_css_files() {
 	
 	//Dequeuing the css files after reading it and dumping to style tag
 	foreach( $wp_styles->queue as $handleName ){
-			
+
 		if($handleName !="admin-bar")
 			wp_dequeue_style( $handleName );
 	}
