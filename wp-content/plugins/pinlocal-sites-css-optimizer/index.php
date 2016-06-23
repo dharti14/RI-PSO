@@ -11,7 +11,7 @@ Author URI: http://www.regur.net
 
 
 //Minifying the css files (stripping whitespaces except spaces before and after tags)
-function pinlocal_sites_minify_css_files($cssFile) {		
+function pinlocal_minify_css_files($cssFile) {		
 
 	$search = array(
 			'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
@@ -32,7 +32,7 @@ function pinlocal_sites_minify_css_files($cssFile) {
 }
 
 
-function get_all_css_files() {
+function pinlocal_get_all_css_files() {
 
 	global $wp_styles, $wp_query;
 	
@@ -110,7 +110,7 @@ function get_all_css_files() {
 		 	$cssFile = str_replace($replaceImages,$replaceImagesWith,$cssFile);
 
 		 	//minifying css files removing whitspaces before and after tags
-			echo $minifiedCssFile =  pinlocal_sites_minify_css_files($cssFile);
+			echo $minifiedCssFile =  pinlocal_minify_css_files($cssFile);
 		 }
 	}
 	echo '</style>';
@@ -126,6 +126,6 @@ function get_all_css_files() {
 
 }
 
-add_action( 'wp_print_styles', 'get_all_css_files' );
+add_action( 'wp_print_styles', 'pinlocal_get_all_css_files' );
 
 ?>
