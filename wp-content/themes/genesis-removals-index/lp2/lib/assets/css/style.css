@@ -1337,7 +1337,6 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 #how_will .steps .num2 i {
       background-image: url("/wp-content/themes/genesis-removals-index/lp2/lib/assets/images/compare-new.png");
-/*       background-image: url("images/compare-new.png"); */
       background-size: 102px 83px; 
 }
 
@@ -1710,9 +1709,7 @@ ul.no_list li .fa {
 		    border-top: #c9c9c9 solid 7px;
 		    border-bottom: #c9c9c9 solid 7px;
 		    position: relative;
-		    clear: both;
-/* 		    padding: 15px 0 11px; */
-		    
+		    clear: both;		    
 }
 
 #testimonials .wrap {

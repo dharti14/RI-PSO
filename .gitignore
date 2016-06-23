@@ -25,6 +25,7 @@ wp-content/object-cache.php
 wp-content/plugins/*
 #include the plugins with a negate pattern (!)
 !wp-content/plugins/removals-index-quote-form
+!wp-content/plugins/pinlocal-sites-css-optimizer
 
 wp-content/themes/*
 !wp-content/themes/genesis-removals-index

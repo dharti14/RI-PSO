@@ -113,136 +113,6 @@ function ri_display_address(){
 
 //*************** Copyright Section *****************//
 
-function ri_minify_css_files($cssFile) {		
-
-	$search = array(
-			'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-			'/[^\S ]+\</s',  // strip whitespaces before tags, except space
-			'/(\s)+/s'       // shorten multiple whitespace sequences
-	);
-
-	$replace = array(
-			'>',
-			'<',
-			'\\1'
-	);
-
-	$cssFile = preg_replace($search, $replace, $cssFile);
-
-	return $cssFile;
-
-}
-
-
-function ri_get_all_css_files() {
-
-	global $wp_styles, $wp_query;
-	
-	//Getting the template name
-	$templateName = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
-	
-	//Extracting directory name from templateName
-	$path = explode('/',$templateName);
-	$directory = $path[0];
-
-	echo '<style>';
-
-	foreach( $wp_styles->queue as $handleName ){
-
-		 $file = $wp_styles->registered[$handleName]->src;
-		 		 
-		 //Ignoring admin-bar.css 
-		 if($handleName !="admin-bar"){
-		 	
-		 	//Checking for plugins directory from full path($file)
-		 	if (strpos($file, '/plugins/') !== false){ //For PLUGIN
-		 				
-		 		
-		 		/* get_option('active_plugins') will give the list of all activate plugins
-		 		 * Reference :- http://wordpress.stackexchange.com/questions/54742/how-to-do-i-get-a-list-of-active-plugins-on-my-wordpress-blog-programmatically
-		 		 * 
-		 		 * 
-		 		 * get_plugins() will give list of all plugins (activated and deactivated)
-		 		 * Reference :- https://codex.wordpress.org/Function_Reference/get_plugins
-		 		 * 
-		 		 */
-		 		
-			 		/*
-			 		foreach (get_option('active_plugins') as $activePluginsList){
-			 			$pluginspath = explode('/', $activePluginsList);
-			 			$pluginDirectory =  $pluginspath[0];
-			 		}
-			 		
-			 		$cssFile = str_replace('images/','/wp-content/plugins/'.$pluginDirectory.'/images/',$cssFile);
-			 		*/
-		 		
-		 		
-		 		//handle the plugin files and directory path dynamically
-		 		
-		 	}else { // For THEME
-		 		
-		 		//getting child theme path, i.e /wp-content/themes/genesis-removals-index
-			    $themePath = str_replace(RI_SITE_URL, '', THEME_PATH_URI);
-		 		
-		 		//Setting Fonts path with absolute path
-		 		$replaceFonts = '../fonts/';
-		 		$replaceFontsWith = $themePath.'/'.$directory.'/lib/assets/fonts/';
-		 		
-		 		
-		 		//Setting Images path with absolute path
-		 		$replaceImages = '../images/';
-		 		$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
-		 		
-		 		
-		 		//For site and its internal pages
-		 		if($directory == "default"){
-		 			$directory = "site";
-		 			$replaceFontsWith = $themePath.'/'.$directory.'/assets/fonts/';
-		 			$replaceImagesWith = $themePath.'/'.$directory.'/assets/images/';
-		 		}
-		 		//For site and its internal pages
-		 		
-		 	}
-		 			 	
-		 	//reads entire file into string
-		 	$cssFile = file_get_contents($file);
-		 	
-		 	
-		 	
-		 	
-		 	//Handling the plugin date-picker.css file for our plugin only
-		 	if($handleName == "ri-jquery-datepicker-css"){
-		 		$cssFile = str_replace('images/','/wp-content/plugins/removals-index-quote-form/images/',$cssFile);	 
-		 	}
-		 	//Handling the plugin date-picker.css file for our plugin only
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	//Replacing Fonts path
-		 	$cssFile = str_replace($replaceFonts,$replaceFontsWith,$cssFile);
-		 	
-		 	//Replacing Images path
-		 	$cssFile = str_replace($replaceImages,$replaceImagesWith,$cssFile);
-
-			echo $minifiedCssFile =  ri_minify_css_files($cssFile);
-		 }
-	}
-	echo '</style>';
-	
-	
-	//Dequeuing the css files after reading it and dumping to style tag
-	foreach( $wp_styles->queue as $handleName ){
-
-		if($handleName !="admin-bar")
-			wp_dequeue_style( $handleName );
-	}
-	//Dequeuing the css files after reading it and dumping to style tag
-
-}
-
-add_action( 'wp_print_styles', 'ri_get_all_css_files' );
 
 
 // Setting Site header and footer for all pages
@@ -319,8 +189,6 @@ function add_async_attribute($tag, $handle) {
 }
 
 
-
-
 //Register nav menus by wordpress way
 /*
 register_nav_menus( array(
@@ -339,21 +207,5 @@ add_theme_support ( 'genesis-menus' , array (
 		'secondary' => __( 'Secondary Navigation', 'genesis' ),
 		'footer' => __( 'Footer Navigation', 'genesis' )
 ) );
-
-
-add_action('genesis_footer', 'lp2_dequeue_scripts',9999);
-add_action('wp_enqueue_scripts', 'lp2_dequeue_scripts',9999);
-
-
-function lp2_dequeue_scripts(){
-	global $wp_styles;
-
-	foreach( $wp_styles->queue as $handleName ){
-// 		echo $handleName;
-
-		//wp_dequeue_style( $handleName );
-		//wp_deregister_style( $handleName );
-	}
-}
 
 ?>
