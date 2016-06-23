@@ -13,7 +13,7 @@ define( 'Child_Theme_Version', '2.1.2' );
 define('THEME_PATH_DIR', get_stylesheet_directory()); 
 define('THEME_PATH_URI', get_stylesheet_directory_uri()); 
 
-define('RI_SITE_URL',get_site_url());
+define('SITE_URL',get_site_url());
 
 define('THEME_PATH',get_template_directory());
 

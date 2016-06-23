@@ -1,12 +1,15 @@
 <?php
+
 /*
-Plugin Name: Pinlocal Sites Css Optimizer
-Plugin URI: http://www.regur.net
-Description: This plugin is used Eliminate render-blocking CSS in above-the-fold content suggested by Google PageSpeed Insights.. It will read all enqueued css files and dump it in the head.
-Author: Regur Technology Solutions
-Version: 1.0
-Author URI: http://www.regur.net
-*/
+ * 
+ * Plugin Name: Pinlocal Sites CSS Optimizer
+ * Plugin URI: http://www.regur.net
+ * Description: This plugin is used to eliminate render-blocking CSS in above-the-fold content suggested by Google PageSpeed Insights. It will read all enqueued css files and dump it in the head.
+ * Author: Regur Technology Solutions
+ * Version: 1.0
+ * Author URI: http://www.regur.net
+ * 
+ */
 
 
 
@@ -31,7 +34,7 @@ function pinlocal_minify_css_files($cssFile) {
 
 }
 
-
+//Getting enqueued css files, reading it, minifying it and dumping into head.
 function pinlocal_get_all_css_files() {
 
 	global $wp_styles, $wp_query;
@@ -77,8 +80,11 @@ function pinlocal_get_all_css_files() {
 		 				 		
 		 	}else { // For THEME
 		 		
+		 		
+		 		//Note :- Please define "SITE_URL" Constant in your functions.php file. ex.  define('SITE_URL',get_site_url());
+		 		
 		 		//getting child theme path, i.e /wp-content/themes/genesis-removals-index
-			    $themePath = str_replace(RI_SITE_URL, '', THEME_PATH_URI);
+			    $themePath = str_replace(SITE_URL, '', THEME_PATH_URI);
 		 		
 		 		//Setting Fonts path with absolute path
 		 		$replaceFonts = '../fonts/';
