@@ -51,6 +51,36 @@ remove_action('genesis_footer', 'genesis_footer_markup_close',15);
 
 
 
+/**
+ * overrides the default WordPress redirect of trailing /index.php to /
+ *
+ *
+ * For historical reasons RI/Pinlocal needs to maintain/preserve trailing /index.php in their PPC URLs
+ * and this filter handles the same.
+ *
+ *
+ * @param string $redirect_url
+ * @param string $requested_url
+ * @return string
+ */
+function handle_ri_main_url_redirects($redirect_url, $requested_url)
+{
+
+	//if it is RI PPC URL /ri/main/index.php then we need to preserve the URL
+
+	if(stripos($requested_url, 'ri/main/index.php')!==FALSE)
+	{
+		return $requested_url; //this will prevent redirect
+	}
+	else
+	{
+		return $redirect_url; //normal WP redirect
+
+	}
+}
+add_filter('redirect_canonical', 'handle_ri_main_url_redirects',1,2);
+
+
 
 function ri_get_id_by_slug($page_slug) {
 	$page = get_page_by_path($page_slug);
@@ -66,7 +96,15 @@ function ri_get_id_by_slug($page_slug) {
 
 function ri_rewrite_rules($rules) {
 	$newrules = array();
-	$newrules["^2\/thanks/?$"] 		=  'index.php?page_id='.ri_get_id_by_slug('/2thanks');
+	
+	//Fallback for ri/main
+	$newrules["^ri\/main?$"]			  		=  'index.php?page_id='.ri_get_id_by_slug('ri-1');
+	
+	$newrules["^ri\/main\/index.php$"]  		=  'index.php?page_id='.ri_get_id_by_slug('ri-1');
+	$newrules["^ri\/main\/index-5.php$"] 		=  'index.php?page_id='.ri_get_id_by_slug('ri-5');
+	
+	$newrules["^2\/thanks/?$"] 					=  'index.php?page_id='.ri_get_id_by_slug('/2thanks');
+	
 	$rules = $newrules + $rules;
 
 	return $rules;
