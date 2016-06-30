@@ -86,7 +86,10 @@ function lp1_header(){
 		     <div class="logo">
 		     	<a href="<?php 
 		     	if ( is_page_template('lp1/lp1-ppc.php')) {
-		     		echo get_permalink(get_the_ID());
+		     		
+					global $wp;
+            		echo home_url( $wp->request );
+            		
 		     	}else{
 		     		echo bloginfo( 'url' );
 		     	}

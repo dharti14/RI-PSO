@@ -1,5 +1,20 @@
 <?php 
 
+// echo home_url( add_query_arg( null, null ));
+// die();
+
+// global $wp;
+// echo '<pre>';
+// print_r($wp);
+// echo '</pre>';
+
+// echo '================';
+// echo home_url( $wp->request );
+// $current_url = add_query_arg( $wp->query_string, ' ', home_url( $wp->request ) );
+// echo $current_url;
+
+// die();
+
 remove_theme_support( 'genesis-responsive-viewport' );
 
 add_action( 'genesis_meta', 'viewport_meta_tag' );
@@ -83,7 +98,10 @@ function lp2_header(){
         <div class="row">
           <div class="col-sm-4">
             <a id="logo" href="<?php if ( is_page_template('lp2/lp2-ppc.php')) {
-            		echo get_permalink(get_the_ID());
+            	
+            		global $wp;
+            		echo home_url( $wp->request );
+            	
 		     	}else{
 		     		echo bloginfo( 'url' );
 		     	}
