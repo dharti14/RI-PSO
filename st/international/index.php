@@ -86,8 +86,8 @@ display:none;
 
   <div class="row">
     <div class="col-sm-6">
-      <div class="logo"><a href="/ri/international"><img src="images/logo.png" alt="<?php echo $hln;?>"></a></div>
-     <div class="mobile-logo"><a href="/ri/international/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
+      <div class="logo"><a href="/st/international"><img src="images/logo.png" alt="<?php echo $hln;?>"></a></div>
+     <div class="mobile-logo"><a href="/st/international/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
     </div>
     <div class="col-sm-6">
      <div class="contact-num"><label>Specialist International Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
