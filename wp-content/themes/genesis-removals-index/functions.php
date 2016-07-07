@@ -115,10 +115,17 @@ add_filter('rewrite_rules_array', 'ri_rewrite_rules' , 1 , 1);
 
 
 function ri_page_template_redirect(){
+	
 	$req_uri = $_SERVER['REQUEST_URI'];
 	$req_uri_array = explode('?', $req_uri);
-    if( $req_uri_array[0] == '/2thanks/' ) {
-    	wp_redirect(home_url().'/2/thanks/');
+    if( $req_uri_array[0] == '/2thanks/' || $req_uri_array[0] == '/2thanks' ) {
+    	
+    	$queryString = '';
+    	if(count($req_uri_array) > 1) {
+    		$queryString = "?{$req_uri_array[1]}";
+    	}
+    	
+    	wp_redirect(home_url().'/2/thanks/'.$queryString);
         exit();
     }
 }

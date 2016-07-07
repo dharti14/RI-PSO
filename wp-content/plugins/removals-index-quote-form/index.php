@@ -171,9 +171,15 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		 public function get_plocal_tags_var() {
 		 	
-		 	
 		 	$requestUrl = explode('?', $_SERVER['REQUEST_URI']);
-		 	$pageUrl = $_SERVER['HTTP_HOST'].$requestUrl[0];
+		 	
+		 	$requestUrl = $requestUrl[0];
+		 	if($requestUrl == '/ri/main' || $requestUrl == '/ri/main/') {
+		 		$requestUrl = '/ri/main/index.php';
+		 	}
+		 	
+		 	$pageUrl = str_replace('www.','',$_SERVER['HTTP_HOST']).$requestUrl;
+		 	
 		 	$params = array_merge(array('sourcepage' => $pageUrl),$_GET);
 		 	
 		 	$hiddenVars = '';
