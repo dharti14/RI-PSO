@@ -91,6 +91,8 @@ if ($_POST)
 		$firstName = array_shift($name);
 		$lastName = implode(" ", $name);
 
+		
+		$additionalInfo = isset($_POST["additional_info"]) ? $_POST["additional_info"] : $_POST["greenwood_drive"];
 
 		//Get data from your form POST and assign it to appropriate lead fields.
 		
@@ -126,7 +128,7 @@ if ($_POST)
 					'f25[]'=>$packing,
 					
 					'f28'=>urlencode($_POST["date"]),							//approx moving date
-					'f27'=>urlencode($_POST["additional_info"]),						//additional info or instructions
+					'f27'=>urlencode($additionalInfo),						//additional info or instructions
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
@@ -170,7 +172,7 @@ if ($_POST)
 					
 					'preferred_shipping_method' => urlencode($_POST['shipping_method']),	//preferred shipping method
 
-					'f17' => urlencode($_POST["additional_info"]),						//additional info or instructions				
+					'f17' => urlencode($additionalInfo),						//additional info or instructions				
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
@@ -213,7 +215,7 @@ if ($_POST)
 					'out_of_buisness_hours_removal[]'=>$out_of_business,
 					
 					'f18'=>urlencode($_POST["date"]),							//approx moving date
-					'f17' => urlencode($_POST["additional_info"]),				//additional info or instructions
+					'f17' => urlencode($additionalInfo),				//additional info or instructions
 					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
 						
 			);
