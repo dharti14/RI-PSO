@@ -240,10 +240,10 @@ if ($_POST)
 		if(isset($form))
 		{	
 
-			//$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			$url = 'http://www.pinlocal.com/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
 			
 			//For Staging only
-			$url = 'http://pinlocal5.rollingcodes.io/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
+			//$url = 'http://pinlocal5.rollingcodes.io/api/lead/create/'.$form.'/'. $apiKey;	//PLEASE REQUEST THE API KEY FROM PINLOCAL
 			
 			/* print_r($fields);
 			die(); */
@@ -279,14 +279,9 @@ if ($_POST)
 			
 		    if ($http_code == 201) 	//ALL LOOKS GOOD, LEAD SUBMITED. REDIRECT TO YOUR THANKS PAGE
 		    {
-				//header("Location: http://www.removals-index.com/st/thanks/index.php?form=".$form."&h=" . $obj->hash);
+				header("Location: http://www.removals-index.com/st/thanks/index.php?form=".$form."&h=" . $obj->hash);
 				
-				//For Staging only
-				//header("Location: http://ri.regurdev.a2hosted.com/st/thanks/index.php?form=".$form."&h=" . $obj->hash);
-				
-		    	//For Local
-		    	header("Location: http://local.dipesh.removals-index.com/st/thanks/index.php?form=".$form."&h=" . $obj->hash);
-		    	exit();
+				exit();
 		    }
 		    elseif ($http_code == 406) //ERRORS DETECTED BY PINLOCAL SYSTEM IN DATA
 		    {

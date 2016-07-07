@@ -72,8 +72,8 @@ window._fbq.push(['track', '6023862189065', {'value':'0.00','currency':'GBP'}]);
 	
 	  <div class="row">
 	    <div class="col-sm-6">
-	     <div class="logo"><a href="/st/main"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
-	     <div class="mobile-logo"><a href="/st/main/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
+	     <div class="logo"><a href="/ri/main"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
+	     <div class="mobile-logo"><a href="/ri/main/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
 	    </div>
 	    <div class="col-sm-6">
 	     <div class="contact-num">Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
