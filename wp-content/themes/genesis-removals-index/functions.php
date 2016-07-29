@@ -141,8 +141,15 @@ require(THEME_PATH_DIR.'/lib/inc/ri-custom-metaboxes.php');
 
 
 //Keeping the ri phone number central,so that you can change it here if you want to and the changes are reflected overall
+
+//For landing page template only
 function ri_display_phone_number(){
 	return '0333 444 8710';
+}
+
+//New phone number for site wide
+function ri_site_phone_number(){
+	return '0203 514 9004';
 }
 
 

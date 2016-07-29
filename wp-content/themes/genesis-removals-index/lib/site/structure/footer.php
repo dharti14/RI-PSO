@@ -46,6 +46,7 @@ function site_footer(){
 	  	
 		   <p><?php echo ri_copyright_information(); ?></p>
 		   <p><?php echo ri_display_address(); ?></p>
+		   <p>Contact Number : <?php echo ri_site_phone_number(); ?></p>
 		   
 	   <?php //Displaying copyright information and ri address, getting from functions.php ?>
 		   
