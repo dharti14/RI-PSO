@@ -149,7 +149,7 @@ function ri_display_phone_number(){
 
 //New phone number for site wide
 function ri_site_phone_number(){
-	return '0203 514 9004';
+	return '0203 514 9040';
 }
 
 
