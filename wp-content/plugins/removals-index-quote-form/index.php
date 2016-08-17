@@ -58,6 +58,18 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
+			if(strpos(get_site_url(),'local')!==false)
+			{
+				$mode = 'development';
+			}
+			else
+			{
+					
+				$mode = 'production';
+			}
+				
+			define('MODE',$mode);
+			
 		}
 		
 		/**
@@ -157,7 +169,11 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
                    
 		 public function ri_load_css($css) {
 		 	
-			 wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css.'.css' );
+			if(MODE == "development"){
+			 	wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css.'.css' );
+			}else{
+				wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css.'.min.css' );
+			}
 			 
 		 } 
 		 
