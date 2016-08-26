@@ -12,6 +12,8 @@ xmlrpc.php
 readme.html
 *.txt
 
+/node_modules
+
 #Including the static RI site folder (Renamed as st)
 #st (In order to exclude the folder remove comment)
 #Including the static RI site folder (Renamed as st)
