@@ -144,7 +144,7 @@ require(THEME_PATH_DIR.'/lib/inc/ri-custom-metaboxes.php');
 
 //For landing page template only
 function ri_display_phone_number(){
-	return '0333 444 8710';
+	return '0203 514 9040';
 }
 
 //New phone number for site wide
