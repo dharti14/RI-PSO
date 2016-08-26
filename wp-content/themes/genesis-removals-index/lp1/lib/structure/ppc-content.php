@@ -238,7 +238,7 @@ $dki_loc = dki_get_loc();
 <div class="row">
 	<div class="col-sm-12">
          <h5>To find out more, speak to our removal experts :</h5>
-         <div class="call-free"><span>Call Free</span> <div class="number">0333 444 8710</div></div> 
+         <div class="call-free"><span>Call Us</span> <div class="number"><?php echo ri_display_phone_number();?></div></div> 
          
          <div class="great-service"><p><span>Great service - Within an hour I had several quotes and a number of companies prepared to visit my home to prepare a fixed bespoke quotation. When I needed advice I contacted Removals Index on the phone and they were very professional and helpful.</span></p>
           <span class="recommended">Highly recommended.<strong>Rob Hardy - London</strong></span>

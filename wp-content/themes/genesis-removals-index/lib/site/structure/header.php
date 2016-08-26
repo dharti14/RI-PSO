@@ -38,7 +38,7 @@ function site_header(){
           </div>
           <div class="col-sm-4 call">
             <span class="glyphicon glyphicon-earphone"></span>
-            Call <strong>FREE</strong> 24/7 on: <span class="green"><a href="tel:<?php echo trim(ri_site_phone_number());?>"><?php echo ri_site_phone_number();?></a></span>
+            Call <strong>FREE</strong> 24/7 on: <span class="green"><a href="tel:<?php echo trim(ri_display_phone_number());?>"><?php echo ri_display_phone_number();?></a></span>
           </div>
         </div>
       </div>

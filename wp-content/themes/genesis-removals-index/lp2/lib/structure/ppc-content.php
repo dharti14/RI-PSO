@@ -304,7 +304,7 @@ $dki_loc = dki_get_loc();
 		<div class="container">
 		<span class="arrow-post1"><img src="<?php echo THEME_PATH_URI;?>/lp2/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 			<h3 class="i1">To find out more, speak to our removal experts:</h3>
-			<p class="call">Call Free <br>0333 444 8710</p>
+			<p class="call">Call Us <br><?php echo ri_display_phone_number();?></p>
 
 			<blockquote>
 				<div class="wrap">
