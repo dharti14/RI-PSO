@@ -105,7 +105,7 @@ display:none;
      <div class="mobile-logo"><a href="/st/commercial/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
     </div>
     <div class="col-sm-6">
-     <div class="contact-num"><label>Specialist Business Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
+     <div class="contact-num"><label>Specialist Business Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0203 514 9040</span></div>
     </div>
   </div>
       
@@ -148,7 +148,7 @@ display:none;
            
           </div>
           
-          <div class="quotes-text">“We help hundreds of businesses,<br> just like yours, move every month...”</div>
+          <div class="quotes-text">"We help hundreds of businesses,<br> just like yours, move every month..."</div>
         </div>
      </div>
   </div>
@@ -627,7 +627,7 @@ display:none;
       <div class="row">
         <div class="col-sm-12">
          <h5>To find out more, speak to our commercial removal experts :</h5>
-         <div class="call-free"><span>Call Free</span> <div class="number">0333 444 8710</div></div> 
+         <div class="call-free"><span>Call Us</span> <div class="number">0203 514 9040</div></div> 
          
          <div class="great-service"><p><span>Moving office was a military operation for our business, but thanks to Removals Index the move couldn't have been easier. From choosing off their list of vetted commercial movers, to the actual move it's self nothing could have been simpler. It saved my team days of work and countless hours of potential losses in revenue! Many thanks</span></p>
           <span class="recommended">Simply a Smooth Business Move!<strong>Rob Jenkins - Manchester</strong></span>

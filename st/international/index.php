@@ -90,7 +90,7 @@ display:none;
      <div class="mobile-logo"><a href="/st/international/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
     </div>
     <div class="col-sm-6">
-     <div class="contact-num"><label>Specialist International Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
+     <div class="contact-num"><label>Specialist International Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0203 514 9040</span></div>
     </div>
   </div>
       
@@ -226,7 +226,7 @@ display:none;
            
           </div>
           
-          <div class="quotes-text">“We help thousands of people<br> just like you, move <?php echo lcfirst($dst);?> every month...”</div>
+          <div class="quotes-text">"We help thousands of people<br> just like you, move <?php echo lcfirst($dst);?> every month..."</div>
         </div>
      </div>
   </div>
@@ -918,7 +918,7 @@ display:none;
       <div class="row">
         <div class="col-sm-12">
          <h5>To find out more, speak to our international removal experts :</h5>
-         <div class="call-free"><span>Call Free</span> <div class="number">0333 444 8710</div></div> 
+         <div class="call-free"><span>Call Us</span> <div class="number">0203 514 9040</div></div> 
          
          <div class="great-service"><p><span>Moving overseas is stressfully enough with all the paperwork, visa's and other requirements. The last thing I needed was any added headaches with the move itself. Thankfully Removals Index made the whole process of choosing a reliable move extremely simple. Within a matter of minutes I had a selection of quotes from a series of reputable firms, and within days we had our removal service booked and packing up our stuff ready for the trip down under!</span></p>
           <span class="recommended">Highly recommended.<strong>Jake Richards - Manchester to Sydney</strong></span>
