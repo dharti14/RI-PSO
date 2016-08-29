@@ -1,8 +1,21 @@
 <?php
 	//Load css and js of the form here
-	 $this->ri_load_css('ri_quote_form_2');
-     $this->ri_load_js('ri_quote_form_2');
-     
+	
+	$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
+
+	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
+	if($lookup_functionality == "data8"){
+		
+		$this->ri_load_css('ri_quote_form_2-data8');
+		$this->ri_load_js('ri_quote_form_2-data8');
+		 
+	}else{
+		 
+		$this->ri_load_css('ri_quote_form_2');
+		$this->ri_load_js('ri_quote_form_2');
+	}
+
+
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
      
@@ -264,7 +277,7 @@
 								                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
 								                <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
 								                 
-								                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*">
+								                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*" d8validationlevel="Address" value="">
 								                <div class="form-group">
 								               <h5 class="additional">Any Additional Information? </h5>
 								               <span class="additional">Eg Parking issues, contents</span>
@@ -572,7 +585,7 @@
                 <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
                 <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...">
                  
-                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...">
+                <input type="text" class="form-control" name="email" placeholder="Enter Email Address..." d8validationlevel="Address" value="">
                  <div class="form-group">
                <h5 class="additional">Any Additional Information? </h5>
                <span class="additional help">Eg move inventory, best time to call</span>
@@ -912,8 +925,8 @@
               	
                 <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
                 <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
-                 
-                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*">
+                <input type="text" class="form-control" name="email" d8validationlevel="Address" value="" placeholder="Enter Email Address...*">
+                
                 <div class="form-group">
                		<h5 class="additional">Any Additional Information? </h5>
                		<span class="additional">eg parking issues, contents</span>

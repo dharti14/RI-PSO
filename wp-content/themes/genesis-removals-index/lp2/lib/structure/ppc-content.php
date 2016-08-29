@@ -111,7 +111,11 @@ $dki_loc = dki_get_loc();
 	
 	
 	<!--form -->
-        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-02"]'); ?>
+        <?php 
+        	$quote_form_template = genesis_get_custom_field('_template');
+        	
+        	do_shortcode('[ri_quote_form template_name="'.$quote_form_template.'"]');
+        ?>
     <!--form -->
 
 	<section id="how_will">
