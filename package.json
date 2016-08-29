@@ -1,0 +1,23 @@
+{
+  "name": "removals-index",
+  "version": "1.0.0",
+  "description": "RI optimization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/codetoon/ri-wp.git"
+  },
+  "author": "Penuel Ratnagrahi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/codetoon/ri-wp/issues"
+  },
+  "homepage": "https://gitlab.com/codetoon/ri-wp#README",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1"
+  }
+}
