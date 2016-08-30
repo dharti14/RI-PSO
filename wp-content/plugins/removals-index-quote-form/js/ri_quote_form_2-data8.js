@@ -145,6 +145,10 @@ jQuery( document ).ready(function() {
 	});
 	
 	
+	jQuery("input[name='phone']").keypress(function(e) {
+        return 43 != e.which && 8 != e.which && 0 != e.which && (e.which < 48 || e.which > 57) ? !1 : void 0
+    })
+	
         //form validation rules
         jQuery("#form").validate({
         	
@@ -202,15 +206,7 @@ jQuery( document ).ready(function() {
                         },
                         'action': 'ri_validate_phone_data8'
             
-                    },
-                    beforeSend: function() {
-                    	jQuery("#form input[name='phone']").removeClass("valid");
-                        jQuery("#form input[name='phone']").addClass("loading");
-                    },
-                    complete: function(data) {
-                    	jQuery("#form input[name='phone']").removeClass("loading");
                     }
-                    
                 }
 			},
 			password:{
@@ -485,7 +481,18 @@ jQuery( document ).ready(function() {
 				},
 				phone:{
 					required:true,
-					phoneValidate:true
+					phoneValidate:true,
+					remote: {
+	                	url: "/wp-admin/admin-ajax.php",
+	                    type: "post",
+	                    data: {
+	                        phoneNumber: function() {
+	                            return jQuery("#form-business input[name='phone']").val();
+	                        },
+	                        'action': 'ri_validate_phone_data8'
+	            
+	                    }
+	                }
 				},
 				password:{
 					required:true,
@@ -697,7 +704,18 @@ jQuery( document ).ready(function() {
     			},
         		phone:{
         			required:true,
-        			phoneValidate:true
+					phoneValidate:true,
+					remote: {
+	                	url: "/wp-admin/admin-ajax.php",
+	                    type: "post",
+	                    data: {
+	                        phoneNumber: function() {
+	                            return jQuery("#form-international input[name='phone']").val();
+	                        },
+	                        'action': 'ri_validate_phone_data8'
+	            
+	                    }
+	                }
         		},
         		password:{
         			required:true,

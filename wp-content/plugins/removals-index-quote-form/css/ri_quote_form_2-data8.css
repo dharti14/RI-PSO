@@ -704,10 +704,18 @@ label.error:after {
     background: url(../images/error-arrow.png)no-repeat;
 }
 
-input.loading {
+.form-control.valid.pending {
+	background: none;
+}
+
+.form-control.pending {
+	border-color: #66afe9;
+}
+.form-control.phone.pending {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }
+
 
 /* In Mobile View Adjust in checked icon */
 @media (max-width: 358px){

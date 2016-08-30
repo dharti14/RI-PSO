@@ -275,7 +275,7 @@
 								              <div class="form-group">
 								              
 								                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-								                <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
+								                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
 								                 
 								                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*" d8validationlevel="Address" value="">
 								                <div class="form-group">
@@ -583,7 +583,7 @@
               <div class="form-group">
               	<input type="text" class="form-control" name="companyname" placeholder="Company Name...">
                 <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
-                <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...">
+                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
                  
                 <input type="text" class="form-control" name="email" placeholder="Enter Email Address..." d8validationlevel="Address" value="">
                  <div class="form-group">
@@ -924,7 +924,7 @@
               <div class="form-group">
               	
                 <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-                <input type="text" class="form-control" name="phone" placeholder="Enter Best Contact Number...*">
+                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
                 <input type="text" class="form-control" name="email" d8validationlevel="Address" value="" placeholder="Enter Email Address...*">
                 
                 <div class="form-group">
