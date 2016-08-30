@@ -104,7 +104,7 @@ document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead
      <div class="col-sm-4"> 
         <div id="testimonials">
 		
-			<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="830px" data-style-width="100%" data-stars="5"> 
+			<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="830px" data-style-width="100%" data-stars="4,5,3"> 
 				<a href="https://www.trustpilot.com/review/www.removals-index.com" target="_blank" rel="nofollow" hidden>Removals Index Reviews</a> 
 			</div>
 			
