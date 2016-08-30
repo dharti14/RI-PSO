@@ -148,7 +148,7 @@ display:none;
            
           </div>
           
-          <div class="quotes-text">"We help hundreds of businesses,<br> just like yours, move every month..."</div>
+          <div class="quotes-text">“We help hundreds of businesses,<br> just like yours, move every month...”</div>
         </div>
      </div>
   </div>
