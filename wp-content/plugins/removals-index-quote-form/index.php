@@ -23,6 +23,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		protected $api_key = '';
 		
+		private $mode = '';
+		
 		
 		/**
 		 * Constructor function.
@@ -58,6 +60,14 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
+			
+			
+			if(strpos(get_site_url(),'local')!==false) {
+				$this->mode = 'development';
+			} else {	
+				$this->mode = 'production';
+			}
+							
 		}
 		
 		/**
@@ -156,10 +166,13 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		}
                    
 		 public function ri_load_css($css) {
+		 			 			 	
+		 	//If development mode(local) then enqueue normal.css else enqueue minified css file
+		 	$css_mode = $this->mode == "development" ? '.css' :'.min.css';
 		 	
-			 wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css.'.css' );
-			 
-		 } 
+		 	wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
+		 				 
+		 }
 		 
 		 public function ri_load_js($js) {
 		 	
