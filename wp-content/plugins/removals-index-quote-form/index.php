@@ -23,6 +23,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		protected $api_key = '';
 		
+		protected $mode = '';
+		
 		
 		/**
 		 * Constructor function.
@@ -58,13 +60,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
-			//Storing mode in global variable
-			global $mode;
+			
 			
 			if(strpos(get_site_url(),'local')!==false) {
-				$mode = 'development';
+				$this->mode = 'development';
 			} else {	
-				$mode = 'production';
+				$this->mode = 'production';
 			}
 							
 		}
@@ -165,9 +166,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		}
                    
 		 public function ri_load_css($css) {
-		 	
+		 			 			 	
 		 	//If development mode(local) then enqueue normal.css else enqueue minified css file
-		 	$css_mode = $GLOBALS['mode'] == "development" ? '.css' :'.min.css';
+		 	$css_mode = $this->mode == "development" ? '.css' :'.min.css';
 		 	
 		 	wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
 		 				 
