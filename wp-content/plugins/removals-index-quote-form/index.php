@@ -23,7 +23,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		protected $api_key = '';
 		
-		protected $mode = '';
+		private $mode = '';
 		
 		
 		/**
