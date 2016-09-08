@@ -51,7 +51,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			define( 'RI_QUOTE_FORM_PATH' ,plugin_dir_path( __FILE__ ) );
 			
-			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ) );
+			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ),11 );
 			
 			//Ajax action fo all users(no-priviledges are set)
 			// also use wp_ajax_action_name for logged in users only
@@ -125,7 +125,6 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		public function quote_form_assets( ) {		
 				
-			wp_enqueue_script( 'ri-jquery', RI_QUOTE_FORM_URL.'js/jquery.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );

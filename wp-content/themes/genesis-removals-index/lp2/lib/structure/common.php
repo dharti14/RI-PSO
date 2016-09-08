@@ -25,6 +25,9 @@ function dequeue_unwanted_css(){
 	wp_dequeue_script('site_customizer');
 	wp_deregister_script('site_customizer');
 	
+	wp_dequeue_script('bootstrapjs');
+	wp_deregister_script('bootstrapjs');
+	
 	wp_dequeue_script('lp1_customizer');
 	wp_deregister_script('lp1_customizer');
 	
@@ -42,8 +45,8 @@ function lp2_load_scripts() {
 	
 	// Enqueuing Scripts and Styles for lp2
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('lp2_customizer', THEME_PATH_URI.'/lp2/lib/assets/js/customizer.js' );
-	wp_enqueue_script('lp2_bootstrapjs', THEME_PATH_URI.'/lp2/lib/assets/js/bootstrap.min.js' );
+	wp_enqueue_script('lp2_customizer', THEME_PATH_URI.'/lp2/lib/assets/js/customizer.js',array('jquery'),'',true );
+	wp_enqueue_script('lp2_bootstrapjs', THEME_PATH_URI.'/lp2/lib/assets/js/bootstrap.min.js',array('jquery'),'',true );
 	wp_enqueue_script('trustpilot', '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js', '', '', true);
 
 	// LOAD MAIN STYLE
