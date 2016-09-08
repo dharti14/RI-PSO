@@ -46,7 +46,7 @@ function lp1_load_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('lp1_customizer', THEME_PATH_URI.'/lp1/lib/assets/js/customizer.js',array('jquery'),'',true );
 	wp_enqueue_script('lp1_bootstrapjs', THEME_PATH_URI.'/lp1/lib/assets/js/bootstrap.min.js',array('jquery'),'',true );
-	wp_enqueue_script('trustpilot', '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js', '', '', true);
+	
 
 	// LOAD MAIN STYLE
 	wp_enqueue_style('lp1_bootstrapcss', THEME_PATH_URI.'/lp1/lib/assets/css/bootstrap.min.css');
