@@ -29,6 +29,9 @@ function pinlocal_minify_css_files($cssFile) {
 	);
 
 	$cssFile = preg_replace($search, $replace, $cssFile);
+	
+	//Replacing the line breaks too
+	$cssFile = preg_replace( "/\r|\n/", "", $cssFile );
 
 	return $cssFile;
 
