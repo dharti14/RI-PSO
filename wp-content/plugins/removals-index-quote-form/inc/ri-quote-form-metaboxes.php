@@ -25,6 +25,7 @@ function create_html_for_quote_form_settings() {
 			            
 			            <option value="normal" <?php selected ( genesis_get_custom_field( '_lookup_functionality' ), 'normal' ); ?>>Normal</option>
 			            <option value="data8" <?php selected ( genesis_get_custom_field( '_lookup_functionality' ), 'data8' ); ?>>Data8</option>
+			            <option value="bvdata8" <?php selected ( genesis_get_custom_field( '_lookup_functionality' ), 'bvdata8' ); ?>>Briteverify & Data8</option>
 			            
 			        	</select>
 			        </td>

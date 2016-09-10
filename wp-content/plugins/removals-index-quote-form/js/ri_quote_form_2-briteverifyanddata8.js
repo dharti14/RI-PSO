@@ -192,7 +192,17 @@ jQuery( document ).ready(function() {
 			email:{
 				required: true,
 				email: true,
-				d8val_email: true
+				remote: {
+					url: "/wp-admin/admin-ajax.php",
+                    type: "post",
+                    data: {
+                    	emailAddress: function() {
+                            return jQuery("#form input[name='email']").val();
+                        },
+                        'action': 'ri_email_verify'
+            
+                    }
+				}
 			},
 			phone:{
 				required:true,
@@ -477,7 +487,17 @@ jQuery( document ).ready(function() {
 			    email:{
 					required: true,
 	                email: true,
-	                d8val_email: true
+	                remote: {
+	                	url: "/wp-admin/admin-ajax.php",
+	                    type: "post",
+	                    data: {
+	                        phoneNumber: function() {
+	                            return jQuery("#form input[name='phone']").val();
+	                        },
+	                        'action': 'ri_validate_phone_data8'
+	            
+	                    }
+	                }
 				},
 				phone:{
 					required:true,
@@ -700,7 +720,17 @@ jQuery( document ).ready(function() {
     		    email:{
     				required: true,
                     email: true,
-                    d8val_email: true
+                    remote: {
+                    	url: "/wp-admin/admin-ajax.php",
+                        type: "post",
+                        data: {
+                            phoneNumber: function() {
+                                return jQuery("#form input[name='phone']").val();
+                            },
+                            'action': 'ri_validate_phone_data8'
+                
+                        }
+                    }
     			},
         		phone:{
         			required:true,

@@ -716,6 +716,11 @@ label.error:after {
     background-position:97% center;
 }
 
+.form-control.email.pending {
+    background: url("images/ajax-loader.gif") no-repeat;
+    background-position:97% center;
+}
+
 /* In Mobile View Adjust in checked icon */
 @media (max-width: 358px){
 	

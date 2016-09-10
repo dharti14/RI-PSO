@@ -160,7 +160,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			if($lookup_functionality == "data8"){
 			
 				wp_enqueue_script( 'data8-js', 'https://webservices.data-8.co.uk/javascript/jqueryvalidation_min.js', array('ri-jquery-validate-js' ), '', true );
-				wp_enqueue_script( 'data8-api', 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=QvTZrK4u5NnULY8cN7h9r4WKAKhW97G_EqpdccenV_w', array('data8-js' ), '', true );
+				wp_enqueue_script( 'data8-api', 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=QvTZrK4u5NnULY8cN7h9r4WKAKhW97G_EqpdccenV_w&load=EmailValidation', array('data8-js' ), '', true );
 			
 			}
 			//Enqueuing the required files if data8 lookup functionality is selected
