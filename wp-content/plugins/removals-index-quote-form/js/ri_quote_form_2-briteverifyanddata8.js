@@ -492,7 +492,7 @@ jQuery( document ).ready(function() {
 	                    type: "post",
 	                    data: {
 	                    	emailAddress: function() {
-	                            return jQuery("#form input[name='email']").val();
+	                            return jQuery("#form-business input[name='email']").val();
 	                        },
 	                        'action': 'ri_email_verify'
 	            
@@ -725,7 +725,7 @@ jQuery( document ).ready(function() {
                         type: "post",
                         data: {
                         	emailAddress: function() {
-                                return jQuery("#form input[name='email']").val();
+                                return jQuery("#form-international input[name='email']").val();
                             },
                             'action': 'ri_email_verify'
                 
