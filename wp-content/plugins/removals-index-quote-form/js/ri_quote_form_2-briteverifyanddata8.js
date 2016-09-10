@@ -488,16 +488,16 @@ jQuery( document ).ready(function() {
 					required: true,
 	                email: true,
 	                remote: {
-	                	url: "/wp-admin/admin-ajax.php",
+						url: "/wp-admin/admin-ajax.php",
 	                    type: "post",
 	                    data: {
-	                        phoneNumber: function() {
-	                            return jQuery("#form input[name='phone']").val();
+	                    	emailAddress: function() {
+	                            return jQuery("#form input[name='email']").val();
 	                        },
-	                        'action': 'ri_validate_phone_data8'
+	                        'action': 'ri_email_verify'
 	            
 	                    }
-	                }
+					}
 				},
 				phone:{
 					required:true,
@@ -721,16 +721,16 @@ jQuery( document ).ready(function() {
     				required: true,
                     email: true,
                     remote: {
-                    	url: "/wp-admin/admin-ajax.php",
+    					url: "/wp-admin/admin-ajax.php",
                         type: "post",
                         data: {
-                            phoneNumber: function() {
-                                return jQuery("#form input[name='phone']").val();
+                        	emailAddress: function() {
+                                return jQuery("#form input[name='email']").val();
                             },
-                            'action': 'ri_validate_phone_data8'
+                            'action': 'ri_email_verify'
                 
                         }
-                    }
+    				}
     			},
         		phone:{
         			required:true,

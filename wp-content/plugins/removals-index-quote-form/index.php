@@ -248,6 +248,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 
 		 public static function ri_email_verify( ) {
 		 		
+		 	
 		 	/**
 		 	 * Brite Verify API Key.
 		 	 */
@@ -257,7 +258,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 		
 		 	if( $_POST && isset( $_POST['emailAddress'] ) ) {
 		 
-		 		$initUrl = $apiUrl."address=".urlencode($_POST['emailAddress'])."&apikey=".urlencode($apiKey);
+		 		$initUrl = $apiUrl."address=".urlencode(trim($_POST['emailAddress']))."&apikey=".urlencode($apiKey);
 		 
 		 		$ch = curl_init();
 		 
@@ -272,10 +273,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		 
 		 		$output = curl_exec($ch);
-		 
-		 			
-		 
-		 			
+				 			
 		 		if($output === false)
 		 		{
 		 			//echo 'Curl error: ' . curl_error($ch);
