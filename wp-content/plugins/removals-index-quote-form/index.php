@@ -58,6 +58,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			add_action( 'wp_ajax_nopriv_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			add_action( 'wp_ajax_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			
+			add_action( 'wp_ajax_ri_email_verify', array('RI_QuoteForm','ri_email_verify'));
+			add_action( 'wp_ajax_nopriv_ri_email_verify', array('RI_QuoteForm','ri_email_verify'));
+			
 			add_action( 'wp_ajax_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 			add_action( 'wp_ajax_nopriv_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 			
@@ -77,8 +80,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				
 			//Passing the name of the template file(.php) as key and the value will be Name (which is to be visible on front end).
 			$quote_form_templates = array(
-					'quote-form-template-01' => 'Template 01',
-					'quote-form-template-02' => 'Template 02'
+					'quote-form-template-02' => 'Template 02',
+					'quote-form-template-01' => 'Template 01'
 			);
 				
 			//Including ci plugin metaboxes file
@@ -147,7 +150,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
-			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.css' );
+			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.min.css' );
 			
 			
 			//Checking for the lookup functionality selected
@@ -157,7 +160,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			if($lookup_functionality == "data8"){
 			
 				wp_enqueue_script( 'data8-js', 'https://webservices.data-8.co.uk/javascript/jqueryvalidation_min.js', array('ri-jquery-validate-js' ), '', true );
-				wp_enqueue_script( 'data8-api', 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=QvTZrK4u5NnULY8cN7h9r4WKAKhW97G_EqpdccenV_w&load=EmailValidation', array('data8-js' ), '', true );
+				wp_enqueue_script( 'data8-api', 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=QvTZrK4u5NnULY8cN7h9r4WKAKhW97G_EqpdccenV_w', array('data8-js' ), '', true );
 			
 			}
 			//Enqueuing the required files if data8 lookup functionality is selected
@@ -237,6 +240,63 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 	
 		 	return $hiddenVars;
 		 	
+		 }
+		 
+		 /**
+		  * Validated email id
+		  */
+		 
+		 public static function ri_email_verify( ) {
+		 		
+		 	/**
+		 	 * Brite Verify API Key.
+		 	 */
+		 	$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
+		 		
+		 	$apiUrl = "https://bpi.briteverify.com/emails.json?";
+		 		
+		 	if( $_POST && isset( $_POST['emailAddress'] ) ) {
+		 
+		 		$initUrl = $apiUrl."address=".urlencode($_POST['emailAddress'])."&apikey=".urlencode($apiKey);
+		 
+		 		$ch = curl_init();
+		 
+		 		curl_setopt($ch, CURLOPT_URL, $initUrl);
+		 
+		 		//curl_setopt($ch, CURLOPT_HEADER, 0);
+		 
+		 		//curl_setopt($ch, CURLOPT_POST, 1);
+		 
+		 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		 
+		 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		 
+		 		$output = curl_exec($ch);
+		 
+		 			
+		 
+		 			
+		 		if($output === false)
+		 		{
+		 			//echo 'Curl error: ' . curl_error($ch);
+		 			echo "true";
+		 		}
+		 		else
+		 		{
+		 			$output = json_decode($output, true);
+		 				
+		 			if($output['status'] == 'valid' || $output['status'] == 'accept_all')
+		 				echo "true";
+		 			else if($output['status'] == 'invalid')
+		 				echo "false";
+		 				
+		 		}
+		 	}
+		 	else {
+		 		echo "false";
+		 	}
+		 	die();
+		 		
 		 }
 		 
 		 

@@ -277,7 +277,7 @@
 								                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
 								                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
 								                 
-								                <input type="text" class="form-control" name="email" placeholder="Enter Email Address...*" d8validationlevel="Address" value="">
+								                <input type="text" class="form-control email" name="email" placeholder="Enter Email Address...*"  value="">
 								                <div class="form-group">
 								               <h5 class="additional">Any Additional Information? </h5>
 								               <span class="additional">Eg Parking issues, contents</span>
@@ -585,7 +585,7 @@
                 <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
                 <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
                  
-                <input type="text" class="form-control" name="email" placeholder="Enter Email Address..." d8validationlevel="Address" value="">
+                <input type="text" class="form-control email" name="email" placeholder="Enter Email Address..." value="">
                  <div class="form-group">
                <h5 class="additional">Any Additional Information? </h5>
                <span class="additional help">Eg move inventory, best time to call</span>
@@ -925,7 +925,7 @@
               	
                 <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
                 <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
-                <input type="text" class="form-control" name="email" d8validationlevel="Address" value="" placeholder="Enter Email Address...*">
+                <input type="text" class="form-control email" name="email"  value="" placeholder="Enter Email Address...*">
                 
                 <div class="form-group">
                		<h5 class="additional">Any Additional Information? </h5>

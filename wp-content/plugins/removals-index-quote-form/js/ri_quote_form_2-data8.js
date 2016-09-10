@@ -158,7 +158,7 @@ jQuery( document ).ready(function() {
 					if (errors) {
 					 
 				      var first_element = validator.errorList[0].element;
-					  var real_offset = $(first_element).offset();
+					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
 					  
@@ -192,7 +192,17 @@ jQuery( document ).ready(function() {
 			email:{
 				required: true,
 				email: true,
-                d8val_email: true
+				remote: {
+					url: "/wp-admin/admin-ajax.php",
+                    type: "post",
+                    data: {
+                    	emailAddress: function() {
+                            return jQuery("#form input[name='email']").val();
+                        },
+                        'action': 'ri_email_verify'
+            
+                    }
+				}
 			},
 			phone:{
 				required:true,
@@ -448,11 +458,11 @@ jQuery( document ).ready(function() {
 					if (errors) {
 					 
 				      var first_element = validator.errorList[0].element;
-					  var real_offset = $(first_element).offset();
+					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
 					  
-					  $(window).scrollTo({top:top_offset,left:left_offset});
+					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}	
 				},	
@@ -477,7 +487,17 @@ jQuery( document ).ready(function() {
 			    email:{
 					required: true,
 	                email: true,
-	                d8val_email: true
+	                remote: {
+	                	url: "/wp-admin/admin-ajax.php",
+	                    type: "post",
+	                    data: {
+	                        phoneNumber: function() {
+	                            return jQuery("#form input[name='phone']").val();
+	                        },
+	                        'action': 'ri_validate_phone_data8'
+	            
+	                    }
+	                }
 				},
 				phone:{
 					required:true,
@@ -667,7 +687,7 @@ jQuery( document ).ready(function() {
 					if (errors) {
 					 
 				      var first_element = validator.errorList[0].element;
-					  var real_offset = $(first_element).offset();
+					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
 					  
@@ -700,7 +720,17 @@ jQuery( document ).ready(function() {
     		    email:{
     				required: true,
                     email: true,
-                    d8val_email: true
+                    remote: {
+                    	url: "/wp-admin/admin-ajax.php",
+                        type: "post",
+                        data: {
+                            phoneNumber: function() {
+                                return jQuery("#form input[name='phone']").val();
+                            },
+                            'action': 'ri_validate_phone_data8'
+                
+                        }
+                    }
     			},
         		phone:{
         			required:true,
