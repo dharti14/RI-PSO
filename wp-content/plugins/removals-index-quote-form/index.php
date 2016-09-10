@@ -23,6 +23,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		protected $api_key = '';
 		
+		private $mode = '';
+		
 		
 		/**
 		 * Constructor function.
@@ -49,7 +51,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			define( 'RI_QUOTE_FORM_PATH' ,plugin_dir_path( __FILE__ ) );
 			
-			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ) );
+			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ),11 );
 			
 			//Ajax action fo all users(no-priviledges are set)
 			// also use wp_ajax_action_name for logged in users only
@@ -61,13 +63,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 			
-			//Storing mode in global variable
-			global $mode;
+			
 			
 			if(strpos(get_site_url(),'local')!==false) {
-				$mode = 'development';
+				$this->mode = 'development';
 			} else {	
-				$mode = 'production';
+				$this->mode = 'production';
 			}
 			
 			
@@ -142,7 +143,6 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		public function quote_form_assets( ) {		
 				
-			wp_enqueue_script( 'ri-jquery', RI_QUOTE_FORM_URL.'js/jquery.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
@@ -198,9 +198,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		}
                    
 		 public function ri_load_css($css) {
-		 	
+		 			 			 	
 		 	//If development mode(local) then enqueue normal.css else enqueue minified css file
-		 	$css_mode = $GLOBALS['mode'] == "development" ? '.css' :'.min.css';
+		 	$css_mode = $this->mode == "development" ? '.css' :'.min.css';
 		 	
 		 	wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
 		 				 

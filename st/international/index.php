@@ -226,7 +226,7 @@ display:none;
            
           </div>
           
-          <div class="quotes-text">"We help thousands of people<br> just like you, move <?php echo lcfirst($dst);?> every month..."</div>
+          <div class="quotes-text">“We help thousands of people<br> just like you, move <?php echo lcfirst($dst);?> every month...”</div>
         </div>
      </div>
   </div>
