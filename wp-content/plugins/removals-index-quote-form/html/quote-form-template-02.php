@@ -70,7 +70,7 @@
 					                <div rel="bed5" class="bed-radios-container">
 					                  <div class="img5bed">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
-					                  <label for="bed5">5<br>bed</label>
+					                  <label for="bed5">5<br>bed +</label>
 					                </div>
 					                
 					                <div rel="bed0" class="bed-radios-container box_desc">
@@ -701,7 +701,7 @@
 					                <div rel="bed5" class="bed-radios-container">
 					                  <div class="img5bed">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
-					                  <label for="bed5">5<br>bed</label>
+					                  <label for="bed5">5<br>bed +</label>
 					                </div>
 					                
 					                <div rel="bed0" class="bed-radios-container box_desc">
