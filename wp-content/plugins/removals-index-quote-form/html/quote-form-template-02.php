@@ -2,24 +2,29 @@
 	//Load css and js of the form here
 	
 	$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
+	
+	$filename='';
 
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
 	switch ($lookup_functionality){
 		
 		case "data8":
-			$this->ri_load_css('ri_quote_form_2-data8');
-			$this->ri_load_js('ri_quote_form_2-data8');
+			$filename = "ri_quote_form_2-data8";
 			break;
 			
 		case "bvdata8":
-			$this->ri_load_css('ri_quote_form_2-briteverifyanddata8');
-			$this->ri_load_js('ri_quote_form_2-briteverifyanddata8');
+			$filename = "ri_quote_form_2-briteverifyanddata8";
 			break;
 			
 		default:
-			$this->ri_load_css('ri_quote_form_2');
-			$this->ri_load_js('ri_quote_form_2');
+			$filename = "ri_quote_form_2";
 	}
+	
+	
+	//Loading js and css file depending upon the lookup functionality selected
+		$this->ri_load_css($filename);
+		$this->ri_load_js($filename);
+	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
