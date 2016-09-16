@@ -114,7 +114,7 @@ jQuery( document ).ready(function() {
 			return false;
 		}
 		return true;
-	}, "Invalid name. Name must be atleast 2 characters long and can not contain digits.");
+	}, "Invalid name. Name must be at least 2 characters long and can not contain digits.");
 	
 	
 	//If Additional Info radio is clicked then validate it
