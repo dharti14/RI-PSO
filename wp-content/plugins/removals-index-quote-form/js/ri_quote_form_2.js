@@ -114,7 +114,7 @@ jQuery( document ).ready(function() {
 			return false;
 		}
 		return true;
-	}, "Invalid name. Name must be atleast 2 chars long and can not contain digits.");
+	}, "Invalid name. Name must be atleast 2 characters long and can not contain digits.");
 	
 	
 	//If Additional Info radio is clicked then validate it
@@ -234,7 +234,7 @@ jQuery( document ).ready(function() {
 			bedrooms:"Size of current property is required",
 			fullname:{
 				required:"Your name is required",
-				minlength:"Your name should be atleast 2 characters long"
+				minlength:"Your name should be at least 2 characters long"
 			},
 		    phone:"Please enter a valid phone number",
 		    email:"Your email address is required",
@@ -494,7 +494,7 @@ jQuery( document ).ready(function() {
 					bedrooms:"Size of current property is required",
 					fullname:{
 						required:"Your name is required",
-						minlength:"Your name should be atleast 2 characters long"
+						minlength:"Your name should be at least 2 characters long"
 					},
 					phone:"Please enter a valid phone number",
 					email:"Your email address is required",
@@ -718,7 +718,7 @@ jQuery( document ).ready(function() {
         			bedrooms:"Size of current property is required",
         			fullname:{
         				required:"Your name is required",
-        				minlength:"Your name should be atleast 2 characters long"
+        				minlength:"Your name should be at least 2 characters long"
         			},
         			phone:"Please enter a valid phone number",
         			email:"Your email address is required",
