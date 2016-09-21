@@ -304,9 +304,7 @@ jQuery( document ).ready(function() {
 	 	
 	 	//Checking for the checkbox checked and apply valid class to it.
 	 	jQuery('.bed-radios-container').click(function(){
-			
-			console.log('clicked');
-			
+						
 			jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
 			
 			if(jQuery(this).attr("rel") == "bed0"){
@@ -346,6 +344,7 @@ jQuery( document ).ready(function() {
 			
 			jQuery("#show-after-get .leftpart .radio-with-text h5 span").remove();
 			jQuery("#show-after-get .leftpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#show-after-get #property_type_from-error").hide();
 			
 		});
 		
@@ -361,6 +360,7 @@ jQuery( document ).ready(function() {
 			}
 			jQuery("#show-after-get .rightpart .radio-with-text h5 span").remove();
 			jQuery("#show-after-get .rightpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#show-after-get #property_type_to-error").hide();
 			
 		});
 		
@@ -861,6 +861,7 @@ jQuery( document ).ready(function() {
 			
 			jQuery("#form-international .leftpart .radio-with-text h5 span").remove();
 			jQuery("#form-international .leftpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#form-international #property_type_from-error").hide();
 		
 		});
 
@@ -876,6 +877,7 @@ jQuery( document ).ready(function() {
 			}
 			jQuery("#form-international .rightpart .radio-with-text h5 span").remove();
 			jQuery("#form-international .rightpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#form-international #property_type_to-error").hide();
 			
 		});
 		
