@@ -161,7 +161,7 @@ jQuery( document ).ready(function() {
 					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
-					  
+					  jQuery(first_element).focus();
 					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}
@@ -192,7 +192,23 @@ jQuery( document ).ready(function() {
 			email:{
 				required: true,
 				email: true,
-				d8val_email: true
+				remote: {
+                	url: "/wp-admin/admin-ajax.php",
+                    type: "post",
+                    data: {
+                        emailAddress: function() {
+                            return jQuery("#form input[name='email']").val();
+                        },
+                        'action': 'ri_validate_email_data8'
+            
+                    },
+					beforeSend: function() {
+                        jQuery("#form #get-my-quote-top").attr("disabled", "disabled");
+                    },
+                    complete: function(data) {
+                    	jQuery("#form #get-my-quote-top").removeAttr("disabled");
+                    }
+                }
 			},
 			phone:{
 				required:true,
@@ -288,6 +304,9 @@ jQuery( document ).ready(function() {
 	 	
 	 	//Checking for the checkbox checked and apply valid class to it.
 	 	jQuery('.bed-radios-container').click(function(){
+			
+			console.log('clicked');
+			
 			jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
 			
 			if(jQuery(this).attr("rel") == "bed0"){
@@ -451,7 +470,7 @@ jQuery( document ).ready(function() {
 					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
-					  
+					  jQuery(first_element).focus();
 					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}	
@@ -477,7 +496,23 @@ jQuery( document ).ready(function() {
 			    email:{
 					required: true,
 	                email: true,
-	                d8val_email: true
+	                remote: {
+						url: "/wp-admin/admin-ajax.php",
+						type: "post",
+						data: {
+							emailAddress: function() {
+								return jQuery("#form-business input[name='email']").val();
+							},
+							'action': 'ri_validate_email_data8'
+				
+						},
+						beforeSend: function() {
+							jQuery("#form-business .get-my-quote-second-business").attr("disabled", "disabled");
+						},
+						complete: function(data) {
+							jQuery("#form-business .get-my-quote-second-business").removeAttr("disabled");
+						}
+					}
 				},
 				phone:{
 					required:true,
@@ -670,7 +705,7 @@ jQuery( document ).ready(function() {
 					  var real_offset = jQuery(first_element).offset();
 					  var top_offset  = real_offset.top - 100;
 					  var left_offset = real_offset.left;
-					  
+					  jQuery(first_element).focus();
 					  jQuery(window).scrollTo({top:top_offset,left:left_offset});
 					 
 					}
@@ -700,7 +735,23 @@ jQuery( document ).ready(function() {
     		    email:{
     				required: true,
                     email: true,
-                    d8val_email: true
+                    remote: {
+						url: "/wp-admin/admin-ajax.php",
+						type: "post",
+						data: {
+							emailAddress: function() {
+								return jQuery("#form-international input[name='email']").val();
+							},
+							'action': 'ri_validate_email_data8'
+				
+						},
+						beforeSend: function() {
+							jQuery("#form-international .get-my-quote-second-international").attr("disabled", "disabled");
+						},
+						complete: function(data) {
+							jQuery("#form-international .get-my-quote-second-international").removeAttr("disabled");
+						}
+					}
     			},
         		phone:{
         			required:true,

@@ -58,9 +58,15 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			add_action( 'wp_ajax_nopriv_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			add_action( 'wp_ajax_get_address_by_postcode',  array( &$this, 'get_address_by_postcode'));
 			
+			//Briteverify email validation
 			add_action( 'wp_ajax_ri_email_verify', array('RI_QuoteForm','ri_email_verify'));
 			add_action( 'wp_ajax_nopriv_ri_email_verify', array('RI_QuoteForm','ri_email_verify'));
 			
+			//Data8 email validation
+			add_action( 'wp_ajax_ri_validate_email_data8', array('RI_QuoteForm','ri_validate_email_data8'));
+			add_action( 'wp_ajax_nopriv_ri_validate_email_data8', array('RI_QuoteForm','ri_validate_email_data8'));
+			
+			//Data8 phone validation
 			add_action( 'wp_ajax_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 			add_action( 'wp_ajax_nopriv_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 			
@@ -151,22 +157,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
 			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.min.css' );
-			
-			
-			//Checking for the lookup functionality selected
-			$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
-				
-			//Enqueuing the required files if data8 lookup functionality is selected
-			if($lookup_functionality == "data8"){
-			
-				wp_enqueue_script( 'data8-js', 'https://webservices.data-8.co.uk/javascript/jqueryvalidation_min.js', array('ri-jquery-validate-js' ), '', true );
-				wp_enqueue_script( 'data8-api', 'https://webservices.data-8.co.uk/javascript/loader.ashx?key=QvTZrK4u5NnULY8cN7h9r4WKAKhW97G_EqpdccenV_w&load=EmailValidation', array('data8-js' ), '', true );
-			
-			}
-			//Enqueuing the required files if data8 lookup functionality is selected
-					
-			
-				
+							
 		}
 		
 
@@ -295,6 +286,55 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 	}
 		 	die();
 		 		
+		 }
+		 
+		 
+		 public static function ri_validate_email_data8( ) {
+		 	
+		 	
+		 	
+		 	
+		 	if( $_POST && isset( $_POST['emailAddress'] ) ) {
+		 				 	
+		 		$email = $_POST['emailAddress'];
+		 		
+		 		//Checks for the full email address
+		 			$level = "Address";
+		 		//Checks for the full email address
+		 		
+		 		function IsValid($email, $level)
+		 		{
+		 			$params = array(
+		 					"username" => 'rob@pinlocal.com',
+		 					"password" => '$dxJ0Hxh',
+		 					"email" => $email,
+		 					"level" => $level,
+		 					"options" => $options
+		 			);
+		 			$client = new SoapClient("http://webservices.data-8.co.uk/EmailValidation.asmx?WSDL");
+		 			$result = $client->IsValid($params);
+		 					 			
+		 			if ($result->IsValidResult->Status->Success == 0)
+		 			{
+		 				echo "false";
+		 			}
+		 			else if($result->IsValidResult->Result == "Valid")
+		 			{
+		 				echo "true";
+		 				
+		 			}else{
+		 				
+		 				echo "false";
+		 			}
+		 		}
+		 		
+		 		IsValid($email,$level);
+		 		
+		 	}else{
+		 		echo "false";
+		 	}
+		 	die();
+		 	
 		 }
 		 
 		 

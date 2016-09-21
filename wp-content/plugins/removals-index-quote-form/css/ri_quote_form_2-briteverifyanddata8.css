@@ -125,7 +125,7 @@ blockquote,q {
 .bed-radios-container label {
     margin-left: 60px !important;
     text-align: center !important;
-	display:block !important;
+	display:block;
 	color:#210c3b !important;
 	font-weight:normal !important;
 }
