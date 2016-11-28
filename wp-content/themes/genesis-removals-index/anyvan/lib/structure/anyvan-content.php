@@ -11,7 +11,7 @@ $dki_loc = dki_get_loc();
 	<section id="hero">
 
 		<div class="container">
-			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Today!</h1>
+			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Now</h1>
 			<p class="align_center tagline">You're Seconds Away From Removing The Stress, Hassle &amp; Headache From Your Move!</p>
 
 			<div class="pad80">
@@ -19,7 +19,7 @@ $dki_loc = dki_get_loc();
 					<div class="col-xs-12">
 						<div class="quote_box_holder">
 							<div class="quote_box">
-								<h3 class="title">SAVE Up To 40% On Your Move!</h3>
+								<h3 class="title">SAVE Up To 75% On Your Move.</h3>
 
 								<form id="form1">
 									<div class="row">
@@ -32,22 +32,7 @@ $dki_loc = dki_get_loc();
 											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode..."/>
 										</div>
 									</div>
-									
-									  <!-- 
-												<div class="checkbox align_center">
-													<div class="row">
-														<label class="col-sm-4 mg-b-10">
-															<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="business_type" value="Residential" /> Residential
-														</label>
-														<label class="col-sm-4 mg-b-10">
-															<input type="radio" onclick="jQuery('#form1 .moving-to').show();" name="business_type" value="Business Removal" /> Commercial
-														</label>
-														<label class="col-sm-4 mg-b-10">
-															<input type="radio" onclick="jQuery('#form1 .moving-to').hide(); jQuery('#form1 .moving-to').val('');" name="business_type" value="International" /> International
-														</label>
-													</div>
-												</div>
- 										-->
+
 									<div id="get-my-quote-top" class="btn btn-quote get-my-quote">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
 									<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 
@@ -128,7 +113,7 @@ $dki_loc = dki_get_loc();
 	<section id="how_will">
 		<div class="container">
 			
-			<h2 class="align_center">How Will Removals Index <br class="show_sm"/>Take The Stress Out Of My Move?</h2>
+			<h2 class="align_center">Take The Stress Out Of My Move.</h2>
 
 			<aside class="steps">
 		      <div class="container">
@@ -140,8 +125,8 @@ $dki_loc = dki_get_loc();
 		              <i class="num"></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">1. Provide A Few Details</p>
-		              <p class="t">Tell us about your move and the best local removal companies will compete for your business</p>
+		              <p class="step">1. Provide Details</p>
+		              <p class="t">Complete our simple form in under 60 seconds</p>
 		            </div>
 		          </div>
 
@@ -150,8 +135,8 @@ $dki_loc = dki_get_loc();
 		              <i class="num "></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">2. Compare Prices</p>
-		              <p class="t">Get multiple FREE quotes from local removal firms in <?php echo $dki_loc;?>, so you never need to haggle on price</p>
+		              <p class="step">2. Get Quotes</p>
+		              <p class="t">Compare multiple removal quotes from trusted removal men in <?php echo $dki_loc;?></p>
 		            </div>
 		          </div>
 
@@ -160,8 +145,8 @@ $dki_loc = dki_get_loc();
 		              <i class="num "></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">3. Hire The Best</p>
-		              <p class="t">Removals Index's internal review process ensures you hire only the best movers for the job</p>
+		              <p class="step">3. Save Money</p>
+		              <p class="t">Trusted man and van experts compete for your business, saving upto 75%</p>
 		            </div>
 		          </div>
 
@@ -223,7 +208,7 @@ $dki_loc = dki_get_loc();
 		
 			<div class="inner-container">
 			<h2 class="title">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h2>
-			<p class="intro">We can help you move house quickly and affordably, even if you're booking <br class="show_md">last minute, only have one or two boxes or simply just hate packing!</p>
+			<p class="intro">Simplify your home move with Removals Index.</p>
 			<div class="row">
 				<div class="col-sm-6">
 					<ul>
@@ -235,8 +220,8 @@ $dki_loc = dki_get_loc();
 
 						<li>
 							<i class="fa fa-check-circle"></i>
-							<strong>Get Done In Seconds Not Hours</strong>
-							<p>On top of your move, researching, calling and reviewing removal companies is an added hassle you don't need. Removals Index can help you can get the job done in a matter of seconds.</p>
+							<strong>Find A Trusted Man With A Van</strong>
+							<p>.</p>
 						</li>
 
 						<li>
