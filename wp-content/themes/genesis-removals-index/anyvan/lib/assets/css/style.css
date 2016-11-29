@@ -40,7 +40,9 @@ span.arrow-post1 {
 	    margin: 0 0 0 -77px;
 }
 
-
+#article {
+	   border-bottom: #c9c9c9 solid 7px;
+}
 
 @media (max-width: 767px) { 
 	
@@ -1425,7 +1427,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 768px) {
     #article {
-	      padding: 65px 0; 
+/* 	      padding: 65px 0;  */
 	 } 
 }
 
@@ -1829,6 +1831,16 @@ ul.no_list li .fa {
 	    padding: 10px 0;
 	}
 }
+
+#article .content {
+	margin : 40px 0px;
+	text-align:left;
+}
+
+#search_query h2 {
+	color:#333;
+}
+
 
 /* Footer Menu */
 

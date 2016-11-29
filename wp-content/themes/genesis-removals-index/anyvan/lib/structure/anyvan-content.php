@@ -113,7 +113,7 @@ $dki_loc = dki_get_loc();
 	<section id="how_will">
 		<div class="container">
 			
-			<h2 class="align_center">Take The Stress Out Of My Move.</h2>
+			<h2 class="align_center">Take The Stress Out Of My Move:</h2>
 
 			<aside class="steps">
 		      <div class="container">
@@ -125,8 +125,8 @@ $dki_loc = dki_get_loc();
 		              <i class="num"></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">1. Provide Details</p>
-		              <p class="t">Complete our simple form in under 60 seconds</p>
+		              <p class="step">1. Provide Details.</p>
+		              <p class="t">Complete our simple form in under 60 seconds.</p>
 		            </div>
 		          </div>
 
@@ -135,7 +135,7 @@ $dki_loc = dki_get_loc();
 		              <i class="num "></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">2. Get Quotes</p>
+		              <p class="step">2. Get Quotes.</p>
 		              <p class="t">Compare multiple removal quotes from trusted removal men in <?php echo $dki_loc;?></p>
 		            </div>
 		          </div>
@@ -145,7 +145,7 @@ $dki_loc = dki_get_loc();
 		              <i class="num "></i>
 		            </div>
 		            <div class="a">
-		              <p class="step">3. Save Money</p>
+		              <p class="step">3. Save Money.</p>
 		              <p class="t">Trusted man and van experts compete for your business, saving upto 75%</p>
 		            </div>
 		          </div>
@@ -221,13 +221,13 @@ $dki_loc = dki_get_loc();
 						<li>
 							<i class="fa fa-check-circle"></i>
 							<strong>Find A Trusted Man With A Van</strong>
-							<p>.</p>
+							<p>Our moving experts are hand-picked and carefully vetted with a rigorous, 6-step process. So you can relax, knowing your valuables are in safe hands.</p>
 						</li>
 
 						<li>
 							<i class="fa fa-check-circle"></i>
-							<strong>Need A Quick Turnaround?</strong>
-							<p>Our trusted removal firms will always try and accommodate you, even if you're looking to move fast or at very short notice.</p>
+							<strong>Booking Last Minute?</strong>
+							<p>Need to move quick? Our extensive network of house removal companies will move mountains to make your move happen.</p>
 						</li>
 						
 					</ul>
@@ -236,14 +236,14 @@ $dki_loc = dki_get_loc();
 					<ul>
 						<li>
 							<i class="fa fa-check-circle"></i>
-							<strong>6-Step SAFE™ Verification Process</strong>
-							<p>We <u>hand pick and pre-screen</u> all of our removal companies. Each and every one goes through our 6-step SAFE™ verification process.</p>
+							<strong>Small Jobs? No Problem.</strong>
+							<p>Need to hire a house moving van man for a small removals job? Experienced piano and furniture removal specialists will make light work of moving your heavy valuables.</p>
 						</li>
 
 						<li>
 							<i class="fa fa-check-circle"></i>
-							<strong>SAVE Up To 40%</strong>
-							<p>You can save up to 40% on your moving costs by comparing several no obligation quotes from reliable removal companies in your area.</p>
+							<strong>SAVE Up To 75%</strong>
+							<p>Save up to 75% on your man and van by comparing no obligation quotes from vetted house moving companies.</p>
 						</li>
 
 						<li>
@@ -295,6 +295,31 @@ $dki_loc = dki_get_loc();
 		</div>
 	</section>
 	<!-- /#get_quotes -->
+	
+	
+	<section id="article">
+		<div class="container">
+		
+			<div class="inner-container">
+				<h2 class="title">Hire A Man With A Van in <?php echo $dki_loc;?> And Cut <br class="show_md">Up To 75% Off Your House Removal Costs.</h2>
+				<div class="content">
+					<p>Compare prices from over 60,000 verified relocation specialists and save money to spend on more important things – like your new home. Our easy removal costs calculator takes under 60 seconds, and is the quickest way to get instant removal quotes. Just need a man with van for furniture removals? Whether you need to move a 3 bedroom house, or just a sofa, fridge, or piano, removal vans large and small are available, to make your move hassle-free.</p>
+					<p>Moving far? We deal with all the major national removal companies for long distance removals. Or for man and van hire, smaller moves or shorter distances, you can quickly compare prices from trusted local removal firms. Need both removals and storage? Most of our expert movers can also arrange to store your furniture securely. When you complete the simple form to compare removal companies, simply select “Yes” for “storage required.</p>
+					<p>Looking for prices for moving van hire, but don’t drive? All of our house removals quotes include verified home moving professionals, whether you need a man and a van, or a team from a larger removal company for a bigger move. And all of our moving house quotes also include a detailed breakdown of exactly what’s included, so you can calculate your costs of moving accurately, and ensure you choose the right moving company based on much more than just an approximate removal costs estimate, or a quoted price.</p>
+					<p>Find out why we’re top-rated on TrustPilot by people like you: Try our simple removal quote calculator now to compare removal companies in under 60 seconds.</p>
+				</div>
+				
+				<?php $searchQuery = dki_get_keyword(); if(!empty($searchQuery)){?>
+					<div id="search_query">
+						<h2><b>You searched for : <?php echo $searchQuery;?></b></h2>
+					</div>
+				<?php }?>
+				
+			</div>
+		</div>
+	</section>
+	
+	
 
 	<section id="find_out_more">
 		<div class="container">

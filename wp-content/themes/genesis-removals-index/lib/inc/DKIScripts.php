@@ -97,3 +97,17 @@ function dki_get_metakeywords(){
 	
 	return $dki_meta_keywords_string;
 }
+
+function dki_get_keyword() {
+
+	$isPageDKI = genesis_get_custom_field( '_is_page_dki' );
+
+	$dki_loc = '';
+
+	if($isPageDKI == 'yes') {
+		$dki_loc = get_dki_param("keyword",'');
+	}
+
+	return $dki_loc;
+
+}
