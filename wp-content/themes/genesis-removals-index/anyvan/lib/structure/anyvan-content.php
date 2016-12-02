@@ -126,7 +126,7 @@ $dki_hln3 = dki_get_hln3();
 		            <div class="num_wrap num1">
 		              <i class="num"></i>
 		            </div>
-		            <div class="a">
+		            <div class="a" id="details">
 		              <p class="step">1. Provide Details.</p>
 		              <p class="t">Complete our simple form in under 60 seconds.</p>
 		            </div>

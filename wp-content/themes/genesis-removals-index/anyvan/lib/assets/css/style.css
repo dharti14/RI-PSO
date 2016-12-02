@@ -2254,5 +2254,44 @@ div.progress_bar {
 
 /* Mobile Changes */
 
+/* 02Dec2016 */
+#how_will .a#details{
+	 padding-left: 20px;
+}
+
+@media(min-width:440px) {
+	#how_will .a#details{
+	 padding-left: 40px;
+}
+
+}
+
+@media(min-width:475px) {
+	#how_will .a#details{
+	 padding-left: 72px;
+}
+
+}
+
+@media(min-width:520px) {
+	#how_will .a#details{
+	 padding-left: 95px;
+}
+
+}
+
+@media(min-width:675px) {
+	#how_will .a#details{
+	 padding-left: 155px;
+}
+
+}
+
+@media(min-width:768px) {
+	#how_will .a#details{
+	 padding-left: 0;
+}
+
+}
 
 
