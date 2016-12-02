@@ -1,10 +1,12 @@
 <?php
 $dki_hln = dki_get_hln();
 $dki_loc = dki_get_loc();
+$dki_hln2 = dki_get_hln2();
+$dki_hln3 = dki_get_hln3();
 ?>
 <div id="dki">
 		<div class="container">
-			<h1 class="title blue"><?php echo dki_exact_string( 'Looking For '. $dki_hln ); ?><span>?</span></h1>
+			<h1 class="title blue"><span><?php echo $dki_hln; ?></span></h1>
 		</div>
 </div>
 
@@ -12,7 +14,7 @@ $dki_loc = dki_get_loc();
 
 		<div class="container">
 			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Now</h1>
-			<p class="align_center tagline">You're Seconds Away From Removing The Stress, Hassle &amp; Headache From Your Move!</p>
+			<p class="align_center tagline"><?php echo $dki_hln2;?></p>
 
 			<div class="pad80">
 				<div class="row">
@@ -207,7 +209,7 @@ $dki_loc = dki_get_loc();
 		<div class="container">
 		
 			<div class="inner-container">
-			<h2 class="title">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h2>
+			<h2 class="title"><?php echo $dki_hln3;?></h2>
 			<p class="intro">Simplify your home move with Removals Index.</p>
 			<div class="row">
 				<div class="col-sm-6">
@@ -311,7 +313,7 @@ $dki_loc = dki_get_loc();
 				
 				<?php $searchQuery = dki_get_keyword(); if(!empty($searchQuery)){?>
 					<div id="search_query">
-						<h2><b>You searched for : <?php echo $searchQuery;?></b></h2>
+						<h2><b>You searched for: <?php echo $searchQuery;?></b></h2>
 					</div>
 				<?php }?>
 				
