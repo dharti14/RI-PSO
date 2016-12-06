@@ -41,7 +41,7 @@
 					
 					   <div class="removing-stress-top">
 						    <h2>You're Seconds Away From <span>Removing The Stress</span> From Your Move!</h2>
-						    <p>... And Saving Up To 40% With Vetted, Hand Checked, Removal Companies</p>
+						    <p>... And Saving Up To 75% With Vetted, Hand Checked, Removal Companies</p>
 					   </div>
 
 				</div>
@@ -327,7 +327,7 @@
 									     <div class="right-satisfaction">
 									     <p>With Removals Index you'll be getting access to:</p>
 									     <ul>
-									     	<li>A saving of up to 40% on your moving costs</li>
+									     	<li>A saving of up to 75% on your moving costs</li>
 									        <li>Top local rated removal companies all competing for your move</li>
 									        <li>Bespoke comparison of local firms without ever having to pick up the phone</li>
 									     </ul>

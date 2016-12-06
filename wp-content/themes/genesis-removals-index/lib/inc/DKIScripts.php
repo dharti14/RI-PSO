@@ -146,7 +146,7 @@ function dki_get_hln3() {
 
 	$isPageDKI = genesis_get_custom_field( '_is_page_dki' );
 
-	$dki_hln3 = 'Get Access to Over 60,000 Reliable Man and a Van Specialists.';
+	$dki_hln3 = 'Get Access to Over 60,000 Reliable Man and Van Specialists.';
 
 	if($isPageDKI == 'yes') {
 		$dki_hln3 = get_dki_param("hln3",$dki_hln3);

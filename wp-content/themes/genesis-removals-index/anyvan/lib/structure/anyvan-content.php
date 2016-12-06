@@ -1,6 +1,6 @@
 <?php
 $dki_hln = dki_get_hln();
-$dki_loc = dki_get_loc();
+$dki_loc = ucwords(dki_get_loc());
 $dki_hln2 = dki_get_hln2();
 $dki_hln3 = dki_get_hln3();
 ?>
@@ -115,7 +115,7 @@ $dki_hln3 = dki_get_hln3();
 	<section id="how_will">
 		<div class="container">
 			
-			<h2 class="align_center">Take The Stress Out Of My Move:</h2>
+			<h2 class="align_center">Take The Stress Out Of Your Move:</h2>
 
 			<aside class="steps">
 		      <div class="container">
@@ -138,7 +138,7 @@ $dki_hln3 = dki_get_hln3();
 		            </div>
 		            <div class="a">
 		              <p class="step">2. Get Quotes.</p>
-		              <p class="t">Compare multiple removal quotes from trusted removal men in <?php echo $dki_loc;?></p>
+		              <p class="t">Compare multiple removal quotes from reliable removal men in <?php echo $dki_loc;?>.</p>
 		            </div>
 		          </div>
 
@@ -148,7 +148,7 @@ $dki_hln3 = dki_get_hln3();
 		            </div>
 		            <div class="a">
 		              <p class="step">3. Save Money.</p>
-		              <p class="t">Trusted man and van experts compete for your business, saving upto 75%</p>
+		              <p class="t">Trusted man and van experts compete for your business, saving you up to 75%.</p>
 		            </div>
 		          </div>
 
@@ -303,7 +303,7 @@ $dki_hln3 = dki_get_hln3();
 		<div class="container">
 		
 			<div class="inner-container">
-				<h2 class="title">Hire A Man With A Van in <?php echo $dki_loc;?> And Cut <br class="show_md">Up To 75% Off Your House Removal Costs.</h2>
+				<h2 class="title">Hire A Man With A Van In <?php echo $dki_loc;?> And Cut <br class="show_md">Up To 75% Off Your House Removal Costs.</h2>
 				<div class="content">
 					<p>Compare prices from over 60,000 verified relocation specialists and save money to spend on more important things – like your new home. Our easy removal costs calculator takes under 60 seconds, and is the quickest way to get instant removal quotes. Just need a man with van for furniture removals? Whether you need to move a 3 bedroom house, or just a sofa, fridge, or piano, removal vans large and small are available, to make your move hassle-free.</p>
 					<p>Moving far? We deal with all the major national removal companies for long distance removals. Or for man and van hire, smaller moves or shorter distances, you can quickly compare prices from trusted local removal firms. Need both removals and storage? Most of our expert movers can also arrange to store your furniture securely. When you complete the simple form to compare removal companies, simply select “Yes” for “storage required”.</p>

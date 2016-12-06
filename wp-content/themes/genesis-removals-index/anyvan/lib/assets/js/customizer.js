@@ -39,6 +39,7 @@ jQuery( document ).ready(function() {
 		jQuery(".get_quotes2").hide();
 		jQuery("#find_out_more").hide();
 		jQuery("footer.main").hide();
+		jQuery("section#article").hide();
 		
 		
 		var postcode_from = jQuery("#postcode_from").val();
@@ -107,6 +108,7 @@ jQuery.ajax({
 		jQuery(".get_quotes2").hide();
 		jQuery("#find_out_more").hide();
 		jQuery("footer.main").hide();
+		jQuery("section#article").hide();
 		
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();
@@ -158,6 +160,7 @@ jQuery.ajax({
 		jQuery(".get_quotes2").hide();
 		jQuery("#find_out_more").hide();
 		jQuery("footer.main").hide();
+		jQuery("section#article").hide();
 		
 		var postcode_from = jQuery("#postcode_from3").val();
 		var postcode_to = jQuery("#postcode_to3").val();
