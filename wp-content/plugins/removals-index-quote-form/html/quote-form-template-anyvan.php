@@ -3,27 +3,37 @@
 	
 	$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
 	
-	$filename='';
+	$js_filename='';
+	$css_filename='';
 
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
 	switch ($lookup_functionality){
 		
 		case "data8":
-			$filename = "ri_quote_form_2-data8";
+			$js_filename = "ri_email_phone_lookup-data8";
+			$css_filename = "ri_quote_form_2-data8";
 			break;
 			
 		case "bvdata8":
-			$filename = "ri_quote_form_2-briteverifyanddata8";
+			$js_filename = "ri_email_phone_lookup-bvanddata8";
+			$css_filename = "ri_quote_form_2-briteverifyanddata8";
 			break;
 			
 		default:
-			$filename = "ri_quote_form_2";
+			$css_filename = "ri_quote_form_2";
+	}
+	
+	
+	if(empty($js_filename)){ //No lookup selected so default js will be ri_quote_form_anyvan
+		$js_filename = "ri_quote_form_anyvan";
+	}else{
+		$this->ri_load_form_validation_js('ri_quote_form_anyvan');
 	}
 	
 	
 	//Loading js and css file depending upon the lookup functionality selected
-		$this->ri_load_css($filename);
-		$this->ri_load_js($filename);
+		$this->ri_load_css($css_filename);
+		$this->ri_load_js($js_filename);
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
@@ -288,18 +298,9 @@
 								                 
 								                <input type="text" class="form-control email" name="email"  placeholder="Enter Email Address...*"  value="">
 								                <div class="form-group">
-								               <h5 class="additional">Any Additional Information? </h5>
-								               <span class="additional">Eg Parking issues, contents</span>
-								               <div class="step-4-checkbox ">
-								                <label>
-								                  <input onClick="jQuery('#greenwood_drive').hide();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No 
-								                </label>&nbsp; &nbsp;
-								                <label>
-								                  <input onClick="jQuery('#greenwood_drive').show();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes 
-								                </label>
-								                </div>
+								               <h5 class="additional">Brief Description Of Your Items </h5>
 								              </div>
-								               <textarea id="greenwood_drive" style="display:none" placeholder="Enter any additional information about your move ..." name="additional_info"></textarea>
+								               <textarea id="greenwood_drive" class="form-control addditional_info" placeholder="Eg 2 sofas, 3 Beds, Fridge, 25 boxes ...*" name="additional_info"></textarea>
 								              </div>
 								       
 								          

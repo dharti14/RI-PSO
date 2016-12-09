@@ -147,7 +147,7 @@ jQuery( document ).ready(function() {
 	
         //form validation rules
         jQuery("#form").validate({
-        	
+
         	invalidHandler: function(event, validator) {
 				 var errors = validator.numberOfInvalids();
 					if (errors) {
@@ -185,8 +185,7 @@ jQuery( document ).ready(function() {
 				dateValidate:true
 			},
 			email:{
-				required:true,
-				email:true
+				required:true
 			},
 			phone:{
 				required:true,
@@ -257,8 +256,9 @@ jQuery( document ).ready(function() {
                 form.submit();
         }
      });
-
-    	
+   	
+		addEmailValidation('input[name="email"]');
+		
 		jQuery(".get-my-quote-second").click(function() {
     		jQuery("#form").submit();
     		
