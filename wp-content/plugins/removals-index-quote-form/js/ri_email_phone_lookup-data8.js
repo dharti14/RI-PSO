@@ -2,9 +2,9 @@
 	
 	Decoupling the lookup/validation technology from the form validations
 		
-	Email validation  through Brite verify 
+	Email validation and phone number validation through Data8
 	
-	addEmailValidation function is called from the main form validation js	
+	ri_validate_email_lookup and ri_validate_phone_lookup function is called from the main quote form js	
 	
 */
 
