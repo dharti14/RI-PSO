@@ -223,7 +223,7 @@ jQuery( document ).ready(function() {
 		    	required:"Anticipated moving date is required",
 		    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
 		    },
-			additional_info:"Please provide brief description of your items"
+			additional_info:"Brief description of your items is required"
 		},
 		
         submitHandler: function(form) {
