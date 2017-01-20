@@ -1,18 +1,9 @@
 <?php
-$dki_hln = dki_get_hln();
-$dki_loc = dki_get_loc();
-
 $schema_header_text = genesis_get_custom_field('_schema_header_text');
 $header_text = genesis_get_custom_field('_header_text');
 
 ?>
 <div id="ri_silo_page">
-<div id="dki">
-		<div class="container">
-			<h1 class="title blue"><?php echo dki_exact_string( 'Looking For '. $dki_hln ); ?><span>?</span></h1>
-		</div>
-</div>
-
 	<section id="hero">
 
 		<div class="container">
