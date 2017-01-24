@@ -53,6 +53,7 @@ function create_html_for_landing_page_settings(){
 			
 			?>
 				<select name="landing_page_settings[_conversion_page]" id="_conversion_page">
+					<option value="">Please Select Conversion Page</option>
 				<?php 
 				foreach ( $results as $post ){
 					?><option value="<?php echo $post->ID;?>"  <?php selected ( genesis_get_custom_field( '_conversion_page' ), $post->ID ); ?>  ><?php echo $post->post_title; ?></option>
