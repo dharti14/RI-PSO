@@ -21,7 +21,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		protected $apiUrl = '';
 		
-		protected $api_key = '';
+		protected $default_pinlocal_source_key 	= '';
+		
+		protected $default_conversion_page_id 	= '';
 		
 		private $mode = '';
 		
@@ -39,13 +41,19 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			/* Fron page action */
 			
 			$defaults = array(
-				'apiUrl'		=> ''
+				'apiUrl'		=> '',
+				'default_pinlocal_source_key'	=> '',
+				'default_conversion_page_id'	=> '',
 				
 			);
 			
 			$options = get_option('ri_quote_form', $defaults);
 		
 			$this->apiUrl = $options['apiUrl'];
+			
+			$this->default_pinlocal_source_key	= $options['default_pinlocal_source_key'];
+				
+			$this->default_conversion_page_id	= $options['default_conversion_page_id'];
 					
 			define( 'RI_QUOTE_FORM_URL' , plugin_dir_url( __FILE__ ) );
 			
@@ -123,14 +131,18 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			$message = "";
 			
 			$defaults = array(
-				'apiUrl'		=> ''
+				'apiUrl'		=> '',
+				'default_pinlocal_source_key'	=> '',
+				'default_conversion_page_id'	=> '',
 				
 			);
 				
 			if($_POST) {
 				
 				$options = array(
-					'apiUrl'		=> $_POST['apiUrl']
+					'apiUrl'		=> $_POST['apiUrl'],
+					'default_pinlocal_source_key'	=> $_POST['default_pinlocal_source_key'],
+					'default_conversion_page_id'	=> $_POST['default_conversion_page_id'],
 				);
 				
 				if( get_option('ri_quote_form') )
