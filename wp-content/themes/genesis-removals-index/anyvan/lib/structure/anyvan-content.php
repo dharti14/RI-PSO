@@ -1,12 +1,13 @@
 <?php
 $dki_hln = dki_get_hln();
-$dki_loc = ucwords(dki_get_loc());
+$dki_loc = dki_get_loc();
 $dki_hln2 = dki_get_hln2();
 $dki_hln3 = dki_get_hln3();
+
 ?>
 <div id="dki">
 		<div class="container">
-			<h1 class="title blue"><span><?php echo $dki_hln; ?></span></h1>
+			<h1 class="hln0 text-wrap title blue"><span><?php echo $dki_hln; ?></span></h1>
 		</div>
 </div>
 
@@ -14,7 +15,7 @@ $dki_hln3 = dki_get_hln3();
 
 		<div class="container">
 			<h1 class="align_center h1">Get Your <strong class="green">FREE Removal Quotes</strong> Now</h1>
-			<p class="align_center tagline"><?php echo $dki_hln2;?></p>
+			<p class="align_center tagline hln2 text-wrap"><?php echo $dki_hln2;?></p>
 
 			<div class="pad80">
 				<div class="row">
@@ -209,7 +210,7 @@ $dki_hln3 = dki_get_hln3();
 		<div class="container">
 		
 			<div class="inner-container">
-			<h2 class="title"><?php echo $dki_hln3;?></h2>
+			<h2 class="title hln3 text-wrap"><?php echo $dki_hln3;?></h2>
 			<p class="intro">Simplify your home move with Removals Index.</p>
 			<div class="row">
 				<div class="col-sm-6">
@@ -303,12 +304,12 @@ $dki_hln3 = dki_get_hln3();
 		<div class="container">
 		
 			<div class="inner-container">
-				<h2 class="title">Hire A Man With A Van In <?php echo $dki_loc;?> And Cut <br class="show_md">Up To 75% Off Your House Removal Costs.</h2>
+				<h2 class="title hln3 text-wrap">Hire A Man With A Van In <span id="loc"><?php echo ucwords($dki_loc);?></span> And Cut <br class="show_md">Up To 75% Off Your House Removal Costs.</h2>
 				<div class="content">
-					<p>Compare prices from over 60,000 verified relocation specialists and save money to spend on more important things – like your new home. Our easy removal costs calculator takes under 60 seconds, and is the quickest way to get instant removal quotes. Just need a man with van for furniture removals? Whether you need to move a 3 bedroom house, or just a sofa, fridge, or piano, removal vans large and small are available, to make your move hassle-free.</p>
-					<p>Moving far? We deal with all the major national removal companies for long distance removals. Or for man and van hire, smaller moves or shorter distances, you can quickly compare prices from trusted local removal firms. Need both removals and storage? Most of our expert movers can also arrange to store your furniture securely. When you complete the simple form to compare removal companies, simply select “Yes” for “storage required”.</p>
-					<p>Looking for prices for moving van hire, but don’t drive? All of our house removals quotes include verified home moving professionals, whether you need a man and a van, or a team from a larger removal company for a bigger move. And all of our moving house quotes also include a detailed breakdown of exactly what’s included, so you can calculate your costs of moving accurately, and ensure you choose the right moving company based on much more than just an approximate removal costs estimate, or a quoted price.</p>
-					<p>Find out why we’re top-rated on TrustPilot by people like you: Try our simple removal quote calculator now to compare removal companies in under 60 seconds.</p>
+					<p>Compare prices from over 60,000 verified relocation specialists and save money to spend on more important things â€“ like your new home. Our easy removal costs calculator takes under 60 seconds, and is the quickest way to get instant removal quotes. Just need a man with van for furniture removals? Whether you need to move a 3 bedroom house, or just a sofa, fridge, or piano, removal vans large and small are available, to make your move hassle-free.</p>
+					<p>Moving far? We deal with all the major national removal companies for long distance removals. Or for man and van hire, smaller moves or shorter distances, you can quickly compare prices from trusted local removal firms. Need both removals and storage? Most of our expert movers can also arrange to store your furniture securely. When you complete the simple form to compare removal companies, simply select â€œYesâ€� for â€œstorage requiredâ€�.</p>
+					<p>Looking for prices for moving van hire, but donâ€™t drive? All of our house removals quotes include verified home moving professionals, whether you need a man and a van, or a team from a larger removal company for a bigger move. And all of our moving house quotes also include a detailed breakdown of exactly whatâ€™s included, so you can calculate your costs of moving accurately, and ensure you choose the right moving company based on much more than just an approximate removal costs estimate, or a quoted price.</p>
+					<p>Find out why weâ€™re top-rated on TrustPilot by people like you: Try our simple removal quote calculator now to compare removal companies in under 60 seconds.</p>
 				</div>
 				
 				<?php $searchQuery = dki_get_keyword(); if(!empty($searchQuery)){?>

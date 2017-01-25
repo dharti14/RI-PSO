@@ -51,7 +51,7 @@ function dki_get_hln() {
 	
 	if ( is_page_template('anyvan/anyvan.php')){ //For AnyVan page only
 		
-		$dki_hln = 'Looking For A Reliable Man With A Van ?';
+		$dki_hln = 'Looking For A Reliable Man With A Van?';
 		
 		if($isPageDKI == 'yes') {
 			$dki_hln = get_dki_param("hln0",$dki_hln);

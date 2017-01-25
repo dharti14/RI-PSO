@@ -27,6 +27,9 @@ jQuery( document ).ready(function() {
 
 	jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
 	
+	if(jQuery('#loc').text() != "Your Area"){
+		jQuery('.title.hln3.text-wrap br').remove();
+	}
 			
 	jQuery(".get-my-quote").click(function(){
 		

@@ -2294,4 +2294,22 @@ div.progress_bar {
 
 }
 
+.hln0{
+	max-width: 650px;
+	margin: 0 auto !important;
+}
 
+.hln2{
+	max-width: 650px;
+	margin-bottom: 15px !important;
+}
+
+.hln3{
+	max-width: 860px;
+}
+
+.text-wrap{
+    margin: 0 auto;
+    word-wrap: break-word;
+    line-height: 1.2 !important;
+}
