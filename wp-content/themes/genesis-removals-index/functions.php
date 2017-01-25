@@ -253,7 +253,8 @@ register_nav_menus( array(
 add_theme_support ( 'genesis-menus' , array (
 		'primary' => __( 'Primary Navigation', 'genesis' ),
 		'secondary' => __( 'Secondary Navigation', 'genesis' ),
-		'footer' => __( 'Footer Navigation', 'genesis' )
+		'footer' => __( 'Footer Navigation', 'genesis' ),
+		'silo' => __( 'SILO Navigation', 'genesis' )
 ) );
 
 //Adding js for preview the h1 (schema) tag for silo pages
