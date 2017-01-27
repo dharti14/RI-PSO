@@ -77,7 +77,7 @@ function silo_header(){
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#silo_nav" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -86,10 +86,10 @@ function silo_header(){
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="silo_nav">
             <?php
             $defaults = array(
-              'theme_location'  => 'primary',
+              'theme_location'  => 'silo',
               'menu'            => '',
               'container'       => false,
               'container_class' => '',
@@ -102,8 +102,8 @@ function silo_header(){
               'after'           => '',
               'link_before'     => '',
               'link_after'      => '',
-              'items_wrap'      => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>',
-              'depth'           => 0,
+              'items_wrap'      => '<ul id="silo_nav" class="nav navbar-nav">%3$s</ul>',
+              'depth'           => 2,
               'walker'          => new wp_bootstrap_navwalker()
             );
 
