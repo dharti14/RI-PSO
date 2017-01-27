@@ -873,4 +873,11 @@ label.error:after {
 	}
 }
 
+#greenwood_drive {
+	padding-right: 32px;
+}
 
+#greenwood_drive.form-control.valid{
+	background-position-x: 99% !important;
+    background-position-y: 50% !important;
+}

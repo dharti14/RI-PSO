@@ -87,7 +87,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			//Passing the name of the template file(.php) as key and the value will be Name (which is to be visible on front end).
 			$quote_form_templates = array(
 					'quote-form-template-02' => 'Template 02',
-					'quote-form-template-01' => 'Template 01'
+// 					'quote-form-template-01' => 'Template 01',
+					'quote-form-template-anyvan' => 'Anyvan - 1'
 			);
 				
 			//Including ci plugin metaboxes file
@@ -153,11 +154,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		public function quote_form_assets( ) {		
 				
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
+			
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
 			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.min.css' );
-							
+					
 		}
 		
 
@@ -406,6 +408,14 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 	die();
 		 		
 		 }
+		 
+		 
+		 public function ri_load_form_validation_js($js) {
+		 
+		 	wp_enqueue_script( $js, RI_QUOTE_FORM_URL.'js/'.$js.'.js');
+		 	
+		 }
+		 
 		 
 		 		 
 	}

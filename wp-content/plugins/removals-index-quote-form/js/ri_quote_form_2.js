@@ -144,10 +144,42 @@ jQuery( document ).ready(function() {
 		
 	});
 	
+	//When the get quotes button will be clicked, we will set the respective form and its selector
+	jQuery('.btn-quote').on('click',function(){
+		
+		if(typeof ri_validate_email_lookup === "function" && typeof ri_validate_phone_lookup === "function"){
+			
+			var email_selector = '';
+			var phone_selector = '';
+			
+			if(jQuery('#show-after-get').is(':visible')){ //Domestic Form
+				
+				email_selector = '#form input[name="email"]';
+				phone_selector = '#form input[name="phone"]';
+							
+			}else if(jQuery('#show-after-get-business').is(':visible')){ // Commercial Form
+				
+				email_selector = '#form-business input[name="email"]';
+				phone_selector = '#form-business input[name="phone"]';
+				
+			}else if(jQuery('#show-after-get-international').is(':visible')){ //International Form
+				
+				email_selector = '#form-international input[name="email"]';
+				phone_selector = '#form-international input[name="phone"]';
+				
+			}
+		
+			ri_validate_email_lookup(email_selector);
+			ri_validate_phone_lookup(phone_selector);
+
+		
+		}
+	});
+	
 	
         //form validation rules
         jQuery("#form").validate({
-        	
+
         	invalidHandler: function(event, validator) {
 				 var errors = validator.numberOfInvalids();
 					if (errors) {
@@ -185,8 +217,7 @@ jQuery( document ).ready(function() {
 				dateValidate:true
 			},
 			email:{
-				required:true,
-				email:true
+				required:true
 			},
 			phone:{
 				required:true,
@@ -257,8 +288,7 @@ jQuery( document ).ready(function() {
                 form.submit();
         }
      });
-
-    	
+   			
 		jQuery(".get-my-quote-second").click(function() {
     		jQuery("#form").submit();
     		
