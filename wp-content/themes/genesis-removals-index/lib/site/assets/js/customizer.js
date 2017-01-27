@@ -5,6 +5,51 @@ jQuery( document ).ready(function() {
 	
 	/*google analytics event tracking.*/	
 	
+	
+	
+	
+	var mobile_navbar = jQuery('#mobile-header-navbar-collapse');
+	var mobile_menu_container = jQuery('.mobile-menu-container');
+	
+	//Mobile button Toggle Open
+	jQuery("#navbar-toggle-btn").click(function () {
+		// Set the effect type
+		var effect = 'fold';
+
+		mobile_navbar.toggle( effect, 100);
+		jQuery('#navbar').css("display","table");         
+		jQuery("html,body").css('overflow','hidden');
+		jQuery('.mobile-menu-container').show();
+	    });
+	
+	//Toggle mobile menu (Close)
+	jQuery("#mobile-header-menu-close-btn").click( function(){
+		// Set the effect type
+		var effect = 'slide';
+		
+		mobile_navbar.toggle( effect, 100);
+		jQuery('#navbar').css({"display":"table"});         
+		jQuery("html,body").css('overflow','auto');
+		mobile_menu_container.toggle();
+	});
+	
+	var submenu_item = jQuery('.menu-item-has-children');
+
+		submenu_item.mouseenter(
+				function () {
+					//show its submenu
+					jQuery(this).children('ul.sub-menu').slideDown(300);
+				}
+		);
+		submenu_item.mouseleave(
+				function () {
+					//hide its submenu
+					jQuery(this).children('ul.sub-menu').slideUp(300);
+				}
+		);
+	
+	
+	
 	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
 	
