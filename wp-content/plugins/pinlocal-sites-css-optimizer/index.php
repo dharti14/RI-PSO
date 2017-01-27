@@ -40,8 +40,6 @@ function pinlocal_minify_css_files($cssFile) {
 //Getting enqueued css files, reading it, minifying it and dumping into head.
 function pinlocal_get_all_css_files() {
 
-	require_once(ABSPATH . 'wp-admin/includes/file.php');
-	
 	global $wp_styles, $wp_query;
 	
 	//Checking for wp_query object and post not empty
@@ -53,9 +51,7 @@ function pinlocal_get_all_css_files() {
 		//Extracting directory name from templateName
 		$path = explode('/',$templateName);
 		$directory = $path[0];
-		
-		$path = get_home_path();
-				
+
 		echo '<style>';
 
 		foreach( $wp_styles->queue as $handleName ){
@@ -105,32 +101,20 @@ function pinlocal_get_all_css_files() {
 					$replaceImages = '../images/';
 					$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
 					
-
+					
 					//For site and its internal pages
-					if(empty($directory) || $directory == "default" || $directory == "lib" || $directory== "site"){
-						
-						//Setting directory to site only
+					if($directory == "default"){
 						$directory = "site";
-						
 						$replaceFontsWith = $themePath.'/lib/'.$directory.'/assets/fonts/';
 						$replaceImagesWith = $themePath.'/lib/'.$directory.'/assets/images/';
-						
-					}else{
-												
-						$replaceFontsWith = $themePath.'/'.$directory.'/lib/assets/fonts/';
-						$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
 					}
-				
+					//For site and its internal pages
 					
 				}
-
-				$file = str_replace(SITE_URL,$path,$file);
-				
-				$file = str_replace('/wp-content','wp-content',$file);
-				
+							
 				//reads entire file into string
 				$cssFile = file_get_contents($file);
-						
+							
 				//Replacing Fonts path
 				$cssFile = str_replace($replaceFonts,$replaceFontsWith,$cssFile);
 				
@@ -141,7 +125,6 @@ function pinlocal_get_all_css_files() {
 				echo $minifiedCssFile =  pinlocal_minify_css_files($cssFile);
 			 }
 		}
-		
 		echo '</style>';
 		
 		
