@@ -73,7 +73,7 @@ function silo_header(){
   	if($menu_items>0){  
   		
   	?>
-    <nav id="primary" class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="primary">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header desktop">
@@ -102,7 +102,7 @@ function silo_header(){
               'after'           => '',
               'link_before'     => '',
               'link_after'      => '',
-              'items_wrap'      => '<ul id="silo_nav" class="nav navbar-nav">%3$s</ul>',
+              'items_wrap'      => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>',
               'depth'           => 0,
               'walker'          => ''
             );
@@ -113,7 +113,8 @@ function silo_header(){
           
         </div><!-- /.navbar-collapse -->
         
-        <div id="mobile-menu" class="mobile-header">
+        
+                <div id="mobile-menu" class="mobile-header">
 						<div class="row mobile-menu-wrapper">
 							<div class="mobile-menu">
 								<nav class="navbar altium-navbar navbar-default">
@@ -160,8 +161,9 @@ function silo_header(){
 						</div>
 					</div>
         
+        
       </div><!-- /.container-fluid -->
-    </nav>    
+    </nav>
     
 <?php 
   	} // if ($menu_items > 0) ends

@@ -5,7 +5,12 @@ jQuery( document ).ready(function() {
 	
 	/*google analytics event tracking.*/	
 	
-	
+	//For mobile menu doesn't go inside the admin bar
+	if(jQuery('#wpadminbar').length>0){
+		var admin_navbar_height = jQuery('#wpadminbar').height();
+		jQuery('.mobile-menu-container .mobile-header-menu-close').css('top',admin_navbar_height+'px');
+		jQuery('.mobile-menu-container #navbar').css('top',(admin_navbar_height-20)+'px');
+	}
 	
 	
 	var mobile_navbar = jQuery('#mobile-header-navbar-collapse');
@@ -31,24 +36,7 @@ jQuery( document ).ready(function() {
 		jQuery('#navbar').css({"display":"table"});         
 		jQuery("html,body").css('overflow','auto');
 		mobile_menu_container.toggle();
-	});
-	
-	var submenu_item = jQuery('.menu-item-has-children');
-
-		submenu_item.mouseenter(
-				function () {
-					//show its submenu
-					jQuery(this).children('ul.sub-menu').slideDown(300);
-				}
-		);
-		submenu_item.mouseleave(
-				function () {
-					//hide its submenu
-					jQuery(this).children('ul.sub-menu').slideUp(300);
-				}
-		);
-	
-	
+	});	
 	
 	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
