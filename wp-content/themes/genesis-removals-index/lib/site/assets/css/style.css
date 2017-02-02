@@ -2382,38 +2382,38 @@ li.menu-item-has-children a{
 	    display:initial;
 	}
 	
-nav#primary ul.nav.navbar-nav{
+nav.navbar ul.nav.navbar-nav{
 	text-align:center;
 }
 	
-nav#primary ul li.menu-item-has-children{
+nav.navbar ul li.menu-item-has-children{
 	padding-right:15px;
 }
 	
-nav#primary .navbar-nav li{
+nav.navbar .navbar-nav li{
 	padding-top: 15px;
 }	
 	
 
 @media only screen and (min-width: 768px) {
 	
-	 .sub-menu .menu-item-has-children{
+	 nav.navbar .sub-menu .menu-item-has-children{
 		background-image:url('../images/select-arrow-right.png');
 		background-position: calc(100% - 15px) calc(1em + -2px);
 	}
 			
-	nav#primary li.menu-item-has-children a{
+	nav.navbar li.menu-item-has-children a{
 		
 	    padding: 8px 10px;
 	    width: 210px;
 	    text-decoration:none;
 	}
 	
-	nav#primary .mobile-header{
+	nav.navbar .mobile-header{
 		display:none;
 	}
 	
-	nav#primary .navbar-header.desktop{
+	nav.navbar .navbar-header.desktop{
 		display:block;
 	}
 
@@ -2424,17 +2424,17 @@ nav#primary .navbar-nav li{
 	    margin-top: 5px;
 	}
 	
-	nav#primary .header-menu li a{
+	nav.navbar .header-menu li a{
 		color: #8a95a4;
 	}
-	nav#primary .header-menu li.current-menu-item a{
+	nav.navbar .header-menu li.current-menu-item a{
 		color: #000024;
 		font-weight: 600;
 	}
-	nav#primary .header-menu .current-menu-item .sub-menu a{
+	nav.navbar .header-menu .current-menu-item .sub-menu a{
 		font-weight: 500;
 	}
-	nav#primary ul.sub-menu{
+	nav.navbar ul.sub-menu{
 		color: #FFF;
 	    background-color: #305eab !important;
 		display: none;
@@ -2450,12 +2450,12 @@ nav#primary .navbar-nav li{
 	    margin-top:13px;
 	}
 	
-	nav#primary ul.sub-menu ul.sub-menu{
+	nav.navbar ul.sub-menu ul.sub-menu{
     	margin-top: -44px;
     	margin-left: 100%;
 	}
 	
-	nav#primary ul.sub-menu li{
+	nav.navbar ul.sub-menu li{
 		text-align: left;
 		display: block;
 		width: 100%;
@@ -2464,22 +2464,22 @@ nav#primary .navbar-nav li{
 		padding : 10px 0;
 	}
 	
-	nav#primary ul.sub-menu li:hover{
+	nav.navbar ul.sub-menu li:hover{
 		cursor: pointer;
 	}
 	
-	nav#primary .nav ul.sub-menu{
+	nav.navbar .nav ul.sub-menu{
 		padding: 5px 0;
 		background-color: #f7f7f6;
 		box-shadow: 0px 5px 6px 1px #757575;
 	}
 	
-	nav#primary .header-menu ul.sub-menu li a{
+	nav.navbar .header-menu ul.sub-menu li a{
 		color: #242424;
 		padding-left: 10px;
 	}
 
-	nav#primary .header-menu ul.sub-menu ul.sub-menu a{
+	nav.navbar .header-menu ul.sub-menu ul.sub-menu a{
 		padding: 0;
 	}
 }
@@ -2519,55 +2519,55 @@ nav#primary .navbar-nav li{
 @media(min-width: 768px){
 	
 	
-	nav#primary ul li.menu-item-has-children a{
+	nav.navbar ul li.menu-item-has-children a{
 		margin-right:15px !important;				
 	}
 	
-	nav#primary ul li.menu-item-has-children:hover{
+	nav.navbar ul li.menu-item-has-children:hover{
 		background-color:#2b5395;
 	}
 	
 	
-	nav#primary li.menu-item{
+	nav.navbar li.menu-item{
 		width:25%;
 	}
 	
 	
-	nav#primary .navbar-nav li{
+	nav.navbar .navbar-nav li{
 		padding: 15px 0;
 	}
 	
 	
-	 nav#primary ul.sub-menu li:hover{
+	nav.navbar ul.sub-menu li:hover{
 			padding: 10px 0 10px 0;
 		    background-color: #74b851;
 		    margin-left: 0px;
 		    text-decoration:none;
 	}
 
-	 nav#primary ul li a{
+	 nav.navbar ul li a{
 		text-align: right;
 		width: 310px;
 	}
 
-	 nav#primary ul li ul li a{
+	 nav.navbar ul li ul li a{
 		width: 370px;
 	}
 
 
-	 nav#primary ul li ul li a:after{
+	 nav.navbar ul li ul li a:after{
 		content: unset;
 		width: auto;
 		margin-right: 0px;
 		border: none;
 	}
 	
-	nav#primary ul li a:after{
+	nav.navbar ul li a:after{
 		border: none !important;
 		content: unset;
 	}
 	
-	nav#primary ul li ul:after{
+	nav.navbar ul li ul:after{
 		border: none;
 		content: unset;
 	}
@@ -2575,11 +2575,11 @@ nav#primary .navbar-nav li{
 
 @media only screen and (min-width: 992px){
 	
-	nav#primary .menu-item-has-children{
+	nav.navbar .menu-item-has-children{
 		background-position: calc(100% - 14px) calc(1em + 10px);
 	}
 	
-	nav#primary li.menu-item{
+	nav.navbar li.menu-item{
 		width:20%;
 	}
 	
