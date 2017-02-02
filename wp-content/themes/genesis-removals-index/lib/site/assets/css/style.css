@@ -2593,17 +2593,3 @@ nav.navbar .navbar-nav li{
 		padding: 14px 13px;
 	}
 }
-
-@media (min-width: 1200px){
-	
-	header .container{
-		max-width: 1300px;
-		width: 100%;
-	}
-	
-	.col-lg-10{
-		width: 85%;
-	}
-	
-}
-
