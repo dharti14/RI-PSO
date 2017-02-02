@@ -20,24 +20,6 @@ function silo_footer(){
 
 <footer class="main">
 	 <div class="container">
-
-    
-    <?php 
-
-	     $defaults = array(
-		              'theme_location'  => 'footer',
-		              'container'       => false,
-		              'menu_class'      => 'menu',
-		              'echo'            => true,
-		              'items_wrap'      => '<ul id="footer">%3$s</ul>',
-		              'depth'           => 1
-		 );
-	    
-	    genesis_nav_menu( $defaults );
-     
-		?>
-   
-
   
 	  <div class="copyright">
 	  		

@@ -2536,38 +2536,39 @@ ul li.menu-item-has-children{
 	}
 	
 	
-	#menu-item-38 ul.sub-menu li:hover{
+	 ul.sub-menu li:hover{
 			padding: 10px 0 10px 0;
 		    background-color: #74b851;
 		    margin-left: 0px;
 		    text-decoration:none;
 	}
 
-	#menu-item-38 ul li a{
+	 ul li a{
 		text-align: right;
 		width: 310px;
 	}
 
-	#menu-item-38 ul li ul li a{
+	 ul li ul li a{
 		width: 370px;
 	}
 
 
-#menu-item-38 ul li ul li a:after{
-content: unset;
-width: auto;
-margin-right: 0px;
-border: none;
-}
-#menu-item-38 ul li a:after{
-border: none !important;
-content: unset;
-}
-
-#menu-item-38 ul li ul:after{
-border: none;
-content: unset;
-}
+	 ul li ul li a:after{
+		content: unset;
+		width: auto;
+		margin-right: 0px;
+		border: none;
+	}
+	
+	ul li a:after{
+		border: none !important;
+		content: unset;
+	}
+	
+	 ul li ul:after{
+		border: none;
+		content: unset;
+	}
 }
 
 @media only screen and (min-width: 992px){
