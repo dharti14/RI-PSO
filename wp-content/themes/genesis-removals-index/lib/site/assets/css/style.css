@@ -2381,6 +2381,19 @@ li.menu-item-has-children a{
 	    padding: 0px !important;
 	    display:initial;
 	}
+	
+nav#primary ul.nav.navbar-nav{
+	text-align:center;
+}
+	
+nav#primary ul li.menu-item-has-children{
+	padding-right:15px;
+}
+	
+nav#primary .navbar-nav li{
+	padding-top: 15px;
+}	
+	
 
 @media only screen and (min-width: 768px) {
 	
@@ -2388,21 +2401,19 @@ li.menu-item-has-children a{
 		background-image:url('../images/select-arrow-right.png');
 		background-position: calc(100% - 15px) calc(1em + -2px);
 	}
-	
-	
-		
-	li.menu-item-has-children a{
+			
+	nav#primary li.menu-item-has-children a{
 		
 	    padding: 8px 10px;
 	    width: 210px;
 	    text-decoration:none;
 	}
 	
-	.mobile-header{
+	nav#primary .mobile-header{
 		display:none;
 	}
 	
-	.navbar-header.desktop{
+	nav#primary .navbar-header.desktop{
 		display:block;
 	}
 
@@ -2413,17 +2424,17 @@ li.menu-item-has-children a{
 	    margin-top: 5px;
 	}
 	
-	.header-menu li a{
+	nav#primary .header-menu li a{
 		color: #8a95a4;
 	}
-	.header-menu li.current-menu-item a{
+	nav#primary .header-menu li.current-menu-item a{
 		color: #000024;
 		font-weight: 600;
 	}
-	.header-menu .current-menu-item .sub-menu a{
+	nav#primary .header-menu .current-menu-item .sub-menu a{
 		font-weight: 500;
 	}
-	ul.sub-menu{
+	nav#primary ul.sub-menu{
 		color: #FFF;
 	    background-color: #305eab !important;
 		display: none;
@@ -2439,12 +2450,12 @@ li.menu-item-has-children a{
 	    margin-top:13px;
 	}
 	
-	ul.sub-menu ul.sub-menu{
+	nav#primary ul.sub-menu ul.sub-menu{
     	margin-top: -44px;
     	margin-left: 100%;
 	}
 	
-	ul.sub-menu li{
+	nav#primary ul.sub-menu li{
 		text-align: left;
 		display: block;
 		width: 100%;
@@ -2452,34 +2463,25 @@ li.menu-item-has-children a{
 		margin-top: 5px;
 		padding : 10px 0;
 	}
-	ul.sub-menu li:hover{
+	
+	nav#primary ul.sub-menu li:hover{
 		cursor: pointer;
 	}
-	.nav ul.sub-menu{
+	
+	nav#primary .nav ul.sub-menu{
 		padding: 5px 0;
 		background-color: #f7f7f6;
 		box-shadow: 0px 5px 6px 1px #757575;
 	}
-	.header-menu ul.sub-menu li a{
+	
+	nav#primary .header-menu ul.sub-menu li a{
 		color: #242424;
 		padding-left: 10px;
 	}
 
-	.header-menu ul.sub-menu ul.sub-menu a{
+	nav#primary .header-menu ul.sub-menu ul.sub-menu a{
 		padding: 0;
 	}
-}
-
-ul.nav.navbar-nav{
-	text-align:center;
-}
-
-ul li.menu-item-has-children{
-	padding-right:15px;
-}
-
-.navbar-nav li{
-	padding-top: 15px;
 }
 
 
@@ -2517,55 +2519,55 @@ ul li.menu-item-has-children{
 @media(min-width: 768px){
 	
 	
-	ul li.menu-item-has-children a{
+	nav#primary ul li.menu-item-has-children a{
 		margin-right:15px !important;				
 	}
 	
-	ul li.menu-item-has-children:hover{
+	nav#primary ul li.menu-item-has-children:hover{
 		background-color:#2b5395;
 	}
 	
 	
-	li.menu-item{
+	nav#primary li.menu-item{
 		width:25%;
 	}
 	
 	
-	.navbar-nav li{
+	nav#primary .navbar-nav li{
 		padding: 15px 0;
 	}
 	
 	
-	 ul.sub-menu li:hover{
+	 nav#primary ul.sub-menu li:hover{
 			padding: 10px 0 10px 0;
 		    background-color: #74b851;
 		    margin-left: 0px;
 		    text-decoration:none;
 	}
 
-	 ul li a{
+	 nav#primary ul li a{
 		text-align: right;
 		width: 310px;
 	}
 
-	 ul li ul li a{
+	 nav#primary ul li ul li a{
 		width: 370px;
 	}
 
 
-	 ul li ul li a:after{
+	 nav#primary ul li ul li a:after{
 		content: unset;
 		width: auto;
 		margin-right: 0px;
 		border: none;
 	}
 	
-	ul li a:after{
+	nav#primary ul li a:after{
 		border: none !important;
 		content: unset;
 	}
 	
-	 ul li ul:after{
+	nav#primary ul li ul:after{
 		border: none;
 		content: unset;
 	}
@@ -2573,11 +2575,11 @@ ul li.menu-item-has-children{
 
 @media only screen and (min-width: 992px){
 	
-	.menu-item-has-children{
+	nav#primary .menu-item-has-children{
 		background-position: calc(100% - 14px) calc(1em + 10px);
 	}
 	
-	li.menu-item{
+	nav#primary li.menu-item{
 		width:20%;
 	}
 	
@@ -2587,12 +2589,15 @@ ul li.menu-item-has-children{
 }
 
 @media (min-width: 1200px){
+	
 	header .container{
-	max-width: 1300px;
-	width: 100%;
+		max-width: 1300px;
+		width: 100%;
 	}
+	
 	.col-lg-10{
-	width: 85%;
+		width: 85%;
 	}
+	
 }
 
