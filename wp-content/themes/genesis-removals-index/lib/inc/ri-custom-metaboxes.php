@@ -206,8 +206,33 @@ function create_html_for_silo_page_settings_metabox() {
 
 	?>
 	<div class="silo-page-settings">
+	
+		<p> <b>1. <u>Banner Image Settings</u></b></p>
 		
-		<p><b>1. <u>Schema Tag Settings for Title </u> </b></p>
+			<table>	
+			
+				<tr>
+					<td>
+						<label for="banner_alt_text"> Image Alternate Text :&nbsp;&nbsp; </label>
+					</td>
+					<td>
+						<input type="text" placeholder="Please provide the alternate text for the banner image" name="silo[_banner_img_alt_text]" style="width: 600px;height: 35px;" id="_banner_img_alt_text" value="<?php echo esc_attr( genesis_get_custom_field( '_banner_img_alt_text' ) );  ?>">
+			        </td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><em style="color: grey;">This will be the alt text of the banner image.</em></td>
+				</tr>
+			
+				<tr style="height:10px;">
+				</tr>
+				
+			</table>
+		
+		<hr>
+		
+		<p><b>2. <u>Schema Tag Settings for Title </u> </b></p>
 		
 		<p>**Please enter the required text in below input boxes to preview the exact H1 tag generated**</p>
 	
@@ -253,6 +278,7 @@ function save_silo_page_settings() {
 	
 	$field_names = wp_parse_args( $_POST['silo'], array(
 			
+			'_banner_img_alt_text'   => '',
 			'_schema_header_text' 	 => '',
 			'_header_text' 			 => ''
 			
