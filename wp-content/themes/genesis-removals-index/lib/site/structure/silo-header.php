@@ -64,7 +64,7 @@ function silo_header(){
   	
   	$menu_to_count = wp_nav_menu(array(
   			'echo' => false,
-  			'theme_location' => 'primary'
+  			'theme_location' => 'silo'
   	));
   	
   	//Checking for the menu items if there is no menu items in menu then hide the navigation menu
