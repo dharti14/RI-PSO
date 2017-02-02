@@ -1,8 +1,6 @@
 // JavaScript Document
 jQuery( document ).ready(function() {
-	
-	jQuery("#logo_call").css("border-bottom","none");
-	
+		
 	/*google analytics event tracking.*/	
 	
 	//For mobile menu doesn't go inside the admin bar
@@ -22,9 +20,9 @@ jQuery( document ).ready(function() {
 		var effect = 'fold';
 
 		mobile_navbar.toggle( effect, 100);
-		jQuery('#navbar').css("display","table");         
-		jQuery("html,body").css('overflow','hidden');
-		jQuery('.mobile-menu-container').show();
+			jQuery('#navbar').css("display","table");         
+			jQuery("html,body").css('overflow','hidden');
+			jQuery('.mobile-menu-container').show();
 	    });
 	
 	//Toggle mobile menu (Close)
@@ -80,7 +78,6 @@ jQuery( document ).ready(function() {
 	
 	jQuery(".get-my-quote").click(function(){
 		
-		jQuery("nav.navbar").hide();
 		jQuery("#hero").hide();
 		jQuery("#article").hide();
 		jQuery("#tp").hide();
@@ -89,7 +86,6 @@ jQuery( document ).ready(function() {
 		jQuery("section.boxes").hide();
 		jQuery("#locations").hide();
 		jQuery("footer.main").hide();
-		jQuery("#logo_call").css("border-bottom","#c9c9c9 solid 7px");
 		
 		var postcode_from = jQuery("#postcode_from").val();
 		var postcode_to = jQuery("#postcode_to").val();
@@ -148,7 +144,6 @@ jQuery.ajax({
 	
 	jQuery(".get-my-quote2").click(function(){
 		
-		jQuery("nav.navbar").hide();
 		jQuery("#how_will").hide();
 		jQuery("#article").hide();
 		jQuery("#tp").hide();
@@ -157,7 +152,6 @@ jQuery.ajax({
 		jQuery("#locations").hide();
 		jQuery("section.boxes").hide();
 		jQuery("footer.main").hide();
-		jQuery("#logo_call").css("border-bottom","#c9c9c9 solid 7px");
 		
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();

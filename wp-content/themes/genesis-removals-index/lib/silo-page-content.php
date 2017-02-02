@@ -78,7 +78,7 @@ $header_text = genesis_get_custom_field('_header_text');
 		</div>
 		</div>
 	</section>
-	<section id="silo-separator"></section>
+<!-- 	<section id="silo-separator"></section> -->
 	<!--form -->
         <?php 
         	$quote_form_template = genesis_get_custom_field('_template');
