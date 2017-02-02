@@ -38,6 +38,41 @@ jQuery( document ).ready(function() {
 		mobile_menu_container.toggle();
 	});	
 	
+	var submenu_item = jQuery('.menu-item-has-children');
+	submenu_item.mouseenter(
+			function () {
+				//show its submenu
+				jQuery(this).children('ul.sub-menu').slideDown(300);
+			}
+	);
+	submenu_item.mouseleave(
+			function () {
+				//hide its submenu
+				jQuery(this).children('ul.sub-menu').slideUp(300);
+			}
+	);
+	
+	//For Silo content pages only
+	function ci_align_banner_image(){
+		
+		var window_width = jQuery(window).width();
+		var image_width = jQuery('.silo_banner_image').width();
+		
+		var image_css = (window_width/2)-(image_width/2);
+			
+		jQuery('.silo_banner_image').css('left',image_css+"px");
+		
+	}
+
+	jQuery(window).load(function($){
+		ci_align_banner_image();
+	});
+
+	jQuery(window).resize(function($){
+		ci_align_banner_image();
+	});
+	//For Silo content pages only
+	
 	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
 	

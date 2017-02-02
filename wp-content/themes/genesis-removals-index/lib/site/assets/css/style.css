@@ -847,7 +847,7 @@ header.main .navbar-default .navbar-nav > li > a {
 
 @media only screen and (min-width: 640px) {
     #hero {
-		background:url("/wp-content/themes/genesis-removals-index/lp2/lib/assets/images/home_hero.jpg") 50% 100% no-repeat;
+/* 		background:url("/wp-content/themes/genesis-removals-index/lp2/lib/assets/images/home_hero.jpg") 50% 100% no-repeat; */
 /* 		  background: url("../images/details-new.png"); */
 	}
 }
@@ -2286,9 +2286,9 @@ header.main nav#primary ul.navbar-nav li.menu-item-has-children > ul{
 	list-style-type: none;
 }
 
-header.main nav#primary ul.navbar-nav li.menu-item-has-children:hover > ul{
-	display:block;
-}
+/* header.main nav#primary ul.navbar-nav li.menu-item-has-children:hover > ul{ */
+/* 	display:block; */
+/* } */
 
 li.menu-item-has-children a{
 	color: #fff;
@@ -2362,7 +2362,6 @@ li.menu-item-has-children a{
    color: #3463b5;
 }
 
-/* Mobile nav menu END */
 .menu-item:hover{
 	text-decoration: none;
 }
@@ -2484,15 +2483,36 @@ ul li.menu-item-has-children{
 }
 
 
-@media (min-width: 1200px){
-	header .container{
-	max-width: 1300px;
-	width: 100%;
-	}
-	.col-lg-10{
-	width: 85%;
+/* SILO Banner Image */
+
+#ri_silo_page .silo_banner{
+	position:relative;
+    height: 100%;
+    overflow: hidden;
+}
+  
+#ri_silo_page .silo_banner_image{
+  	 position: absolute;
+  	 height: 100%;
+  	 max-width: none;
+}
+
+#ri_silo_page .silo_container_wrapper{
+	position: relative;
+}
+
+#ri_silo_page .silo_banner_image{
+		display:none;
+}
+
+@media only screen and (min-width: 640px) {
+	#ri_silo_page .silo_banner_image{
+		display:block;
 	}
 }
+
+/* SILO Banner Image */
+
 
 @media(min-width: 768px){
 	
@@ -2562,6 +2582,16 @@ content: unset;
 	
 	header.main nav#primary ul.navbar-nav li a{
 		padding: 14px 13px;
+	}
+}
+
+@media (min-width: 1200px){
+	header .container{
+	max-width: 1300px;
+	width: 100%;
+	}
+	.col-lg-10{
+	width: 85%;
 	}
 }
 

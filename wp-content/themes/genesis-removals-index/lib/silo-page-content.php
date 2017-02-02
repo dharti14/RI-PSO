@@ -3,6 +3,8 @@
 $dki_hln = dki_get_hln();
 $dki_loc = dki_get_loc();
 
+//Getting the required data for the silo pages from wp admin dashboard
+$banner_img_alt_text = genesis_get_custom_field('_banner_img_alt_text');
 $schema_header_text = genesis_get_custom_field('_schema_header_text');
 $header_text = genesis_get_custom_field('_header_text');
 
@@ -10,8 +12,13 @@ $header_text = genesis_get_custom_field('_header_text');
 <div id="ri_silo_page">
 
 	<section id="hero">
-
+		<div class="silo_banner">
+	
+		<img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/home_hero.jpg"  class="silo_banner_image" alt="<?php  echo $banner_img_alt_text; ?>">
+		<div class="silo_container_wrapper">
+		
 		<div class="container">
+		
 			<?php if(!empty($schema_header_text) && (!empty($header_text))){ ?>
 				  <h1 class="silo-title" itemscope itemtype="http://schema.org/Article"><span itemprop="articleSection"><?php echo $schema_header_text;?></span> <?php echo $header_text; ?></h1>
 			<?php } else { ?>
@@ -68,7 +75,8 @@ $header_text = genesis_get_custom_field('_header_text');
 				</div>
 			</div>
 		</div>
-
+		</div>
+		</div>
 	</section>
 	<section id="silo-separator"></section>
 	<!--form -->
