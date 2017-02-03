@@ -2524,6 +2524,27 @@ nav.navbar .navbar-nav li{
 
 /* SILO Banner Image */
 
+#ri_silo_page h2, h3, h4, h5, h6{
+	color: #305eaa;
+    margin: 20px 0 5px;
+}
+#ri_silo_page h2{
+	font-size: 30px;
+}
+#ri_silo_page h3{
+	font-size: 28px;
+}
+#ri_silo_page h4{
+	font-size: 26px;
+}
+#ri_silo_page h5{
+	font-size: 24px;
+}
+#ri_silo_page h6{
+	font-size: 22px;
+}
+
+
 .silo-outbound-link{
 	text-decoration: none ! important;
     cursor: text ! important;
