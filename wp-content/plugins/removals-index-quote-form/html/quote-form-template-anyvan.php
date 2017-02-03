@@ -57,7 +57,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form">
+					   <form method="post" name="form" id="form" autocomplete="off">
 					   
 					   		<input type="hidden" value="4" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
