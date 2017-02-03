@@ -2530,11 +2530,14 @@ nav.navbar .navbar-nav li{
     color: rgb(51, 51, 51) ! important;
 }
 
+nav.navbar ul.sub-menu li a{
+	margin-right: 0px !important;
+}
 
 @media(min-width: 768px){
 	
 	nav.navbar ul li.menu-item-has-children a{
-		margin-right:20px !important;				
+		margin-right:20px;				
 	}
 	
 	nav.navbar ul li.menu-item-has-children:hover{
