@@ -13,7 +13,9 @@
 
 
 
-//Minifying the css files (stripping whitespaces except spaces before and after tags)
+
+//Minifying the css files (stripping whitespaces except spaces before and after tags also removing the line breaks)
+
 function pinlocal_minify_css_files($cssFile) {		
 
 	$search = array(
@@ -30,7 +32,7 @@ function pinlocal_minify_css_files($cssFile) {
 
 	$cssFile = preg_replace($search, $replace, $cssFile);
 	
-	//Replacing the line breaks too
+	//Removing the line breaks too
 	$cssFile = preg_replace( "/\r|\n/", "", $cssFile );
 
 	return $cssFile;
@@ -94,24 +96,29 @@ function pinlocal_get_all_css_files() {
 					
 					//Setting Fonts path with absolute path
 					$replaceFonts = '../fonts/';
-					$replaceFontsWith = $themePath.'/'.$directory.'/lib/assets/fonts/';
-					
 					
 					//Setting Images path with absolute path
 					$replaceImages = '../images/';
-					$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
-					
+
 					
 					//For site and its internal pages
-					if($directory == "default"){
+					if(empty($directory) || $directory == "default" || $directory == "lib" || $directory== "site"){
+						
+						//Setting directory to site only
 						$directory = "site";
+
+						
 						$replaceFontsWith = $themePath.'/lib/'.$directory.'/assets/fonts/';
 						$replaceImagesWith = $themePath.'/lib/'.$directory.'/assets/images/';
+						
+					}else{
+												
+						$replaceFontsWith = $themePath.'/'.$directory.'/lib/assets/fonts/';
+						$replaceImagesWith = $themePath.'/'.$directory.'/lib/assets/images/';
 					}
-					//For site and its internal pages
 					
 				}
-							
+				
 				//reads entire file into string
 				$cssFile = file_get_contents($file);
 							
@@ -141,5 +148,4 @@ function pinlocal_get_all_css_files() {
 }
 
 add_action( 'wp_print_styles', 'pinlocal_get_all_css_files' );
-
 ?>
