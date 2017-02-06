@@ -61,11 +61,11 @@ function site_header(){
   	if($menu_items>0){  
   		
   	?>
-    <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default" id="primary">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <div class="navbar-header desktop">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary_nav" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -74,7 +74,7 @@ function site_header(){
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="primary_nav">
             <?php
             $defaults = array(
               'theme_location'  => 'primary',
@@ -92,7 +92,7 @@ function site_header(){
               'link_after'      => '',
               'items_wrap'      => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>',
               'depth'           => 0,
-              'walker'          => new wp_bootstrap_navwalker()
+              'walker'          => ''
             );
 
             wp_nav_menu( $defaults );
@@ -100,6 +100,56 @@ function site_header(){
             ?>
           
         </div><!-- /.navbar-collapse -->
+        
+        
+                <div id="mobile-menu" class="mobile-header">
+						<div class="row mobile-menu-wrapper">
+							<div class="mobile-menu">
+								<nav class="navbar navbar-default">
+									<div class="container">
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle collapsed" id="navbar-toggle-btn">
+												  <span class="sr-only">Toggle navigation</span>
+									            <span class="icon-bar"></span>
+									            <span class="icon-bar"></span>
+									            <span class="icon-bar"></span>
+											</button> 
+										</div>
+									</div>
+								</nav>
+								<div class="mobile-menu-container" id="mobile-header-navbar-collapse">
+									<div class="mobile-header-menu-close" id="mobile-header-menu-close-btn">
+										<span aria-hidden="true">x</span>
+									</div>
+									<div id="navbar">
+									<?php
+									$defaults = array(
+									'theme_location'  => 'primary',
+									'menu'            => '',
+									'container'       => false,
+									'container_class' => '',
+									'container_id'    => '',
+									'menu_class'      => 'menu',
+									'menu_id'         => '',
+									'echo'            => true,
+									'fallback_cb'     => false,
+									'before'          => '',
+									'after'           => '',
+									'link_before'     => '',
+									'link_after'      => '',
+									'items_wrap'      => '<ul id="silo_nav" class="nav navbar-nav mobile-header-menu">%3$s</ul>',
+									'depth'           => 0,
+									'walker'          => ''
+									);				
+									wp_nav_menu( $defaults ); ?>
+									<hr class="menu-bottom mobile-menu-bottom visible-xs">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        
+        
       </div><!-- /.container-fluid -->
     </nav>
     
