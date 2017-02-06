@@ -117,7 +117,7 @@ function silo_header(){
                 <div id="mobile-menu" class="mobile-header">
 						<div class="row mobile-menu-wrapper">
 							<div class="mobile-menu">
-								<nav class="navbar altium-navbar navbar-default">
+								<nav class="navbar navbar-default">
 									<div class="container">
 										<div class="navbar-header">
 											<button type="button" class="navbar-toggle collapsed" id="navbar-toggle-btn">
