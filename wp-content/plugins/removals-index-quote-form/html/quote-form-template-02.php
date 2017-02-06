@@ -56,7 +56,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form">
+					   <form method="post" name="form" id="form" action="<?php echo '/'.basename(get_permalink()); ?>>
 					   
 					   		<input type="hidden" value="0" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -376,7 +376,7 @@
 		</div>
 	</div>
 
-   <form method="post" name="form" id="form-business">
+   <form method="post" name="form" id="form-business" action="<?php echo '/'.basename(get_permalink()); ?>>
    
    	<input type="hidden" name="form-type" value="2">
    	<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -687,7 +687,7 @@
 				</div>
 			</div>
 			
-   <form method="post" name="form" id="form-international">
+   <form method="post" name="form" id="form-international" action="<?php echo '/'.basename(get_permalink()); ?>>
    
    		<input type="hidden" name="form-type" value="1">
    		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
