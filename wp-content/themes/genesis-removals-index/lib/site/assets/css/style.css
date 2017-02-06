@@ -2525,6 +2525,7 @@ nav.navbar .navbar-nav li{
 #ri_silo_page .h2, .h3, .h4, .h5, .h6{
 	color: #305eaa;
     margin: 20px 0 5px;
+    font-weight: bold;
 }
 #ri_silo_page .h2{
 	font-size: 30px;
