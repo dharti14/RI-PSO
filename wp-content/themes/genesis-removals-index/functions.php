@@ -253,7 +253,15 @@ register_nav_menus( array(
 add_theme_support ( 'genesis-menus' , array (
 		'primary' => __( 'Primary Navigation', 'genesis' ),
 		'secondary' => __( 'Secondary Navigation', 'genesis' ),
-		'footer' => __( 'Footer Navigation', 'genesis' )
+		'footer' => __( 'Footer Navigation', 'genesis' ),
+		'silo' => __( 'SILO Navigation', 'genesis' )
 ) );
+
+//Adding js for preview the h1 (schema) tag for silo pages
+add_action( 'admin_enqueue_scripts', 'ri_add_js_for_silo_page_metabox' );
+function ri_add_js_for_silo_page_metabox($hook){
+	wp_enqueue_script('ri-silo-metabox-js', THEME_PATH_URI.'/lib/site/assets/js/ri_silo_page_metaboxes.js', array( 'jquery' ), true );
+}
+
 
 ?>

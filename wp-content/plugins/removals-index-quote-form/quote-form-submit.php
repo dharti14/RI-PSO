@@ -4,7 +4,7 @@ ob_start();
 if ($_POST) 
 {
 
-	$apiKey ="";
+	$api_key ="";
 		
 	$formType = "";
 	
@@ -14,6 +14,9 @@ if ($_POST)
 	{
 		//Getting the api url from the admin panel ( settings>>RI Quote Form )
 		$api_url = $this->apiUrl;
+		
+		$default_pinlocal_source_key 	= $this->default_pinlocal_source_key; //Taking the default pinlocal source key
+		$default_conversion_page_id	= $this->default_conversion_page_id; //Taking default converson page id
 		
 		$ri_form_type = $_POST['form-type'];
 
@@ -25,9 +28,19 @@ if ($_POST)
 		//Using the page id getting the associated thank you (conversion) page id
 		$ri_thanks_page_id = get_post_meta( $ri_page_id, '_conversion_page', true );
 		
+		if(empty($ri_thanks_page_id)){
+			$ri_thanks_page_id = $default_conversion_page_id;
+		}
+		
 		
 		//Using the page id getting the pinlocal source key (used to identify the lead source)
-		$apiKey = get_post_meta( $ri_page_id, '_pinlocal_source_key', true );
+		$api_key = get_post_meta( $ri_page_id, '_pinlocal_source_key', true );
+		
+		
+		$api_key = trim($api_key);
+		if(empty($api_key)){		//If Pinlocal Source Key is not set -> Default Pinlocal Source Key
+			$api_key = $default_pinlocal_source_key;
+		}
 		
 	
 		$storage = "";	//possible values "Yes/No"
@@ -262,7 +275,7 @@ if ($_POST)
 			
 			
 			//Getting api_url ( settings>>RI Quote Form ) and api key, both from admin panel
-			 $url = rtrim($api_url,'/') . '/api/lead/create/' . $form . '/' . $apiKey;
+			 $url = rtrim($api_url,'/') . '/api/lead/create/' . $form . '/' . $api_key;
 			 
 		    //url-ify the data for the POST
 		    $fields_string = '';
