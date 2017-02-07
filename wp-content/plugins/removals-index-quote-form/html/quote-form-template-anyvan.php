@@ -38,7 +38,8 @@
 
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
-    
+     
+     global $post;    
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -56,7 +57,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo '/'.basename(get_permalink()); ?>">
+					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $post->post_name; ?>">
 					   
 					   		<input type="hidden" value="4" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
