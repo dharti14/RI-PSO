@@ -38,7 +38,14 @@
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
      
-     global $post;    
+    $uri = $_SERVER['REQUEST_URI'];
+	$req_uri = explode('?', $uri); 
+	
+	$request_url = $req_uri[0];
+	if($request_url == '/ri/main' || $request_url == '/ri/main/') {
+		$request_url = '/ri/main/index.php';
+	}
+		
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -56,7 +63,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form" action="<?php  echo $post->post_name; ?>>
+					   <form method="post" name="form" id="form" action="<?php  echo $request_url; ?>">
 					   
 					   		<input type="hidden" value="0" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -376,7 +383,7 @@
 		</div>
 	</div>
 
-   <form method="post" name="form" id="form-business" action="<?php echo $post->post_name; ?>>
+   <form method="post" name="form" id="form-business" action="<?php echo $request_url; ?>">
    
    	<input type="hidden" name="form-type" value="2">
    	<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -687,7 +694,7 @@
 				</div>
 			</div>
 			
-   <form method="post" name="form" id="form-international" action="<?php echo $post->post_name; ?>>
+   <form method="post" name="form" id="form-international" action="<?php echo $request_url; ?>">
    
    		<input type="hidden" name="form-type" value="1">
    		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
