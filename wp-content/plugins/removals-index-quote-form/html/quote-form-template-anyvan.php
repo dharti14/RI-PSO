@@ -39,7 +39,10 @@
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
      
-     global $post;    
+     $uri = $_SERVER['REQUEST_URI'];
+	 $req_uri = explode('?', $uri); 
+		
+	 $request_url = $req_uri[0];    
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -57,7 +60,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $post->post_name; ?>">
+					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $request_url; ?>">
 					   
 					   		<input type="hidden" value="4" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
