@@ -841,14 +841,21 @@ header.main .navbar-default .navbar-nav > li > a {
 /* } */
 
 #hero {
-/* 	  border-bottom: 6px solid #f5f5f5; */
+	  border-bottom: 6px solid #f5f5f5;
 	  padding-top: 10px;
 }
 
 @media only screen and (min-width: 640px) {
+	
+/* 	For home page */
     #hero {
-/* 		background:url("/wp-content/themes/genesis-removals-index/lp2/lib/assets/images/home_hero.jpg") 50% 100% no-repeat; */
-/* 		  background: url("../images/details-new.png"); */
+		background:url("../images/home_hero.jpg") 50% 100% no-repeat;
+	}
+	
+	
+/* 	No background image for silo pages */
+	#ri_silo_page #hero{
+		 background: none;
 	}
 }
 
