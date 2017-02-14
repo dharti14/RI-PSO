@@ -2557,7 +2557,7 @@ nav.navbar ul.sub-menu li a{
 @media(min-width: 768px){
 	
 	nav.navbar ul.sub-menu{
-		margin-left:-121px;
+		margin-left:-178px;
 	}
 	
 	nav.navbar ul li.menu-item-has-children a{
@@ -2617,7 +2617,7 @@ nav.navbar ul.sub-menu li a{
 @media only screen and (min-width: 992px){
 	
 	nav.navbar ul.sub-menu{
-		margin-left: -126px;
+		margin-left: -121px;
 	}
 	
 	nav.navbar .menu-item-has-children{
@@ -2633,10 +2633,6 @@ nav.navbar ul.sub-menu li a{
 	
 	nav.navbar li.menu-item{
 		width:20%;
-	}
-	
-	nav.navbar ul.sub-menu{
-		 margin-left: -67px;
 	}
 }	
 
