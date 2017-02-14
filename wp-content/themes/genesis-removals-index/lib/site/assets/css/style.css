@@ -2446,15 +2446,15 @@ nav.navbar .navbar-nav li{
 		display: none;
 		position: absolute;
 		height: auto;
-		z-index: 99;
+		z-index: 999999;
 		padding: 0 5px;
 		border-radius: 2px;
 		text-align: left;
 		 padding: 8px 10px;
-	    width: 250px;
+	    width: 350px;
 	    text-decoration:none;
 	    margin-top:13px;
-	    margin-left:-76px;
+	    margin-left:-177px;
 	}
 	
 	nav.navbar ul.sub-menu ul.sub-menu{
@@ -2613,7 +2613,7 @@ nav.navbar ul.sub-menu li a{
 @media only screen and (min-width: 992px){
 	
 	nav.navbar ul.sub-menu{
-		margin-left:-22px;
+		margin-left:-126px;
 	}
 	
 	nav.navbar .menu-item-has-children{
@@ -2632,7 +2632,7 @@ nav.navbar ul.sub-menu li a{
 	}
 	
 	nav.navbar ul.sub-menu{
-		margin-left:-27px;
+		 margin-left: -67px;
 	}
 }	
 
