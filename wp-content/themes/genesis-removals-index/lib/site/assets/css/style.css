@@ -2634,5 +2634,9 @@ nav.navbar ul.sub-menu li a{
 	nav.navbar li.menu-item{
 		width:20%;
 	}
+	
+	nav.navbar ul.sub-menu{
+		margin-left: -128px;
+	}
 }	
 
