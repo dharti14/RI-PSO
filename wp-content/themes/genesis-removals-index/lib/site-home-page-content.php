@@ -255,7 +255,7 @@
 					<div class="cta_box">
 						<h4>Removal Quotes</h4>
 						<p>Let removal firms do the heavy lifting: With our simple removals costs calculator, you'll quickly receive multiple online removal quotes from moving experts, all competing for your move. You’ll never be hassled, and all your quotes are 100% obligation-free.</p>
-						<a href="/removal-quotes" title="About Us" class="btn btn-primary">Find Out More</a>
+						<a href="/removal-quotes" title="About Us" class="btn btn-primary less-block-text">Find Out More</a>
 					</div>
 				</div>
 
@@ -271,27 +271,9 @@
 					<div class="cta_box">
 						<h4>Removal Companies UK</h4>
 						<p>There are thousands of national and local removal companies throughout the UK – But every removal company is different. It’s vital to choose an experienced, reliable moving firm to entrust your valuables to, to ensure your home move is a success.</p>
-						<a href="/removal-companies-uk" title="Find out more" class="btn btn-primary">Find Out More</a>
+						<a href="/removal-companies-uk" title="Find out more" class="btn btn-primary less-block-text">Find Out More</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-<!-- 	<section id="locations">
-		<div class="container">
-			<div class="group">
-				<h4 class="title">West Midlands <span class="num">(32)</span></h4>
-				<p>Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton</p>
-			</div>
-			<div class="group">
-				<h4 class="title">West Midlands <span class="num">(32)</span></h4>
-				<p>Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton</p>
-			</div>
-			<div class="group">
-				<h4 class="title">West Midlands <span class="num">(32)</span></h4>
-				<p>Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton</p>
-			</div>
-		</div>
-	</section>  -->
-	<!-- /#locations -->
