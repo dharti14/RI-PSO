@@ -51,7 +51,7 @@ jQuery( document ).ready(function() {
 	);
 	
 	//For Silo content pages only
-	function ci_align_banner_image(){
+	function ri_align_banner_image(){
 		
 		var window_width = jQuery(window).width();
 		var image_width = jQuery('.silo_banner_image').width();
@@ -63,11 +63,11 @@ jQuery( document ).ready(function() {
 	}
 
 	jQuery(window).load(function($){
-		ci_align_banner_image();
+		ri_align_banner_image();
 	});
 
 	jQuery(window).resize(function($){
-		ci_align_banner_image();
+		ri_align_banner_image();
 	});
 	//For Silo content pages only
 	
@@ -81,6 +81,7 @@ jQuery( document ).ready(function() {
 		jQuery("#hero").hide();
 		jQuery("#article").hide();
 		jQuery("#tp").hide();
+		jQuery(".green_section").hide();
 		jQuery("#how_will").hide();
 		jQuery("#get_quotes").hide();
 		jQuery("section.boxes").hide();
@@ -147,6 +148,7 @@ jQuery.ajax({
 		jQuery("#how_will").hide();
 		jQuery("#article").hide();
 		jQuery("#tp").hide();
+		jQuery(".green_section").hide();
 		jQuery("#hero").hide();
 		jQuery("#get_quotes").hide();
 		jQuery("#locations").hide();
