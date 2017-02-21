@@ -1443,7 +1443,7 @@ span.home-arrow-post{
 }
 
 span.home-arrow-post img{
-	width: 55px;
+	width: 50px;
 }
 
 .icon-wrapper{
@@ -1462,8 +1462,8 @@ span.home-arrow-post img{
 	      padding: 35px 0; 
 	 } 
 	 
-	 span.home-arrow-post img{
-		width: 60px;
+	 span.home-arrow-post{
+ 		bottom: 23px;
 	}
 	
 	#article ul{
