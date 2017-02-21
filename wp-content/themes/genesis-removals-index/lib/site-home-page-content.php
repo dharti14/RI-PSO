@@ -208,7 +208,7 @@
 					<div class="cta_box">
 						<h4>Compare &amp; Save</h4>
 						<p>Why waste hours trawling through websites? Compare removal quotes from trusted removals experts in under 60 seconds, and save up to 40% on your home removal costs. So you’ll have more to spend on the things you really need for your new home.</p>
-						<a href="/compare-removal-quotes" title="Find out more" class="btn btn-primary">Find out more</a>
+						<a href="/compare-removal-quotes" title="Find out more" class="btn btn-primary">Find Out More</a>
 					</div>
 				</div>
 			</div>
