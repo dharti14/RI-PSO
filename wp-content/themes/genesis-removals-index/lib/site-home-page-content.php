@@ -1,4 +1,4 @@
-<section id="hero">
+<section id="hero" class="home_page_content">
 
 		<div class="container">
 			<h1 class="align_center">Get Your <strong class="green">FREE Removal Quotes</strong> Today!</h1>
@@ -59,10 +59,78 @@
 			<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="5"></div>
 		</div>
 	</section>
-
 	<section id="article">
+	
 		<div class="container">
-			<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+			<h2 class="align_center text-wrap">Removal Companies</h2>
+			
+			<h3 class="align_center intro">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h3>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<ul>
+						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</p>
+						<li>Make your house move stress-free with Removals Index: Just give us a few details about your move to quickly compare free, no-obligation house removal quotes from trusted removal companies.</li>
+						<li>With our easy-to-complete form, you’ll be done in 60 seconds. Pre-screened removal companies will compete for your business – so you won’t have to lift a finger.</li>
+						<li>Your home removals quotes are 100% obligation-free, and all of our removal companies are hand-picked, and thoroughly vetted with a 6-step verification process.</li>
+						<li>Compare removal quotes with Removals Index now, and save up to 40% off your house removal costs.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<section  class="green_section">
+	<span class="home-arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/arrow.svg"></span>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<ul>
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_1.svg" class="icon"></span>
+							<strong>Never Haggle On Price Again</strong>
+							<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your move.</u></p>
+						</li>
+
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_2.svg" class="icon"></span>
+							<strong>Find A Trusted Man With A Van</strong>
+							<p>Our moving experts are hand-picked and carefully vetted with a rigorous, 6-step process. So you can relax, knowing your valuables are in safe hands.</p>
+						</li>
+
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_3.svg" class="icon"></span>
+							<strong>Booking Last Minute?</strong>
+							<p>Need to move quick? Our extensive network of house removal companies will move mountains to make your move happen.</p>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="col-sm-6">
+					<ul>
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_4.svg" class="icon"></span>
+							<strong>Small Jobs? No Problem.</strong>
+							<p>Need to hire a house moving van man for a small removals job? Experienced piano and furniture removal specialists will make light work of moving your heavy valuables.</p>
+						</li>
+
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_5.svg" class="icon"></span>
+							<strong>SAVE Up To 75%</strong>
+							<p>Save up to 75% on your man and van by comparing no obligation quotes from vetted house moving companies.</p>
+						</li>
+
+						<li>
+							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_6.svg" class="icon"></span>
+							<strong>100% No Obligation Guarantee</strong>
+							<p>We guarantee that your details are safe and secure and that you'll never be bombarded with calls or spam after comparing quotes.</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			
+			
 		</div>
 	</section>
 	
@@ -122,25 +190,25 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="cta_box">
-						<h4>Why use Removal Index?</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="About Us" class="btn btn-primary">About Us</a>
+						<h4>Why Use Removals Index?</h4>
+						<p>Remove the hassle from your house move: Compare removal quotes from top-rated removal companies in seconds – not hours – and save up to 40% on your moving costs. Find out why hundreds like you have awarded us 5 stars on Trustpilot.</p>
+						<a href="/about-us" title="About Us" class="btn btn-primary">About Us</a>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="cta_box">
-						<h4>Only the best movers</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="Get a Removal Quote" class="btn btn-primary">Get a Removal Quote</a>
+						<h4>Only The Best Movers</h4>
+						<p>All of our removals partners are hand-picked, and carefully vetted with a 6 step process – and you’ll only choose from trusted, reliable moving experts. So you can relax, knowing that your most valuable possessions are in safe hands.</p>
+						<a title="Get a Removal Quote" class="btn btn-primary get-my-quote">Get a Removal Quote</a>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="cta_box">
 						<h4>Compare &amp; Save</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="Find out more" class="btn btn-primary">Find out more</a>
+						<p>Why waste hours trawling through websites? Compare removal quotes from trusted removals experts in under 60 seconds, and save up to 40% on your home removal costs. So you’ll have more to spend on the things you really need for your new home.</p>
+						<a href="/compare-removal-quotes" title="Find out more" class="btn btn-primary">Find out more</a>
 					</div>
 				</div>
 			</div>
@@ -185,32 +253,32 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="cta_box">
-						<h4>Why use Removal Index?</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="About Us" class="btn btn-primary">About Us</a>
+						<h4>Removal Quotes</h4>
+						<p>Let removal firms do the heavy lifting: With our simple removals costs calculator, you'll quickly receive multiple online removal quotes from moving experts, all competing for your move. You’ll never be hassled, and all your quotes are 100% obligation-free.</p>
+						<a href="/removal-quotes" title="About Us" class="btn btn-primary">Find Out More</a>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="cta_box">
-						<h4>Only the best movers</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="Get a Removal Quote" class="btn btn-primary">Get a Removal Quote</a>
+						<h4>House Removal Costs</h4>
+						<p>All removal companies’ prices will vary. But a reliable removal company will provide a full breakdown of your house removal costs at the outset. Hire a trusted professional to avoid the unexpected costs – and stress – of relying on inexperienced moving companies.</p>
+						<a href="/house-removal-costs" title="Get a Removal Quote" class="btn btn-primary">Find Out More</a>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="cta_box">
-						<h4>Compare &amp; Save</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type..</p>
-						<a href="#" title="Find out more" class="btn btn-primary">Find out more</a>
+						<h4>Removal Companies UK</h4>
+						<p>There are thousands of national and local removal companies throughout the UK – But every removal company is different. It’s vital to choose an experienced, reliable moving firm to entrust your valuables to, to ensure your home move is a success.</p>
+						<a href="/removal-companies-uk" title="Find out more" class="btn btn-primary">Find Out More</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="locations">
+<!-- 	<section id="locations">
 		<div class="container">
 			<div class="group">
 				<h4 class="title">West Midlands <span class="num">(32)</span></h4>
@@ -225,5 +293,5 @@
 				<p>Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton, Walsall, Dudley, Sandwell, Birmingham, Wolverhampton</p>
 			</div>
 		</div>
-	</section>
+	</section>  -->
 	<!-- /#locations -->
