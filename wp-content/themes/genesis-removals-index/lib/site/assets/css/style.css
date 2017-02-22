@@ -437,7 +437,8 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	  font-size: 16px;
 	  padding-top: 20px;
 	  padding-bottom: 20px; 
-/* 	  border-top: #c9c9c9 solid 7px; */
+	  border-top: #c9c9c9 solid 7px;
+	  border-bottom: #c9c9c9 solid 7px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1442,38 +1443,15 @@ span.home-arrow-post{
     bottom: 21px;
 }
 
-span.home-arrow-post img{
-	width: 50px;
-}
-
-.icon-wrapper{
-	display: block;
-    position: absolute;
-    left: 0px;
-    top: 10px;
-}
-
-.icon-wrapper img{
-	width:40px;	
-}
-
 @media only screen and (min-width: 768px) {
     #article {
 	      padding: 35px 0; 
 	 } 
-	 
-	 span.home-arrow-post{
- 		bottom: 24px;
-	}
-	
+		
 	#article ul{
 		margin-left: 30px;
 	}
-	
-	.icon-wrapper img{
-		width:50px;	
-	}
-	
+		
 	.cta_box .less-block-text{
 		margin-top:47px !important;
 	}
