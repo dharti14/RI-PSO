@@ -1,13 +1,13 @@
 <?php
 	//Load css and js of the form here
-	
-	$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
-	
+		
 	$js_filename='';
 	$css_filename='';
 
+	$lookup_technology = $this->get_lookup_technology();
+	
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
-	switch ($lookup_functionality){
+	switch ($lookup_technology){
 		
 		case "data8":
 			$js_filename = "ri_email_phone_lookup-data8";
@@ -36,13 +36,9 @@
 		$this->ri_load_js($js_filename);
 	//Loading js and css file depending upon the lookup functionality selected
 
-     $dki_hln = dki_get_hln();
-     $ri_page_id = ri_get_page_id();
+     $dki_hln = $this->dki_hln;
+     $ri_page_id = $this->page_id;
      
-     $uri = $_SERVER['REQUEST_URI'];
-	 $req_uri = explode('?', $uri); 
-		
-	 $request_url = $req_uri[0];    
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -60,7 +56,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $request_url; ?>">
+					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $this->request_url; ?>">
 					   
 					   		<input type="hidden" value="4" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">

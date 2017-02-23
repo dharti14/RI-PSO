@@ -25,6 +25,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		
 		private $mode = '';
 		
+		protected $lookup_functionality = '';
+		protected $page_id = '';
+		protected $dki_hln = '';
+		protected $request_url = '';
+		
+		
 		
 		/**
 		 * Constructor function.
@@ -32,8 +38,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		public function __construct( ) {
 			
 			/* Admin page action */
-			add_action( 'admin_menu', array( &$this, 'quote_form_admin_menu' ) );
+			add_action( 'admin_menu', array( &$this, 'quote_form_admin_menu' ) );		
+						
+			$uri = $_SERVER['REQUEST_URI'];
+			$req_uri = explode('?', $uri);
 			
+			$this->request_url = $req_uri[0];
 			
 						
 			/* Fron page action */
@@ -152,6 +162,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 * insert js and css files.
 		 */
 		public function quote_form_assets( ) {		
+			
+			$this->dki_hln = dki_get_hln(); //Getting the DKI hln parameters
+			$this->page_id = get_the_ID(); //Getting the page id
+			
 				
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
 			
@@ -212,9 +226,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		 public function get_plocal_tags_var() {
 		 	
-		 	$requestUrl = explode('?', $_SERVER['REQUEST_URI']);
-		 	
-		 	$requestUrl = $requestUrl[0];
+		 	$requestUrl = $this->request_url;
 		 	if($requestUrl == '/ri/main' || $requestUrl == '/ri/main/') {
 		 		$requestUrl = '/ri/main/index.php';
 		 	}
@@ -413,6 +425,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 public function ri_load_form_validation_js($js) {
 		 
 		 	wp_enqueue_script( $js, RI_QUOTE_FORM_URL.'js/'.$js.'.js');
+		 	
+		 }
+		 
+		 public function get_lookup_technology(){
+		 	
+		 	return get_post_meta( $this->page_id, '_lookup_functionality', true );
 		 	
 		 }
 		 

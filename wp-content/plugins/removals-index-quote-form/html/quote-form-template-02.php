@@ -42,9 +42,6 @@
 	$req_uri = explode('?', $uri); 
 	
 	$request_url = $req_uri[0];
-	if($request_url == '/ri/main' || $request_url == '/ri/main/') {
-		$request_url = '/ri/main/index.php';
-	}
 		
 ?>
 
