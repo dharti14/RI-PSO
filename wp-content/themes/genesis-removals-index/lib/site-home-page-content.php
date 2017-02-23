@@ -71,7 +71,7 @@ $dki_loc = dki_get_loc();
 			<div class="inner-container">
 				<h2 class="title">Removal Companies</h2>
 							
-				<div class="intro">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
+				<div class="intro heading">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
 				
 					<ul class="bullet_points">
 						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</li>
