@@ -71,15 +71,16 @@ $dki_loc = dki_get_loc();
 			<div class="inner-container">
 				<h2 class="title">Removal Companies</h2>
 							
-				<h3 class="intro">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</h3>
+				<div class="intro">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
 				
-				<ul>
-					<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</li>
-					<li>Make your house move stress-free with Removals Index: Just give us a few details about your move to quickly compare free, no-obligation house removal quotes from trusted removal companies.</li>
-					<li>With our easy-to-complete form, you’ll be done in 60 seconds. Pre-screened removal companies will compete for your business – so you won’t have to lift a finger.</li>
-					<li>Your home removals quotes are 100% obligation-free, and all of our removal companies are hand-picked, and thoroughly vetted with a 6-step verification process.</li>
-					<li>Compare removal quotes with Removals Index now, and save up to 40% off your house removal costs.</li>
-				</ul>				
+					<ul class="bullet_points">
+						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</li>
+						<li>Make your house move stress-free with Removals Index: Just give us a few details about your move to quickly compare free, no-obligation house removal quotes from trusted removal companies.</li>
+						<li>With our easy-to-complete form, you’ll be done in 60 seconds. Pre-screened removal companies will compete for your business – so you won’t have to lift a finger.</li>
+						<li>Your home removals quotes are 100% obligation-free, and all of our removal companies are hand-picked, and thoroughly vetted with a 6-step verification process.</li>
+						<li>Compare removal quotes with Removals Index now, and save up to 40% off your house removal costs.</li>
+					</ul>				
+
 					
 				<div class="row">
 					<div class="col-sm-6">

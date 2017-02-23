@@ -1937,53 +1937,6 @@ footer.main ul#footer li:last-child:after {
 /* Footer Menu */
 
 
-
-/* Thanks page tweaks */
-
-       .steps.thanks_steps .col_1 {
-       		padding-left: 73px;
-       }
-
-@media (min-width: 992px){
-	#main_article .container {
-	    padding-left: 78px;
-	}
-}
-
-@media (min-width: 1200px){
-	#main_article .container {
-	    padding-left: 145px;
-	}
-}
-
-div.progress_bar {
-	    width: auto;
-	    overflow: hidden;
-	    padding-left: 50px;
-}
-
-@media only screen and (max-width: 1200px) {
-	div.progress_bar {
-		padding-left: 0px;
-	}
-	
-	.steps.thanks_steps .col_1 {
-		padding-left: 0px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.steps.thanks_steps .col_1 {
-		padding-left: 15px;
-	}
-}
-
-
-/* Thanks page tweaks */
-
-
-
-
 /* RI Width changes */
 
 
@@ -2668,4 +2621,30 @@ nav.navbar ul.sub-menu li a{
 		margin-left: -127px;
 	}
 }	
+
+/* Home page new section tweaks */
+
+.green_section .bullet_points li {
+	padding-bottom: 15px;
+}
+
+.green_section .bullet_points{
+	margin: 0 auto;
+    font-size: 16px;
+    padding: 0px;
+    text-align: justify;
+}
+
+@media only screen and (min-width: 768px){
+	
+	.green_section .bullet_points li {
+		padding-left:0px;
+	}
+	
+	.green_section .bullet_points{
+		width: 60%;
+		margin-bottom: 20px;
+	}
+	
+}
 
