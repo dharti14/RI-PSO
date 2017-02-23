@@ -194,13 +194,6 @@ function get_conversion_page_scripts() {
 	return $conversion_scripts;
 }
 
-
-//Getting the Page Id and from that we will get the pinlocal source key and thanks page id
-function ri_get_page_id(){
-	return get_the_ID();
-}
-
-
 //Adding action (genesis_loop) to get the contents of the page (ex. Terms and Conditions, Private Policy, etc.)
 add_action('genesis_loop','loop_for_internal_page_content');
 

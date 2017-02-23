@@ -26,8 +26,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		private $mode = '';
 		
 		protected $lookup_functionality = '';
+		
 		protected $page_id = '';
-		protected $dki_hln = '';
+
 		protected $request_url = '';
 		
 		
@@ -162,10 +163,6 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 * insert js and css files.
 		 */
 		public function quote_form_assets( ) {		
-			
-			$this->dki_hln = dki_get_hln(); //Getting the DKI hln parameters
-			$this->page_id = get_the_ID(); //Getting the page id
-			
 				
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
 			
@@ -186,6 +183,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				
 				include 'quote-form-submit.php';
 			}
+			
+			$this->page_id = get_the_ID(); //Getting the page id
        
 			if(isset($atts['template_name']) && !empty($atts['template_name'])) {
 			  
