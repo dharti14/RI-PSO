@@ -2624,6 +2624,19 @@ nav.navbar ul.sub-menu li a{
 
 /* Home page new section tweaks */
 
+
+@media (min-width: 992px){
+	#main_article .container {
+	    padding: 0px 100px;
+	}
+}
+
+@media (min-width: 1200px){
+	#main_article .container {
+	    padding:  0px 160px;
+	}
+}
+
 .green_section .bullet_points li {
 	padding-bottom: 15px;
 }
@@ -2648,5 +2661,7 @@ nav.navbar ul.sub-menu li a{
 	
 }
 
-
+.show_all{
+	 display: block;
+}
 

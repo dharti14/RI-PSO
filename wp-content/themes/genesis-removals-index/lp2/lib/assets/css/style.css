@@ -1916,13 +1916,13 @@ footer.main ul#footer li:last-child:after {
        }
 
 @media (min-width: 992px){
-	#main_article .container.thanks {
+	#main_article .container {
 	    padding-left: 78px;
 	}
 }
 
 @media (min-width: 1200px){
-	#main_article .container.thanks {
+	#main_article .container {
 	    padding-left: 145px;
 	}
 }

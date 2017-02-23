@@ -52,7 +52,7 @@
     <!-- /.steps -->
 
 	<article id="main_article">
-		<div class="container thanks">
+		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
 					<h1 class="h2">Thank you <span id="customername"></span></h1>
