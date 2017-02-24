@@ -2659,7 +2659,7 @@ nav.navbar ul.sub-menu li a{
 
 .bullet-point-seperator{
 	width:60%;
-	margin-bottom:30px;
+	margin-bottom:40px;
 }
 
 @media only screen and (min-width: 768px){
@@ -2681,6 +2681,7 @@ nav.navbar ul.sub-menu li a{
 	
 	.bullet-point-seperator{
 		width:50%;
+		margin-bottom:30px;
 	}
 	
 }
