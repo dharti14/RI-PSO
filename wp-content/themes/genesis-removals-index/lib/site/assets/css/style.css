@@ -437,7 +437,8 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 	  font-size: 16px;
 	  padding-top: 20px;
 	  padding-bottom: 20px; 
-/* 	  border-top: #c9c9c9 solid 7px; */
+	  border-top: #c9c9c9 solid 7px;
+	  border-bottom: #c9c9c9 solid 7px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1442,38 +1443,15 @@ span.home-arrow-post{
     bottom: 21px;
 }
 
-span.home-arrow-post img{
-	width: 50px;
-}
-
-.icon-wrapper{
-	display: block;
-    position: absolute;
-    left: 0px;
-    top: 10px;
-}
-
-.icon-wrapper img{
-	width:40px;	
-}
-
 @media only screen and (min-width: 768px) {
     #article {
 	      padding: 35px 0; 
 	 } 
-	 
-	 span.home-arrow-post{
- 		bottom: 24px;
-	}
-	
+		
 	#article ul{
 		margin-left: 30px;
 	}
-	
-	.icon-wrapper img{
-		width:50px;	
-	}
-	
+		
 	.cta_box .less-block-text{
 		margin-top:47px !important;
 	}
@@ -1957,53 +1935,6 @@ footer.main ul#footer li:last-child:after {
 
 }
 /* Footer Menu */
-
-
-
-/* Thanks page tweaks */
-
-       .steps.thanks_steps .col_1 {
-       		padding-left: 73px;
-       }
-
-@media (min-width: 992px){
-	#main_article .container {
-	    padding-left: 78px;
-	}
-}
-
-@media (min-width: 1200px){
-	#main_article .container {
-	    padding-left: 145px;
-	}
-}
-
-div.progress_bar {
-	    width: auto;
-	    overflow: hidden;
-	    padding-left: 50px;
-}
-
-@media only screen and (max-width: 1200px) {
-	div.progress_bar {
-		padding-left: 0px;
-	}
-	
-	.steps.thanks_steps .col_1 {
-		padding-left: 0px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.steps.thanks_steps .col_1 {
-		padding-left: 15px;
-	}
-}
-
-
-/* Thanks page tweaks */
-
-
 
 
 /* RI Width changes */
@@ -2690,4 +2621,70 @@ nav.navbar ul.sub-menu li a{
 		margin-left: -127px;
 	}
 }	
+
+/* Home page new section tweaks */
+
+
+@media (min-width: 992px){
+	#main_article .container {
+	    padding: 0px 100px;
+	}
+}
+
+@media (min-width: 1200px){
+	#main_article .container {
+	    padding:  0px 160px;
+	}
+}
+
+.intro.heading{
+	font-size:16px;
+}
+
+.show_all{
+	 display: block;
+}
+
+.green_section .bullet-points li {
+	padding: 0 25px;
+	padding-bottom: 15px;
+}
+
+.green_section .bullet-points{
+	
+    font-size: 14px;
+    padding: 0px;
+    text-align: justify;
+}
+
+.bullet-point-seperator{
+	width:90%;
+	margin-bottom:40px;
+}
+
+@media only screen and (min-width: 768px){
+	
+	.intro.heading{
+		font-size:18px;
+	}
+	
+	.green_section .bullet-points li {
+		padding-left:0px;
+	}
+	
+	.green_section .bullet-points{
+		margin-left: 32px;
+		font-size: 16px;
+		width: 95%;
+		margin-bottom: 40px;
+	}
+	
+	.bullet-point-seperator{
+		width:94%;
+		margin-bottom:57px;
+	}
+	
+}
+
+
 
