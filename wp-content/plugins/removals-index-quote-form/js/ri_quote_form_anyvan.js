@@ -94,13 +94,17 @@ jQuery( document ).ready(function() {
 			return false;
 		}
 		
-		var chkDt = new Date(year, month-1 , day, 0, 0, 0, 0);
-		if(chkDt.getTime() < dt.getTime())
-		{
-			return false;
+			var chkDt = new Date(year, month-1 , day, 0, 0, 0, 0);
+		
+			
+		if( (chkDt.getFullYear() >= dt.getFullYear()) && (chkDt.getMonth() >= dt.getMonth())&& (chkDt.getDate() >= dt.getDate()) )
+		{			
+			return true;
+			
+		}else{
+			if (chkDt.getTime() < dt.getTime()) return false;
 		}
 		
-					
 		return true;
 		
 	}, "Invalid moving date. Date must be in mm/dd/yyyy format and must be future date.");

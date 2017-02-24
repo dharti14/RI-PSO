@@ -1,13 +1,13 @@
 <?php
 	//Load css and js of the form here
-	
-	$lookup_functionality = genesis_get_custom_field('_lookup_functionality');
-	
+		
 	$js_filename='';
 	$css_filename='';
 
+	$lookup_technology = $this->get_lookup_technology();
+	
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
-	switch ($lookup_functionality){
+	switch ($lookup_technology){
 		
 		case "data8":
 			$js_filename = "ri_email_phone_lookup-data8";
@@ -37,9 +37,8 @@
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
-     $ri_page_id = ri_get_page_id();
-     
-     
+     $ri_page_id = $this->page_id;
+          
 ?>
 
 <div id="show-after-get" class="residential" style="display:none;">
@@ -57,7 +56,7 @@
 				</div>
 			</div>
 					   
-					   <form method="post" name="form" id="form">
+					   <form method="post" name="form" id="form" autocomplete="off" action="<?php echo $this->request_url; ?>">
 					   
 					   		<input type="hidden" value="4" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -68,8 +67,8 @@
 							<div class="col-md-12">
 					   		<!-- Step 1 -->
 					  		<div class="removing-stress-frm step1">
-					  		<span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/anyvan/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-					            <div class="nearly"><img src="<?php echo THEME_PATH_URI;?>/anyvan/lib/assets/images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
+					  		<span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+					            <div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
 					             <h4 class="property">Step 1 : Size of my current property</h4>
 					             
 					             
@@ -121,7 +120,7 @@
 								<div class="col-sm-8">
 							       <div class="removing-stress-frm step2">
 							         <h4>Step 2 : My move</h4>
-							         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/anyvan/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 							          <div class="removing-stress-frm-con">
 							           <div class="leftpart">
 							            
@@ -234,7 +233,7 @@
 					          
 					            <div class="removing-stress-frm step3">
 							         <h4>Step 3 : Things I would also like help with</h4>
-							         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/anyvan/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 							          <div class="removing-stress-frm-con">
 							            
 							              <div class="form-group">
@@ -288,7 +287,7 @@
 
 								       <div class="removing-stress-frm step4">
 								         <h4>Step 4 : My contact Information</h4>
-								         <span class="arrow-post2"><img src="<?php echo THEME_PATH_URI;?>/anyvan/lib/assets/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+								         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 								          <div class="removing-stress-frm-con">
 								       
 								              <div class="form-group">
