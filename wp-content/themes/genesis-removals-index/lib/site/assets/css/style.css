@@ -2645,16 +2645,21 @@ nav.navbar ul.sub-menu li a{
 	 display: block;
 }
 
-.green_section .bullet_points li {
+.green_section .bullet-points li {
 	padding: 0 25px;
 	padding-bottom: 15px;
 }
 
-.green_section .bullet_points{
-	margin: 0 auto;
+.green_section .bullet-points{
+	
     font-size: 14px;
     padding: 0px;
     text-align: justify;
+}
+
+.bullet-point-seperator{
+	width:60%;
+	margin-bottom:30px;
 }
 
 @media only screen and (min-width: 768px){
@@ -2663,14 +2668,19 @@ nav.navbar ul.sub-menu li a{
 		font-size:18px;
 	}
 	
-	.green_section .bullet_points li {
+	.green_section .bullet-points li {
 		padding-left:0px;
 	}
 	
-	.green_section .bullet_points{
+	.green_section .bullet-points{
+		margin-left: 32px;
 		font-size: 16px;
-		width: 92%;
+		width: 95%;
 		margin-bottom: 20px;
+	}
+	
+	.bullet-point-seperator{
+		width:50%;
 	}
 	
 }
