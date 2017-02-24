@@ -2638,7 +2638,7 @@ nav.navbar ul.sub-menu li a{
 }
 
 .intro.heading{
-	font-size:16px;
+	font-size:18px;
 }
 
 .show-all{
@@ -2652,7 +2652,7 @@ nav.navbar ul.sub-menu li a{
 
 .green_section .bullet-points{
 	
-    font-size: 14px;
+    font-size: 16px;
     padding: 0px;
     text-align: justify;
 }
@@ -2662,10 +2662,14 @@ nav.navbar ul.sub-menu li a{
 	margin-bottom:40px;
 }
 
+h2.home.title{
+	font-size:20px;
+}
+
 @media only screen and (min-width: 768px){
 	
-	.intro.heading{
-		font-size:18px;
+	h2.home.title{
+		font-size:28px;
 	}
 	
 	.green_section .bullet-points li {
@@ -2674,7 +2678,6 @@ nav.navbar ul.sub-menu li a{
 	
 	.green_section .bullet-points{
 		margin-left: 32px;
-		font-size: 16px;
 		width: 95%;
 		margin-bottom: 40px;
 	}
