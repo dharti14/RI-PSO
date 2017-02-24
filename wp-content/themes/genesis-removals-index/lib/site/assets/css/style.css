@@ -2641,7 +2641,7 @@ nav.navbar ul.sub-menu li a{
 	font-size:16px;
 }
 
-.show_all{
+.show-all{
 	 display: block;
 }
 
@@ -2684,6 +2684,12 @@ nav.navbar ul.sub-menu li a{
 		margin-bottom:57px;
 	}
 	
+}
+
+@media only screen and (min-width: 1200px){
+	.show-all{
+		display:none;
+	}
 }
 
 
