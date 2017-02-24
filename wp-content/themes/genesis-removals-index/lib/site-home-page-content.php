@@ -69,7 +69,7 @@ $dki_loc = dki_get_loc();
 		<div class="container">
 		
 			<div class="inner-container">
-				<h2 class="title">Removal Companies</h2>
+				<h2 class="home title">Removal Companies</h2>
 							
 				<div class="intro heading">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
 				
