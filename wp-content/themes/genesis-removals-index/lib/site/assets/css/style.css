@@ -2685,12 +2685,3 @@ nav.navbar ul.sub-menu li a{
 	}
 	
 }
-
-@media only screen and (min-width: 1200px){
-	.show-all{
-		display:none;
-	}
-}
-
-
-
