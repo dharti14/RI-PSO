@@ -1,3 +1,7 @@
+<?php
+$dki_hln = dki_get_hln();
+$dki_loc = dki_get_loc();
+?>
 <section id="hero" class="home_page_content">
 
 		<div class="container">
@@ -59,74 +63,71 @@
 			<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="5"></div>
 		</div>
 	</section>
-	<section id="article">
+	
+	<section  class="green_section">
 	
 		<div class="container">
-			<h2 class="align_center text-wrap">Removal Companies</h2>
-			
-			<h3 class="align_center intro">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation!</h3>
-			
-			<div class="row">
-				<div class="col-sm-12">
-					<ul>
-						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</p>
+		
+			<div class="inner-container">
+				<h2 class="title">Removal Companies</h2>
+							
+				<div class="intro heading">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
+				
+					<ul class="bullet-points">
+						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</li>
 						<li>Make your house move stress-free with Removals Index: Just give us a few details about your move to quickly compare free, no-obligation house removal quotes from trusted removal companies.</li>
 						<li>With our easy-to-complete form, you’ll be done in 60 seconds. Pre-screened removal companies will compete for your business – so you won’t have to lift a finger.</li>
 						<li>Your home removals quotes are 100% obligation-free, and all of our removal companies are hand-picked, and thoroughly vetted with a 6-step verification process.</li>
 						<li>Compare removal quotes with Removals Index now, and save up to 40% off your house removal costs.</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-	</section>
-	<section  class="green_section">
-	<span class="home-arrow-post"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/arrow.svg"></span>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<ul>
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_1.svg" class="icon"></span>
-							<strong>Never Haggle On Price Again</strong>
-							<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your move.</u></p>
-						</li>
-
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_2.svg" class="icon"></span>
-							<strong>Find A Trusted Man With A Van</strong>
-							<p>Our moving experts are hand-picked and carefully vetted with a rigorous, 6-step process. So you can relax, knowing your valuables are in safe hands.</p>
-						</li>
-
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_3.svg" class="icon"></span>
-							<strong>Booking Last Minute?</strong>
-							<p>Need to move quick? Our extensive network of house removal companies will move mountains to make your move happen.</p>
-						</li>
-						
-					</ul>
-				</div>
-				<div class="col-sm-6">
-					<ul>
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_4.svg" class="icon"></span>
-							<strong>Small Jobs? No Problem.</strong>
-							<p>Need to hire a house moving van man for a small removals job? Experienced piano and furniture removal specialists will make light work of moving your heavy valuables.</p>
-						</li>
-
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_5.svg" class="icon"></span>
-							<strong>SAVE Up To 75%</strong>
-							<p>Save up to 75% on your man and van by comparing no obligation quotes from vetted house moving companies.</p>
-						</li>
-
-						<li>
-							<span class="icon-wrapper"><img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/bullet_point_num_6.svg" class="icon"></span>
-							<strong>100% No Obligation Guarantee</strong>
-							<p>We guarantee that your details are safe and secure and that you'll never be bombarded with calls or spam after comparing quotes.</p>
-						</li>
-						
-					</ul>
+					</ul>				
+				
+				<hr class="bullet-point-seperator">
+					
+				<div class="row">
+					<div class="col-sm-6">
+						<ul>
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>Never Haggle On Price Again</strong>
+								<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your move.</u></p>
+							</li>
+	
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>Get Done In Seconds Not Hours</strong>
+								<p>On top of your move, researching, calling and reviewing removal companies is an added hassle you don't need. Removals Index can help you can get the job done in a matter of seconds.</p>
+							</li>
+	
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>Need A Quick Turnaround?</strong>
+								<p>Our trusted removal firms will always try and accommodate you, even if you're looking to move fast or at very short notice.</p>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="col-sm-6">
+						<ul>
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>6-Step SAFE™ Verification Process</strong>
+								<p>We <u>hand pick and pre-screen</u> all of our removal companies. Each and every one goes through our 6-step SAFE™ verification process.</p>
+							</li>
+	
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>SAVE Up To 40%</strong>
+								<p>You can save up to 40% on your moving costs by comparing several no obligation quotes from reliable removal companies in your area.</p>
+							</li>
+	
+							<li>
+								<i class="fa fa-check-circle"></i>
+								<strong>100% No Obligation Guarantee</strong>
+								<p>We guarantee that your details are safe and secure and that you'll never be bombarded with calls or spam after comparing quotes.</p>
+							</li>
+							
+						</ul>
+					</div>
 				</div>
 			</div>
 			
@@ -163,7 +164,7 @@
 		            </div>
 		            <div class="a">
 		              <p class="step">2. Compare Prices</p>
-		              <p class="t">Get multiple FREE quotes from local removal firms in your area, so you never need to haggle on price</p>
+		              <p class="t">Get multiple FREE quotes from local removal firms in <?php echo $dki_loc;?>, so you never need to haggle on price</p>
 		            </div>
 		          </div>
 
