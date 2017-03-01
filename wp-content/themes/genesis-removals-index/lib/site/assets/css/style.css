@@ -2703,4 +2703,8 @@ h2.home.title{
 		margin-bottom:57px;
 	}
 	
+	ul.nav > li {
+		text-align:center !important;
+	}
+	
 }
