@@ -49,6 +49,7 @@ $dki_loc = dki_get_loc();
 							</div>
 
 							<p class="tag2">"We help thousands of people, just like <br>you, move every month.."</p>
+							<p class="tag2 mobile-tag">"We help thousands of people,<br> just like you, move every month..."</p>
 
 						</div>
 					</div>
