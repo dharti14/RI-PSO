@@ -863,23 +863,8 @@ header.main .navbar-default .navbar-nav > li > a {
 #hero h1 {
     margin-top: 0;
     margin-bottom: 5px; 
-    font-size: 26.59px;
 }
 
-@media only screen and (min-width: 640px) {
-	
-	#hero h1 {
-	    font-size: 30px;
-	}
-	
-}
-
-
-@media only screen and (min-width: 992px) {
-	#hero h1 {
-	    font-size: 44.44px;
-	}
-}
 
 #hero .tagline {
     font-weight: bold;
