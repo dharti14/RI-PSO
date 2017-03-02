@@ -2535,6 +2535,10 @@ nav.navbar ul.sub-menu li a{
 
 @media(min-width: 768px){
 	
+	nav.navbar ul.nav.navbar-nav{
+		float:right;
+	}
+	
 	nav.navbar ul.sub-menu{
 		margin-left:-178px;
 	}

@@ -74,10 +74,8 @@ jQuery( document ).ready(function() {
 	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
 	
-	/*google analytics event tracking.*/	
-	
-	jQuery(".get-my-quote").click(function(){
-		
+	/*google analytics event tracking.*/		
+	function hide_divs(){
 		jQuery("#hero").hide();
 		jQuery("#article").hide();
 		jQuery("#tp").hide();
@@ -87,12 +85,9 @@ jQuery( document ).ready(function() {
 		jQuery("section.boxes").hide();
 		jQuery("#locations").hide();
 		jQuery("footer.main").hide();
-		
-		var postcode_from = jQuery("#postcode_from").val();
-		var postcode_to = jQuery("#postcode_to").val();
-		
-		var business_type = jQuery("input[name=business_type]:checked").val();
-		
+	}
+	
+	function load_quote_form(business_type){
 		if(business_type == "International"){ postcode_to = ''; }
 		if(business_type == "Business Removal"){
 			jQuery("#show-after-get-business").css("display","block");
@@ -110,6 +105,43 @@ jQuery( document ).ready(function() {
         		scrollTop: jQuery('#show-after-get').offset().top
     		}, 300);
 		}
+	}
+	
+	
+	function load_quote_form_from_menu(){
+		var form_type = document.location.href.split('#');
+		var quote_form = '';
+		if(form_type.length>1){
+			
+			quote_form = form_type[1].toLowerCase();
+			
+			if(quote_form == "hr" || quote_form == "or" || quote_form == "ir"){
+				hide_divs();
+				business_type = '';
+				if(quote_form == "or") business_type = "Business Removal";
+				if(quote_form == "ir") business_type = "International";
+				
+				load_quote_form(business_type);
+			}
+			
+			clearInterval(ri_form);
+		}
+	}
+	
+	
+	var ri_form = setInterval(function(){ load_quote_form_from_menu() }, 500);
+	
+	
+	jQuery(".get-my-quote").click(function(){
+		
+		hide_divs();
+		
+		var postcode_from = jQuery("#postcode_from").val();
+		var postcode_to = jQuery("#postcode_to").val();
+		
+		var business_type = jQuery("input[name=business_type]:checked").val();
+		
+		load_quote_form(business_type);
 		
 jQuery.ajax({
 			
