@@ -2366,14 +2366,10 @@ nav.navbar ul.nav.navbar-nav{
 		
 
 @media only screen and (min-width: 768px) {
-	
-	ul.nav li {
-		float:right;
-	}
-	
+		
 	ul.nav li {
 		width: auto;
-   		padding: 15px 13px;
+   		padding: 15px 10px;
    		margin: 0;
 	}
 	
@@ -2467,6 +2463,13 @@ nav.navbar ul.nav.navbar-nav{
 
 	nav.navbar .header-menu ul.sub-menu ul.sub-menu a{
 		padding: 0;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+		
+	ul.nav li {
+		    padding: 15px 18px;
 	}
 }
 

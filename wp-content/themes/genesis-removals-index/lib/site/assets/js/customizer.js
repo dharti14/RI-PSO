@@ -1,7 +1,85 @@
 // JavaScript Document
 jQuery( document ).ready(function() {
 		
-	/*google analytics event tracking.*/	
+	/*google analytics event tracking.*/
+	
+	//url watcher..
+	if(typeof(previous_url) == 'undefined'){ previous_url = document.location.href; }	
+	url_watcher = function()
+	{
+		if(document.location.href != previous_url)
+		{			
+			previous_url = document.location.href;
+			window.clearInterval(url_watcher_interval);		
+			console.log('page change detected');	
+			location.reload();
+		}
+	}
+
+	if(typeof(url_watcher_interval) !='undefined') window.clearInterval(url_watcher_interval);
+	url_watcher_interval = window.setInterval(url_watcher,500);
+	
+	
+	function hide_divs(){
+		
+		jQuery("#hero").hide();
+		jQuery("#article").hide();
+		jQuery("#tp").hide();
+		jQuery(".green_section").hide();
+		jQuery("#how_will").hide();
+		jQuery("#get_quotes").hide();
+		jQuery("section.boxes").hide();
+		jQuery("#locations").hide();
+		jQuery("footer.main").hide();
+		
+	}
+	
+	function load_quote_form(business_type){
+		if(business_type == "International"){ postcode_to = ''; }
+		if(business_type == "Business Removal"){
+			jQuery("#show-after-get-business").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get-business').offset().top
+    		}, 300);
+		}else if(business_type == "International"){
+			jQuery("#show-after-get-international").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get-international').offset().top
+    		}, 300);
+		}else{	
+			jQuery("#show-after-get").css("display","block");
+			jQuery('html, body').animate({
+        		scrollTop: jQuery('#show-after-get').offset().top
+    		}, 300);
+		}
+	}
+	
+	
+	function load_quote_form_from_menu(){
+		var form_type = document.location.href.split('#');
+		var quote_form = '';
+		if(form_type.length>1){
+			
+			quote_form = form_type[1].toLowerCase();
+	
+			
+			if(quote_form == "hr" || quote_form == "or" || quote_form == "ir"){
+				hide_divs();
+				business_type = '';
+				if(quote_form == "or") business_type = "Business Removal";
+				if(quote_form == "ir") business_type = "International";
+				
+				
+				setTimeout(function(){ load_quote_form(business_type); }, 1000);
+			}
+			
+		}
+	}
+	
+	//Loading the quote form 
+	setTimeout(function(){ load_quote_form_from_menu();},1000);
+	
+	
 	
 	//For mobile menu doesn't go inside the admin bar
 	if(jQuery('#wpadminbar').length>0){
@@ -75,38 +153,14 @@ jQuery( document ).ready(function() {
 	
 	jQuery(".get-my-quote").click(function(){
 		
-		jQuery("#hero").hide();
-		jQuery("#article").hide();
-		jQuery("#tp").hide();
-		jQuery(".green_section").hide();
-		jQuery("#how_will").hide();
-		jQuery("#get_quotes").hide();
-		jQuery("section.boxes").hide();
-		jQuery("#locations").hide();
-		jQuery("footer.main").hide();
+		hide_divs();
 		
 		var postcode_from = jQuery("#postcode_from").val();
 		var postcode_to = jQuery("#postcode_to").val();
 		
 		var business_type = jQuery("input[name=business_type]:checked").val();
 		
-		if(business_type == "International"){ postcode_to = ''; }
-		if(business_type == "Business Removal"){
-			jQuery("#show-after-get-business").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get-business').offset().top
-    		}, 300);
-		}else if(business_type == "International"){
-			jQuery("#show-after-get-international").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get-international').offset().top
-    		}, 300);
-		}else{	
-			jQuery("#show-after-get").css("display","block");
-			jQuery('html, body').animate({
-        		scrollTop: jQuery('#show-after-get').offset().top
-    		}, 300);
-		}
+		load_quote_form(business_type);
 		
 jQuery.ajax({
 			
@@ -142,15 +196,7 @@ jQuery.ajax({
 	
 	jQuery(".get-my-quote2").click(function(){
 		
-		jQuery("#how_will").hide();
-		jQuery("#article").hide();
-		jQuery("#tp").hide();
-		jQuery(".green_section").hide();
-		jQuery("#hero").hide();
-		jQuery("#get_quotes").hide();
-		jQuery("#locations").hide();
-		jQuery("section.boxes").hide();
-		jQuery("footer.main").hide();
+		hide_divs();
 		
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();
