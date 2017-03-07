@@ -3,6 +3,18 @@ jQuery( document ).ready(function() {
 		
 	/*google analytics event tracking.*/
 	
+	function close_mobile_menu(){
+		//Close mobile menu -- Code
+				var mobile_navbar = jQuery('#mobile-header-navbar-collapse');
+				var mobile_menu_container = jQuery('.mobile-menu-container');
+				mobile_navbar.toggle( 'fold', 100);
+				jQuery('#navbar').css({"display":"table"});         
+				jQuery("html,body").css('overflow','auto');
+				mobile_menu_container.toggle();
+		//Close mobile menu -- Code
+	}
+	
+	
 	//url watcher..
 	if(typeof(previous_url) == 'undefined'){ previous_url = document.location.href; }	
 	url_watcher = function()
@@ -11,12 +23,17 @@ jQuery( document ).ready(function() {
 		{			
 			previous_url = document.location.href;
 			
+			console.log(previous_url);
+			
 			//Hiding quote forms if opened previously
 			hide_quoteform();
 						
 			//Hiding divs and loading quote form
 			hide_divs();
 			load_quote_form_from_menu();
+			
+			close_mobile_menu();
+			
 		}
 	}
 
