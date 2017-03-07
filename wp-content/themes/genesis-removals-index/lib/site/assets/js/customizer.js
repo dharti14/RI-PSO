@@ -6,13 +6,13 @@ jQuery( document ).ready(function() {
 	//url watcher..
 	if(typeof(previous_url) == 'undefined'){ previous_url = document.location.href; }	
 	url_watcher = function()
-	{
+	{		
 		if(document.location.href != previous_url)
 		{			
 			previous_url = document.location.href;
-			window.clearInterval(url_watcher_interval);		
-			console.log('page change detected');	
-			location.reload();
+
+			hide_divs();
+			load_quote_form_from_menu();
 		}
 	}
 
@@ -70,14 +70,14 @@ jQuery( document ).ready(function() {
 				if(quote_form == "ir") business_type = "International";
 				
 				
-				setTimeout(function(){ load_quote_form(business_type); }, 1000);
+				load_quote_form(business_type);
 			}
 			
 		}
 	}
 	
 	//Loading the quote form 
-	setTimeout(function(){ load_quote_form_from_menu();},1000);
+	setTimeout(function(){ load_quote_form_from_menu();},1500);
 	
 	
 	
