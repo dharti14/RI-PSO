@@ -10,7 +10,11 @@ jQuery( document ).ready(function() {
 		if(document.location.href != previous_url)
 		{			
 			previous_url = document.location.href;
-
+			
+			//Hiding quote forms if opened previously
+			hide_quoteform();
+						
+			//Hiding divs and loading quote form
 			hide_divs();
 			load_quote_form_from_menu();
 		}
@@ -34,7 +38,13 @@ jQuery( document ).ready(function() {
 		
 	}
 	
-	function load_quote_form(business_type){
+	function hide_quoteform(){
+		jQuery("#show-after-get-business").hide();
+		jQuery("#show-after-get-international").hide();
+		jQuery("#show-after-get").hide();
+	}
+	
+	function show_quote_form(business_type){
 		if(business_type == "International"){ postcode_to = ''; }
 		if(business_type == "Business Removal"){
 			jQuery("#show-after-get-business").css("display","block");
@@ -70,7 +80,7 @@ jQuery( document ).ready(function() {
 				if(quote_form == "ir") business_type = "International";
 				
 				
-				load_quote_form(business_type);
+				show_quote_form(business_type);
 			}
 			
 		}
@@ -160,7 +170,7 @@ jQuery( document ).ready(function() {
 		
 		var business_type = jQuery("input[name=business_type]:checked").val();
 		
-		load_quote_form(business_type);
+		show_quote_form(business_type);
 		
 jQuery.ajax({
 			
