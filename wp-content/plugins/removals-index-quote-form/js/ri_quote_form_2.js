@@ -1,6 +1,6 @@
 // JavaScript Document
 jQuery( document ).ready(function() {
-		
+
 	//Custom Validations
 	
 	//Validate Phone Number
@@ -178,7 +178,7 @@ jQuery( document ).ready(function() {
 	
 	
         //form validation rules
-        jQuery("#form").validate({
+       var dm_form =  jQuery("#form").validate({
 
         	invalidHandler: function(event, validator) {
 				 var errors = validator.numberOfInvalids();
@@ -288,7 +288,7 @@ jQuery( document ).ready(function() {
                 form.submit();
         }
      });
-   			
+	    			
 		jQuery(".get-my-quote-second").click(function() {
     		jQuery("#form").submit();
     		
@@ -457,7 +457,7 @@ jQuery( document ).ready(function() {
 	 	
 		//form-business validation rules
 		
-        jQuery("#form-business").validate({
+       var cm_form = jQuery("#form-business").validate({
         	
         	invalidHandler: function(event, validator) {
 				 var errors = validator.numberOfInvalids();
@@ -547,7 +547,6 @@ jQuery( document ).ready(function() {
 		            form.submit();
 		        }
 	});
-	
 	
 		jQuery(".get-my-quote-second-business").click(function() {
     		jQuery("#form-business").submit();
@@ -663,7 +662,7 @@ jQuery( document ).ready(function() {
 		
 	//form-international validation rules
 		
-        jQuery("#form-international").validate({
+        var in_form = jQuery("#form-international").validate({
         	
         	invalidHandler: function(event, validator) {
 				 var errors = validator.numberOfInvalids();
@@ -776,7 +775,6 @@ jQuery( document ).ready(function() {
                 }
         	});
         
-    	
 		jQuery(".get-my-quote-second-international").click(function() {
     		jQuery("#form-international").submit();
  		 });
@@ -918,5 +916,26 @@ jQuery( document ).ready(function() {
 	});
 	
 	//Date Picker for all forms (Residential,Commercial and international)
+	
+	if(typeof(plugin_previous_url) == 'undefined'){ plugin_previous_url = document.location.href; }	
+	plugin_url_watcher = function()
+	{		
+		if(document.location.href != plugin_previous_url)
+		{			
+			plugin_previous_url = document.location.href;
+			
+			//Reseting the forms Ref, https://jqueryvalidation.org/Validator.resetForm/
+			
+			dm_form.resetForm();
+			cm_form.resetForm();
+			in_form.resetForm();
+			
+			//Hiding error message(total) div
+			jQuery('.danger').css("display","none");     
+		}
+	}
+
+	if(typeof(plugin_url_watcher_interval) !='undefined') window.clearInterval(plugin_url_watcher_interval);
+	plugin_url_watcher_interval = window.setInterval(plugin_url_watcher,500);
 	
 });
