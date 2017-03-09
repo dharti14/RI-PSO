@@ -256,5 +256,11 @@ function ri_add_js_for_silo_page_metabox($hook){
 	wp_enqueue_script('ri-silo-metabox-js', THEME_PATH_URI.'/lib/site/assets/js/ri_silo_page_metaboxes.js', array( 'jquery' ), true );
 }
 
+//Register Cusotm Image Sizes
+add_action('init', 'ri_regiter_image_sizes');
+function ri_regiter_image_sizes() {
+	add_image_size( 'ipad', 407, 407, TRUE ); // force crop true
+}
+
 
 ?>
