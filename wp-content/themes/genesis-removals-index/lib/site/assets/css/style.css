@@ -3451,6 +3451,12 @@ span.byline{
     font-size: 14px;
     color: #000;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+    
+    .widget ul li{
+        padding: 0 0 3px 35px;
+    	position: relative;
+    }
+    
     @media only screen and (min-width: 768px) {
       .widget#widget_trustpilot, .widget#widget_savings, .widget#widget_guarantee {
         padding: 35px 20px; } }
@@ -3502,8 +3508,8 @@ span.byline{
       display: inline-block;
       vertical-align: middle;
       margin-right: 10px;
-      position: relative;
-      top: -1px; }
+      position: absolute;
+      left: 0px; }
       @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         .widget#widget_savings i.check, .widget#widget_guarantee i.check {
           background-image: url("../images/check_circle@2x.png"); } }
