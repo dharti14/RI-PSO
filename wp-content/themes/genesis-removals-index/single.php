@@ -79,6 +79,11 @@ function loop_for_single_blog_content() {
             	
           
           </div>
+          
+          <div class="col-sm-5 col-md-4 col-lg-3">
+            <?php get_template_part('lib/site/structure/blog_sidebar_template'); ?>
+          </div>
+          
         </div>
       </div>
 	  </div>
