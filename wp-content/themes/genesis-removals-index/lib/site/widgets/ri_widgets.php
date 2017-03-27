@@ -79,7 +79,7 @@ class widget_savings extends WP_Widget {
 		?>
 		<div id="widget_savings" class="widget">
 			<h3>Average Customer Savings</h3>
-			<p class="price">£287* <span>per instruction</span></p>
+			<p class="price">£287 <span>per house removal</span></p>
 			<p><strong>*Over 21,000 quotes generated</strong> every month.  Average savings based on full house removals over the last 12 months.</p>
         </div>
 		<?php
