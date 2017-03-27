@@ -140,6 +140,11 @@ require(THEME_PATH_DIR.'/lib/inc/ri-custom-metaboxes.php');
 //Including ri custom metaboxes
 
 
+//Including the custom widgets for site (internal pages)
+require(THEME_PATH_DIR.'/lib/site/widgets/ri_widgets.php');
+//Including the custom widgets for site (internal pages)
+
+
 //Keeping the ri phone number central,so that you can change it here if you want to and the changes are reflected overall
 
 //For landing page template only

@@ -23,6 +23,9 @@ function loop_for_blog_page_content() {
 				<?php get_template_part('lib/site/structure/blog_post_grid_template'); ?>
           
           </div>
+          <div class="col-sm-5 col-md-4 col-lg-3">
+             <?php get_template_part('lib/site/structure/blog_sidebar_template'); ?>
+          </div>
         </div>
         </div>
       </div>

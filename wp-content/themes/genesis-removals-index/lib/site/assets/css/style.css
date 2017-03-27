@@ -3425,3 +3425,124 @@ span.byline{
 
 
 
+
+/* Sidebar widget Css -- Starts*/
+
+
+#widget_sidebar {
+  padding: 20px 0; }
+  @media only screen and (min-width: 768px) {
+    #widget_sidebar {
+      padding: 20px 0; } }
+
+.widget {
+  margin-bottom: 20px; }
+  .widget#widget_trustpilot, .widget#widget_savings, .widget#widget_guarantee, .widget#widget_comodo {
+
+    padding-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #3464b5;
+    
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0px;
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #000;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+    @media only screen and (min-width: 768px) {
+      .widget#widget_trustpilot, .widget#widget_savings, .widget#widget_guarantee {
+        padding: 35px 20px; } }
+    .widget#widget_trustpilot .trustpilot-widget, .widget#widget_savings .trustpilot-widget, .widget#widget_guarantee .trustpilot-widget {
+      position: relative; }
+      @media only screen and (min-width: 768px) {
+        .widget#widget_trustpilot .trustpilot-widget, .widget#widget_savings .trustpilot-widget, .widget#widget_guarantee .trustpilot-widget {
+          left: -25px; } }
+      @media only screen and (min-width: 1200px) {
+        .widget#widget_trustpilot .trustpilot-widget, .widget#widget_savings .trustpilot-widget, .widget#widget_guarantee .trustpilot-widget {
+          left: -35px; } }
+  .widget#widget_savings, .widget#widget_guarantee {
+    text-align: center;
+    padding: 20px 15px; }
+    @media only screen and (min-width: 768px) {
+      .widget#widget_savings, .widget#widget_guarantee {
+        padding: 25px 20px; } }
+    .widget#widget_savings h3, .widget#widget_guarantee h3 {
+      color: #3463b5;
+      margin-top: 0px;
+      font-family: "Lato-Bold", Helvetica;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 25px; }
+    .widget#widget_savings .price, .widget#widget_guarantee .price {
+      font-size: 30px;
+      color: #7bc242;
+      font-weight: bold;
+      font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1;
+      margin-bottom: 15px; }
+      .widget#widget_savings .price span, .widget#widget_guarantee .price span {
+        font-size: 17px;
+        display: block; }
+    .widget#widget_savings ul, .widget#widget_guarantee ul {
+      padding: 0px;
+      list-style: none;
+      font-size: 14px;
+      font-family: Helvetica, Arial, sans-serif;
+      text-align: left; }
+      .widget#widget_savings ul li, .widget#widget_guarantee ul li {
+        margin-bottom: 10px; }
+    .widget#widget_savings i.check, .widget#widget_guarantee i.check {
+      background-image: url("../images/check_circle.png");
+      background-repeat: no-repeat;
+      background-size: 24px 25px;
+      width: 24px;
+      height: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      position: relative;
+      top: -1px; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        .widget#widget_savings i.check, .widget#widget_guarantee i.check {
+          background-image: url("../images/check_circle@2x.png"); } }
+  .widget#widget_trustpilot {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .widget#widget_trustpilot .tbl {
+      display: table;
+      height: 100%;
+      width: 100%; }
+      .widget#widget_trustpilot .tbl .vert {
+        vertical-align: middle;
+        display: table-cell; }
+  .widget#widget_guarantee {
+    text-align: center;
+    padding: 20px 15px; }
+    @media only screen and (min-width: 768px) {
+      .widget#widget_guarantee {
+        padding: 25px 15px; } }
+  .widget#widget_comodo {
+    text-align: center;
+    padding: 5px 15px; }
+    .widget#widget_comodo h3 {
+      margin-top: 0px;
+      font-family: "Lato-Bold", Helvetica;
+      font-weight: bold;
+      font-size: 15px;
+      color: #000; }
+    @media only screen and (min-width: 768px) {
+      .widget#widget_comodo {
+        padding: 5px 15px; } }
+      
+#widget_trustpilot img {
+	max-height: 84px;
+	width: auto;
+}      
+
+/* Sidebar widget Css --> Ends */
