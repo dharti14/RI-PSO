@@ -147,7 +147,7 @@ class widget_comodo extends WP_Widget {
 		'widget_comodo', 
 
 		// Widget name will appear in UI
-		__('CI - Comodo Widget', 'widget_comodo_domain'), 
+		__('RI - Comodo Widget', 'widget_comodo_domain'), 
 
 		// Widget description
 		array( 'description' => __( 'Outputs Comodo Widget', 'widget_comodo_domain' ), ) 
