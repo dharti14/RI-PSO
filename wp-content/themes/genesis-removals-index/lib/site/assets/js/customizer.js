@@ -168,11 +168,59 @@ jQuery( document ).ready(function() {
 		ri_align_banner_image();
 	});
 	//For Silo content pages only
+
 	
-	jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
-	jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
+	//Blog Pages - floating header banner
+	if( jQuery('#compare_quotes_banner').length > 0 ){
+			
+			var compare_quotes_banner = jQuery('#compare_quotes_banner');
+			var before_compare_quotes_banner = jQuery('#before_compare_quotes_banner');
+			var compare_quotes_banner_offset = before_compare_quotes_banner.offset().top;
+			
+			var is_float = false;
+			var window_width = jQuery( window ).width();
+			var temp_width = window_width;
+			
+			function float_quotes_banner(){
+				var scroll_height = jQuery(window).scrollTop();
+				
+					if( (scroll_height > compare_quotes_banner_offset) && (!is_float)){
+							jQuery('.empty-block').css({height: compare_quotes_banner.height()+"px"});
+							compare_quotes_banner.css({position: "fixed", top: "0"});
+							compare_quotes_banner.css("margin-top", "0px");
+							is_float = true;
+					}
+					else if( (scroll_height <= compare_quotes_banner_offset) && is_float){
+							compare_quotes_banner.css({position: "relative"});
+							jQuery('.empty-block').css({height: 0, top: "0"});
+							compare_quotes_banner.css("margin-top", "30px");
+							is_float = false;
+					}
+			}
+			
+			jQuery( window ).resize(function() {
+				window_width = jQuery( document ).width();
+				if(window_width != temp_width){
+					compare_quotes_banner_offset = before_compare_quotes_banner.offset().top;
+					temp_width = window_width;
+					is_float = false;
+					float_quotes_banner();
+				}
+			});
+			
+			jQuery( document ).on("touchmove", function(){
+				float_quotes_banner();
+			});
+			
+			jQuery( window ).scroll(function(){
+				float_quotes_banner();
+			});
+			
+			float_quotes_banner();
+			
+		}
+
 	
-	/*google analytics event tracking.*/	
 	
 	jQuery(".get-my-quote").click(function(){
 		
