@@ -140,6 +140,11 @@ require(THEME_PATH_DIR.'/lib/inc/ri-custom-metaboxes.php');
 //Including ri custom metaboxes
 
 
+//Including the custom widgets for site (internal pages)
+require(THEME_PATH_DIR.'/lib/site/widgets/ri_widgets.php');
+//Including the custom widgets for site (internal pages)
+
+
 //Keeping the ri phone number central,so that you can change it here if you want to and the changes are reflected overall
 
 //For landing page template only
@@ -254,6 +259,12 @@ add_theme_support ( 'genesis-menus' , array (
 add_action( 'admin_enqueue_scripts', 'ri_add_js_for_silo_page_metabox' );
 function ri_add_js_for_silo_page_metabox($hook){
 	wp_enqueue_script('ri-silo-metabox-js', THEME_PATH_URI.'/lib/site/assets/js/ri_silo_page_metaboxes.js', array( 'jquery' ), true );
+}
+
+//Register Cusotm Image Sizes
+add_action('init', 'ri_regiter_image_sizes');
+function ri_regiter_image_sizes() {
+	add_image_size( 'ipad', 407, 407, TRUE ); // force crop true
 }
 
 
