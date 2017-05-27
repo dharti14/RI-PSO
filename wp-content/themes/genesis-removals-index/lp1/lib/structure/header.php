@@ -110,7 +110,7 @@ function lp1_header(){
 		     </div>
 	    </div>
 	    	<div class="col-sm-6">
-	     	<div class="contact-num">Call <strong>FREE</strong> 24/7 on: <span class="number"><?php echo ri_display_phone_number();?></span></div>
+	     	<div class="contact-num">Call <strong>FREE</strong> on: <span class="number"><?php echo ri_display_phone_number();?></span></div>
 	    </div>
 	    
         </div>
