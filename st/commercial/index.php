@@ -105,7 +105,7 @@ display:none;
      <div class="mobile-logo"><a href="/st/commercial/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
     </div>
     <div class="col-sm-6">
-     <div class="contact-num"><label>Specialist Business Removers:</label>Call <strong>FREE</strong> 24/7 on: <span class="number">0203 514 9040</span></div>
+     <div class="contact-num"><label>Specialist Business Removers:</label>Call <strong>FREE</strong> on: <span class="number">0203 514 9040</span></div>
     </div>
   </div>
       

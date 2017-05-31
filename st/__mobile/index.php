@@ -104,7 +104,7 @@ display:none;
      <div class="mobile-logo"><a href="/ri/main/"><img src="images/logo.svg" alt="<?php echo $hln;?>"></a></div>
     </div>
     <div class="col-sm-6">
-     <div class="contact-num">Call <strong>FREE</strong> 24/7 on: <span class="number">0333 444 8710</span></div>
+     <div class="contact-num">Call <strong>FREE</strong> on: <span class="number">0333 444 8710</span></div>
     </div>
   </div>
       
