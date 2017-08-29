@@ -35,3 +35,15 @@ wp-content/themes/*
 !wp-content/themes/genesis-removals-index
 
 
+
+.htaccess.170829071706.orig
+20170825_removalsindex_8c6831e80d71261b8003170825072552_archive.zip
+database.sql
+installer-backup.php
+installer-data.sql
+installer.php
+web.config
+wp-content/languages/
+wp-content/updraft/
+wp-snapshots/
+
