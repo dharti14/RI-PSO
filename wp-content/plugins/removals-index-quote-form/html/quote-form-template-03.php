@@ -22,7 +22,7 @@
 		default:
 			$css_filename = "ri_quote_form_2";
 	}
-	
+
 
 	if(empty($js_filename)){ //No lookup selected so default js will be ri_quote_form_2
 		$js_filename = "ri_quote_form_2";
@@ -125,7 +125,7 @@
 
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving from:</label>
-							                <input type="text" class="form-control" name="postcode" placeholder="Postcode *">
+							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">
 							                <input type="text" class="form-control" name="city" placeholder="Town / City *">
 							                <input type="text" class="form-control" name="address" placeholder="Street Name *">
 							                <input type="text" class="form-control" name="houseno" placeholder="Enter House Number...">
@@ -174,12 +174,18 @@
 
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
-							                <input type="text" class="form-control" name="postcode_to" placeholder="Postcode">
+							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
+															<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
 							                <input type="text" class="form-control" name="city_to" placeholder="Town / City *">
 							                <input type="text" class="form-control" name="address_to" placeholder="Street Name">
 							                <input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">
 
 							              </div>
+														<div class="form-group dontknow-exact-address">
+															<label>Nearest town to property</label>
+																<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown'>
+																<a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
+														</div>
 
 
 							              <div class="form-group radio-with-text">
@@ -384,7 +390,7 @@
 
    	<div class="row">
      <div class="col-sm-8">
-       <div class="removing-stress-frm step2">
+       <div class="removing-stress-frm step2 ">
        	<div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/nearly-img.png" alt="<?php echo $dki_hln;?>"></div>
          <h4>Step 1 : My move</h4>
 
@@ -393,7 +399,7 @@
 
               <div class="form-group stress-moving-from">
                 <label for="exampleInputEmail1">I'm moving from:</label>
-                <input type="text" class="form-control" name="postcode" placeholder="Postcode *">
+                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">
                 <input type="text" class="form-control" name="city" placeholder="Town / City *">
                 <input type="text" class="form-control" name="address" placeholder="Street Name *">
                 <input type="text" class="form-control" name="houseno" placeholder="Enter Property Number...">
@@ -454,13 +460,18 @@
 
               <div class="form-group stress-moving-from">
                 <label for="exampleInputEmail1">I'm moving to:</label>
-                <input type="text" class="form-control" name="postcode_to" placeholder="Postcode">
-                <input type="text" class="form-control" name="city_to" placeholder="Town / City *">
-                <input type="text" class="form-control" name="address_to" placeholder="Street Name">
+							  <input type="text" class="form-control" name="postcode_to" id="commercialpostcodeto" placeholder="Postcode">
+								<a href="javascript:void(0);" class="dont-know-address" id='dontknowcommercialaddress'>I don't know the exact address</a>
+                <input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
+                <input type="text" class="form-control" name="address_to" id="addressto" placeholder="Street Name">
                 <input type="text" class="form-control" name="houseno_to" placeholder="Enter Property Number...">
 
               </div>
-
+							<div class="form-group dontknow-exact-address">
+								<label>Nearest town to property</label>
+									<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttowncom' id='nearesttowncom'>
+									<a href="javascript:void(0);" class="dont-know-address" id='knowexactcommercialaddress'>I have the exact address</a>
+							</div>
 
               <div class="form-group radio-with-text">
                <h5>Access :</h5>
