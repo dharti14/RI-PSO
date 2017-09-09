@@ -920,3 +920,10 @@ input[id='nearesttowncom']{
 .dontknow-exact-address {
 	margin-bottom: 158px;
 }
+.pcaitem.pcaselected {
+    background: #305eaa;
+    color: #fff;
+}
+.pcaitem.pcaselected .pcadescription{
+	color:#e8e8e8;
+}
