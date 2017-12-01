@@ -13,18 +13,18 @@ $header_text = genesis_get_custom_field('_header_text');
 
 	<section id="hero">
 		<div class="silo_banner">
-	
+
 		<img src="<?php echo THEME_PATH_URI;?>/lib/site/assets/images/home_hero.jpg"  class="silo_banner_image" alt="<?php  echo $banner_img_alt_text; ?>">
 		<div class="silo_container_wrapper">
-		
+
 		<div class="container">
-		
+
 			<?php if(!empty($schema_header_text) && (!empty($header_text))){ ?>
 				  <h1 class="silo-title" itemscope itemtype="http://schema.org/Article"><span itemprop="articleSection"><?php echo $schema_header_text;?></span> <?php echo $header_text; ?></h1>
 			<?php } else { ?>
 				     <h1 class="silo-title"><?php the_title(); ?></h1>
 			<?php } ?>
-			
+
 
 			<div class="pad80">
 				<div class="row">
@@ -80,9 +80,9 @@ $header_text = genesis_get_custom_field('_header_text');
 	</section>
 <!-- 	<section id="silo-separator"></section> -->
 	<!--form -->
-        <?php 
+        <?php
         	$quote_form_template = genesis_get_custom_field('_template');
-        	
+
         	//When the template is not selected
         	if(empty($quote_form_template))   {
         		$quote_form_template = "quote-form-template-02";
@@ -96,27 +96,24 @@ $header_text = genesis_get_custom_field('_header_text');
 		<div class="container">
 			<div id="ri_silo_page_content">
 				   <?php
-				   
-	       			if (have_posts()) : 
+
+	       			if (have_posts()) :
 	            	 	 while (have_posts()) : the_post(); ?>
-	            
+
 	            	<article class="post-<?php echo get_the_ID();?> entry">
 	            		<div class="entry-content content-page-content">
 	            			<?php the_content(); ?>
 	            		</div>
 	            	</article>
-	
-	            <?php 
+
+	            <?php
 	            		endwhile; //* end of one post
-	            		
+
 		            endif;
 		        ?>
-	
+
 	      </div>
-			 
+
 		</div>
 	</section>
-</div>		
-		
-	
-	
+</div>

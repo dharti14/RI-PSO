@@ -292,7 +292,7 @@ jQuery( document ).ready(function() {
                 form.submit();
         }
      });
-/*
+
 		jQuery(".get-my-quote-second").click(function() {
     		jQuery("#form").submit();
 
@@ -303,7 +303,7 @@ jQuery( document ).ready(function() {
     			jQuery("#form").submit();
 			}
  		 });
-*/
+
 
 	 	//Checking for the checkbox checked and apply valid class to it.
 	 	jQuery('.bed-radios-container').click(function(){
@@ -554,6 +554,17 @@ jQuery( document ).ready(function() {
 	});
 
 
+		jQuery(".get-my-quote-second-business").click(function() {
+    		jQuery("#form-business").submit();
+ 		 });
+
+	 	jQuery('#form-business input').keydown(function(e) {
+			if (e.keyCode == 13) {
+    			jQuery("#form-business").submit();
+			}
+ 		 });
+
+
 		jQuery("#form-business input[name='property_type_from']").click(function(){
 			if(jQuery(this).val() == "Apartment / Flat"){
 				jQuery("#form-business #appartment-floor-from").css("display","block");
@@ -770,6 +781,17 @@ jQuery( document ).ready(function() {
                     form.submit();
                 }
         	});
+
+
+		jQuery(".get-my-quote-second-international").click(function() {
+    		jQuery("#form-international").submit();
+ 		 });
+
+	 	jQuery('#form-international input').keydown(function(e) {
+			if (e.keyCode == 13) {
+    			jQuery("#form-international").submit();
+			}
+ 		 });
 
 
 		jQuery("#form-international input[name='property_type_from']").click(function(){
