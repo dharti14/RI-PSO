@@ -230,40 +230,57 @@ jQuery( document ).ready(function() {
 		var postcode_to = jQuery("#postcode_to").val();
 
 		var business_type = jQuery("input[name=business_type]:checked").val();
-
+				
 		show_quote_form(business_type);
-
-jQuery.ajax({
-
-			//type: 'get',
-			dataType: 'json',
-			url: post_code_address_object.ajaxurl,
-			data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
-			success: function(result){
-
-					if(postcode_from!="")
-					{
-						jQuery("input[name=city]").val(result.town[0]);
-						jQuery("input[name=address]").val(result.line_1);
-						jQuery("input[name=postcode]").val(postcode_from);
-					}
-					if(postcode_to!='')
-					{
-						jQuery("input[name=city_to]").val(result.town_to[0]);
-						jQuery("input[name=address_to]").val(result.line_1_to);
-						jQuery("input[name=postcode_to]").val(postcode_to);
-					}
-					jQuery("input:text").each(function(){
-						if (jQuery.trim(jQuery(this).val()).length != 0){
-							jQuery(this).addClass("valid");
-						}
-					});
+		
+		var business_type_class = business_type.toLowerCase();
+		
+		if(postcode_from != '' || postcode_to != '')
+		{
+			if(postcode_from != '')
+			{
+				jQuery("."+business_type_class+" input[name=city]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=address]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=postcode]").addClass("pending");
 			}
+			if(postcode_to != '')
+			{
+				jQuery("."+business_type_class+" input[name=city_to]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=address_to]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=postcode_to]").addClass("pending");
+			}
+			jQuery.ajax({
 
-		});
+				//type: 'get',
+				dataType: 'json',
+				url: post_code_address_object.ajaxurl,
+				data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
+				success: function(result){
+					
+						if(postcode_from!="")
+						{							
+							jQuery("."+business_type_class+" input[name=city]").val(result.town[0]);
+							jQuery("."+business_type_class+" input[name=address]").val(result.line_1);
+							jQuery("."+business_type_class+" input[name=postcode]").val(postcode_from);
+						}
+						if(postcode_to!='')
+						{
+							jQuery("."+business_type_class+" input[name=city_to]").val(result.town_to[0]);
+							jQuery("."+business_type_class+" input[name=address_to]").val(result.line_1_to);
+							jQuery("."+business_type_class+" input[name=postcode_to]").val(postcode_to);
+						}
+						jQuery("."+business_type_class+" input:text").each(function(){
+							if (jQuery.trim(jQuery(this).val()).length != 0){
+								jQuery(this).removeClass("pending");
+								jQuery(this).addClass("valid");
+							}
+						});
+				}
+
+			});
+		}	
 
 	});
-
 
 	jQuery(".get-my-quote2").click(function(){
 
@@ -272,40 +289,60 @@ jQuery.ajax({
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();
 
-
-		jQuery("#show-after-get").css("display","block");
+		jQuery("#show-after-get").css("display","block");		
 		jQuery('html, body').animate({
     		scrollTop: jQuery('#show-after-get').offset().top
 		}, 300);
+		var business_type_class = 'residential';
+		if(postcode_from != '' || postcode_to != '')
+		{
+			if(postcode_from != '')
+			{
+				jQuery("."+business_type_class+" input[name=city]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=address]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=postcode]").addClass("pending");
+			}
+			if(postcode_to != '')
+			{
+				jQuery("."+business_type_class+" input[name=city_to]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=address_to]").addClass("pending");
+				jQuery("."+business_type_class+" input[name=postcode_to]").addClass("pending");
+			}
 
-
-		jQuery.ajax({
-			//type: 'post',
-			dataType: 'json',
-			url: post_code_address_object.ajaxurl,
-			data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
-			success: function(result){
-
-
-					jQuery("input[name=city]").val(result.town[0]);
-					jQuery("input[name=address]").val(result.line_1);
-					jQuery("input[name=city_to]").val(result.town_to[0]);
-					jQuery("input[name=address_to]").val(result.line_1_to);
-
-
-					jQuery("input[name=postcode]").val(postcode_from);
-					jQuery("input[name=postcode_to]").val(postcode_to);
-
+			jQuery.ajax({
+				//type: 'post',
+				dataType: 'json',
+				url: post_code_address_object.ajaxurl,
+				data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
+				success: function(result){
+	
+					if(postcode_from != '')
+					{
+						jQuery("."+business_type_class+" input[name=city]").val(result.town[0]);
+						jQuery("."+business_type_class+" input[name=address]").val(result.line_1);
+						jQuery("."+business_type_class+" input[name=postcode]").val(postcode_from);
+						
+					}
+					if(postcode_to != '')
+					{
+						jQuery("."+business_type_class+" input[name=city_to]").val(result.town_to[0]);
+						jQuery("."+business_type_class+" input[name=address_to]").val(result.line_1_to);					
+						jQuery("."+business_type_class+" input[name=postcode_to]").val(postcode_to);
+					}
+					
 					jQuery("input:text").each(function(){
 						if (jQuery.trim(jQuery(this).val()).length != 0){
+							jQuery(this).removeClass("pending");
 							jQuery(this).addClass("valid");
 
 						}
 
 					});
-			}
-
-		});
+						
+				}
+	
+			});
+	   }
 
 	});
 });
