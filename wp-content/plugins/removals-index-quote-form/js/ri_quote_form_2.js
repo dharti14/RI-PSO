@@ -287,13 +287,13 @@ jQuery( document ).ready(function() {
         submitHandler: function(form) {
 								//jQuery("#get-my-quote-top").css('disabled','disabled');
 
-								jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
+				jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
 
                 form.submit();
         }
      });
 
-		jQuery(".get-my-quote-second").click(function() {
+		/*jQuery(".get-my-quote-second").click(function() {
     		jQuery("#form").submit();
 
  		 });
@@ -303,7 +303,7 @@ jQuery( document ).ready(function() {
     			jQuery("#form").submit();
 			}
  		 });
-
+*/
 
 	 	//Checking for the checkbox checked and apply valid class to it.
 	 	jQuery('.bed-radios-container').click(function(){
@@ -548,13 +548,13 @@ jQuery( document ).ready(function() {
 				},
 
 		        submitHandler: function(form) {
-								jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
+					jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
 		            form.submit();
 		        }
 	});
 
 
-		jQuery(".get-my-quote-second-business").click(function() {
+		/*jQuery(".get-my-quote-second-business").click(function() {
     		jQuery("#form-business").submit();
  		 });
 
@@ -562,7 +562,7 @@ jQuery( document ).ready(function() {
 			if (e.keyCode == 13) {
     			jQuery("#form-business").submit();
 			}
- 		 });
+ 		 });*/
 
 
 		jQuery("#form-business input[name='property_type_from']").click(function(){
@@ -777,13 +777,13 @@ jQuery( document ).ready(function() {
         		},
 
                 submitHandler: function(form) {
-										jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
+					jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
                     form.submit();
                 }
         	});
 
 
-		jQuery(".get-my-quote-second-international").click(function() {
+		/*jQuery(".get-my-quote-second-international").click(function() {
     		jQuery("#form-international").submit();
  		 });
 
@@ -791,7 +791,7 @@ jQuery( document ).ready(function() {
 			if (e.keyCode == 13) {
     			jQuery("#form-international").submit();
 			}
- 		 });
+ 		 });*/
 
 
 		jQuery("#form-international input[name='property_type_from']").click(function(){
