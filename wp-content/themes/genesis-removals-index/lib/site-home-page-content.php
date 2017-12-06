@@ -137,7 +137,22 @@ $dki_loc = dki_get_loc();
 	</section>
 
 	<!--form -->
-        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-03"]'); ?>
+        
+        
+        <?php
+        	$quote_form_template = genesis_get_custom_field('_template');
+        	//When the template is not selected
+        	if(!empty($quote_form_template))   {        		
+        		do_shortcode('[ri_quote_form template_name="'.$quote_form_template.'"]');
+        	}
+        	else
+        	{
+        		echo "Please select the Form Template";
+        	}       	
+        ?>
+        
+        
+        
     <!--form -->
 
 	<section id="how_will">
