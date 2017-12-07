@@ -11,23 +11,23 @@
 
 		case "data8":
 			$js_filename = "ri_email_phone_lookup-data8";
-			$css_filename = "ri_quote_form_2-data8";
+			$css_filename = "ri_quote_form_3-data8";
 			break;
 
 		case "bvdata8":
 			$js_filename = "ri_email_phone_lookup-bvanddata8";
-			$css_filename = "ri_quote_form_2-briteverifyanddata8";
+			$css_filename = "ri_quote_form_3-briteverifyanddata8";
 			break;
 
 		default:
-			$css_filename = "ri_quote_form_2";
+			$css_filename = "ri_quote_form_3";
 	}
 
 
 	if(empty($js_filename)){ //No lookup selected so default js will be ri_quote_form_2
-		$js_filename = "ri_quote_form_2";
+		$js_filename = "ri_quote_form_3";
 	}else{
-		$this->ri_load_form_validation_js('ri_quote_form_2');
+		$this->ri_load_form_validation_js('ri_quote_form_3');
 	}
 
 	//Loading js and css file depending upon the lookup functionality selected
@@ -321,8 +321,9 @@
 								        </div>
 
 						        	 <!-- Step 4 -->
+									<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
 
-						        	 <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>
+<!-- 						        	  <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>  -->
 
 								     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
 										<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
@@ -633,7 +634,8 @@
           </div>
         </div>
 
-        <div id="button"><div class="btn btn-quote get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div>
+		<button type="submit" id="get-my-quote-top-commercial" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>																									 
+<!--         /* <div id="button"><div class="btn btn-quote get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div> */ -->
 
 		<div class="danger" id="danger-get-my-quote-second-business"><span></span></div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
@@ -973,8 +975,8 @@
 
           </div>
         </div>
-
-       <div id="button"><div class="btn btn-quote get-my-quote-second-international">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div>
+		<button type="submit" id="get-my-quote-top-international" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>	
+<!--        /* <div id="button"><div class="btn btn-quote get-my-quote-second-international">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div> */ -->
 
 		<div class="danger" id="danger-get-my-quote-second-international"><span></span></div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
