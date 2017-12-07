@@ -1019,7 +1019,7 @@ jQuery(document).ready(function(){
 
 
 
-     jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change paste keyup",function(){
+     jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change",function(){
          postcode_from  = jQuery("div.leftpart div.stress-moving-from input[name='postcode']").val();
          var commercial=0;
 
@@ -1063,7 +1063,7 @@ jQuery(document).ready(function(){
              }
          });
 
-         jQuery("div.rightpart div.stress-moving-from input[name='postcode_to']").on("change paste keyup",function(){
+         jQuery("div.rightpart div.stress-moving-from input[name='postcode_to']").on("change",function(){
 
          	  postcode_to  = jQuery("div.rightpart div.stress-moving-from input[name='postcode_to']").val();
                var commercial=0;
