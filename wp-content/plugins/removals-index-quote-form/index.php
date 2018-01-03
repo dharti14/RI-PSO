@@ -297,21 +297,22 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 		}
 		 		else
 		 		{
-		 			$output = json_decode($output, true);
+		 			$output = json_decode($output, true);		 			
 		 			
-		 			/* if($output['status'] == 'valid' || $output['status'] == 'accept_all')
+		 			
+		 			if ($output['status'] == 'valid' || $output['status'] == 'accept_all')
+		 			{
 		 				echo "true";
-		 			else if($output['status'] == 'invalid')
-		 				echo "false"; */
-		 						 			
-		 			if($output['status'] == 'invalid')
+		 			}
+		 			elseif($output['status'] == 'unknown' && stripos($output['domain'],'yahoo') !== false)
+		 			{
+		 				echo "true";
+		 			}
+		 			elseif($output['status'] == 'invalid')
 		 			{
 		 				echo "false";
 		 			}
-		 			else 
-		 			{
-		 				echo "true";
-		 			}	
+		 			
 		 					
 		 			
 		 			
