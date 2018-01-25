@@ -64,26 +64,26 @@ $dki_loc = dki_get_loc();
 			<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="5"></div>
 		</div>
 	</section>
-	
+
 	<section  class="green_section">
-	
+
 		<div class="container">
-		
+
 			<div class="inner-container">
 				<h2 class="home title">Removal Companies</h2>
-							
+
 				<div class="intro heading">Get Free Access to 100's Of Pre-Screened <br class="show_md">Removal Companies, With No Obligation ...</div>
-				
+
 					<ul class="bullet-points">
 						<li>Why not have removal companies compete for your business instead of trawling the web yourself to find them?</li>
 						<li>Make your house move stress-free with Removals Index: Just give us a few details about your move to quickly compare free, no-obligation house removal quotes from trusted removal companies.</li>
 						<li>With our easy-to-complete form, you’ll be done in 60 seconds. Pre-screened removal companies will compete for your business – so you won’t have to lift a finger.</li>
 						<li>Your home removals quotes are 100% obligation-free, and all of our removal companies are hand-picked, and thoroughly vetted with a 6-step verification process.</li>
 						<li>Compare removal quotes with Removals Index now, and save up to 40% off your house removal costs.</li>
-					</ul>				
-				
+					</ul>
+
 				<hr class="bullet-point-seperator">
-					
+
 				<div class="row">
 					<div class="col-sm-6">
 						<ul>
@@ -92,19 +92,19 @@ $dki_loc = dki_get_loc();
 								<strong>Never Haggle On Price Again</strong>
 								<p>You'll get a full list of quotes from removal firms in <?php echo $dki_loc;?> that will all be <u>competing for your move.</u></p>
 							</li>
-	
+
 							<li>
 								<i class="fa fa-check-circle"></i>
 								<strong>Get Done In Seconds Not Hours</strong>
 								<p>On top of your move, researching, calling and reviewing removal companies is an added hassle you don't need. Removals Index can help you can get the job done in a matter of seconds.</p>
 							</li>
-	
+
 							<li>
 								<i class="fa fa-check-circle"></i>
 								<strong>Need A Quick Turnaround?</strong>
 								<p>Our trusted removal firms will always try and accommodate you, even if you're looking to move fast or at very short notice.</p>
 							</li>
-							
+
 						</ul>
 					</div>
 					<div class="col-sm-6">
@@ -114,41 +114,56 @@ $dki_loc = dki_get_loc();
 								<strong>6-Step SAFE™ Verification Process</strong>
 								<p>We <u>hand pick and pre-screen</u> all of our removal companies. Each and every one goes through our 6-step SAFE™ verification process.</p>
 							</li>
-	
+
 							<li>
 								<i class="fa fa-check-circle"></i>
 								<strong>SAVE Up To 40%</strong>
 								<p>You can save up to 40% on your moving costs by comparing several no obligation quotes from reliable removal companies in your area.</p>
 							</li>
-	
+
 							<li>
 								<i class="fa fa-check-circle"></i>
 								<strong>100% No Obligation Guarantee</strong>
 								<p>We guarantee that your details are safe and secure and that you'll never be bombarded with calls or spam after comparing quotes.</p>
 							</li>
-							
+
 						</ul>
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 		</div>
 	</section>
-	
+
 	<!--form -->
-        <?php do_shortcode('[ri_quote_form template_name="quote-form-template-02"]'); ?>
+        
+        
+        <?php
+        	$quote_form_template = genesis_get_custom_field('_template');
+        	//When the template is not selected
+        	if(!empty($quote_form_template))   {        		
+        		do_shortcode('[ri_quote_form template_name="'.$quote_form_template.'"]');
+        	}
+        	else
+        	{
+        		echo "Please select the Form Template";
+        	}       	
+        ?>
+        
+        
+        
     <!--form -->
 
 	<section id="how_will">
 		<div class="container">
-			
+
 			<h2 class="align_center">How Will Removals Index <br class="show_sm"/>Take The Stress Out Of My Move?</h2>
 
 			<aside class="steps">
 		      <div class="container">
 		        <div class="row">
-		          
+
 		          <div class="col-sm-4 col_1">
 		            <div class="num_wrap num1">
 		              <i class="num"></i>
@@ -220,7 +235,7 @@ $dki_loc = dki_get_loc();
 	<section id="get_quotes">
 		<div class="container">
 			<div class="pad65">
-				
+
 				<form>
 					<div class="row">
 						<div class="col-sm-7">
@@ -244,7 +259,7 @@ $dki_loc = dki_get_loc();
 					<figure class="sh2"></figure>
 				</form>
 
-					
+
 			</div>
 		</div>
 	</section>
