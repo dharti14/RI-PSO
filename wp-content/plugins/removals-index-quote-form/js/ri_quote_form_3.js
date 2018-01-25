@@ -970,7 +970,7 @@ jQuery(document).ready(function(){
     });
 
 
-           var options = { key: "EU75-PX99-PZ78-BY61" , search: { countries: "United Kingdom" }}
+          /* var options = { key: "EU75-PX99-PZ78-BY61" , search: { countries: "United Kingdom" }}
            var nearestfields = [
              { element: "nearesttown", field: "City", mode: pca.fieldMode.SEARCH},
              { element: "postcodeto", field: "PostalCode", mode: pca.fieldMode.POPULATE},
@@ -994,8 +994,8 @@ jQuery(document).ready(function(){
          });
        });
      });
-
-     var nearestCommercialFields = [
+*/
+    /* var nearestCommercialFields = [
        { element: "nearesttowncom", field: "City", mode: pca.fieldMode.SEARCH},
        { element: "commercialpostcodeto", field: "PostalCode", mode: pca.fieldMode.POPULATE},
        { element: "cityto", field: "City", mode: pca.fieldMode.POPULATE},
@@ -1016,7 +1016,7 @@ jQuery(document).ready(function(){
        });
        });
      });
-
+*/
 
 
      jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change",function(){
