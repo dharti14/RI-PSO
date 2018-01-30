@@ -23,18 +23,35 @@ class PostcodeLookup {
 		$options = get_option( 'postcode_lookup_array' );
 		?>
 	   
-	      <h2>Postcode Lookup Page Setteing</h2>
+	      <h2>Postcode Lookup Page Setting</h2>
 	      <form method="post" action="admin-post.php">
 	         <input type="hidden" name="action" value="postcode_lookup_option" />
-	 
 	         <?php wp_nonce_field( 'postcode_lookup_verify' ); ?>
-	 
-	         Postcode Lookup URL: <input type="text" style="width:27%" name="postcode_lookup_url" value="<?php echo esc_html( $options['postcode_lookup_url_value'] ); ?>"/>
-	         <br />
-	         Postcode Lookup Key: <input type="text" style="width:27%" name="postcode_lookup_key" value="<?php echo esc_html( $options['postcode_lookup_key_value'] ); ?>"/>
-	         <br/>
-	         <input type="submit" value="Submit" class="button-primary"/>
-	      </form>
+		 	<table class="form-table">	
+				<tbody>
+					<tr class="form-required">
+						<th scope="row">
+							<label for="postcode_lookup_url">Postcode Lookup URL</label>
+						</th>
+						<td>
+							<input type="text" style="width:27%" name="postcode_lookup_url" value="<?php echo esc_html( $options['postcode_lookup_url_value'] ); ?>"/>
+						</td>
+					</tr>
+					<tr class="form-required">
+						<th scope="row">
+							<label for="postcode_lookup_key">Postcode Lookup Key</label>
+						</th>
+						<td>
+							<input type="text" style="width:27%" name="postcode_lookup_key" value="<?php echo esc_html( $options['postcode_lookup_key_value'] ); ?>"/>
+						</td>
+					</tr>
+					<tr>
+					 <td> <input type="submit" value="Submit" class="button-primary"/></td>
+					</tr>
+					
+				</tbody>
+			</table>
+	     </form>
 	   
 	<?php
 	
