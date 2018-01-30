@@ -10,8 +10,7 @@ jQuery( document ).ready(function() {
 					    value: i.townName + ' (' + i.districtName+')'
 				  }
 				});
-				  
-				  datamap = datamap.filter(function(i) {
+				  	  datamap = datamap.filter(function(i) {
 					  return i.value.toLowerCase().indexOf(term.toLowerCase()) >= 0;
 				});
 	
