@@ -1,14 +1,16 @@
 jQuery( document ).ready(function() {
+	var url = jQuery('#postcode_lookup_url').val();
+	var api = jQuery('#postcode_lookup_api').val();
 	jQuery('#nearesttown').autocomplete({
 			
 	     source: function(request, response) {
 			 var term = request.term; 
-			 var restUrl = 'http://pinlocal5-dev278.rollingcodes.io/api/postcodelookup/'+term+'/097fa9b1217773bab93615c95dc5dd86';
+			 var restUrl = url+term+'/'+api;
 			 jQuery.getJSON(decodeURI(restUrl), function (data) {
 			 
 				  var datamap = data.map(function(i) {
 				  return {
-					    value: i.townName + ' (' + i.districtName+')'
+					    value: i.townName + ' ('+i.districtName+')'
 				  }
 				});
 				  	  datamap = datamap.filter(function(i) {
