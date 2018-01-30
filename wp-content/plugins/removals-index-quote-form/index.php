@@ -90,7 +90,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			add_action( 'wp_ajax_nopriv_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 
 			//PCA predict js code
-			add_action('wp_head','pcaPredictScript');
+			//add_action('wp_head','pcaPredictScript');
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 
 
@@ -461,12 +461,12 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 
 	}
-/*  function pcaPredictScript()
+/* function pcaPredictScript()
 	{
 		echo '<script>(function(n,t,i,r){var u,f;n[i]=n[i]||{},n[i].initial={accountCode:"IPLAC11112",host:"IPLAC11112.pcapredict.com"},n[i].on=n[i].on||function(){(n[i].onq=n[i].onq||[]).push(arguments)},u=t.createElement("script"),u.async=!0,u.src=r,f=t.getElementsByTagName("script")[0],f.parentNode.insertBefore(u,f)})(window,document,"pca","//IPLAC11112.pcapredict.com/js/sensor.js")</script>';
 		echo '<link rel="stylesheet" type="text/css" href="http://services.postcodeanywhere.co.uk/css/address-3.50.css" />';
 		echo '<script type="text/javascript" src="http://services.postcodeanywhere.co.uk/js/address-3.50.min.js"></script>';
-	} */
+	}  */
 	new RI_QuoteForm( );
 
 
