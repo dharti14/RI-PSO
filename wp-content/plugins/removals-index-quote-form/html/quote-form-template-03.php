@@ -183,7 +183,7 @@
 							              </div>
 														<div class="form-group dontknow-exact-address">
 															<label>Nearest town to property</label>
-																<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown'>
+																<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete='off'>
 																<a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
 														</div>
 

@@ -11,8 +11,25 @@
 class PostcodeLookup {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array($this,'postcode_lookup_scripts' ));
+		add_action('admin_menu', array($this,'postcode_lookup_add_page'));
+		
 	}
-	
+	public function postcode_lookup_add_page() {
+	     add_menu_page(
+	        __( 'Postcode', 'textdomain' ),
+	        __( 'Postcode Lookup','textdomain' ),
+	        'manage_options',
+	        'postcode-lookup-autocomplete',
+	        array($this,'postcode_lookup_page_callback')
+	        
+	    );
+	}
+	public function postcode_lookup_page_callback() {
+	 ?>
+	    <h2>Postcode Lookup Page API Setting</h2>
+	    
+	<?php
+	 }
 	public function postcode_lookup_scripts()
 	{
 		 wp_register_script( 'postcode-jquery', plugins_url( '/js/jquery.min.js', __FILE__ ) );

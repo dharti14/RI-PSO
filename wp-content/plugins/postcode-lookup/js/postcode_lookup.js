@@ -1,9 +1,10 @@
 jQuery( document ).ready(function() {
-		$('#nearesttown').autocomplete({
+	jQuery('#nearesttown').autocomplete({
+			
 	     source: function(request, response) {
 			 var term = request.term; 
-	         var restUrl = 'http://pinlocal5-dev278.rollingcodes.io/api/postcodelookup/'+term+'/097fa9b1217773bab93615c95dc5dd86';
-			 jQuery.getJSON(restUrl, function (data) {
+			 var restUrl = 'http://pinlocal5-dev278.rollingcodes.io/api/postcodelookup/'+term+'/097fa9b1217773bab93615c95dc5dd86';
+			 jQuery.getJSON(decodeURI(restUrl), function (data) {
 			 
 				  var datamap = data.map(function(i) {
 				  return {
