@@ -13,7 +13,9 @@ class PostcodeLookup {
 		add_action( 'wp_enqueue_scripts', array($this,'postcode_lookup_scripts' ));
 		add_action('admin_menu', array($this,'postcode_lookup_add_page'));
 		add_action( 'admin_post_postcode_lookup_option', array($this,'postcode_lookup_options' ));
-		include 'postcode-lookup.php';
+		
+		add_action( 'wp_ajax_postcode_lookup', array($this,'postcode_lookup_ajax')); // admin login
+		add_action('wp_ajax_nopriv_postcode_lookup', array($this,'postcode_lookup_ajax')); //fronted
 	}
 	public function postcode_lookup_add_page() {
 	     add_submenu_page( 'options-general.php' , 'Postcode Lookup', 'Postcode Lookup' , 'manage_options' , 'postcode_lookup' , array($this,'postcode_lookup_contents'));
@@ -84,13 +86,36 @@ class PostcodeLookup {
 	   
 	   exit;
 	}
+	public function postcode_lookup_ajax(){
+		
+	 $searchKeyword = $_GET['searchKeyword'];
+		
+	 $options=get_option( 'postcode_lookup_array' );
+	 $postcode_lookup_url= $options['postcode_lookup_url_value'];
+	 if(substr($postcode_lookup_url, -1) == '/') {
+		$postcode_lookup_url = substr($postcode_lookup_url, 0, -1);
+	 }
+	 $postcode_lookup_api = $options['postcode_lookup_key_value'];
+	 $initUrl = $postcode_lookup_url.'/'.$searchKeyword.'/'.$postcode_lookup_api;
+	 
+	 $ch = curl_init();
+	 curl_setopt($ch, CURLOPT_URL, $initUrl);
+	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	 curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+	 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+	 $output = trim(curl_exec($ch));
+	 echo $output;
+	 curl_close($ch);  
+	 wp_die();
+
+}
 	public function postcode_lookup_scripts()
 	{
 		 wp_register_script( 'postcode-jquery', plugins_url( '/js/jquery.min.js', __FILE__ ) );
 		 wp_enqueue_script( 'postcode-jquery' );
 		 
-	   	 wp_register_script( 'postcode-lookup', plugins_url( '/js/postcode_lookup.js', __FILE__ ) );
-	   	 wp_enqueue_script( 'postcode-lookup' );
+	   	/*  wp_register_script( 'postcode-lookup', plugins_url( '/js/postcode_lookup.js', __FILE__ ) );
+	   	 wp_enqueue_script( 'postcode-lookup' ); */
 	   	 
 	   	 wp_register_script( 'postcode-jquery-ui-min', plugins_url( '/js/jquery-ui.min.js', __FILE__ ) );
 	   	 wp_enqueue_script( 'postcode-jquery-ui-min' );
@@ -98,6 +123,8 @@ class PostcodeLookup {
 	   	 wp_enqueue_style( 'postcode-jquery-ui', plugins_url( '/css/jquery-ui.min.css', __FILE__ ) );
 	   	 wp_enqueue_style( 'postcode-style', plugins_url( '/css/style.css', __FILE__ ) );
 	   	 
+	   	 wp_enqueue_script('postcode_lookup', plugins_url( '/js/postcode_lookup.js' , __FILE__ ), array('jquery'), 1.0, true);
+	   	 wp_localize_script('postcode_lookup', 'postcode_lookup', array('ajaxurl' => admin_url('admin-ajax.php'))); //create ajaxurl 
 	   	 
    	}
 }
