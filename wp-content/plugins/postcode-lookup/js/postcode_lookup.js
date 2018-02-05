@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function(){
 
 	jQuery('#nearesttown').autocomplete({
 		 source: function(request, response) {
@@ -24,6 +24,15 @@ jQuery(document).ready(function($){
 				  
 			});
 	  },
+	  select: function (event, ui) {
+			jQuery("#nearesttown").val(ui.item.label);
+			jQuery("div.rightpart div.dontknow-exact-address").hide();
+			jQuery("div.rightpart div.stress-moving-from").show();
+			
+			var searchKeyValue = jQuery('#nearesttown').val();
+			jQuery('#postcodeto').val(searchKeyValue);
+			return false;
+		},
 	  minLength: 1,
 	  delay: 100
 	});
