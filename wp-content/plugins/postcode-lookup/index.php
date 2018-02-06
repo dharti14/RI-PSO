@@ -11,6 +11,7 @@
 class PostcodeLookup {
 	public function __construct() {
 		add_action('wp_enqueue_scripts', array($this,'postcode_lookup_scripts' ));
+		add_action('admin_enqueue_scripts', array($this,'postcode_lookup_admin_scripts' ));
 		add_action('admin_menu', array($this,'postcode_lookup_add_page'));
 		add_action('admin_post_postcode_lookup_option', array($this,'postcode_lookup_options' ));
 		
@@ -38,7 +39,7 @@ class PostcodeLookup {
 							<label for="postcode_lookup_api_url">API URL</label>
 						</th>
 						<td>
-							<input type="text" style="width:27%" name="postcode_lookup_api_url" value="<?php echo esc_html( $options['postcode_lookup_url'] ); ?>"/>
+							<input type="text" class="pl-width" name="postcode_lookup_api_url" value="<?php echo esc_html( $options['postcode_lookup_url'] ); ?>"/>
 						</td>
 					</tr>
 					<tr class="form-required">
@@ -46,7 +47,7 @@ class PostcodeLookup {
 							<label for="postcode_lookup_api_key">API Key</label>
 						</th>
 						<td>
-							<input type="text" style="width:27%" name="postcode_lookup_api_key" value="<?php echo esc_html( $options['postcode_lookup_key'] ); ?>"/>
+							<input type="text"  class="pl-width" name="postcode_lookup_api_key" value="<?php echo esc_html( $options['postcode_lookup_key'] ); ?>"/>
 						</td>
 					</tr>
 					<tr>
@@ -72,10 +73,7 @@ class PostcodeLookup {
 	
 	   $options = get_option( 'postcode_lookup_array' );
 	   
-	   if (empty($_POST['postcode_lookup_api_url'] ) )
-	   {
-		   
-	   }
+	  
 	   if ( isset( $_POST['postcode_lookup_api_url'] ) && !empty($_POST['postcode_lookup_api_url'] ) )
 	   {
 	      $options['postcode_lookup_url'] = sanitize_text_field( $_POST['postcode_lookup_api_url'] );
@@ -122,6 +120,10 @@ class PostcodeLookup {
 	   	 wp_localize_script('postcode_lookup', 'postcode_lookup', array('ajaxurl' => admin_url('admin-ajax.php'))); //create ajaxurl 
 	   	 
    	}
+	public function postcode_lookup_admin_scripts()
+	{
+		wp_enqueue_style( 'postcode-admin-style', plugins_url( '/css/admin-style.css', __FILE__ ) );
+	}
 }
 
 new PostcodeLookup();
