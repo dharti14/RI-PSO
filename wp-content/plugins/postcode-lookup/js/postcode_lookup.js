@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
 			url: postcode_lookup.ajaxurl,
 			type: "GET",
 			data: {
-				action: 'postcode_lookup',searchKeyword:term
+				action: 'postcode_lookup',searchedKeyword:term
 			},
 			dataType: "json",
 			success: function(data){ 

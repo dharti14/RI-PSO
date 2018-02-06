@@ -88,7 +88,7 @@ class PostcodeLookup {
 	}
 	public function postcode_lookup_ajax(){
 		
-	 $searchKeyword = $_GET['searchKeyword'];
+	 $searchedKeyword = $_GET['searchedKeyword'];
 		
 	 $options=get_option( 'postcode_lookup_array' );
 	 $postcode_lookup_url= $options['postcode_lookup_url_value'];
@@ -96,7 +96,8 @@ class PostcodeLookup {
 		$postcode_lookup_url = substr($postcode_lookup_url, 0, -1);
 	 }
 	 $postcode_lookup_api_key = $options['postcode_lookup_key_value'];
-	 $initUrl = $postcode_lookup_url.'/'.$searchKeyword.'/'.$postcode_lookup_api_key;
+	 $initUrl = $postcode_lookup_url.'/'.$postcode_lookup_api_key.'?searchedKeyword='.$searchedKeyword;
+	 	
 	 $ch = curl_init();
 	 curl_setopt($ch, CURLOPT_URL, $initUrl);
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
