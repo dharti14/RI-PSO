@@ -33,7 +33,9 @@ jQuery(document).ready(function(){
 			jQuery('#postcodeto').val(searchKeyValue);
 			return false;
 		},
+		
 	  minLength: 1,
 	  delay: 100
 	});
+	
 });
