@@ -181,13 +181,11 @@
 							                <input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">
 
 							              </div>
-														<div class="form-group dontknow-exact-address">
-															<label>Nearest town to property</label>
-																<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete='off'>
-																<a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
-														</div>
-
-
+										  <div class="form-group dontknow-exact-address">
+											<label>Nearest town to property</label>
+												<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' value="" autocomplete="new-nearesttown">
+												<a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
+										  </div>
 							              <div class="form-group radio-with-text">
 							               <h5>Property Type:</h5>
 							                <label for="house">
