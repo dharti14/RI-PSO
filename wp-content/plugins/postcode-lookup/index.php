@@ -2,7 +2,7 @@
 /*
  Plugin Name: Postcode Lookup
  Plugin URI: http://www.regur.net
- Description: This plugin is used for autocomplete input text field.
+ Description: Postcode lookup plugin is used to search the town and postcode stem of UK if user don't know the exact address.
  Author: Regur Technology Solutions
  Version: 1.0
  Author URI: http://www.regur.net
