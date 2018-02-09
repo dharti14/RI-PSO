@@ -1,8 +1,8 @@
 jQuery('document').ready(function() {
 	
-	
+	results = '';
 	plResponse = [];
-	jQuery('#nearesttown').autoComplete({
+	jQuery(auto_complete_plugin.selector).autoComplete({
 		minChars: 1,		
 		cache:true,	
 		 source: function(term,response) {
@@ -10,21 +10,27 @@ jQuery('document').ready(function() {
 	    	try { xhr.abort(); } catch(e){}
 	        xhr = jQuery.getJSON(postcode_lookup.ajaxurl ,{ action: 'postcode_lookup',searchedKeyword:term }, 
 	        function(data){
-	        	if(data != '' && data != null)
-	        	{	
-	        		plResponse = [];
-	        		for (var key in data)
-	        		{	        	
-	        			plResponse.push(data[key].townName+' ('+data[key].districtName+')');	        	  
-	        		} 
-	        	}
-	        	else
-	        	{
+	        	
+		        if(data.statusCode == 200)
+		        {	        	
+		        	results = JSON.parse(data.results);		        		 
+		        	if(results != '' && results != null)
+		        	{	
+		        		plResponse = [];
+		        		for (var key in results)
+		        		{	        	
+		        			plResponse.push(results[key].townName+' ('+results[key].districtName+')');	        	  
+		        		} 
+		        	}
+		         }	
+	            else
+	            {
 	        		plResponse = ["No Data Found"]
-	        	}
+	            }
 	        	
 	        	response(plResponse);
-	        	jQuery('#nearesttown').css({'background':'none'});
+	        	jQuery(auto_complete_plugin.selector).css({'background':'none'});
+	        	
 	          });
 	        },
 	        
@@ -37,14 +43,14 @@ jQuery('document').ready(function() {
 					jQuery("div.rightpart div.stress-moving-from").show();				
 					jQuery('#postcodeto').val(term);
 				}
-	        	jQuery('#nearesttown').css({'background':'none'});
+	        	jQuery(auto_complete_plugin.selector).css({'background':'none'});
 	        	
 	        }
 	        		
 	  });  
 	 
 		
-	jQuery("#nearesttown").keyup(function(){   	 
+	jQuery(auto_complete_plugin.selector).keyup(function(){   	 
 		
 		if(jQuery(this)[0].value != '')
 		{	
@@ -58,7 +64,7 @@ jQuery('document').ready(function() {
 		
 	});  
 		
-	jQuery("#nearesttown").focusout(function() {		
+	jQuery(auto_complete_plugin.selector).focusout(function() {		
 		jQuery(this).css({'background':'none'});
 	});
 	  

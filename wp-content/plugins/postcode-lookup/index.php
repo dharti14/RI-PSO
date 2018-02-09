@@ -55,6 +55,7 @@ class PostcodeLookup {
 						</th>
 						<td>
 							<input type="text"  class="regular-text" name="postcode_lookup_plugin_init_selector" value="<?php if(isset($options['postcode_lookup_plugin_init_selector'])){ echo esc_html( $options['postcode_lookup_plugin_init_selector'] ); } ?>"/>
+							<em>Add id of input on which you want to intialize this plugin with # prefix. (Ex: #selector)</em>
 						</td>
 					</tr>				
 				</tbody>
@@ -102,6 +103,7 @@ class PostcodeLookup {
 	public function postcode_lookup_ajax(){
 		 
 		 $initUrl = '';
+		 $response = array();
 		 $searchedKeyword = $_GET['searchedKeyword'];
 		 // pl means postcode lookup	
 		 $options=get_option( 'postcode_lookup_array');
@@ -130,10 +132,11 @@ class PostcodeLookup {
 		 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		 curl_setopt($ch, CURLOPT_TIMEOUT, 3);
 		 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-		 $output = trim(curl_exec($ch));
-		 echo $output;
-		 curl_close($ch); 
-			
+		 $output = trim(curl_exec($ch));		
+		 $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		 $response = array('results'=>$output,'statusCode'=>$http_code);
+		 echo json_encode($response);
+		 curl_close($ch);			
 		 wp_die();
 
 	}
@@ -145,7 +148,14 @@ class PostcodeLookup {
 		 wp_register_script('postcode_lookup_autocomplete_js', plugins_url( '/js/jquery.auto-complete.min.js' , __FILE__ ), array('jquery'), 1.0,true);
 		 wp_enqueue_script('postcode_lookup_autocomplete_js');		 
 	   	 wp_enqueue_script('postcode_lookup', plugins_url( '/js/postcode_lookup.js' , __FILE__ ), array('jquery'), 1.0, true);
-	   	 wp_localize_script('postcode_lookup', 'postcode_lookup', array('ajaxurl' => admin_url('admin-ajax.php'))); //create ajaxurl 
+	   	 wp_localize_script('postcode_lookup', 'postcode_lookup', array('ajaxurl' => admin_url('admin-ajax.php'))); //create ajaxurl
+	   	 $js_plugin_selector = '';
+	   	 $options = get_option('postcode_lookup_array');
+	   	 if(!empty($options) && isset($options['postcode_lookup_plugin_init_selector']))
+	   	 {
+	   	 	$js_plugin_selector = $options['postcode_lookup_plugin_init_selector'];
+	   	 }	
+	   	 wp_localize_script('postcode_lookup', 'auto_complete_plugin', array('selector' =>$js_plugin_selector));
 	   	 
    	}
 	
