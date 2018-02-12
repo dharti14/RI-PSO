@@ -235,6 +235,11 @@ jQuery( document ).ready(function() {
 		
 		var business_type_class = business_type.toLowerCase();
 		
+		if(business_type_class == "business removal")
+		{
+			business_type_class = "business";
+		}	
+		
 		if(postcode_from != '' || postcode_to != '')
 		{
 			if(postcode_from != '')
@@ -270,10 +275,11 @@ jQuery( document ).ready(function() {
 							jQuery("."+business_type_class+" input[name=postcode_to]").val(postcode_to);
 						}
 						jQuery("."+business_type_class+" input:text").each(function(){
-							if (jQuery.trim(jQuery(this).val()).length != 0){
-								jQuery(this).removeClass("pending");
+							jQuery(this).removeClass("pending");
+							if (jQuery.trim(jQuery(this).val()).length != 0){								
 								jQuery(this).addClass("valid");
 							}
+							
 						});
 				}
 

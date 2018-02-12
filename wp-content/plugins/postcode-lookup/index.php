@@ -55,7 +55,7 @@ class PostcodeLookup {
 						</th>
 						<td>
 							<input type="text"  class="regular-text" name="postcode_lookup_plugin_init_selector" value="<?php if(isset($options['postcode_lookup_plugin_init_selector'])){ echo esc_html( $options['postcode_lookup_plugin_init_selector'] ); } ?>"/>
-							<em>Add id of input on which you want to intialize this plugin with # prefix. (Ex: #selector)</em>
+							<em>Add class name of input on which you want to intialize this plugin with . prefix. (Ex: .selector)</em>
 						</td>
 					</tr>				
 				</tbody>

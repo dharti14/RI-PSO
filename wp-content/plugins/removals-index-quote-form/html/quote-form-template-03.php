@@ -55,7 +55,7 @@
 				</div>
 			</div>
 
-					   <form method="post" name="form" id="form" action="<?php  echo $this->request_url; ?>">
+					   <form method="post" name="form" id="form" action="<?php  echo $this->request_url; ?>" autocomplete="off">
 
 					   		<input type="hidden" value="0" name="form-type">
 					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
@@ -125,11 +125,10 @@
 
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving from:</label>
-							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">
+							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">							                
 							                <input type="text" class="form-control" name="city" placeholder="Town / City *">
 							                <input type="text" class="form-control" name="address" placeholder="Street Name *">
 							                <input type="text" class="form-control" name="houseno" placeholder="Enter House Number...">
-
 							              </div>
 
 							              <div class="form-group radio-with-text">
@@ -171,20 +170,20 @@
 
 							           </div>
 							           <div class="rightpart">
-
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
 							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
-															<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
-							                <input type="text" class="form-control" name="city_to" placeholder="Town / City *">
-							                <input type="text" class="form-control" name="address_to" placeholder="Street Name">
-							                <input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">
-
+											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
+							                <div class="to-address-fields-wrapper">
+							                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
+							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
+							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
+											</div>
 							              </div>
 										  <div class="form-group dontknow-exact-address">
-											<label>Nearest town to property</label>
-												<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' value="" autocomplete="new-nearesttown">
-												<a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
+											  <label>Nearest town to property</label>
+											  <input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete="off" value="">
+											  <a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
 										  </div>
 							              <div class="form-group radio-with-text">
 							               <h5>Property Type:</h5>
@@ -459,18 +458,19 @@
 
               <div class="form-group stress-moving-from">
                 <label for="exampleInputEmail1">I'm moving to:</label>
-							  <input type="text" class="form-control" name="postcode_to" id="commercialpostcodeto" placeholder="Postcode">
-								<a href="javascript:void(0);" class="dont-know-address" id='dontknowcommercialaddress'>I don't know the exact address</a>
-                <input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
-                <input type="text" class="form-control" name="address_to" id="addressto" placeholder="Street Name">
-                <input type="text" class="form-control" name="houseno_to" placeholder="Enter Property Number...">
-
+				<input type="text" class="form-control" name="postcode_to" id="commercialpostcodeto" placeholder="Postcode">
+				<a href="javascript:void(0);" class="dont-know-address" id='dontknowcommercialaddress'>I don't know the exact address</a>
+                <div class="to-address-fields-wrapper">
+                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
+                	<input type="text" class="form-control" name="address_to" id="addressto" placeholder="Street Name">
+                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter Property Number...">
+				</div>
               </div>
-							<div class="form-group dontknow-exact-address">
-								<label>Nearest town to property</label>
-									<input type='text' class="form-control" placeholder='Nearest town to property' name='nearesttowncom' id='nearesttowncom'>
-									<a href="javascript:void(0);" class="dont-know-address" id='knowexactcommercialaddress'>I have the exact address</a>
-							</div>
+				<div class="form-group dontknow-exact-address">
+					<label>Nearest town to property</label>
+						<input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttowncom' id='nearesttowncom'>
+						<a href="javascript:void(0);" class="dont-know-address" id='knowexactcommercialaddress'>I have the exact address</a>
+				</div>
 
               <div class="form-group radio-with-text">
                <h5>Access :</h5>

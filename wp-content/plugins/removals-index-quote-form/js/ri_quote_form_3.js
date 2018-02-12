@@ -950,10 +950,12 @@ jQuery( document ).ready(function() {
 
 //PCA predict implementation
 jQuery(document).ready(function(){
-  jQuery("div.rightpart div.dontknow-exact-address").hide();
+	
+	
+    jQuery("div.rightpart div.dontknow-exact-address").hide();
 
     jQuery('#dontknow').on("click",function(){
-          jQuery("div.rightpart div.stress-moving-from").hide();
+         jQuery("div.rightpart div.stress-moving-from").hide();
          jQuery("div.rightpart div.dontknow-exact-address").show();
     });
     jQuery('#knowexactaddress').on("click",function(){
@@ -969,55 +971,43 @@ jQuery(document).ready(function(){
          jQuery("div.rightpart div.dontknow-exact-address").hide();
     });
 
-
-          /* var options = { key: "EU75-PX99-PZ78-BY61" , search: { countries: "United Kingdom" }}
-           var nearestfields = [
-             { element: "nearesttown", field: "City", mode: pca.fieldMode.SEARCH},
-             { element: "postcodeto", field: "PostalCode", mode: pca.fieldMode.POPULATE},
-             { element: "city_to", field: "City", mode: pca.fieldMode.POPULATE},
-             { element: "address_to", field: "Street", mode: pca.fieldMode.POPULATE}
-           ];
-
-           nearestFieldControl = new pca.Address(nearestfields,options);
-
-           nearestFieldControl.listen("load", function(control) {
-
-           nearestFieldControl.listen("populate", function (address) {
-
-         jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.dontknow-exact-address").hide();
-         jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
-           if (jQuery.trim(jQuery(this).val()).length != 0){
-             jQuery(this).addClass("valid");
-
-           }
-         });
-       });
-     });
-*/
-    /* var nearestCommercialFields = [
-       { element: "nearesttowncom", field: "City", mode: pca.fieldMode.SEARCH},
-       { element: "commercialpostcodeto", field: "PostalCode", mode: pca.fieldMode.POPULATE},
-       { element: "cityto", field: "City", mode: pca.fieldMode.POPULATE},
-       { element: "addressto", field: "Street", mode: pca.fieldMode.POPULATE}
-     ];
-
-     nearestCommercialControl = new pca.Address(nearestCommercialFields,options);
-
-     nearestCommercialControl.listen("load",function(control){
-       nearestCommercialControl.listen("populate",function(address){
-
-         jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.dontknow-exact-address").hide();
-         jQuery("input:text").each(function(){
-           if (jQuery.trim(jQuery(this).val()).length != 0){            	  
-         	  jQuery(this).addClass("valid");
-           }
-       });
-       });
-     });
-*/
-
+    // Below function is call back of postcode look up
+    
+    postcodeLookupCallback = function(term)
+    {    	
+    	var businessType = ''; 
+    	
+    	if(typeof(jQuery("#show-after-get").css('display')) != "undefined" && jQuery("#show-after-get").css('display') == "block")
+    	{
+    		businessType = 'residential';
+    	}
+    	else if(typeof(jQuery("#show-after-get-business").css('display')) != "undefined" && jQuery("#show-after-get-business").css('display') == "block")
+    	{
+    		businessType = 'business'; // commercial
+    	}	
+    	else if(typeof(jQuery("#show-after-get-international").css('display')) != "undefined" && jQuery("#show-after-get-international").css('display') == "block")
+    	{
+    		businessType = 'international';
+    	}	
+    	
+       if(typeof(term) != "undefined" && term != '')
+ 	   {       		
+        	jQuery(".to-address-fields-wrapper").css({'visibility':'hidden'});
+			jQuery("div.rightpart div.dontknow-exact-address").hide();
+			jQuery("div.rightpart div.stress-moving-from").show();					
+			
+			var temp = term.split(" ");
+			if(temp.length)
+			{
+				townName = temp[0];
+				jQuery('.'+businessType+' .rightpart input[name="city_to"]').val(townName);
+			}
+			
+			jQuery('.'+businessType+' .rightpart input[name="postcode_to"]').val(term);
+				
+		}
+    }
+    
 
      jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change",function(){
          postcode_from  = jQuery("div.leftpart div.stress-moving-from input[name='postcode']").val();

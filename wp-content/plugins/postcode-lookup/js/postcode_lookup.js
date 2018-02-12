@@ -35,15 +35,13 @@ jQuery('document').ready(function() {
 	        },
 	        
 	       onSelect: function (e, term, item) {
-	        	
-	    	   if(typeof(term) != "undefined" && term != '')
-	    	   {       		
-		        	//jQuery("#nearesttown").val(ui.item.label);
-					jQuery("div.rightpart div.dontknow-exact-address").hide();
-					jQuery("div.rightpart div.stress-moving-from").show();				
-					jQuery('#postcodeto').val(term);
-				}
-	        	jQuery(auto_complete_plugin.selector).css({'background':'none'});
+	    	   
+	    	   if(typeof(postcodeLookupCallback) == "function")
+	    	   {
+	    		   postcodeLookupCallback(term);
+	    	   }	    	   
+	    	   
+	           jQuery(auto_complete_plugin.selector).css({'background':'none'});
 	        	
 	        }
 	        		
