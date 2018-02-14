@@ -711,7 +711,7 @@ label.error:after {
 .form-control.pending {
 	border-color: #66afe9;
 }
-.form-control.phone.pending,input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending {
+.form-control.phone.pending,input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending,input[name=town_postcode_to].pending {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }
