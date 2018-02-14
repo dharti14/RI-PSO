@@ -897,33 +897,4 @@ label.error:after {
     background-position-y: 50% !important;
 }
 
-/* .postcode {
-	margin-bottom: 35px !important;
-} */
-.dont-know-address{
-	text-align: center;
-	display: block;
-	margin:5px 0 8px 0 !important;
-	font-size: 15px !important;
 
-}
-input[name="postcode_to"]{
-	margin-bottom: 5px!important;
-}
-
-input[id='nearesttown']{
-	margin-bottom: 0px!important;
-}
-input[id='nearesttowncom']{
-	margin-bottom: 0px!important;
-}
-.dontknow-exact-address {
-	margin-bottom: 158px;
-}
-.pcaitem.pcaselected {
-    background: #305eaa;
-    color: #fff;
-}
-.pcaitem.pcaselected .pcadescription{
-	color:#e8e8e8;
-}

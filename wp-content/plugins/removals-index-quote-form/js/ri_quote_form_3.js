@@ -948,7 +948,7 @@ jQuery( document ).ready(function() {
 
 });
 
-//PCA predict implementation
+
 jQuery(document).ready(function(){
 	
 	
@@ -956,18 +956,22 @@ jQuery(document).ready(function(){
 
     jQuery('#dontknow').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").hide();
+         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
          jQuery("div.rightpart div.dontknow-exact-address").show();
     });
     jQuery('#knowexactaddress').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").show();
+         jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
          jQuery("div.rightpart div.dontknow-exact-address").hide();
     });
     jQuery('#dontknowcommercialaddress').on("click",function(){
-          jQuery("div.rightpart div.stress-moving-from").hide();
+         jQuery("div.rightpart div.stress-moving-from").hide();
+         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
          jQuery("div.rightpart div.dontknow-exact-address").show();
     });
     jQuery('#knowexactcommercialaddress').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").show();
+         jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
          jQuery("div.rightpart div.dontknow-exact-address").hide();
     });
 
@@ -991,19 +995,24 @@ jQuery(document).ready(function(){
     	}	
     	
        if(typeof(term) != "undefined" && term != '')
- 	   {       		
+ 	   {
+    	    postcode = '';
+    	    townName = '';
         	jQuery(".to-address-fields-wrapper").css({'visibility':'hidden'});
 			jQuery("div.rightpart div.dontknow-exact-address").hide();
 			jQuery("div.rightpart div.stress-moving-from").show();					
 			
-			var temp = term.split(" ");
-			if(temp.length)
+			var temp = term.split("(");
+			if(temp.length>1)
 			{
-				townName = temp[0];
+				townName = temp[0].trim();
+				postcode = temp[1].replace(")","").trim();
+				
 				jQuery('.'+businessType+' .rightpart input[name="city_to"]').val(townName);
+				jQuery('.'+businessType+' .rightpart input[name="postcode_to"]').val(postcode);
 			}
 			
-			jQuery('.'+businessType+' .rightpart input[name="postcode_to"]').val(term);
+			jQuery('.'+businessType+' .rightpart input[name="town_postcode_to"]').val(term);
 				
 		}
     }

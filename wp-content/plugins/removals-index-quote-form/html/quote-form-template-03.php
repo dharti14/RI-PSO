@@ -32,6 +32,7 @@
 
 	//Loading js and css file depending upon the lookup functionality selected
 		$this->ri_load_css($css_filename);
+		$this->ri_load_form_css('ri_quote_form_3-postcodelookup');
 		$this->ri_load_js($js_filename);
 	//Loading js and css file depending upon the lookup functionality selected
 
@@ -172,9 +173,10 @@
 							           <div class="rightpart">
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
-							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
+							                <input type="text" class="form-control" name="town_postcode_to" id="townpostcodeto" placeholder="Postcode">
 											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
 							                <div class="to-address-fields-wrapper">
+							                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto">
 							                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
 							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
 							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
@@ -458,9 +460,10 @@
 
               <div class="form-group stress-moving-from">
                 <label for="exampleInputEmail1">I'm moving to:</label>
-				<input type="text" class="form-control" name="postcode_to" id="commercialpostcodeto" placeholder="Postcode">
+				<input type="text" class="form-control" name="town_postcode_to" id="commercialtownpostcodeto" placeholder="Postcode">
 				<a href="javascript:void(0);" class="dont-know-address" id='dontknowcommercialaddress'>I don't know the exact address</a>
                 <div class="to-address-fields-wrapper">
+                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto">
                 	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
                 	<input type="text" class="form-control" name="address_to" id="addressto" placeholder="Street Name">
                 	<input type="text" class="form-control" name="houseno_to" placeholder="Enter Property Number...">

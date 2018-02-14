@@ -42,6 +42,7 @@ jQuery('document').ready(function() {
 	    	   }	    	   
 	    	   
 	           jQuery(auto_complete_plugin.selector).css({'background':'none'});
+	           
 	        	
 	        }
 	        		
