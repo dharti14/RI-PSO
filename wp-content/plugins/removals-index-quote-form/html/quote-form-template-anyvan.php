@@ -32,7 +32,7 @@
 	
 	
 	//Loading js and css file depending upon the lookup functionality selected
-		$this->ri_load_css($css_filename);
+		$this->ri_load_css('ri_quote_form_css',$css_filename);
 		$this->ri_load_js($js_filename);
 	//Loading js and css file depending upon the lookup functionality selected
 

@@ -31,7 +31,7 @@
 		
 	//Loading js and css file depending upon the lookup functionality selected
 	
-	$this->ri_load_css('ri_quote_form_default_css','ri_quote_form_3');
+	$this->ri_load_css('ri_quote_form_css','ri_quote_form_3');
 	$this->ri_load_css('ri_selected_lookup_technology',$css_filename);
 		
 	$this->ri_load_js($js_filename);

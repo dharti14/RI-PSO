@@ -1,6 +1,6 @@
 <?php
 	//Load css and js of the form here
-	 $this->ri_load_css('ri_quote_form_1');
+	 $this->ri_load_css('ri_quote_form_css','ri_quote_form_1');
      $this->ri_load_js('ri_quote_form_1');
      
      $dki_hln = dki_get_hln();
