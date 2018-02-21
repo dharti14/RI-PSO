@@ -881,3 +881,37 @@ label.error:after {
 	background-position-x: 99% !important;
     background-position-y: 50% !important;
 }
+
+/*  postcode lookup css */
+
+.form-control.valid.pending {
+	background: none;
+}
+
+.form-control.pending {
+	border-color: #66afe9;
+}
+
+input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending{
+    background: url("images/ajax-loader.gif") no-repeat;
+    background-position:97% center;
+}
+
+.dont-know-address,.know-address{
+	text-align: center;
+	display: block;
+	margin:5px 0 8px 0 !important;
+	font-size: 15px !important;
+}
+
+input[name="postcode_to"]{
+	margin-bottom: 5px !important;
+}
+
+input.nearesttown{
+	margin-bottom: 0px !important;
+}
+
+.dontknow-exact-address {
+	margin-bottom: 138px;
+}

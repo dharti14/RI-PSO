@@ -221,19 +221,22 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		}
 
-		 public function ri_load_css($css) {
+		 public function ri_load_css($handle, $css) {
 
 		 	//If development mode(local) then enqueue normal.css else enqueue minified css file
+		 	
 		 	$css_mode = $this->mode == "development" ? '.css' :'.min.css';
 
-		 	wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
+		 	//wp_enqueue_style( 'ri-quote-form-css', RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
+		 	
+		 	wp_enqueue_style( $handle , RI_QUOTE_FORM_URL.'css/'.$css. $css_mode);
+		 	
 
 		 }
 
 		 public function ri_load_js($js) {
 
 			wp_enqueue_script( 'ri-quote-form-js', RI_QUOTE_FORM_URL.'js/'.$js.'.js');
-
 			wp_localize_script('ri-quote-form-js', 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
 
 		 }

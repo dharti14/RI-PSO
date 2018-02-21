@@ -949,22 +949,30 @@ jQuery( document ).ready(function() {
 });
 
 
-jQuery(document).ready(function(){
-	
+jQuery(document).ready(function(){	
 	
     jQuery("div.rightpart div.dontknow-exact-address").hide();
 
-    jQuery('#dontknow').on("click",function(){
+    jQuery('div.rightpart .dont-know-address').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").hide();
          jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
+         jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
+ 			jQuery(this).val("");				
+ 		 });
          jQuery("div.rightpart div.dontknow-exact-address").show();
     });
-    jQuery('#knowexactaddress').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
+    jQuery('div.rightpart .know-address').on("click",function(){
+         
+    	 jQuery("div.rightpart div.stress-moving-from").show();
          jQuery("div.rightpart div.dontknow-exact-address").hide();
+         
+         jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
+			jQuery(this).val("");				
+		});
+         
     });
-    jQuery('#dontknowcommercialaddress').on("click",function(){
+    
+   /* jQuery('#dontknowcommercialaddress').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").hide();
          jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
          jQuery("div.rightpart div.dontknow-exact-address").show();
@@ -973,12 +981,12 @@ jQuery(document).ready(function(){
          jQuery("div.rightpart div.stress-moving-from").show();
          jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
          jQuery("div.rightpart div.dontknow-exact-address").hide();
-    });
+    });*/
 
     // Below function is call back of postcode look up
     
     postcodeLookupCallback = function(term)
-    {    	
+    { 
     	var businessType = ''; 
     	
     	if(typeof(jQuery("#show-after-get").css('display')) != "undefined" && jQuery("#show-after-get").css('display') == "block")
@@ -992,15 +1000,16 @@ jQuery(document).ready(function(){
     	else if(typeof(jQuery("#show-after-get-international").css('display')) != "undefined" && jQuery("#show-after-get-international").css('display') == "block")
     	{
     		businessType = 'international';
-    	}	
+    	}  	
+    	
     	
        if(typeof(term) != "undefined" && term != '')
  	   {
     	    postcode = '';
     	    townName = '';
-        	jQuery(".to-address-fields-wrapper").css({'visibility':'hidden'});
-			jQuery("div.rightpart div.dontknow-exact-address").hide();
-			jQuery("div.rightpart div.stress-moving-from").show();					
+        	//jQuery(".to-address-fields-wrapper").css({'visibility':'hidden'});
+			//jQuery("div.rightpart div.dontknow-exact-address").hide();
+			//jQuery("div.rightpart div.stress-moving-from").show();					
 			
 			var temp = term.split("(");
 			if(temp.length>1)
@@ -1049,7 +1058,7 @@ jQuery(document).ready(function(){
 			                        else {
 			                            jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name='city']").val(result.town[0]);
 			                            jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name='address']").val(result.line_1);
-			                           // jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name='postcode']").val(postcode_from);
+			                            //jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name='postcode']").val(postcode_from);
 			                        }
              					jQuery("input:text").each(function(){
              						if (jQuery.trim(jQuery(this).val()).length != 0){

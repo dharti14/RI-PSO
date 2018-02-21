@@ -11,16 +11,14 @@
 
 		case "data8":
 			$js_filename = "ri_email_phone_lookup-data8";
-			$css_filename = "ri_quote_form_3-data8";
+			$css_filename = "ri_quote_form_3-briteverifyanddata8";
 			break;
 
 		case "bvdata8":
 			$js_filename = "ri_email_phone_lookup-bvanddata8";
 			$css_filename = "ri_quote_form_3-briteverifyanddata8";
 			break;
-
-		default:
-			$css_filename = "ri_quote_form_3";
+			
 	}
 
 
@@ -30,10 +28,13 @@
 		$this->ri_load_form_validation_js('ri_quote_form_3');
 	}
 
+		
 	//Loading js and css file depending upon the lookup functionality selected
-		$this->ri_load_css($css_filename);
-		$this->ri_load_form_css('ri_quote_form_3-postcodelookup');
-		$this->ri_load_js($js_filename);
+	
+	$this->ri_load_css('ri_quote_form_default_css','ri_quote_form_3');
+	$this->ri_load_css('ri_selected_lookup_technology',$css_filename);
+		
+	$this->ri_load_js($js_filename);
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
@@ -173,19 +174,19 @@
 							           <div class="rightpart">
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
-							                <input type="text" class="form-control" name="town_postcode_to" id="townpostcodeto" placeholder="Postcode">
+							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
 											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
-							                <div class="to-address-fields-wrapper">
-							                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto">
+<!-- 							                <div class="to-address-fields-wrapper"> -->
+<!-- 							                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto"> -->
 							                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
 							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
 							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
-											</div>
+<!-- 											</div> -->
 							              </div>
 										  <div class="form-group dontknow-exact-address">
 											  <label>Nearest town to property</label>
 											  <input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete="off" value="">
-											  <a href="javascript:void(0);" class="dont-know-address" id='knowexactaddress'>I have the exact address</a>
+											  <a href="javascript:void(0);" class="know-address" id='knowexactaddress'>I have the exact address</a>
 										  </div>
 							              <div class="form-group radio-with-text">
 							               <h5>Property Type:</h5>
@@ -460,19 +461,19 @@
 
               <div class="form-group stress-moving-from">
                 <label for="exampleInputEmail1">I'm moving to:</label>
-				<input type="text" class="form-control" name="town_postcode_to" id="commercialtownpostcodeto" placeholder="Postcode">
+				<input type="text" class="form-control"  name="postcode_to" id="postcodeto" placeholder="Postcode">
 				<a href="javascript:void(0);" class="dont-know-address" id='dontknowcommercialaddress'>I don't know the exact address</a>
-                <div class="to-address-fields-wrapper">
-                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto">
+<!--                 <div class="to-address-fields-wrapper"> -->
+<!--                 	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto"> -->
                 	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
                 	<input type="text" class="form-control" name="address_to" id="addressto" placeholder="Street Name">
                 	<input type="text" class="form-control" name="houseno_to" placeholder="Enter Property Number...">
-				</div>
+<!-- 				</div> -->
               </div>
 				<div class="form-group dontknow-exact-address">
 					<label>Nearest town to property</label>
-						<input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttowncom' id='nearesttowncom'>
-						<a href="javascript:void(0);" class="dont-know-address" id='knowexactcommercialaddress'>I have the exact address</a>
+					<input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttowncom' id='nearesttowncom'>
+					<a href="javascript:void(0);" class="know-address" id='knowexactcommercialaddress'>I have the exact address</a>
 				</div>
 
               <div class="form-group radio-with-text">

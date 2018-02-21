@@ -253,11 +253,11 @@ jQuery( document ).ready(function() {
 				jQuery("."+business_type_class+" input[name=city_to]").addClass("pending");
 				jQuery("."+business_type_class+" input[name=address_to]").addClass("pending");
 				jQuery("."+business_type_class+" input[name=postcode_to]").addClass("pending");
-				fackField = jQuery("."+business_type_class+" input[name=town_postcode_to]"); // For postcode lookup plugin and available only on template3
-				if(fackField.length)
+				/*fakeField = jQuery("."+business_type_class+" input[name=town_postcode_to]"); // For postcode lookup plugin and available only on template3
+				if(fakeField.length)
 				{
-					jQuery(fackField).addClass("pending");
-				}
+					jQuery(fakeField).addClass("pending");
+				}*/
 			}
 			jQuery.ajax({
 
@@ -278,7 +278,7 @@ jQuery( document ).ready(function() {
 							jQuery("."+business_type_class+" input[name=city_to]").val(result.town_to[0]);
 							jQuery("."+business_type_class+" input[name=address_to]").val(result.line_1_to);
 							jQuery("."+business_type_class+" input[name=postcode_to]").val(postcode_to);
-							jQuery(fackField[0]).val(postcode_to);
+							//jQuery(fakeField[0]).val(postcode_to);
 						}
 						jQuery("."+business_type_class+" input:text").each(function(){
 							jQuery(this).removeClass("pending");
