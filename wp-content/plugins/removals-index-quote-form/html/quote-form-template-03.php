@@ -20,21 +20,14 @@
 			break;
 			
 	}
-
-
-	if(empty($js_filename)){ //No lookup selected so default js will be ri_quote_form_2
-		$js_filename = "ri_quote_form_3";
-	}else{
-		$this->ri_load_form_validation_js('ri_quote_form_3');
-	}
-
-		
-	//Loading js and css file depending upon the lookup functionality selected
 	
+	//Loading js and css file depending upon the lookup functionality selected
+	$this->ri_load_js('ri_quote_form_js','ri_quote_form_3');
+	$this->ri_load_js('ri_selected_lookup_technology_js',$js_filename);
 	$this->ri_load_css('ri_quote_form_css','ri_quote_form_3');
-	$this->ri_load_css('ri_selected_lookup_technology',$css_filename);
+	$this->ri_load_css('ri_selected_lookup_technology_css',$css_filename);
 		
-	$this->ri_load_js($js_filename);
+	
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
