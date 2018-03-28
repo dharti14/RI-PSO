@@ -40,6 +40,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 */
 		public function __construct( ) {
 
+			
 			/* Admin page action */
 			add_action( 'admin_menu', array( &$this, 'quote_form_admin_menu' ) );
 
@@ -70,6 +71,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 			define( 'RI_QUOTE_FORM_PATH' ,plugin_dir_path( __FILE__ ) );
 
+						
 			add_action('wp_enqueue_scripts', array( &$this, 'quote_form_assets' ),11 );
 
 			//Ajax action fo all users(no-priviledges are set)
@@ -88,8 +90,6 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			//Data8 phone validation
 			add_action( 'wp_ajax_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
 			add_action( 'wp_ajax_nopriv_ri_validate_phone_data8', array('RI_QuoteForm','ri_validate_phone_data8'));
-
-			wp_localize_script('ri-quote-form-js', 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 
@@ -100,7 +100,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			} else {
 				$this->mode = 'production';
 			}
-
+			
+			
+			
 
 			//Creating global array for the list of the quote form templates available.
 			global $quote_form_templates;
@@ -116,9 +118,13 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			//Including ci plugin metaboxes file
 			include 'inc/ri-quote-form-metaboxes.php';
 			//Including ci plugin metaboxes file
-
+			
+			
 
 		}
+		
+		
+		
 
 		/**
 		 * Include file for crafty Api
@@ -177,10 +183,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		/**
 		 * insert js and css files.
 		 */
-		public function quote_form_assets( ) {
-
+		public function quote_form_assets( ) {		
+			
 			wp_enqueue_script( 'ri-jquery-ui', RI_QUOTE_FORM_URL.'js/jquery.ui.js', array( 'jquery' ), '', true );
-
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
@@ -236,7 +241,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		 public function ri_load_js($handle,$js) {
 
-		 	wp_enqueue_script( $handle, RI_QUOTE_FORM_URL.'js/'.$js.'.js');
+		 	wp_enqueue_script( $handle, RI_QUOTE_FORM_URL.'js/'.$js.'.js');	 	
 
 		 }
 

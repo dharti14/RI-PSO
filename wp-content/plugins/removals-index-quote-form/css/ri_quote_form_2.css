@@ -881,3 +881,16 @@ label.error:after {
 	background-position-x: 99% !important;
     background-position-y: 50% !important;
 }
+
+
+.form-control.valid.pending {
+	background: none;
+}
+
+.form-control.pending {
+	border-color: #66afe9;
+}
+.form-control.phone.pending,.form-control.email.pending {
+    background: url("images/ajax-loader.gif") no-repeat;
+    background-position:97% center;
+}

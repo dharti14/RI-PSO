@@ -10,23 +10,25 @@
 	switch ($lookup_technology){
 
 		case "data8":
-			$js_filename = "ri_email_phone_lookup-data8";
-			$css_filename = "ri_quote_form_3-briteverifyanddata8";
+			$js_filename = "ri_email_phone_lookup-data8";			
 			break;
 
 		case "bvdata8":
-			$js_filename = "ri_email_phone_lookup-bvanddata8";
-			$css_filename = "ri_quote_form_3-briteverifyanddata8";
+			$js_filename = "ri_email_phone_lookup-bvanddata8";			
 			break;
 			
 	}
 	
 	//Loading js and css file depending upon the lookup functionality selected
 	$this->ri_load_js('ri_quote_form_js','ri_quote_form_3');
-	$this->ri_load_js('ri_selected_lookup_technology_js',$js_filename);
 	$this->ri_load_css('ri_quote_form_css','ri_quote_form_3');
-	$this->ri_load_css('ri_selected_lookup_technology_css',$css_filename);
-		
+	wp_localize_script("ri_quote_form_js", 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
+	
+	if(!empty($js_filename))
+	{
+		$this->ri_load_js('ri_selected_lookup_technology_js',$js_filename);
+	}
+	
 	
 	//Loading js and css file depending upon the lookup functionality selected
 

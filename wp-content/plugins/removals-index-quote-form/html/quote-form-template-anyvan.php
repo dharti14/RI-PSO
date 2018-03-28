@@ -7,34 +7,28 @@
 	$lookup_technology = $this->get_lookup_technology();
 	
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
+	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
 	switch ($lookup_technology){
 		
 		case "data8":
 			$js_filename = "ri_email_phone_lookup-data8";
-			$css_filename = "ri_quote_form_2-data8";
 			break;
 			
 		case "bvdata8":
 			$js_filename = "ri_email_phone_lookup-bvanddata8";
-			$css_filename = "ri_quote_form_2-briteverifyanddata8";
 			break;
 			
-		default:
-			$css_filename = "ri_quote_form_2";
 	}
 	
-	
-	if(empty($js_filename)){ //No lookup selected so default js will be ri_quote_form_anyvan
-		$js_filename = "ri_quote_form_anyvan";
-	}else{
-		$this->ri_load_form_validation_js('ri_quote_form_anyvan');
-	}
-	
-	
 	//Loading js and css file depending upon the lookup functionality selected
-		$this->ri_load_css('ri_quote_form_css',$css_filename);
-		$this->ri_load_js($js_filename);
-	//Loading js and css file depending upon the lookup functionality selected
+	$this->ri_load_js('ri_quote_form_js','ri_quote_form_2');
+	$this->ri_load_css('ri_quote_form_css','ri_quote_form_2');
+	wp_localize_script("ri_quote_form_js", 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
+	
+	if(!empty($js_filename))
+	{
+		$this->ri_load_js('ri_selected_lookup_technology_js',$js_filename);		
+	}	
 
      $dki_hln = dki_get_hln();
      $ri_page_id = $this->page_id;

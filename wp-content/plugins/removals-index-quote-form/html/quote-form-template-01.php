@@ -2,7 +2,8 @@
 	//Load css and js of the form here
 	 $this->ri_load_css('ri_quote_form_css','ri_quote_form_1');
 	 $this->ri_load_js('ri_quote_form_js','ri_quote_form_1');
-     
+	 wp_localize_script("ri_quote_form_js", 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
+	 
      $dki_hln = dki_get_hln();
      $ri_page_id = ri_get_page_id();
 ?>

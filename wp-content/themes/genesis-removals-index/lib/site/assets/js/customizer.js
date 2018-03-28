@@ -253,11 +253,7 @@ jQuery( document ).ready(function() {
 				jQuery("."+business_type_class+" input[name=city_to]").addClass("pending");
 				jQuery("."+business_type_class+" input[name=address_to]").addClass("pending");
 				jQuery("."+business_type_class+" input[name=postcode_to]").addClass("pending");
-				/*fakeField = jQuery("."+business_type_class+" input[name=town_postcode_to]"); // For postcode lookup plugin and available only on template3
-				if(fakeField.length)
-				{
-					jQuery(fakeField).addClass("pending");
-				}*/
+				
 			}
 			jQuery.ajax({
 

@@ -39,6 +39,8 @@ class PostcodeLookup {
 						</th>
 						<td>
 							<input type="text" class="regular-text" name="postcode_lookup_api_url" value="<?php if(isset($options['postcode_lookup_api_url'])){ echo esc_html( $options['postcode_lookup_api_url'] ); } ?>"/>
+							<em>Enter complete API link. (Ex: http(s)://xxxx.xxx/api/postcodelookup)</em>
+							
 						</td>
 					</tr>
 					<tr class="form-required">
@@ -55,8 +57,8 @@ class PostcodeLookup {
 						</th>
 						<td>
 							<input type="text"  class="regular-text" name="postcode_lookup_plugin_init_selector" value="<?php if(isset($options['postcode_lookup_plugin_init_selector'])){ echo esc_html( $options['postcode_lookup_plugin_init_selector'] ); } ?>"/>
-							<em>Add class name of input on which you want to intialize this plugin with . prefix. (Ex: .selector)</em>
-						</td>
+							<em>Add class name or id name of input on which you want to intialize this plugin with ./# prefix. (Ex: .selector, #selector)</em><br>
+							<em>Don't forget to add prefix(. or #).</em>						</td>
 					</tr>				
 				</tbody>
 			</table>
