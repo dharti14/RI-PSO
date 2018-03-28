@@ -450,20 +450,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 		 	die();
 
-		 }
-
-
-		/*  public function ri_load_form_validation_js($js) {
-
-		 	wp_enqueue_script( $js, RI_QUOTE_FORM_URL.'js/'.$js.'.js');
-
-		 }
-		 
-		 public function ri_load_form_css($css) {
-		 	
-		 	wp_enqueue_style( $css, RI_QUOTE_FORM_URL.'css/'.$css.'.css');
-		 	
-		 } */
+		 }		
 
 		 public function get_lookup_technology(){
 
