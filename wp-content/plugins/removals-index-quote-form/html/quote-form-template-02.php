@@ -7,7 +7,6 @@
 	$css_filename='';
 
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
-	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
 	switch ($lookup_technology){
 		
 		case "data8":
@@ -967,10 +966,7 @@
 		
 		<button type="submit" id="get-my-quote-top-international" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>
 
-		
-	
-<!--        <div id="button"><div class="btn btn-quote get-my-quote-second-international">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div>
- -->
+
 		<div class="danger" id="danger-get-my-quote-second-international"><span></span></div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 		</div>
