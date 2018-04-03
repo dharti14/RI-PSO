@@ -111,6 +111,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			$quote_form_templates = array(
 					'quote-form-template-02' => 'Template 02',
 					'quote-form-template-03' => 'Template 03',
+					'quote-form-template-04' => 'Template 04',
 // 					'quote-form-template-01' => 'Template 01',
 					'quote-form-template-anyvan' => 'Anyvan - 1'
 			);
