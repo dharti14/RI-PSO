@@ -7,7 +7,6 @@
 	$lookup_technology = $this->get_lookup_technology();
 	
 	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
-	//If lookup functionality selected is data8 then load its js and css files else load as usual css and js files
 	switch ($lookup_technology){
 		
 		case "data8":
