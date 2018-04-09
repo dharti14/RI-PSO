@@ -22,6 +22,7 @@
 	//Loading js and css file depending upon the lookup functionality selected
 	$this->ri_load_js('ri_quote_form_js','ri_quote_form_4');
 	$this->ri_load_css('ri_quote_form_css','ri_quote_form_4');
+	$this->ri_load_css('ri_quote_form_residential_css','ri_quote_form_4_residential');
 	wp_localize_script("ri_quote_form_js", 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
 	
 	if(!empty($js_filename))
@@ -52,60 +53,109 @@
 				</div>
 			</div>
 
-					   <form method="post" name="form" id="form" action="<?php  echo $this->request_url; ?>" autocomplete="off">
+			<form method="post" name="form" id="form" action="<?php  echo $this->request_url; ?>" autocomplete="off">
 
-					   		<input type="hidden" value="0" name="form-type">
-					   		<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
+				<input type="hidden" value="0" name="form-type">
+				<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
 
 					   		<?php echo $this->get_plocal_tags_var(); ?>
 
-					   		<div class="row">
+					 <div class="row">
 					   		
-							<div class="col-sm-offset-2 col-sm-6" style="padding-left:0px;">
+						<div class="col-md-offset-2 col-xs-12 col-sm-8 col-md-6">
+					   		
+					   		<div class="row">
 					   		<!-- Step 1 -->
-					  		<div class="removing-stress-frm step1">
-					  		<span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-					            <div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
+					  		<div class="removing-stress-form step1 col-md-12">
+					  		<span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+					            <div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
 					             <h4 class="property">Step 1 of 4 : Size of my current property</h4>
-
-
-					              <div class="removing-stress-frm-con">
-
-					                <div rel="bed1" class="bed-radios-container">
-					                  <div class="img1bed" rel="bed1">&nbsp;</div>
-					                  <input type="radio" class="bedrooms" id="bed1" value="1" name="bedrooms">
-					                  <label for="bed1">1<br>bed</label>
+					              <div class="removing-stress-form-con">
+					              
+					               <div rel="bed1" class="bedroom-radios-container">
+					                  <div class="bedimgwrapper" rel="bed1">
+					                  	<img alt="bed1" src="<?php echo RI_QUOTE_FORM_URL;?>images/1bed.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed1" value="1" name="bedrooms">
+					                  	<label for="bed1">1<br>bed</label>
+					                  </div>					                  
+					                </div>									
+									<div rel="bed2" class="bedroom-radios-container">
+					                  <div class="bedimgwrapper" rel="bed2">
+					                  	<img alt="bed2" src="<?php echo RI_QUOTE_FORM_URL;?>images/2bed.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed2" value="2" name="bedrooms">
+					                  	<label for="bed2">2<br>bed</label>
+					                  </div>					                  
+					                </div>					                
+					                <div rel="bed3" class="bedroom-radios-container">
+					                  <div class="bedimgwrapper" rel="bed3">
+					                  	<img alt="bed3" src="<?php echo RI_QUOTE_FORM_URL;?>images/3bed.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed3" value="3" name="bedrooms">
+					                  	<label for="bed3">3<br>bed</label>
+					                  </div>					                  
+					                </div>					                
+					                <div rel="bed4" class="bedroom-radios-container">
+					                  <div class="bedimgwrapper" rel="bed4">
+					                  	<img alt="bed4" src="<?php echo RI_QUOTE_FORM_URL;?>images/4bed.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed4" value="4" name="bedrooms">
+					                  	<label for="bed4">4<br>bed</label>
+					                  </div>					                  
+					                </div>					                
+					                <div rel="bed5" class="bedroom-radios-container">
+					                  <div class="bedimgwrapper" rel="bed5">
+					                  	<img alt="bed5" src="<?php echo RI_QUOTE_FORM_URL;?>images/5bed.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed3" value="5" name="bedrooms">
+					                  	<label for="bed5">5<br>bed</label>
+					                  </div>					                  
+					                </div>					                
+					                <div rel="bed0" class="bedroom-radios-container box0_desc">
+					                  <div class="bedimgwrapper" rel="bed0">
+					                  	<img alt="bed0" src="<?php echo RI_QUOTE_FORM_URL;?>images/desc-img.png">
+					                  </div>
+					                  <div class="bed-radios-input-wrapper">
+					                  	<input type="radio" class="bedrooms" id="bed0" value="in description" name="bedrooms">
+					                  	<label for="bed0">Describe the inventory or contents of your move</label>
+					                  </div>					                  
 					                </div>
-
-					                <div rel="bed2" class="bed-radios-container">
-					                  <div class="img2bed">&nbsp;</div>
+									
+					                 <!-- <div rel="bed2" class="bed-radios-container">
+					                  <div class="img2bed bedimgwrapper">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed2" value="2" name="bedrooms">
 					                  <label for="bed2">2<br>bed</label>
 					                </div>
 
 					                <div rel="bed3" class="bed-radios-container">
-					                  <div class="img3bed">&nbsp;</div>
+					                  <div class="img3bed bedimgwrapper">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed3" value="3" name="bedrooms">
 					                  <label for="bed3">3<br>bed</label>
 					                </div>
 
 					                <div rel="bed4" class="bed-radios-container">
-					                  <div class="img4bed">&nbsp;</div>
+					                  <div class="img4bed bedimgwrapper">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed4" value="4" name="bedrooms">
 					                  <label for="bed4">4<br>bed</label>
 					                </div>
 
 					                <div rel="bed5" class="bed-radios-container">
-					                  <div class="img5bed">&nbsp;</div>
+					                  <div class="img5bed bedimgwrapper">&nbsp;</div>
 					                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
 					                  <label for="bed5">5<br>bed +</label>
 					                </div>
 
 					                <div rel="bed0" class="bed-radios-container box_desc">
-					                  <div class="imgdesc">&nbsp;</div>
+					                  <div class="imgdesc bedimgwrapper">&nbsp;</div>
 					                  <input type="radio" id="bed0" value="in description" name="bedrooms">
 					                  <label for="bed0">Describe the<br>inventory or<br>contents of<br>your move</label>
-					                </div>
+					                </div>  -->
 
 					              </div>
 					            </div>
@@ -115,12 +165,12 @@
 								<!-- Step 2 -->
 
 								
-							       <div class="removing-stress-frm step2">
+							       <div class="removing-stress-form step2 col-md-12">
 							         <h4>Step 2 of 4 : My move</h4>
-							         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-							          <div class="removing-stress-frm-con">
-							           <div class="leftpart">
-
+							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							          <div class="removing-stress-form-con">
+							           <div class="section-wrapper">
+							           <div class="moving-from-wrapper">
 							              <div class="form-group stress-moving-from">
 							                <label for="exampleInputEmail1">I'm moving from:</label>
 							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">							                
@@ -165,19 +215,18 @@
 							                </label>
 							              </div>
 							           	</div>
-
 							           </div>
-							           <div class="rightpart">
-							              <div class="form-group stress-moving-from">
+							           
+							           <div class="moving-to-wrapper">
+							              <div class="form-group stress-moving-to">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
 							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
 											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
-<!-- 							                <div class="to-address-fields-wrapper"> -->
-<!-- 							                	<input type="hidden" class="form-control" name="postcode_to" id="postcodeto"> -->
+ 							                <div class="to-address-fields-wrapper" style="display:none"> 
 							                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
 							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
 							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
-<!-- 											</div> -->
+ 											</div> 
 							              </div>
 										  <div class="form-group dontknow-exact-address">
 											  <label>Nearest town to property</label>
@@ -219,136 +268,150 @@
 							                </label>
 							              </div>
 							          	</div>
-
 							          </div>
+							          
 							           <div class="form-group stress-moving-from">
 							            <label for="date">My approximate moving date is:</label>
 							            <input type="text" class="form-control date_picker" name="date" id="date1" placeholder="Date *">
 							           </div>
 							          </div>
+							         </div> 
 							        </div>
 
 					            <!-- Step 2 -->
 
 					            <!-- Step 3 -->
 
-					            <div class="removing-stress-frm step3">
+					            <div class="removing-stress-form step3 col-md-12">
 							         <h4>Step 3 : Things I would also like help with</h4>
-							         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-							          <div class="removing-stress-frm-con">
-
+							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							          <div class="removing-stress-form-con"> 										
 							              <div class="form-group">
-							               <h5>Packing Service Required : </h5>
+							               <div class="input-label-wrapper">
+							               		<h5>Packing Service Required : </h5>
+							               </div> 							               
 							               <div class="step-3-checkbox packing-service">
-							                <label id="packing-service-y">
-							                  <input type="radio" name="packing_service" id="packing-service-y" value="Yes"> Yes
-							                </label>&nbsp; &nbsp;
-							                <label for="packing-service-n">
-							                  <input type="radio" name="packing_service" id="packing-service-n" value="No"> No
-							                </label>
-							                <label>
-							                  <input type="radio" name="packing_service" id="packing-service-not-sure" value="Not sure"> Not sure
-							                </label>
+							                  <div class="input-label-wrapper">
+								                <label id="packing-service-y">
+								                  <input type="radio" name="packing_service" id="packing-service-y" value="Yes"> Yes
+								                </label>&nbsp; &nbsp;
+								                <label for="packing-service-n">
+								                  <input type="radio" name="packing_service" id="packing-service-n" value="No"> No
+								                </label>
+								                <label>
+								                  <input type="radio" name="packing_service" id="packing-service-not-sure" value="Not sure"> Not sure
+								                </label>
+							                  </div>
 							                </div>
 							              </div>
 							              <div class="form-group">
-							               <h5>Dismantle / Reassemble Needed : </h5>
+							                 <div class="input-label-wrapper">
+							               		<h5>Dismantle / Reassemble Needed : </h5>
+							               	</div>	
 							               <div class="step-3-checkbox dismantle">
-							                <label>
-							                  <input type="radio" name="dismantle" id="dismantle-y" value="Yes"> Yes
-							                </label>&nbsp; &nbsp;
-							                <label>
-							                  <input type="radio" name="dismantle" id="dismantle-n" value="No"> No
-							                </label>
-							                <label>
-							                  <input type="radio" name="dismantle" id="dismantle-not-sure" value="Not sure"> Not sure
-							                </label>
+							                <div class="input-label-wrapper">
+								                <label>
+								                  <input type="radio" name="dismantle" id="dismantle-y" value="Yes"> Yes
+								                </label>&nbsp; &nbsp;
+								                <label>
+								                  <input type="radio" name="dismantle" id="dismantle-n" value="No"> No
+								                </label>
+								                <label>
+								                  <input type="radio" name="dismantle" id="dismantle-not-sure" value="Not sure"> Not sure
+								                </label>
+							                </div>
 							                </div>
 							              </div>
 							              <div class="form-group">
-							               <h5>Storage Required: </h5>
+							               <div class="input-label-wrapper">
+							               	<h5>Storage Required: </h5>
+							               </div>
 							               <div class="step-3-checkbox storage">
-							                <label for="storage-y">
-							                  <input type="radio" name="storage" id="storage-y" value="Yes"> Yes
-							                </label>&nbsp; &nbsp;
-							                <label for="storage-n">
-							                  <input type="radio" name="storage" id="storage-n" value="No"> No
-							                </label>
-							                <label>
-							                  <input type="radio" name="storage" id="storage-not-sure" value="Not sure"> Not sure
-							                </label>
+							                <div class="input-label-wrapper">
+								                <label for="storage-y">
+								                  <input type="radio" name="storage" id="storage-y" value="Yes"> Yes
+								                </label>&nbsp; &nbsp;
+								                <label for="storage-n">
+								                  <input type="radio" name="storage" id="storage-n" value="No"> No
+								                </label>
+								                <label>
+								                  <input type="radio" name="storage" id="storage-not-sure" value="Not sure"> Not sure
+								                </label>
+							                 </div>
 							                </div>
-							              </div>
-
+							              </div>										
 							        </div>
-							         </div>
+							     </div>
 
 							      <!-- Step 3 -->
 							       <!-- Step 4 -->
 
-								       <div class="removing-stress-frm step4">
-								         <h4>Step 4 : My contact Information</h4>
-								         <span class="arrow-post2"><img src="<?php echo RI_QUOTE_FORM_URL;?>/images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
-								          <div class="removing-stress-frm-con">
+							       <div class="removing-stress-form step4 col-md-12">
+							         <h4>Step 4 : My contact Information</h4>
+							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							          <div class="removing-stress-form-con">
+										 <div class="section-wrapper">
+							              <div class="form-group">
 
-								              <div class="form-group">
+							                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
+							                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
 
-								                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-								                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
+							                <input type="text" class="form-control email" name="email"  placeholder="Enter Email Address...*"  value="">
+							                <div class="form-group">
+							               <h5 class="additional">Any Additional Information? </h5>
+							               <span class="additional">Eg Parking issues, contents</span>
+							               <div class="step-4-checkbox ">
+							                <label>
+							                  <input onClick="jQuery('#greenwood_drive').hide();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No
+							                </label>&nbsp; &nbsp;
+							                <label>
+							                  <input onClick="jQuery('#greenwood_drive').show();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes
+							                </label>
+							                </div>
+							              </div>
+							               <textarea id="greenwood_drive" style="display:none" placeholder="Enter any additional information about your move ..." name="additional_info"></textarea>
+							              </div>
+										</div>
 
-								                <input type="text" class="form-control email" name="email"  placeholder="Enter Email Address...*"  value="">
-								                <div class="form-group">
-								               <h5 class="additional">Any Additional Information? </h5>
-								               <span class="additional">Eg Parking issues, contents</span>
-								               <div class="step-4-checkbox ">
-								                <label>
-								                  <input onClick="jQuery('#greenwood_drive').hide();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No
-								                </label>&nbsp; &nbsp;
-								                <label>
-								                  <input onClick="jQuery('#greenwood_drive').show();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes
-								                </label>
-								                </div>
-								              </div>
-								               <textarea id="greenwood_drive" style="display:none" placeholder="Enter any additional information about your move ..." name="additional_info"></textarea>
-								              </div>
-
-
-								          </div>
-								        </div>
+							          </div>
+							        </div>
 
 						        	 <!-- Step 4 -->
-									<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
+						        	<div class="col-md-12"> 
+										<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
+	
+	<!-- 						        	  <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>  -->
+	
+									     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
+										 <p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+								   </div>	 
+							</div>
+						</div>
 
-<!-- 						        	  <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>  -->
+						     <!--Right sec start -->
 
-								     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
-										<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
-								     </div>
+							     <div id="sidebar" class="col-xs-12 col-sm-4 col-md-4">
 
-								     <!--Right sec start -->
+							     <div class="right-slider">
+							      <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="4,5"></div>
 
-									     <div id="sidebar" class="col-sm-4">
+							     </div>
 
-									     <div class="right-slider">
-									      <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="130" data-style-width="100%" data-stars="4,5"></div>
+							     <h4 class="right-satisfaction-heading">100% Satisfaction Guarantee</h4>
+							     <div class="right-satisfaction">
+							     <p>With Removals Index you'll be getting access to:</p>
+							     <ul>
+							     	<li>A saving of up to 40% on your moving costs</li>
+							        <li>Top local rated removal companies all competing for your move</li>
+							        <li>Bespoke comparison of local firms without ever having to pick up the phone</li>
+							     </ul>
+							     </div>
 
-									     </div>
+							    <?php include(RI_QUOTE_FORM_PATH.'inc/sidebar.php'); ?>
 
-									     <h4 class="right-satisfaction-heading">100% Satisfaction Guarantee</h4>
-									     <div class="right-satisfaction">
-									     <p>With Removals Index you'll be getting access to:</p>
-									     <ul>
-									     	<li>A saving of up to 40% on your moving costs</li>
-									        <li>Top local rated removal companies all competing for your move</li>
-									        <li>Bespoke comparison of local firms without ever having to pick up the phone</li>
-									     </ul>
-									     </div>
+							   </div>
 
-									    <?php include(RI_QUOTE_FORM_PATH.'inc/sidebar.php'); ?>
-
-									   </div>
-
-								   <!--Right sec end -->
+						   <!--Right sec end -->
 
 					            </div>
 

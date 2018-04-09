@@ -293,20 +293,39 @@ jQuery( document ).ready(function() {
         }
      });
 
-		/*jQuery(".get-my-quote-second").click(function() {
-    		jQuery("#form").submit();
+		
 
- 		 });
+     //checking for the checkbox checked and apply valid class to it.
+	 	jQuery('#show-after-get .bedroom-radios-container').click(function(){	 		
+	 		
+	 		jQuery("#show-after-get .bedroom-radios-container").each(function(){
+	 			jQuery(this).children().eq(0).removeClass("bedroom-radios-container-sel");
+	 		});
+	 		
+	 		
 
-	 	jQuery('#form input').keydown(function(e) {
-			if (e.keyCode == 13) {
-    			jQuery("#form").submit();
+			if(jQuery(this).attr("rel") == "bed0"){
+				// need to update as per new design
+				jQuery(".step-4-checkbox span").remove();
+				jQuery(".step-4-checkbox").append('<span class="vaild-check valid"></span>');
+				jQuery('#greenwood_drive').show();
+				
+
+				jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
+				jQuery('textarea[name="additional_info"]').valid();
+
+			}else{
+				jQuery(this).children().eq(0).addClass("bedroom-radios-container-sel");
 			}
- 		 });
-*/
 
+			jQuery(this).find("input[type='radio']").prop("checked", true);
+			
+			jQuery(".removing-stress-form h4.property span").remove();
+			jQuery(".removing-stress-form h4.property").append('<span class="vaild-check valid"></span>');
+		});
+       
 	 	//Checking for the checkbox checked and apply valid class to it.
-	 	jQuery('.bed-radios-container').click(function(){
+	 	jQuery('#show-after-get-international .bed-radios-container').click(function(){
 			jQuery('.bed-radios-container').removeClass("bed-radios-container-sel");
 
 			if(jQuery(this).attr("rel") == "bed0"){
@@ -330,6 +349,10 @@ jQuery( document ).ready(function() {
 			jQuery(".removing-stress-frm h4.property span").remove();
 			jQuery(".removing-stress-frm h4.property").append('<span class="vaild-check valid"></span>');
 		});
+	 	
+	 	
+	 	
+	 	
 	 	//Checking for the checkbox checked and apply valid class to it.
 
 
@@ -344,8 +367,8 @@ jQuery( document ).ready(function() {
 				jQuery("#show-after-get input[name='lift_available_from']").prop("required",false);
 			}
 
-			jQuery("#show-after-get .leftpart .radio-with-text h5 span").remove();
-			jQuery("#show-after-get .leftpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#show-after-get .moving-from-wrapper .radio-with-text h5 span").remove();
+			jQuery("#show-after-get .moving-from-wrapper .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 			jQuery("#show-after-get #property_type_from-error").hide();
 
 		});
@@ -360,8 +383,8 @@ jQuery( document ).ready(function() {
 				jQuery("#show-after-get select[name='floor_to']").prop("required",false);
 				jQuery("#show-after-get input[name='lift_available_to']").prop("required",false);
 			}
-			jQuery("#show-after-get .rightpart .radio-with-text h5 span").remove();
-			jQuery("#show-after-get .rightpart .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
+			jQuery("#show-after-get .moving-to-wrapper .radio-with-text h5 span").remove();
+			jQuery("#show-after-get .moving-to-wrapper .radio-with-text h5").append('<span class="vaild-check property_type valid"></span>');
 			jQuery("#show-after-get #property_type_to-error").hide();
 
 		});
@@ -951,22 +974,22 @@ jQuery( document ).ready(function() {
 
 jQuery(document).ready(function(){	
 	
-    jQuery("div.rightpart div.dontknow-exact-address").hide();
+    jQuery("div.dontknow-exact-address").hide();
 
-    jQuery('div.rightpart .dont-know-address').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").hide();
-         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
-         jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
+    jQuery('.dont-know-address').on("click",function(){
+         jQuery("div.rightpart div.stress-moving-from,.residential div.stress-moving-to").hide();
+         jQuery("div.dontknow-exact-address .nearesttown").val("");
+         jQuery("div.stress-moving-from input:text,.residential div.stress-moving-to input:text").each(function(){
  			jQuery(this).val("");				
  		 });
-         jQuery("div.rightpart div.dontknow-exact-address").show();
+         jQuery("div.dontknow-exact-address").show();
     });
-    jQuery('div.rightpart .know-address').on("click",function(){
+    jQuery('.know-address').on("click",function(){
          
-    	 jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.dontknow-exact-address").hide();
+    	 jQuery("div.rightpart div.stress-moving-from,.residential div.stress-moving-to").show();
+         jQuery("div.dontknow-exact-address").hide();
          
-         jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
+         jQuery("div.rightpart div.stress-moving-from input:text, .residential div.stress-moving-to input:text").each(function(){
 			jQuery(this).val("");				
 		});
          

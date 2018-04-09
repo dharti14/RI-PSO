@@ -144,19 +144,12 @@ blockquote,q {
     width: 41px;
 }
 
-/* new added */
-
 .box_desc.bed-radios-container label {  
 	margin-left: 55px !important; 
 	font-size: 12px !important; 
 	line-height: 15px;
 }
 
-.residential .box_desc
-{
-	font-size: 12px !important; 
-	margin-left: 8px !important;
-} 
 .removing-stress-frm-con label { 
 	font-size:14.16px; 
 	color:#305eaa; 
@@ -489,10 +482,6 @@ span.arrow-post2 img {
 
 .step1 span.arrow-post2 { 
 	left: 33%;
-}
-/* new added */
-.residential .step1 span.arrow-post2 { 
-	left: 50%;
 }
 
 label.error {
