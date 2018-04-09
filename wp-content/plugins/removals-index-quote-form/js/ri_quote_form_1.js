@@ -134,7 +134,23 @@ jQuery( document ).ready(function() {
 		
 	}, "Additional information is required");
 	
-	
+	// Mainly it is required when no lookup technology is selected 
+	jQuery.validator.addMethod("emailFormatValidation", function(value, element) {		
+			
+			var result = value.match(/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/);
+			if(result != null && result.length>0)
+			{
+				
+				return true;
+					
+			}
+			else
+			{
+				
+				return false;
+			}	
+		   
+		}, "Please enter a valid email address.");
 	
 	//If information provided then make it valid
 	jQuery("input[name='any_addition_information']").click(function(){
@@ -186,7 +202,8 @@ jQuery( document ).ready(function() {
 			},
 			email:{
 				required:true,
-				email:true
+				email:true,
+				emailFormatValidation:true
 			},
 			phone:{
 				required:true,
@@ -237,7 +254,9 @@ jQuery( document ).ready(function() {
 				minlength:"Your name should be at least 2 characters long"
 			},
 		    phone:"Please enter a valid phone number",
-		    email:"Your email address is required",
+		    email:{		    	
+		    	required:"Your email address is required"
+		    },
 		    postcode:"Your post code address is required",
 		    address:"Your address is required",
 		    city:"Your city is required",
@@ -456,7 +475,8 @@ jQuery( document ).ready(function() {
 			    },
 				email:{
 					required:true,
-					email:true
+					email:true,
+					emailFormatValidation:true
 				},
 				phone:{
 					required:true,
@@ -493,7 +513,9 @@ jQuery( document ).ready(function() {
 						minlength:"Your name should be at least 2 characters long"
 					},
 					phone:"Please enter a valid phone number",
-					email:"Your email address is required",
+					email:{
+						required:"Your email address is required"
+					},
 					postcode:"Your post code address is required",
 					address:"Your address is required",
 					city:"Your city is required",
@@ -666,7 +688,8 @@ jQuery( document ).ready(function() {
     		    },
         		email:{
         			required:true,
-        			email:true
+        			email:true,
+        			emailFormatValidation:true
         		},
         		phone:{
         			required:true,
@@ -717,7 +740,8 @@ jQuery( document ).ready(function() {
         				minlength:"Your name should be at least 2 characters long"
         			},
         			phone:"Please enter a valid phone number",
-        			email:"Your email address is required",
+        			email:{
+        				required:"Your email address is required"},
         			postcode:"Your post code address is required",
         			address:"Your address is required",
         			city:"Your city is required",
