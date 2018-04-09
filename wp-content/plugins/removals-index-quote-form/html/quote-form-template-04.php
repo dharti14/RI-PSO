@@ -66,12 +66,11 @@
 					   		
 					   		<div class="row">
 					   		<!-- Step 1 -->
-					  		<div class="removing-stress-form step1 col-md-12">
-					  		<span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+					  		<div class="removing-stress-form step1 col-xs-12 col-sm-12 col-md-12">
+					  		<span class="bottom-arrow" style="display:none"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 					            <div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
 					             <h4 class="property">Step 1 of 4 : Size of my current property</h4>
-					              <div class="removing-stress-form-con">
-					              
+					              <div class="removing-stress-form-con">					              
 					               <div rel="bed1" class="bedroom-radios-container">
 					                  <div class="bedimgwrapper" rel="bed1">
 					                  	<img alt="bed1" src="<?php echo RI_QUOTE_FORM_URL;?>images/1bed.png">
@@ -165,9 +164,9 @@
 								<!-- Step 2 -->
 
 								
-							       <div class="removing-stress-form step2 col-md-12">
+							       <div class="removing-stress-form step2 col-xs-12 col-sm-12 col-md-12" style="display:none">
 							         <h4>Step 2 of 4 : My move</h4>
-							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="bottom-arrow" style="display:none"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 							          <div class="removing-stress-form-con">
 							           <div class="section-wrapper">
 							           <div class="moving-from-wrapper">
@@ -216,7 +215,7 @@
 							              </div>
 							           	</div>
 							           </div>
-							           
+							           <div class="moving-from-to-section-separator"></div>
 							           <div class="moving-to-wrapper">
 							              <div class="form-group stress-moving-to">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
@@ -227,6 +226,9 @@
 							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
 							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
  											</div> 
+							              </div>
+							              <div class="form-group readyonly-address-wrapper" style="display:none;">
+							              		
 							              </div>
 										  <div class="form-group dontknow-exact-address">
 											  <label>Nearest town to property</label>
@@ -282,8 +284,8 @@
 
 					            <!-- Step 3 -->
 
-					            <div class="removing-stress-form step3 col-md-12">
-							         <h4>Step 3 : Things I would also like help with</h4>
+					            <div class="removing-stress-form step3 col-xs-12 col-sm-12 col-md-12" style="display:none">
+							         <h4>Step 3 of 4 : Things I would also like help with</h4>
 							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 							          <div class="removing-stress-form-con"> 										
 							              <div class="form-group">
@@ -346,8 +348,8 @@
 							      <!-- Step 3 -->
 							       <!-- Step 4 -->
 
-							       <div class="removing-stress-form step4 col-md-12">
-							         <h4>Step 4 : My contact Information</h4>
+							       <div class="removing-stress-form step4 col-xs-12 col-sm-12 col-md-12" style="display:none">
+							         <h4>Step 4 of 4 : My contact Information</h4>
 							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
 							          <div class="removing-stress-form-con">
 										 <div class="section-wrapper">
@@ -377,7 +379,7 @@
 							        </div>
 
 						        	 <!-- Step 4 -->
-						        	<div class="col-md-12"> 
+						        	<div class="col-xs-12 col-sm-12 col-md-12 domestic-submit-btn" style="display:none"> 
 										<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
 	
 	<!-- 						        	  <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>  -->

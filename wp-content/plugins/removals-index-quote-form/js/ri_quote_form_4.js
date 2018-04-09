@@ -205,8 +205,7 @@ jQuery( document ).ready(function() {
 			phone:"required",
 			postcode:"required",
 			address:"required",
-			city:"required",
-			city_to:"required",
+			city:"required",			
 			property_type_from:"required",
 			property_type_to:"required",
 			packing_service:"required",
@@ -234,13 +233,18 @@ jQuery( document ).ready(function() {
 
 		errorPlacement: function (error, element) {
             if (element.attr("name") == "property_type_from") {
-               error.appendTo("div.leftpart div.radio-with-text");
+               error.appendTo("div.moving-from-wrapper div.radio-with-text");
             }
 			else if(element.attr("name") == "property_type_to")
 			{
-				error.appendTo("div.rightpart div.radio-with-text");
+				error.appendTo("div.moving-to-wrapper div.radio-with-text");
 			}
-			else {
+			else if(element.attr("name") == "bedrooms")
+			{
+				error.appendTo("div.step1 div.removing-stress-form-con");
+			}	
+			else 
+			{
                 error.insertAfter(element);
             }
 
@@ -271,8 +275,7 @@ jQuery( document ).ready(function() {
 		    email:"Your email address is required",
 		    postcode:"Your post code address is required",
 		    address:"Your address is required",
-		    city:"Your city is required",
-		    city_to:"Your city is required",
+		    city:"Your city is required",		   
 		    property_type_from:"Property type is required",
 		    property_type_to:"Property type is required",
 		    packing_service:"Packing service is required",
@@ -300,9 +303,7 @@ jQuery( document ).ready(function() {
 	 		
 	 		jQuery("#show-after-get .bedroom-radios-container").each(function(){
 	 			jQuery(this).children().eq(0).removeClass("bedroom-radios-container-sel");
-	 		});
-	 		
-	 		
+	 		});	 		
 
 			if(jQuery(this).attr("rel") == "bed0"){
 				// need to update as per new design
@@ -311,7 +312,7 @@ jQuery( document ).ready(function() {
 				jQuery('#greenwood_drive').show();
 				
 
-				jQuery("input[name='any_addition_information']").attr( 'checked', 'checked' );
+				jQuery("input[name='any_addition_information']").attr('checked', 'checked');
 				jQuery('textarea[name="additional_info"]').valid();
 
 			}else{
@@ -322,6 +323,11 @@ jQuery( document ).ready(function() {
 			
 			jQuery(".removing-stress-form h4.property span").remove();
 			jQuery(".removing-stress-form h4.property").append('<span class="vaild-check valid"></span>');
+			
+			
+			jQuery("#show-after-get .step1 .bottom-arrow").css({'display':'block'});
+			jQuery("#show-after-get .step2").css({'display':'block'});
+			
 		});
        
 	 	//Checking for the checkbox checked and apply valid class to it.
@@ -390,18 +396,18 @@ jQuery( document ).ready(function() {
 		});
 
 		jQuery("#show-after-get input[name='lift_available_from']").click(function(){
-			jQuery("#show-after-get .leftpart .radio-with-text2 span").remove();
-			jQuery("#show-after-get .leftpart .radio-with-text2").append('<span class="vaild-check valid"></span>');
+			jQuery("#show-after-get .moving-from-wrapper .radio-with-text2 span").remove();
+			jQuery("#show-after-get .moving-from-wrapper .radio-with-text2").append('<span class="vaild-check valid"></span>');
 
 		});
 
 		jQuery("#show-after-get input[name='lift_available_to']").click(function(){
-			jQuery("#show-after-get .rightpart .radio-with-text2 span").remove();
-			jQuery("#show-after-get .rightpart .radio-with-text2").append('<span class="vaild-check valid"></span>');
+			jQuery("#show-after-get .moving-to-wrapper .radio-with-text2 span").remove();
+			jQuery("#show-after-get .moving-to-wrapper .radio-with-text2").append('<span class="vaild-check valid"></span>');
 
 		});
 
-		jQuery("#show-after-get input[name='parking_available_from']").click(function(){
+		/*jQuery("#show-after-get input[name='parking_available_from']").click(function(){
 			jQuery("#show-after-get .leftpart .radio-with-text3 span").remove();
 			jQuery("#show-after-get .leftpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
 
@@ -412,23 +418,23 @@ jQuery( document ).ready(function() {
 			jQuery("#show-after-get .rightpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
 
 		});
-
+*/
 
 		jQuery("#show-after-get input[name='packing_service']").click(function(){
-			jQuery("#show-after-get .packing-service span").remove();
-			jQuery("#show-after-get .packing-service").append('<span class="vaild-check valid"></span>');
+			jQuery("#show-after-get .packing-service .input-label-wrapper span").remove();
+			jQuery("#show-after-get .packing-service .input-label-wrapper").append('<span class="vaild-check valid"></span>');
 
 		});
 
 		jQuery("input[name='dismantle']").click(function(){
-			jQuery(".dismantle span").remove();
-			jQuery(".dismantle").append('<span class="vaild-check valid"></span>');
+			jQuery(".dismantle .input-label-wrapper span").remove();
+			jQuery(".dismantle .input-label-wrapper").append('<span class="vaild-check valid"></span>');
 
 		});
 
 		jQuery("input[name='storage']").click(function(){
-			jQuery(".storage span").remove();
-			jQuery(".storage").append('<span class="vaild-check valid"></span>');
+			jQuery(".storage .input-label-wrapper span").remove();
+			jQuery(".storage .input-label-wrapper").append('<span class="vaild-check valid"></span>');
 
 		});
 
@@ -455,27 +461,36 @@ jQuery( document ).ready(function() {
 		});
 
 		jQuery("#show-after-get select[name='floor_from']").change(function(){
-			if(jQuery(this).val() == "Ground"){
-				jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
-				jQuery("#show-after-get .leftpart .radio-with-text2 span").remove();
-				jQuery("#show-after-get .leftpart .radio-with-text2").append('<span class="vaild-check valid"></span>');
-			}
 			if(jQuery(this).val() != ""){
-				jQuery("#show-after-get span.floor_from").remove();
-				jQuery(this).after('<span class="vaild-check floor_from valid"></span>');
+				
+				if(jQuery(this).val() == "Ground"){
+					
+					jQuery("input[name='lift_available_from']").attr( 'checked', 'checked' );
+					jQuery("#show-after-get .moving-from-wrapper .radio-with-text2 span").remove();
+					jQuery("#show-after-get .moving-from-wrapper .radio-with-text2").append('<span class="vaild-check valid"></span>');
+				}
+				else
+				{			
+					jQuery("#show-after-get span.floor_from").remove();
+					jQuery(this).after('<span class="vaild-check floor_from valid"></span>');
+				}
 			}else{
-				jQuery("#show-after-get span.floor_from").remove();
+					jQuery("#show-after-get span.floor_from").remove();
 			}
 		});
 		jQuery("#show-after-get select[name='floor_to']").change(function(){
-			if(jQuery(this).val() == "Ground"){
-				jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
-				jQuery("#show-after-get .rightpart .radio-with-text2 span").remove();
-				jQuery("#show-after-get .rightpart .radio-with-text2").append('<span class="vaild-check valid"></span>');
-			}
 			if(jQuery(this).val() != ""){
-				jQuery("#show-after-get span.floor_to").remove();
-				jQuery(this).after('<span class="vaild-check floor_to valid"></span>');
+				if(jQuery(this).val() == "Ground"){
+					jQuery("input[name='lift_available_to']").attr( 'checked', 'checked' );
+					jQuery("#show-after-get .moving-to-wrapper .radio-with-text2 span").remove();
+					jQuery("#show-after-get .moving-to-wrapper .radio-with-text2").append('<span class="vaild-check valid"></span>');
+				}
+				else
+				{
+					jQuery("#show-after-get span.floor_to").remove();
+					jQuery(this).after('<span class="vaild-check floor_to valid"></span>');
+				}		
+				
 			}else{
 
 				jQuery("#show-after-get span.floor_to").remove();
@@ -922,6 +937,10 @@ jQuery( document ).ready(function() {
 		dateFormat: 'dd/mm/yy',
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
+			jQuery("#show-after-get .step2 .bottom-arrow").css({'display':'block'});
+			jQuery("#show-after-get .step3").css({'display':'block'});
+			jQuery("#show-after-get .step4").css({'display':'block'});
+			jQuery("#show-after-get .domestic-submit-btn").css({'display':'block'});
 
 		}
 	});
@@ -1029,10 +1048,7 @@ jQuery(document).ready(function(){
        if(typeof(term) != "undefined" && term != '')
  	   {
     	    postcode = '';
-    	    townName = '';
-        	//jQuery(".to-address-fields-wrapper").css({'visibility':'hidden'});
-			//jQuery("div.rightpart div.dontknow-exact-address").hide();
-			//jQuery("div.rightpart div.stress-moving-from").show();					
+    	    townName = '';        					
 			
 			var temp = term.split("(");
 			if(temp.length>1)
@@ -1040,17 +1056,17 @@ jQuery(document).ready(function(){
 				townName = temp[0].trim();
 				postcode = temp[1].replace(")","").trim();
 				
-				jQuery('.'+businessType+' .rightpart input[name="city_to"]').val(townName);
-				jQuery('.'+businessType+' .rightpart input[name="postcode_to"]').val(postcode);
+				jQuery('.'+businessType+' input[name="city_to"]').val(townName);
+				jQuery('.'+businessType+' input[name="postcode_to"]').val(postcode);
 			}
 			
-			jQuery('.'+businessType+' .rightpart input[name="town_postcode_to"]').val(term);
+			jQuery('.'+businessType+' input[name="town_postcode_to"]').val(term);
 				
 		}
     }
     
 
-     jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change",function(){
+     jQuery("div.stress-moving-from input[name='postcode']").on("change",function(){
          postcode_from  = jQuery("div.leftpart div.stress-moving-from input[name='postcode']").val();
          var commercial=0;
 
@@ -1094,10 +1110,10 @@ jQuery(document).ready(function(){
              }
          });
 
-         jQuery("div.rightpart div.stress-moving-from input[name='postcode_to']").on("change",function(){
-
-         	  postcode_to  = jQuery("div.rightpart div.stress-moving-from input[name='postcode_to']").val();
-               var commercial=0;
+         jQuery("div.stress-moving-from input[name='postcode_to']").on("change",function(){
+        	
+         	  postcode_to  = jQuery("div.stress-moving-from input[name='postcode_to']").val();
+              var commercial=0;
              if(postcode_to=='')
              {
                postcode_to = jQuery('#form-business .removing-stress-frm-con .rightpart .stress-moving-from input[name="postcode_to"]').val();
@@ -1114,32 +1130,34 @@ jQuery(document).ready(function(){
                    jQuery.ajax({
 
                  			//type: 'get',
-                 			dataType: 'json',
-                 			url: post_code_address_object.ajaxurl,
-                       data: {action: "get_address_by_postcode", postcode_to : postcode_to},
-                 			success: function(result){
-                         if(commercial!=1)
-                         {
-                         			jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name=city_to]").val(result.town_to[0]);
-     					            jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name=address_to]").val(result.line_1_to);
-                 					//jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name=postcode_to]").val(postcode_to);
-                         }
-                         else {
-                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='city_to']").val(result.town_to[0]);
-                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='address_to']").val(result.line_1_to);
-                           //jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='postcode_to']").val(postcode_to);
-                         }
-                 					jQuery("input:text").each(function(){
-                 						if (jQuery.trim(jQuery(this).val()).length != 0){
-                 							//jQuery(this).removeClass("pending");
-                 							jQuery(this).addClass("valid");
-                 						}
-                 						else
-                 						{
-                 							jQuery(this).removeClass("valid");
-                 						}
-                 						jQuery(this).removeClass("pending");
-       			            });
+                 		dataType: 'json',
+                 		url: post_code_address_object.ajaxurl,
+                        data: {action: "get_address_by_postcode", postcode_to : postcode_to},
+                 		success: function(result){
+		                         if(commercial!=1)
+		                         {
+		                         			jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper div.stress-moving-from input[name=city_to]").val(result.town_to[0]);
+		     					            jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper div.stress-moving-from input[name=address_to]").val(result.line_1_to);
+		     					           jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper .readyonly-address-wrapper").css({'display':'block'});
+		                 					jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper .readyonly-address-wrapper").text(result.town_to[0]+","+result.line_1_to+","+postcode_to+"United Kingdom");
+		                         }
+		                         else {
+		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='city_to']").val(result.town_to[0]);
+		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='address_to']").val(result.line_1_to);
+		                           //jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='postcode_to']").val(postcode_to);
+		                         }
+             					jQuery("input:text").each(function(){
+             						if (jQuery.trim(jQuery(this).val()).length != 0){
+             							
+             							jQuery(this).addClass("valid");
+             						}
+             						else
+             						{
+             							jQuery(this).removeClass("valid");
+             						}
+             						jQuery(this).removeClass("pending");
+             					});
+             					
                  			}
                      });
                  }

@@ -125,6 +125,7 @@
 
 .step3 .removing-stress-form-con .step-3-checkbox { 
 	padding: 8px 0 2px 0px;
+	position: relative;
 }
 
 .step3 .removing-stress-form-con .step-3-checkbox label {
@@ -134,9 +135,14 @@
 }
 
 .step3 .removing-stress-form-con .step-3-checkbox input { 
-	margin:0 5px 0 15px;
+	margin:0 5px 0 15px;	
 }
 
+.step3 .removing-stress-form-con .step-3-checkbox label.error{
+	margin: 27px 0 0 -20px;
+    position: absolute;
+    padding-left:5px;
+}
 
 span.bottom-arrow { 
 	display:block; 
@@ -175,7 +181,7 @@ span.bottom-arrow img {
 	float:left; 
 	width:100%; 
 	position:relative; 
-/* 	padding:0 22px 0 0; */
+
 }
 
 .removing-stress-form h4 { 
@@ -183,7 +189,7 @@ span.bottom-arrow img {
 	font-size:12px; 
 	font-weight:bold; 
 	color:#FFF;
-	padding:8px 20px;	
+	padding:8px 10px;	
 	border-radius: 5px 5px 0 0;  
 }
 
@@ -199,6 +205,43 @@ span.bottom-arrow img {
 	position:absolute;
 	width:auto;
 	z-index: 100;	
+}
+
+.residential .step3 span.valid, .residential .step-4-checkbox span.valid 
+{
+	margin-top:4px;
+	margin-left:3px;
+}
+
+.residential .removing-stress-form-con label.error{
+	font-size: 12px;
+	font-weight: 400;	
+}
+
+label#bedrooms-error{	
+	margin-left: 17%;	
+}
+
+.moving-from-to-section-separator{
+	border: 2px solid #efefef;
+    height: 0px;
+    margin: 25px -15px;
+}
+.moving-from-to-section-separator::after
+{
+	content:"";
+	border-top: 20px solid #efefef;
+	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
+	position: absolute;
+    left: 46%;
+}
+
+.residential .readyonly-address-wrapper{
+	background-color:#efefef;
+	width:100%;
+	height:60px;
+	padding:10px;	
 }
 
 /* For Postcode lookup */
@@ -241,6 +284,10 @@ span.bottom-arrow img {
 	.residential .bedroom-radios-container.box0_desc label {
 	    font-size: 10px !important;	 
 	    font-weight:normal !important;      
+	}
+	
+	label#bedrooms-error{	
+		margin-left: 20%;	
 	}
 }
 	

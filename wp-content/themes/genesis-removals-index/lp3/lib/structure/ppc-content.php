@@ -181,14 +181,14 @@ $dki_loc = dki_get_loc();
 					<div class="row">
 						<div class="col-sm-7">
 							<div class="row">
-								<div class="form-group col-sm-6">
+								<div class="form-group col-sm-12">
 									<label>I'm Moving From:</label>
 									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
-								<div class="form-group col-sm-6">
+								<!-- <div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
 									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode..."/>
-								</div>
+								</div> -->
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
@@ -281,14 +281,14 @@ $dki_loc = dki_get_loc();
 					<div class="row">
 						<div class="col-sm-7">
 							<div class="row">
-								<div class="form-group col-sm-6">
+								<div class="form-group col-sm-12">
 									<label>I'm Moving From:</label>
 									<input type="text" id="postcode_from3" name="postcode_from3" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
-								<div class="form-group col-sm-6">
+								<!-- <div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
 									<input type="text" id="postcode_to3" name="postcode_to3" class="form-control" placeholder="Enter Postcode..."/>
-								</div>
+								</div> -->
 							</div>
 							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
