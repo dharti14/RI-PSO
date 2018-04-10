@@ -13,7 +13,7 @@ require(THEME_PATH_DIR.'/lp3/lib/structure/header.php');
 
 add_action('genesis_loop','lp3_thanks_content_genesis_loop');
 
-function lp2_thanks_content_genesis_loop()
+function lp3_thanks_content_genesis_loop()
 {
 	require(THEME_PATH_DIR.'/lp3/lib/structure/thanks-content.php');
 }
