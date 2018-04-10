@@ -1142,8 +1142,8 @@ jQuery(document).ready(function(){
                  		success: function(result){
 		                         if(commercial!=1)
 		                         {
-                         			jQuery("#form div.moving-to-wrapper div.stress-moving-from input[name=city_to]").val(result.town_to[0]);
-     					            jQuery("#form div.moving-to-wrapper div.stress-moving-from input[name=address_to]").val(result.line_1_to);
+                         			jQuery("#form div.moving-to-wrapper div.stress-moving-to input[name=city_to]").val(result.town_to[0]);
+     					            jQuery("#form div.moving-to-wrapper div.stress-moving-to input[name=address_to]").val(result.line_1_to);
      					            jQuery("#form div.moving-to-wrapper .readyonly-address-wrapper").css({'display':'block'});
                  					jQuery("#form div.moving-to-wrapper .readyonly-address-wrapper").text(result.town_to[0] + result.line_1_to +", "+ postcode_to+", UNITED KINGDOM");
 		                         }
