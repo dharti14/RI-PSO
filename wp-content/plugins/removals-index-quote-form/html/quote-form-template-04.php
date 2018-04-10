@@ -221,20 +221,18 @@
 							                <label for="exampleInputEmail1">I'm moving to:</label>
 							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
 											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
- 							                <div class="to-address-fields-wrapper" style="display:none"> 
-							                	<input type="text" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
-							                	<input type="text" class="form-control" name="address_to" placeholder="Street Name">
-							                	<input type="text" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
- 											</div> 
+						                	 <input type="hidden" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
+						                	 <input type="hidden" class="form-control" name="address_to" placeholder="Street Name">
+						                	 <input type="hidden" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
 							              </div>
-							              <div class="form-group readyonly-address-wrapper" style="display:none;">
-							              		
-							              </div>
+							              
 										  <div class="form-group dontknow-exact-address">
 											  <label>Nearest town to property</label>
 											  <input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete="off" value="">
 											  <a href="javascript:void(0);" class="know-address" id='knowexactaddress'>I have the exact address</a>
 										  </div>
+										  <div class="form-group readyonly-address-wrapper" style="display:none;">
+							              </div>
 							              <div class="form-group radio-with-text">
 							               <h5>Property Type:</h5>
 							                <label for="house">

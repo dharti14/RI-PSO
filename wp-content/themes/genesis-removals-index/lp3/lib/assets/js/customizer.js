@@ -19,15 +19,17 @@ function pl_displayCallback(data,elementId) {
 jQuery( document ).ready(function() {
 	
 	
-	/*google analytics event tracking.*/	
+	if(typeof(ga) != "undefined")
+	{	
 	
-	//jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
+	 jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});
 
-	//jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
+	 jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Middle',4);});
 
-	//jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
+	 jQuery("#get-my-quote-bottom").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Bottom',4); });
 	
-			
+	}
+	
 	jQuery(".get-my-quote").click(function(){
 		
 		jQuery("div#dki").hide();
@@ -70,17 +72,17 @@ jQuery.ajax({
 			//type: 'get',
 			dataType: 'json',
 			url: post_code_address_object.ajaxurl,
-			data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
+			data: {action: "get_address_by_postcode", postcode_from : postcode_from},
 			success: function(result){
 				
 					jQuery("input[name=city]").val(result.town[0]);
 					jQuery("input[name=address]").val(result.line_1);
-					jQuery("input[name=city_to]").val(result.town_to[0]);
-					jQuery("input[name=address_to]").val(result.line_1_to);
+					//jQuery("input[name=city_to]").val(result.town_to[0]);
+					//jQuery("input[name=address_to]").val(result.line_1_to);
 				
 				
 					jQuery("input[name=postcode]").val(postcode_from);
-					jQuery("input[name=postcode_to]").val(postcode_to);
+					//jQuery("input[name=postcode_to]").val(postcode_to);
 					
 					jQuery("input:text").each(function(){
 						if (jQuery.trim(jQuery(this).val()).length != 0){
@@ -122,17 +124,17 @@ jQuery.ajax({
 			//type: 'post',
 			dataType: 'json',
 			url: post_code_address_object.ajaxurl,
-			data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
+			data: {action: "get_address_by_postcode", postcode_from : postcode_from},
 			success: function(result){
 					
 					jQuery("input[name=city]").val(result.town[0]);
 					jQuery("input[name=address]").val(result.line_1);
-					jQuery("input[name=city_to]").val(result.town_to[0]);
-					jQuery("input[name=address_to]").val(result.line_1_to);
+					//jQuery("input[name=city_to]").val(result.town_to[0]);
+					//jQuery("input[name=address_to]").val(result.line_1_to);
 				
 				
 					jQuery("input[name=postcode]").val(postcode_from);
-					jQuery("input[name=postcode_to]").val(postcode_to);
+					//jQuery("input[name=postcode_to]").val(postcode_to);
 					
 					jQuery("input:text").each(function(){
 						if (jQuery.trim(jQuery(this).val()).length != 0){
@@ -173,18 +175,18 @@ jQuery.ajax({
 			//type: 'post',
 			dataType: 'json',
 			url: post_code_address_object.ajaxurl,
-			data: {action: "get_address_by_postcode", postcode_from : postcode_from, postcode_to : postcode_to},
+			data: {action: "get_address_by_postcode", postcode_from : postcode_from},
 			success: function(result){
 				
 					
 					jQuery("input[name=city]").val(result.town[0]);
 					jQuery("input[name=address]").val(result.line_1);
-					jQuery("input[name=city_to]").val(result.town_to[0]);
-					jQuery("input[name=address_to]").val(result.line_1_to);
+					//jQuery("input[name=city_to]").val(result.town_to[0]);
+					//jQuery("input[name=address_to]").val(result.line_1_to);
 				
 				
 					jQuery("input[name=postcode]").val(postcode_from);
-					jQuery("input[name=postcode_to]").val(postcode_to);
+					//jQuery("input[name=postcode_to]").val(postcode_to);
 					
 					jQuery("input:text").each(function(){
 						if (jQuery.trim(jQuery(this).val()).length != 0){

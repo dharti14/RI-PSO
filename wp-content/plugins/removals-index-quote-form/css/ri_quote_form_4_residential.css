@@ -240,7 +240,7 @@ label#bedrooms-error{
 .residential .readyonly-address-wrapper{
 	background-color:#efefef;
 	width:100%;
-	height:60px;
+	height:auto;
 	padding:10px;	
 }
 

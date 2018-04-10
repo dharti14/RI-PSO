@@ -998,19 +998,24 @@ jQuery(document).ready(function(){
     jQuery('.dont-know-address').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from,.residential div.stress-moving-to").hide();
          jQuery("div.dontknow-exact-address .nearesttown").val("");
-         jQuery("div.stress-moving-from input:text,.residential div.stress-moving-to input:text").each(function(){
+         jQuery("div.stress-moving-to input:text,div.stress-moving-to input:hidden").each(function(){
  			jQuery(this).val("");				
  		 });
          jQuery("div.dontknow-exact-address").show();
+         jQuery('div.readyonly-address-wrapper').css({'display':'none'});
+ 		 jQuery('div.readyonly-address-wrapper').text('');
     });
     jQuery('.know-address').on("click",function(){
          
     	 jQuery("div.rightpart div.stress-moving-from,.residential div.stress-moving-to").show();
          jQuery("div.dontknow-exact-address").hide();
          
-         jQuery("div.rightpart div.stress-moving-from input:text, .residential div.stress-moving-to input:text").each(function(){
+         jQuery("div.stress-moving-to input:text,div.stress-moving-to input:hidden").each(function(){
 			jQuery(this).val("");				
 		});
+         
+        jQuery('div.readyonly-address-wrapper').css({'display':'none'});
+		jQuery('div.readyonly-address-wrapper').text('');
          
     });
     
@@ -1061,18 +1066,20 @@ jQuery(document).ready(function(){
 			}
 			
 			jQuery('.'+businessType+' input[name="town_postcode_to"]').val(term);
+			jQuery('.'+businessType+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'block'});
+			jQuery('.'+businessType+' div.moving-to-wrapper .readyonly-address-wrapper').text(term);
 				
 		}
     }
     
 
      jQuery("div.stress-moving-from input[name='postcode']").on("change",function(){
-         postcode_from  = jQuery("div.leftpart div.stress-moving-from input[name='postcode']").val();
+         postcode_from  = jQuery("div.stress-moving-from input[name='postcode']").val();
          var commercial=0;
 
          if(postcode_from=="")
          {
-               postcode_from = jQuery('#form-business .removing-stress-frm-con .leftpart .stress-moving-from input[name="postcode"]').val();
+               postcode_from = jQuery('#form-business .removing-stress-frm-con .leftpart input[name="postcode"]').val();
                commercial = 1;
          }
          if(postcode_from.trim()!='' && (postcode_from.length>6 && postcode_from.length<9))
@@ -1082,16 +1089,15 @@ jQuery(document).ready(function(){
                jQuery("input[name=city]").removeClass("valid");
 				  jQuery("input[name=address]").removeClass("valid");
                
-				  jQuery.ajax({
-             			//type: 'get',
+				  jQuery.ajax({             			
              	  dataType: 'json',
              	  url: post_code_address_object.ajaxurl,
                    data: {action: "get_address_by_postcode", postcode_from : postcode_from},
              			success: function(result){
 			                        if(commercial!=1)
 			                        {
-			                			jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name=city]").val(result.town[0]);
-			        					jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name=address]").val(result.line_1);
+			                			jQuery("#form div.stress-moving-from input[name=city]").val(result.town[0]);
+			        					jQuery("#form div.stress-moving-from input[name=address]").val(result.line_1);
 			        					//jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.leftpart div.stress-moving-from input[name=postcode]").val(postcode_from);
 			                        }
 			                        else {
@@ -1110,9 +1116,9 @@ jQuery(document).ready(function(){
              }
          });
 
-         jQuery("div.stress-moving-from input[name='postcode_to']").on("change",function(){
+         jQuery("div.stress-moving-to input[name='postcode_to']").on("change",function(){
         	
-         	  postcode_to  = jQuery("div.stress-moving-from input[name='postcode_to']").val();
+         	  postcode_to  = jQuery("div.stress-moving-to input[name='postcode_to']").val();
               var commercial=0;
              if(postcode_to=='')
              {
@@ -1136,12 +1142,13 @@ jQuery(document).ready(function(){
                  		success: function(result){
 		                         if(commercial!=1)
 		                         {
-		                         			jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper div.stress-moving-from input[name=city_to]").val(result.town_to[0]);
-		     					            jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper div.stress-moving-from input[name=address_to]").val(result.line_1_to);
-		     					           jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper .readyonly-address-wrapper").css({'display':'block'});
-		                 					jQuery("#form div.removing-stress-frm div.removing-stress-frm-con div.moving-to-wrapper .readyonly-address-wrapper").text(result.town_to[0]+","+result.line_1_to+","+postcode_to+"United Kingdom");
+                         			jQuery("#form div.moving-to-wrapper div.stress-moving-from input[name=city_to]").val(result.town_to[0]);
+     					            jQuery("#form div.moving-to-wrapper div.stress-moving-from input[name=address_to]").val(result.line_1_to);
+     					            jQuery("#form div.moving-to-wrapper .readyonly-address-wrapper").css({'display':'block'});
+                 					jQuery("#form div.moving-to-wrapper .readyonly-address-wrapper").text(result.town_to[0] + result.line_1_to + postcode_to+", UNITED KINGDOM");
 		                         }
-		                         else {
+		                         else 
+		                         {
 		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='city_to']").val(result.town_to[0]);
 		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='address_to']").val(result.line_1_to);
 		                           //jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='postcode_to']").val(postcode_to);
