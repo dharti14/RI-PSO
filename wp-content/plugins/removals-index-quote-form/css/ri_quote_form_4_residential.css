@@ -244,6 +244,12 @@ label#bedrooms-error{
 	padding:10px;	
 }
 
+
+/* crafti click css */
+#cc_c2a .mainbar {
+    display: none !important;
+}
+
 /* For Postcode lookup */
 
 .residential .dontknow-exact-address

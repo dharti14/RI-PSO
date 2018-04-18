@@ -93,7 +93,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			
 			add_shortcode('ri_quote_form', array( &$this, 'quote_form_html' ) );
 
-
+			
 
 			if(strpos(get_site_url(),'local')!==false) {
 				$this->mode = 'development';
@@ -190,7 +190,9 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			wp_enqueue_script( 'ri-jquery-scrollTo-js', RI_QUOTE_FORM_URL.'js/scrollTo.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-validate-js', RI_QUOTE_FORM_URL.'js/jquery.validate.min.js', array( 'jquery' ), '', true );
 			wp_enqueue_script( 'ri-jquery-datepicker',RI_QUOTE_FORM_URL.'js/jquery.datetimepicker.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'ri-quote-form-cc-lookup-js', RI_QUOTE_FORM_URL.'js/cc-lookup.js', array('jquery'), '', true );			
 			wp_enqueue_style( 'ri-jquery-datepicker-css', RI_QUOTE_FORM_URL.'css/datepicker.min.css' );
+			//wp_enqueue_style( 'ri-quote-form-cc-lookup-css', RI_QUOTE_FORM_URL.'css/cc-lookup.css' );
 
 		}
 

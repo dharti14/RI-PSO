@@ -24,7 +24,6 @@
 	$this->ri_load_css('ri_quote_form_css','ri_quote_form_4');
 	$this->ri_load_css('ri_quote_form_residential_css','ri_quote_form_4_residential');
 	wp_localize_script("ri_quote_form_js", 'post_code_address_object', array('ajaxurl' => admin_url("admin-ajax.php")));
-	
 	if(!empty($js_filename))
 	{
 		$this->ri_load_js('ri_selected_lookup_technology_js',$js_filename);
@@ -58,12 +57,10 @@
 				<input type="hidden" value="0" name="form-type">
 				<input type="hidden" value="<?php echo $ri_page_id;?>" name="ri_page_id">
 
-					   		<?php echo $this->get_plocal_tags_var(); ?>
+					 <?php echo $this->get_plocal_tags_var(); ?>
 
-					 <div class="row">
-					   		
-						<div class="col-md-offset-2 col-xs-12 col-sm-8 col-md-6">
-					   		
+					 <div class="row">					   		
+						<div class="col-md-offset-2 col-xs-12 col-sm-8 col-md-6">					   		
 					   		<div class="row">
 					   		<!-- Step 1 -->
 					  		<div class="removing-stress-form step1 col-xs-12 col-sm-12 col-md-12">
@@ -112,7 +109,7 @@
 					                  	<img alt="bed5" src="<?php echo RI_QUOTE_FORM_URL;?>images/5bed.png">
 					                  </div>
 					                  <div class="bed-radios-input-wrapper">
-					                  	<input type="radio" class="bedrooms" id="bed3" value="5" name="bedrooms">
+					                  	<input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
 					                  	<label for="bed5">5<br>bed</label>
 					                  </div>					                  
 					                </div>					                
@@ -124,38 +121,7 @@
 					                  	<input type="radio" class="bedrooms" id="bed0" value="in description" name="bedrooms">
 					                  	<label for="bed0">Describe the inventory or contents of your move</label>
 					                  </div>					                  
-					                </div>
-									
-					                 <!-- <div rel="bed2" class="bed-radios-container">
-					                  <div class="img2bed bedimgwrapper">&nbsp;</div>
-					                  <input type="radio" class="bedrooms" id="bed2" value="2" name="bedrooms">
-					                  <label for="bed2">2<br>bed</label>
-					                </div>
-
-					                <div rel="bed3" class="bed-radios-container">
-					                  <div class="img3bed bedimgwrapper">&nbsp;</div>
-					                  <input type="radio" class="bedrooms" id="bed3" value="3" name="bedrooms">
-					                  <label for="bed3">3<br>bed</label>
-					                </div>
-
-					                <div rel="bed4" class="bed-radios-container">
-					                  <div class="img4bed bedimgwrapper">&nbsp;</div>
-					                  <input type="radio" class="bedrooms" id="bed4" value="4" name="bedrooms">
-					                  <label for="bed4">4<br>bed</label>
-					                </div>
-
-					                <div rel="bed5" class="bed-radios-container">
-					                  <div class="img5bed bedimgwrapper">&nbsp;</div>
-					                  <input type="radio" class="bedrooms" id="bed5" value="5" name="bedrooms">
-					                  <label for="bed5">5<br>bed +</label>
-					                </div>
-
-					                <div rel="bed0" class="bed-radios-container box_desc">
-					                  <div class="imgdesc bedimgwrapper">&nbsp;</div>
-					                  <input type="radio" id="bed0" value="in description" name="bedrooms">
-					                  <label for="bed0">Describe the<br>inventory or<br>contents of<br>your move</label>
-					                </div>  -->
-
+					                </div>				  
 					              </div>
 					            </div>
 					            

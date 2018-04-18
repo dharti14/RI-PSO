@@ -821,15 +821,6 @@ jQuery( document ).ready(function() {
         	});
 
 
-		/*jQuery(".get-my-quote-second-international").click(function() {
-    		jQuery("#form-international").submit();
- 		 });
-
-	 	jQuery('#form-international input').keydown(function(e) {
-			if (e.keyCode == 13) {
-    			jQuery("#form-international").submit();
-			}
- 		 });*/
 
 
 		jQuery("#form-international input[name='property_type_from']").click(function(){
@@ -1019,16 +1010,7 @@ jQuery(document).ready(function(){
          
     });
     
-   /* jQuery('#dontknowcommercialaddress').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").hide();
-         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
-         jQuery("div.rightpart div.dontknow-exact-address").show();
-    });
-    jQuery('#knowexactcommercialaddress').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
-         jQuery("div.rightpart div.dontknow-exact-address").hide();
-    });*/
+   
 
     // Below function is call back of postcode look up
     
@@ -1116,18 +1098,19 @@ jQuery(document).ready(function(){
              }
          });
 
-         jQuery("div.stress-moving-to input[name='postcode_to']").on("change",function(){
-        	
-         	  postcode_to  = jQuery("div.stress-moving-to input[name='postcode_to']").val();
+         jQuery("div.stress-moving-from input[name='postcode_to']").on("change",function(){     	
+        	 
+        	  
+         	  postcode_to  = jQuery("div.stress-moving-from input[name='postcode_to']").val();
               var commercial=0;
-             if(postcode_to=='')
+             if(postcode_to != '')
              {
                postcode_to = jQuery('#form-business .removing-stress-frm-con .rightpart .stress-moving-from input[name="postcode_to"]').val();
                commercial = 1;
              }
 
               if(postcode_to.trim()!='' && (postcode_to.length>6 && postcode_to.length<9))
-              {
+              {	 
              	  jQuery("input[name=city_to]").addClass("pending");
   				  jQuery("input[name=address_to]").addClass("pending"); 
   				  jQuery("input[name=city_to]").removeClass("valid");
@@ -1140,7 +1123,9 @@ jQuery(document).ready(function(){
                  		url: post_code_address_object.ajaxurl,
                         data: {action: "get_address_by_postcode", postcode_to : postcode_to},
                  		success: function(result){
-		                         if(commercial!=1)
+                 				
+                 				
+		                         if(commercial==0)
 		                         {
                          			jQuery("#form div.moving-to-wrapper div.stress-moving-to input[name=city_to]").val(result.town_to[0]);
      					            jQuery("#form div.moving-to-wrapper div.stress-moving-to input[name=address_to]").val(result.line_1_to);
@@ -1149,6 +1134,7 @@ jQuery(document).ready(function(){
 		                         }
 		                         else 
 		                         {
+		                        	
 		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='city_to']").val(result.town_to[0]);
 		                           jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='address_to']").val(result.line_1_to);
 		                           //jQuery("#form-business div.removing-stress-frm div.removing-stress-frm-con div.rightpart div.stress-moving-from input[name='postcode_to']").val(postcode_to);
@@ -1169,4 +1155,72 @@ jQuery(document).ready(function(){
                      });
                  }
            });
+         
+         
+        // crafticlicks postcode lookup
+         
+    	 var cc_postcodeLookup = new clickToAddress({
+
+    			accessToken: 'b6e12-06b5f-e1c4d-00fca',
+    			domMode: 'name',
+    			showLogo:false, 
+    			cssPath: "/wp-content/plugins/removals-index-quote-form/css/cc-lookup.css",
+    			historyTools:false,
+    			defaultCountry: 'gbr',
+    			getIpLocation: false,
+    			countrySelector: false,
+    			enabledCountries: ["gbr"],
+    			countryMatchWith: 'iso_3',
+    			disableAutoSearch: false,
+    			texts: {
+    		        default_placeholder: 'E.G. SK4 4BE'
+    			}
+    		});
+         
+    	
+    	 cc_postcodeLookup.attach({
+ 			search:     'postcode_to',
+ 		},
+ 		{
+ 		 onResultSelected: function(classObj, domObject, resObj) { 				
+ 				
+ 				jQuery("#show-after-get input[name='address_to']").val(resObj.line_1);
+ 				jQuery("#show-after-get input[name='city_to']").val(resObj.locality);
+ 				jQuery("#show-after-get input[name='postcode_to']").val(resObj.postal_code);
+ 				
+ 				var addressHtml = "";
+ 				if(resObj.line_1 != "") {
+ 					addressHtml += resObj.line_1;
+ 				}				
+
+ 				if(resObj.locality != "") {
+
+ 					if( addressHtml != "" ) addressHtml +="<br>";
+ 					addressHtml += resObj.locality;
+ 				}
+
+ 				if(resObj.postal_code != "") {
+
+ 					if( addressHtml != "" ) addressHtml +=", ";
+ 					addressHtml += resObj.postal_code;
+ 				}
+
+ 				if(resObj.country_name != "") {
+
+ 					if( addressHtml != "" ) addressHtml +="<br>";
+ 					addressHtml += resObj.country_name;
+ 				}
+
+ 								
+ 				jQuery("#show-after-get .readyonly-address-wrapper").html("<div>"+addressHtml+"</div>").show();
+ 			
+
+ 		},
+ 		onSearchFocus: function(classObj, domObject, resObj) {
+ 			jQuery("#show-after-get input[name='postcode_to']").removeClass('valid');
+ 			jQuery("#show-after-get input[name='postcode_to']").val('');
+ 		}
+ 	  });
+
+         
      });
