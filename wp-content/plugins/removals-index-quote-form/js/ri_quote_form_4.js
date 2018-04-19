@@ -1241,10 +1241,12 @@ jQuery(document).ready(function(){
 
  		},
  		onSearchFocus: function(classObj, domObject, resObj) {
+ 			
+ 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none','border':'1px solid #ccc'});
+ 			//jQuery("#show-after-get #postcodeto.valid").css({'border':'none'});
  			jQuery("#show-after-get input[name='postcode_to']").removeClass('valid');
  			jQuery("#show-after-get input[name='postcode_to']").val('');
- 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none'});
- 			jQuery("#show-after-get #postcodeto.valid").css({'border':'none'});
+ 			
  		}
  	  });
 
