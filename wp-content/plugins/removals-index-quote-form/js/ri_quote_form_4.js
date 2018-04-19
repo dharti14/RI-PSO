@@ -1213,6 +1213,7 @@ jQuery(document).ready(function(){
 
  								
  				jQuery("#show-after-get .readyonly-address-wrapper").html("<div>"+addressHtml+"</div>").show();
+ 				jQuery("#show-after-get #postcodeto.valid").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat'});
  			
 
  		},

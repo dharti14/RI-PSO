@@ -250,6 +250,10 @@ label#bedrooms-error{
     display: none !important;
 }
 
+.residential #postcodeto.valid {
+	background:none;		
+}
+
 /* For Postcode lookup */
 
 .residential .dontknow-exact-address
