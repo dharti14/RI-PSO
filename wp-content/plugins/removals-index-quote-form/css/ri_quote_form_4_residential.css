@@ -247,11 +247,12 @@ label#bedrooms-error{
 
 /* crafti click css */
 #cc_c2a .mainbar {
-    display: none !important;
+    display: none !important;    
 }
 
 .residential #postcodeto.valid {
-	background:none;		
+	background:none;
+	border:none; 		
 }
 
 /* For Postcode lookup */

@@ -324,9 +324,28 @@ jQuery( document ).ready(function() {
 			jQuery(".removing-stress-form h4.property span").remove();
 			jQuery(".removing-stress-form h4.property").append('<span class="vaild-check valid"></span>');
 			
-			
-			jQuery("#show-after-get .step1 .bottom-arrow").css({'display':'block'});
-			jQuery("#show-after-get .step2").css({'display':'block'});
+			if(jQuery("#show-after-get .step2").css("display") == "none")
+			{	
+				jQuery("#show-after-get .step1 .bottom-arrow").css({'display':'block'});
+				jQuery("#show-after-get .step2").css({'display':'block'});
+								
+				isvalidAddress = false;
+				
+				if (jQuery("#show-after-get input[name='postcode']").val() != '' && jQuery("#show-after-get input[name='city']").val() != '' && jQuery("#show-after-get input[name='address']").val() != ''){
+					
+					isvalidAddress = true;
+				}
+					
+					
+				if(isvalidAddress){
+					
+					jQuery("#show-after-get input[name='houseno']").focus();
+				}
+				else
+				{
+					jQuery("#show-after-get input[name='postcode']").focus();
+				}
+			}
 			
 		});
        
@@ -928,10 +947,14 @@ jQuery( document ).ready(function() {
 		dateFormat: 'dd/mm/yy',
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
-			jQuery("#show-after-get .step2 .bottom-arrow").css({'display':'block'});
-			jQuery("#show-after-get .step3").css({'display':'block'});
-			jQuery("#show-after-get .step4").css({'display':'block'});
-			jQuery("#show-after-get .domestic-submit-btn").css({'display':'block'});
+			
+			if(jQuery("#show-after-get .step3").css('display') == "none")
+			{		
+				jQuery("#show-after-get .step2 .bottom-arrow").css({'display':'block'});
+				jQuery("#show-after-get .step3").css({'display':'block'});
+				jQuery("#show-after-get .step4").css({'display':'block'});
+				jQuery("#show-after-get .domestic-submit-btn").css({'display':'block'});
+			}	
 
 		}
 	});
@@ -1213,13 +1236,14 @@ jQuery(document).ready(function(){
 
  								
  				jQuery("#show-after-get .readyonly-address-wrapper").html("<div>"+addressHtml+"</div>").show();
- 				jQuery("#show-after-get #postcodeto.valid").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat'});
+ 				jQuery("#show-after-get #postcodeto.valid").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat','border':'1px solid #1ec279'});
  			
 
  		},
  		onSearchFocus: function(classObj, domObject, resObj) {
  			jQuery("#show-after-get input[name='postcode_to']").removeClass('valid');
  			jQuery("#show-after-get input[name='postcode_to']").val('');
+ 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none','border':'none'});
  		}
  	  });
 
