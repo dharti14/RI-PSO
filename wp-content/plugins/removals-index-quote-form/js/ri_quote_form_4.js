@@ -1018,6 +1018,7 @@ jQuery(document).ready(function(){
          jQuery("div.dontknow-exact-address").show();
          jQuery('div.readyonly-address-wrapper').css({'display':'none'});
  		 jQuery('div.readyonly-address-wrapper').text('');
+ 		 jQuery('.nearesttown').focus();
     });
     jQuery('.know-address').on("click",function(){
          
@@ -1030,6 +1031,7 @@ jQuery(document).ready(function(){
          
         jQuery('div.readyonly-address-wrapper').css({'display':'none'});
 		jQuery('div.readyonly-address-wrapper').text('');
+		jQuery('input[name="postcode_to"]').focus();
          
     });
     
@@ -1242,8 +1244,7 @@ jQuery(document).ready(function(){
  		},
  		onSearchFocus: function(classObj, domObject, resObj) {
  			
- 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none','border':'1px solid #ccc'});
- 			//jQuery("#show-after-get #postcodeto.valid").css({'border':'none'});
+ 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none','border':'1px solid #66afe9'}); 			
  			jQuery("#show-after-get input[name='postcode_to']").removeClass('valid');
  			jQuery("#show-after-get input[name='postcode_to']").val('');
  			
