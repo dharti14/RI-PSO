@@ -15,9 +15,10 @@ function pl_displayCallback(data,elementId) {
 			}
 }
 
-
 jQuery( document ).ready(function() {
 	
+	active_business_type_class = '';
+
 	
 	if(typeof(ga) != "undefined")
 	{	
@@ -43,6 +44,7 @@ jQuery( document ).ready(function() {
 		jQuery("footer.main").hide();
 		
 		
+		
 		var postcode_from = jQuery("#postcode_from").val();
 		var postcode_to = jQuery("#postcode_to").val();
 		
@@ -60,16 +62,19 @@ jQuery( document ).ready(function() {
 
 		if(business_type == "Business Removal"){
 			jQuery("#show-after-get-business").css("display","block");
+			active_business_type_class = ".business";
 			jQuery('html, body').animate({
         		scrollTop: jQuery('#show-after-get-business').offset().top
     		}, 300);
 		}else if(business_type == "International"){
 			jQuery("#show-after-get-international").css("display","block");
+			active_business_type_class = ".international";
 			jQuery('html, body').animate({
         		scrollTop: jQuery('#show-after-get-international').offset().top
     		}, 300);
 		}else{	
 			jQuery("#show-after-get").css("display","block");
+			active_business_type_class = ".residential";
 			jQuery('html, body').animate({
         		scrollTop: jQuery('#show-after-get').offset().top
     		}, 300);
@@ -123,7 +128,7 @@ jQuery( document ).ready(function() {
 		jQuery(".get_quotes2").hide();
 		jQuery("#find_out_more").hide();
 		jQuery("footer.main").hide();
-		
+		active_business_type_class = ".residential";
 		var postcode_from = jQuery("#postcode_from2").val();
 		var postcode_to = jQuery("#postcode_to2").val();
 		
@@ -169,7 +174,7 @@ jQuery( document ).ready(function() {
 		jQuery(".get_quotes2").hide();
 		jQuery("#find_out_more").hide();
 		jQuery("footer.main").hide();
-		
+		active_business_type_class = ".residential";
 		var postcode_from = jQuery("#postcode_from3").val();
 		var postcode_to = jQuery("#postcode_to3").val();
 		

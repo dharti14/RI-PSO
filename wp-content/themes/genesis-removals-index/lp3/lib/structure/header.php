@@ -81,22 +81,26 @@ function lp3_header(){
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <a id="logo" href="<?php if ( is_page_template('lp3/lp3-ppc.php')) {
-            	
-            		global $wp;
-            		echo home_url( $wp->request );
-            	
-		     	}else{
-		     		echo bloginfo( 'url' );
-		     	}
-		     	?>" title="<?php bloginfo( 'name' );?>">
-              <img width="180" src="<?php echo THEME_PATH_URI;?>/lp3/lib/assets/images/removals-index_logo.svg" alt="<?php echo $dki_hln;?>"/>
-            </a>
+            <div class="header-logo-wrapper">
+	            <a id="logo" href="<?php if ( is_page_template('lp3/lp3-ppc.php')) {
+	            	
+	            		global $wp;
+	            		echo home_url( $wp->request );
+	            	
+			     	}else{
+			     		echo bloginfo( 'url' );
+			     	}
+			     	?>" title="<?php bloginfo( 'name' );?>">
+	              <img width="180" src="<?php echo THEME_PATH_URI;?>/lp3/lib/assets/images/removals-index_logo.svg" alt="<?php echo $dki_hln;?>"/>
+	            </a>
+            </div>
           </div>
           <div class="col-sm-4">
+           <div class="header-trustpilot-logos-wrapper">
           	<div class="trustpilot-logos">
           		<img src="<?php echo THEME_PATH_URI;?>/lp3/lib/assets/images/Trustpilot.svg" alt="<?php echo $dki_hln;?>"/>
           	</div>
+           </div>	
           </div>
           <div class="col-sm-4 call">
             <span class="glyphicon glyphicon-earphone"></span>

@@ -1,3 +1,15 @@
+.header-logo-wrapper,.header-trustpilot-logos-wrapper{
+	display:table;
+	width: 100%;
+}
+.header-logo-wrapper>a#logo,.header-trustpilot-logos-wrapper .trustpilot-logos{
+	height:50px;
+	display:table-cell;
+	overflow:hidden;	
+}
+.header-trustpilot-logos-wrapper .trustpilot-logos{
+	height:58px;
+}
 .trustpilot-logos img {
 	height: 58px;
     width: 100%;
