@@ -141,7 +141,7 @@
 							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">							                
 							                <input type="text" class="form-control" name="city" placeholder="Town / City *">
 							                <input type="text" class="form-control" name="address" placeholder="Street Name *">
-							                <input type="tel" class="form-control" name="houseno" placeholder="Enter House Number...">
+							                <input type="number" class="form-control" name="houseno" placeholder="Enter House Number..." pattern="[0-9]*">
 							              </div>
 
 							              <div class="form-group radio-with-text">

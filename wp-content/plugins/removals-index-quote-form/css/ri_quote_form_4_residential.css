@@ -249,6 +249,15 @@ label#bedrooms-error{
 #cc_c2a .mainbar {
     display: none !important;    
 }
+#cc_c2a .c2a_footer{
+	min-height:0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 .residential #postcodeto.valid {
 	background:none;

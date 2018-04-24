@@ -902,6 +902,7 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
 	display: block;
 	margin:5px 0 8px 0 !important;
 	font-size: 15px !important;
+	clear: both;
 }
 
 input[name="postcode_to"]{
