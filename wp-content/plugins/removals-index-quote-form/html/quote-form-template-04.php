@@ -64,7 +64,7 @@
 					   		<div class="row">
 					   		<!-- Step 1 -->
 					  		<div class="removing-stress-form step1 col-xs-12 col-sm-12 col-md-12">
-					  		<span class="bottom-arrow" style="display:none"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+					  		<span class="bottom-arrow" style="display:none"></span>
 					            <div class="nearly"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/nearly-img-new.png" alt="<?php echo $dki_hln;?>"></div>
 					             <h4 class="property">Step 1 of 4 : Size of my current property</h4>
 					              <div class="removing-stress-form-con">					              
@@ -132,7 +132,7 @@
 								
 							       <div class="removing-stress-form step2 col-xs-12 col-sm-12 col-md-12" style="display:none">
 							         <h4>Step 2 of 4 : My move</h4>
-							         <span class="bottom-arrow" style="display:none"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="bottom-arrow" style="display:none"></span>
 							          <div class="removing-stress-form-con">
 							           <div class="section-wrapper">
 							           <div class="moving-from-wrapper">
@@ -141,7 +141,7 @@
 							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">							                
 							                <input type="text" class="form-control" name="city" placeholder="Town / City *">
 							                <input type="text" class="form-control" name="address" placeholder="Street Name *">
-							                <input type="number" class="form-control" name="houseno" placeholder="Enter House Number..." pattern="[0-9]*">
+							                <input type="text" class="form-control" name="houseno" placeholder="Enter House Number...">
 							              </div>
 
 							              <div class="form-group radio-with-text">
@@ -250,7 +250,7 @@
 
 					            <div class="removing-stress-form step3 col-xs-12 col-sm-12 col-md-12" style="display:none">
 							         <h4>Step 3 of 4 : Things I would also like help with</h4>
-							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="bottom-arrow"></span>
 							          <div class="removing-stress-form-con"> 										
 							              <div class="form-group">
 							               <div class="input-label-wrapper">
@@ -314,7 +314,7 @@
 
 							       <div class="removing-stress-form step4 col-xs-12 col-sm-12 col-md-12" style="display:none">
 							         <h4>Step 4 of 4 : My contact Information</h4>
-							         <span class="bottom-arrow"><img src="<?php echo RI_QUOTE_FORM_URL;?>images/arrow.png" alt="<?php echo $dki_hln;?>"></span>
+							         <span class="bottom-arrow"></span>
 							          <div class="removing-stress-form-con">
 										 <div class="section-wrapper">
 							              <div class="form-group">
