@@ -330,7 +330,7 @@ jQuery( document ).ready(function() {
 				jQuery("#show-after-get .step2").css({'display':'block'});
 					
 				jQuery('html, body').animate({
-	        		scrollTop: jQuery('#show-after-get .step2 .removing-stress-form-con').offset().top
+	        		scrollTop: jQuery('#show-after-get .step2').offset().top
 	    		}, 800);
 				isvalidAddress = false;
 				
@@ -950,7 +950,7 @@ jQuery( document ).ready(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
-		orientation:'bottom',
+		orientation:'bottom',		
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
@@ -961,7 +961,7 @@ jQuery( document ).ready(function() {
 				jQuery("#show-after-get .step4").css({'display':'block'});
 				jQuery("#show-after-get .domestic-submit-btn").css({'display':'block'});
 				jQuery('html, body').animate({
-	        		scrollTop: jQuery('#show-after-get .step3 .removing-stress-form-con').offset().top
+	        		scrollTop: jQuery('#show-after-get .step3').offset().top
 	    		}, 800);
 				
 			}	
