@@ -68,7 +68,11 @@ function handle_ri_main_url_redirects($redirect_url, $requested_url)
 
 	//if it is RI PPC URL /ri/main/index.php then we need to preserve the URL
 
-	if(stripos($requested_url, 'ri/main/index.php')!==FALSE)
+	if(stripos($requested_url, 'ri/main/index.php')!==FALSE || 
+			stripos($requested_url, 'ri/main/index-3.php')!==FALSE ||
+			stripos($requested_url, 'ri/main/index-5.php')!==FALSE ||
+			stripos($requested_url, 'ri/main/index-6.php')!==FALSE ||
+			stripos($requested_url, 'ri/main/index-m.php')!==FALSE)
 	{
 		return $requested_url; //this will prevent redirect
 	}
@@ -103,6 +107,7 @@ function ri_rewrite_rules($rules) {
 	$newrules["^ri\/main\/index.php$"]  		=  'index.php?page_id='.ri_get_id_by_slug('ri-1');
 	$newrules["^ri\/main\/index-3.php$"] 		=  'index.php?page_id='.ri_get_id_by_slug('ri-3');
 	$newrules["^ri\/main\/index-5.php$"] 		=  'index.php?page_id='.ri_get_id_by_slug('ri-5');
+	$newrules["^ri\/main\/index-6.php$"] 		=  'index.php?page_id='.ri_get_id_by_slug('ri-6');
 	$newrules["^ri\/main\/index-m.php$"] 		=  'index.php?page_id='.ri_get_id_by_slug('ri-m');
 	
 	$newrules["^2\/thanks/?$"] 					=  'index.php?page_id='.ri_get_id_by_slug('/2thanks');
