@@ -17,6 +17,7 @@ function pl_displayCallback(data,elementId) {
 
 
 jQuery( document ).ready(function() {
+
 	if(typeof(ga) != "undefined")
 	{	
 		jQuery("#get-my-quote-top").on('click', function(){ ga('send', 'event', 'Landing Page CTA Click', 'Click', 'Click through to form Top',4);});

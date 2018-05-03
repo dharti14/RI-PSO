@@ -9,6 +9,7 @@ jQuery( document ).ready(function() {
 		jQuery("#get-my-quote-middle").on('click', function(){ ga('send', 'event', 'Home page CTA Click', 'Click', 'Click through to form Middle',4);});
 	}
 
+
 	function open_mobile_menu(){
 
 		jQuery('#mobile-header-navbar-collapse').toggle( 'fold', 100);
