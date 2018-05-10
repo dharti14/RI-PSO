@@ -905,13 +905,13 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
 	clear: both;
 }
 
-input[name="postcode_to"]{
+#show-after-get-business input[name="postcode_to"]{
 	margin-bottom: 5px !important;
 }
 
-input.nearesttown{
+ #show-after-get-business input.nearesttown{
 	margin-bottom: 0px !important;
-}
+} 
 
 .dontknow-exact-address {
 	margin-bottom: 138px;

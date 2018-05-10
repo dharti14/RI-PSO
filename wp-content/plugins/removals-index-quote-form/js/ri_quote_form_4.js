@@ -204,6 +204,16 @@ jQuery( document ).ready(function() {
 			},
 			phone:"required",
 			postcode:"required",
+			postcode_to:{
+				required: function(element) {
+		            return jQuery("#nearesttown").is(':empty');
+		        }
+			},
+			nearesttown:{
+				required: function(element) {
+		            return jQuery("#postcodeto").is(':empty');
+		        }
+			},
 			address:"required",
 			city:"required",			
 			property_type_from:"required",
@@ -274,6 +284,12 @@ jQuery( document ).ready(function() {
 		    phone:"Please enter a valid phone number",
 		    email:"Your email address is required",
 		    postcode:"Your post code address is required",
+		    postcode_to:{
+		    	required:"Please select moving to postcode"
+		    },
+		    nearesttown:{
+		    	required:"Please select nearest town"
+		    },
 		    address:"Your address is required",
 		    city:"Your city is required",		   
 		    property_type_from:"Property type is required",
@@ -448,15 +464,27 @@ jQuery( document ).ready(function() {
 
 		});
 
-		jQuery("input[name='dismantle']").click(function(){
+		jQuery("#show-after-get input[name='dismantle']").click(function(){
 			jQuery(".dismantle .input-label-wrapper span").remove();
 			jQuery(".dismantle .input-label-wrapper").append('<span class="vaild-check valid"></span>');
 
 		});
 
-		jQuery("input[name='storage']").click(function(){
+		jQuery("#show-after-get input[name='storage']").click(function(){
 			jQuery(".storage .input-label-wrapper span").remove();
 			jQuery(".storage .input-label-wrapper").append('<span class="vaild-check valid"></span>');
+
+		});
+		
+		jQuery("input[name='dismantle']:not(#show-after-get input[name='dismantle'])").click(function(){
+			jQuery(".dismantle span").remove();
+			jQuery(".dismantle").append('<span class="vaild-check valid"></span>');
+
+		});
+
+		jQuery("input[name='storage']:not(#show-after-get input[name='storage'])").click(function(){
+			jQuery(".storage span").remove();
+			jQuery(".storage").append('<span class="vaild-check valid"></span>');
 
 		});
 
