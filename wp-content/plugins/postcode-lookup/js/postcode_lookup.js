@@ -24,8 +24,10 @@ jQuery('document').ready(function() {
 		        	}
 		         }	
 	            else
-	            {
-	        		plResponse = ["No Data Found"]
+	            {	
+	            	plResponse = ["No Data Found"]	
+	            	jQuery(auto_complete_plugin.selector).val("");	        		        		
+	            	jQuery(auto_complete_plugin.selector).removeClass("valid");	        		
 	            }
 	        	
 	        	response(plResponse);
@@ -65,6 +67,7 @@ jQuery('document').ready(function() {
 		
 	jQuery(auto_complete_plugin.selector).focusout(function() {		
 		jQuery(this).css({'background':'none'});
+		
 	});
 	  
 	

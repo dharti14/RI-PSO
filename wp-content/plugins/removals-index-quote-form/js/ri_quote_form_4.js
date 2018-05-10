@@ -3,6 +3,68 @@ jQuery( document ).ready(function() {
 
 	//Custom Validations
 
+	//Postcode Validation
+	
+	jQuery.validator.addMethod("postcodeValidate", function (post_code, element) {
+		
+		
+		e = post_code;		
+		var postcodePrefix = ['ab', 'al', 'b', 'ba', 'bb', 'bd', 'bh', 'bl', 'bn', 'br', 'bs', 'bt', 'ca', 'cb', 'cf', 'ch', 'cm', 'co', 'cr', 'ct', 'cv', 'cw', 'da', 'dd', 'de', 'dg', 'dh', 'dl', 'dn', 'dt', 'dy', 'e', 'ec', 'eh', 'en', 'ex', 'fk', 'fy', 'g', 'gl', 'gu', 'gy', 'ha', 'hd', 'hg', 'hp', 'hr', 'hs', 'hu', 'hx', 'ig', 'im', 'ip', 'iv', 'je', 'ka', 'kt', 'kw', 'ky', 'l', 'la', 'ld', 'le', 'll', 'ln', 'ls', 'lu', 'm', 'me', 'mk', 'ml', 'n', 'ne', 'ng', 'nn', 'np', 'nr', 'nw', 'ol', 'ox', 'pa', 'pe', 'ph', 'pl', 'po', 'pr', 'rg', 'rh', 'rm', 's', 'sa', 'se', 'sg', 'sk', 'sl', 'sm', 'sn', 'so', 'sp', 'sr', 'ss', 'st', 'sw', 'sy', 'ta', 'td', 'te', 'tf', 'tn', 'tq', 'tr', 'ts', 'tw', 'ub', 'w', 'wa', 'wc', 'wd', 'wf', 'wn', 'wr', 'ws', 'wv', 'yo', 'ze'];
+		var postcode = e.replace(/\s+/, '');
+		var prefix = '';
+		var format = 'invalid';
+		if (postcode.length > 7) return !1;
+		
+		if (postcode.length > 4)
+		{
+			var patterns = ['((^[a-zA-Z]{2})[\\d]{1}[a-zA-Z]{1})[\\d]{1}[a-zA-Z]{2}', 
+			                '((^[a-zA-Z]{2})[\\d]{2})[\\d]{1}[a-zA-Z]{2}', 
+			                '((^[a-zA-Z]{2})[\\d]{1})[\\d]{1}[a-zA-Z]{2}', 
+			                '((^[a-zA-Z]{1})[\\d]{1}[a-zA-Z]{1})[\\d]{1}[a-zA-Z]{2}', 
+			                '((^[a-zA-Z]{1})[\\d]{1})[\\d]{1}[a-zA-Z]{2}', 
+			                '((^[a-zA-Z]{1})[\\d]{2})[\\d]{1}[a-zA-Z]{2}'];
+			for (var i = 0; i < patterns.length; i++)
+			{
+				if (match = postcode.match(new RegExp(patterns[i])))
+				{
+					if (match.length > 2)
+						prefix = match[2];
+					break;
+				}
+			}
+		}
+		else
+		{
+			if (match = postcode.match(/^([a-zA-Z]{1})[\d]{1,2}/))
+			{
+				if (match.length > 1)
+					prefix = match[1];
+			}
+			else if (match = postcode.match(/^([a-zA-Z]{2})[\d]{1,2}/))
+			{
+				if (match.length > 1)
+					prefix = match[1];
+			}
+		}
+		
+		if (prefix != '')
+		{
+			for (var j = 0; j < postcodePrefix.length; j++)
+			{
+				if (prefix.toLowerCase() == postcodePrefix[j])
+				{
+					format = 'valid';
+					break;
+				}
+			}
+		}
+		if (format == 'invalid') return !1;
+		return !0;
+		
+	},"Please enter a valid postcode");
+	
+	
+	
 	//Validate Phone Number
 	jQuery.validator.addMethod("phoneValidate", function (phone_number, element) {
 
@@ -207,7 +269,8 @@ jQuery( document ).ready(function() {
 			postcode_to:{
 				required: function(element) {
 		            return jQuery("#nearesttown").is(':empty');
-		        }
+		        },
+		        postcodeValidate:true
 			},
 			nearesttown:{
 				required: function(element) {
@@ -1087,8 +1150,9 @@ jQuery(document).ready(function(){
     
     postcodeLookupCallback = function(term)
     {   	
-       if(typeof(term) != "undefined" && term != '')
+       if(typeof(term) != "undefined" && term != '' && term != "No Data Found")
  	   {
+    	  
     	    postcode = '';
     	    townName = '';        					
     	    
@@ -1099,14 +1163,19 @@ jQuery(document).ready(function(){
 				postcode = temp[1].replace(")","").trim();
 				
 				jQuery(active_business_type_class+' input[name="city_to"]').val(townName);
-				jQuery(active_business_type_class+' input[name="postcode_to"]').val(postcode);
+				jQuery(active_business_type_class+' input[name="postcode_to"]').val(postcode);				
+					
 			}
 			
-			jQuery(active_business_type_class+' input[name="town_postcode_to"]').val(term);
+			//jQuery(active_business_type_class+' input[name="town_postcode_to"]').val(term);
 			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'block'});
 			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(term);
 				
 		}
+       else
+       {
+    	   jQuery(active_business_type_class+' input[name="nearesttown"]').val('');
+       } 
     }
     
 
@@ -1240,10 +1309,13 @@ jQuery(document).ready(function(){
  					if( addressHtml != "" ) addressHtml +="<br>";
  					addressHtml += resObj.country_name;
  				}
-
- 								
+ 				
+ 				
+ 				var dm_form =  jQuery("#form").validate(); 				 
+ 				dm_form.element("#show-after-get #postcodeto");				
  				jQuery("#show-after-get .readyonly-address-wrapper").html("<div>"+addressHtml+"</div>").show();
  				jQuery("#show-after-get #postcodeto.valid").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat','border':'1px solid #1ec279'});
+ 				
  			
 
  		},
