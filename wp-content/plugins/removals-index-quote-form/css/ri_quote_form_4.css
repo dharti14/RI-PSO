@@ -892,7 +892,7 @@ label.error:after {
 	border-color: #66afe9;
 }
 
-input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending,.form-control.phone.pending, .form-control.email.pending {
+input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending,.form-control.phone.pending, .form-control.email.pending,.form-control.nearesttown.pending {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }

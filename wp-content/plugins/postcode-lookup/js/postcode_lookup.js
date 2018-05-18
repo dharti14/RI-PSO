@@ -25,50 +25,30 @@ jQuery('document').ready(function() {
 		         }	
 	            else
 	            {	
-	            	plResponse = ["No Data Found"]	
-	            	jQuery(auto_complete_plugin.selector).val("");	        		        		
-	            	jQuery(auto_complete_plugin.selector).removeClass("valid");	        		
+	            	plResponse = ["No Data Found"]	           	        		
 	            }
 	        	
 	        	response(plResponse);
-	        	jQuery(auto_complete_plugin.selector).css({'background':'none'});
+	        	jQuery("body").trigger("onResponsePlItems");
 	        	
 	          });
 	        },
 	        
 	       onSelect: function (e, term, item) {
 	    	   
-	    	   if(typeof(postcodeLookupCallback) == "function")
+	    	   jQuery("body").trigger("onSelectPlItem",[term]);
+	    	   
+	    	  /* if(typeof(postcodeLookupCallback) == "function")
 	    	   {
 	    		   postcodeLookupCallback(term);
-	    	   }	    	   
-	    	   
-	           jQuery(auto_complete_plugin.selector).css({'background':'none'});
-	           
+	    	   }  */         
 	        	
 	        }
 	        		
 	  });  
 	 
 		
-	jQuery(auto_complete_plugin.selector).keyup(function(){   	 
-		
-		if(jQuery(this)[0].value != '')
-		{	
-			jQuery(this).css({'background': 'url("http://ri-dev.regur.in/wp-content/plugins/removals-index-quote-form/css/images/ajax-loader.gif") no-repeat','background-position': '97% center'});
-			jQuery(this).removeClass("valid");
-		}
-		else
-		{
-			jQuery(this).css({'background':'none'});
-		}	
-		
-	});  
-		
-	jQuery(auto_complete_plugin.selector).focusout(function() {		
-		jQuery(this).css({'background':'none'});
-		
-	});
+	
 	  
 	
 	
