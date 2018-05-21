@@ -283,7 +283,7 @@ jQuery( document ).ready(function() {
 			phone:"required",
 			postcode:{
 				required:true,
-				postcodeValidate:true,				
+				postcodeValidate:true				
 			},
 			postcode_to:{
 				required: function(element) {
@@ -660,7 +660,22 @@ jQuery( document ).ready(function() {
 					minlength:2,
 					onlyChars:true
 				},
-				postcode:"required",
+				postcode:{
+					required:true,
+					postcodeValidate:true				
+				},
+				postcode_to:{
+					required: function(element) {
+			            return jQuery("#nearesttowncom").is(':empty');
+			        },
+			        postcodeValidate:true,
+			        
+			    },
+			    nearesttowncom:{
+					required: function(element) {
+			            return jQuery("#form-business #postcodeto").is(':empty');
+			        }			       
+				},
 				address:"required",
 				city:"required",
 				city_to:"required",
@@ -710,8 +725,18 @@ jQuery( document ).ready(function() {
 						minlength:"Your name should be at least 2 characters long"
 					},
 					phone:"Please enter a valid phone number",
-					email:"Your email address is required",
-					postcode:"Your post code address is required",
+					email:"Your email address is required",					
+					postcode:{
+						required:"Your post code address is required",
+						postcodeValidate:"Please enter a valid postcode"				
+					},
+					 postcode_to:{
+					    	required:"Please select moving to postcode"
+				    },
+				    nearesttowncom:{
+				    	required:"Please select nearest town",
+				       
+				    },
 					address:"Your address is required",
 					city:"Your city is required",
 					city_to:"Your city is required",
@@ -867,7 +892,10 @@ jQuery( document ).ready(function() {
         			minlength:2,
         			onlyChars:true
         		},
-        		postcode:"required",
+        		postcode:{
+					required:true,
+					postcodeValidate:true				
+				},
         		address:"required",
         		city:"required",
         		city_to:"required",
@@ -935,8 +963,11 @@ jQuery( document ).ready(function() {
         				minlength:"Your name should be at least 2 characters long"
         			},
         			phone:"Please enter a valid phone number",
-        			email:"Your email address is required",
-        			postcode:"Your post code address is required",
+        			email:"Your email address is required",        			
+        			postcode:{
+    					required:"Your post code address is required",
+    					postcodeValidate:"Please enter a valid postcode"				
+    				},
         			address:"Your address is required",
         			city:"Your city is required",
         			city_to:"Your city is required",
@@ -1138,6 +1169,7 @@ jQuery(document).ready(function(){
 
     jQuery(active_business_type_class+' .dont-know-address').on("click",function(){    	
     	
+    	 jQuery(active_business_type_class+' .nearesttown').removeClass("valid");
          jQuery(active_business_type_class+" div.to-address-wrapper").hide();
          jQuery(active_business_type_class+" div.dontknow-exact-address .nearesttown").val("");
          jQuery(active_business_type_class+" div.to-address-wrapper input.form-control").each(function(){
@@ -1191,7 +1223,7 @@ jQuery(document).ready(function(){
     	
     	jQuery(auto_complete_plugin.selector).removeClass("pending");
     	
-    	if(typeof(term) != "undefined" && term != '' && term != "No Data Found")
+    	if(typeof(term) != "undefined" && term != '' && term != "No Data Found")	
    	    {
       	  
       	    postcode = '';
@@ -1216,6 +1248,7 @@ jQuery(document).ready(function(){
   		 }
          else    	   
          {
+           jQuery(auto_complete_plugin.selector).removeClass("valid"); 
       	   jQuery(active_business_type_class+' input[name="city_to"]').val("");
   		   jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
   		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("");

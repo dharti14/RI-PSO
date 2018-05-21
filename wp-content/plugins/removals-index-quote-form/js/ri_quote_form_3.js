@@ -981,6 +981,7 @@ jQuery(document).ready(function(){
 
     jQuery('div.rightpart .dont-know-address').on("click",function(){
          jQuery("div.rightpart div.stress-moving-from").hide();
+         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").removeClass("valid");
          jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
          jQuery("div.rightpart div.stress-moving-from input:text").each(function(){
  			jQuery(this).val("");				
@@ -998,21 +999,15 @@ jQuery(document).ready(function(){
          
     });
     
-   /* jQuery('#dontknowcommercialaddress').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").hide();
-         jQuery("div.rightpart div.dontknow-exact-address .nearesttown").val("");
-         jQuery("div.rightpart div.dontknow-exact-address").show();
-    });
-    jQuery('#knowexactcommercialaddress').on("click",function(){
-         jQuery("div.rightpart div.stress-moving-from").show();
-         jQuery("div.rightpart div.to-address-fields-wrapper").css({'visibility':'visible'});
-         jQuery("div.rightpart div.dontknow-exact-address").hide();
-    });*/
+  
 
     // Below function is call back of postcode look up
     
-    postcodeLookupCallback = function(term)
-    { 
+    jQuery("body").off('onSelectPlItem').on('onSelectPlItem',function(event,term){
+    
+    	
+    	jQuery("div.rightpart div.dontknow-exact-address .nearesttown").removeClass("pending");
+    	
     	var businessType = ''; 
     	
     	if(typeof(jQuery("#show-after-get").css('display')) != "undefined" && jQuery("#show-after-get").css('display') == "block")
@@ -1050,8 +1045,30 @@ jQuery(document).ready(function(){
 			jQuery('.'+businessType+' .rightpart input[name="town_postcode_to"]').val(term);
 				
 		}
-    }
+    });
     
+    
+    if(typeof(auto_complete_plugin.selector) != "undefined")
+    {
+    	jQuery(auto_complete_plugin.selector).keydown(function(){   	 
+    		
+    		if(jQuery(this)[0].value != '')
+    		{	
+    			jQuery(this).addClass("pending");    			
+    		}
+    		else
+    		{
+    			jQuery(this).removeClass("pending");  
+    		}   		
+    		
+    	});  
+    		
+    	jQuery(auto_complete_plugin.selector).focusout(function() {
+    		
+    		jQuery(this).removeClass("pending");
+    		
+    	});
+    }	
 
      jQuery("div.leftpart div.stress-moving-from input[name='postcode']").on("change",function(){
          postcode_from  = jQuery("div.leftpart div.stress-moving-from input[name='postcode']").val();
