@@ -1174,6 +1174,8 @@ jQuery(document).ready(function(){
 
     // Custom postcode lookup - Event triggered of postcode look up
     
+  
+    
     jQuery("body").off('onResponsePlItems').on('onResponsePlItems',function(event,term){ 
     	
     	
@@ -1186,6 +1188,8 @@ jQuery(document).ready(function(){
     });
     
     jQuery("body").off('onSelectPlItem').on('onSelectPlItem',function(event,term){
+    	
+    	jQuery(auto_complete_plugin.selector).removeClass("pending");
     	
     	if(typeof(term) != "undefined" && term != '' && term != "No Data Found")
    	    {
@@ -1205,6 +1209,7 @@ jQuery(document).ready(function(){
   			}
   			
   			jQuery(auto_complete_plugin.selector).addClass("valid");
+  			
   			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'block'});
   			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(term);
   				
@@ -1216,11 +1221,12 @@ jQuery(document).ready(function(){
   		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("");
   		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'none'});
 
-         } 
+         }
+    	
     	
     });
     
-    if(typeof(auto_complete_plugin.selector) != "undefined")
+   if(typeof(auto_complete_plugin.selector) != "undefined")
     {
     	jQuery(auto_complete_plugin.selector).keydown(function(){   	 
     		
