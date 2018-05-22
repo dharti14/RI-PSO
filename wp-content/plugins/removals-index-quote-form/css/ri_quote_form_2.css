@@ -894,3 +894,17 @@ label.error:after {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }
+
+.tc-checkbox
+{	
+	margin-top:8px;
+}
+.tc-label
+{
+	font-size:12px;
+	font-weight:bold;
+}
+.tc-wrapper
+{
+	margin:20px 0px 0px 0px;
+}

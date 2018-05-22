@@ -312,9 +312,12 @@
 
 						        	 <!-- Step 4 -->
 						        	 <button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>
-
-<!-- 						        	 <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>
- -->
+									 
+									 <div class="form-group tc-wrapper">
+									  <span><input type="checkbox" class="from-control tc-checkbox" name="tc" id="tc_residential" checked="checked"></span>
+									  <span class="tc-label">By clicking 'YES! GET MY FREE QUOTES' I agree to the terms and conditions and privacy policy.</span>	
+									 </div>
+									 
 								     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
 										<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 								     </div>
