@@ -895,16 +895,27 @@ label.error:after {
     background-position:97% center;
 }
 
-.tc-checkbox
+.gdpr-opt-in-chk-wrapper{
+	width:15px;
+	float:left;
+	margin-top:3px;
+}
+.gdpr-opt-in
 {	
 	margin-top:8px;
 }
-.tc-label
+.gdpr-opt-in-label
 {
-	font-size:12px;
-	font-weight:bold;
+	float:right;
+	width:calc(100% - 20px);
+	
 }
-.tc-wrapper
+.gdpr-opt-in-label label
+{
+	font-size:12px;	
+}
+.gdpr-info-wrapper
 {
 	margin:20px 0px 0px 0px;
+	overflow:hidden;
 }

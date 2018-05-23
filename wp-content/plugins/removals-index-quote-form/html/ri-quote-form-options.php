@@ -56,6 +56,25 @@
 					</td>
 				</tr>
 				
+				<tr class="form-required">
+					<th scope="row">
+						<label for="gdpr_tc_link">GDPR TC Link</label>
+					</th>
+					<td>
+						<input type="text" aria-required="true" value="<?php echo $options['gdpr_tc_link'] ?>" id="gdpr_tc_link" name="gdpr_tc_link" class="regular-text">
+						<em>Terms and condition page link For GDPR </em>
+					</td>
+				</tr>
+				<tr class="form-required">
+					<th scope="row">
+						<label for="gdpr_tc_link">GDPR PP Link</label>
+					</th>
+					<td>
+						<input type="text" aria-required="true" value="<?php echo $options['gdpr_pp_link'] ?>" id="gdpr_pp_link" name="gdpr_pp_link" class="regular-text">
+						<em> Privacy policy page link For GDPR </em>
+					</td>
+				</tr>
+				
 				
 			</tbody>
 		</table>

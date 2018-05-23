@@ -82,6 +82,17 @@ if ($_POST)
 		if(isset($_POST["out_of_business"]))
 			$out_of_business = urlencode($_POST["out_of_business"]);
 		
+		$gdprPPLink = urlencode($this->gdpr_pp_link);
+		if(isset($_POST["gdprOptIn"]) && $_POST["gdprOptIn"] == "on")
+		{
+			$gdprOptIn  = "y";			
+		}
+		else
+		{
+			$gdprOptIn  = "n";			
+		}	
+				
+		
 		//split full name to first name and last name
 		$firstName = "";
 		$lastName = "";
@@ -125,7 +136,9 @@ if ($_POST)
 					
 					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
 					'special_instructions'=>urlencode($_POST["additional_info"]),						//additional info or instructions
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprOptIn'=>urlencode($gdprOptIn),
+					'gdprPPLink'=>$gdprPPLink
 						
 			);
 		}
@@ -169,8 +182,10 @@ if ($_POST)
 					'preferred_shipping_method' => urlencode($_POST['shipping_method']),	//preferred shipping method
 
 					'special_instructions' => urlencode($_POST["additional_info"]),						//additional info or instructions				
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
-						
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+			
+					'gdprOptIn'=>urlencode($gdprOptIn),
+					'gdprPPLink'=>$gdprPPLink
 			);
 		}
 		elseif ($ri_form_type==2)
@@ -212,8 +227,9 @@ if ($_POST)
 					
 					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
 					'special_instructions' => urlencode($_POST["additional_info"]),				//additional info or instructions
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
-						
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprOptIn'=>urlencode($gdprOptIn),
+					'gdprPPLink'=>$gdprPPLink
 			);
 		}
 		elseif ($ri_form_type==4)
@@ -249,7 +265,9 @@ if ($_POST)
 					
 					'moving_date'=>urlencode($_POST["date"]),							//approx moving date
 					'special_instructions'=>urlencode($_POST["additional_info"]),						//additional info or instructions
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprOptIn'=>urlencode($gdprOptIn),
+					'gdprPPLink'=>$gdprPPLink
 						
 			);
 		}	
