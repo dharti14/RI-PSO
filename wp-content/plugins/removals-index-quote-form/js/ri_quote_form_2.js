@@ -309,7 +309,7 @@ jQuery( document ).ready(function() {
 		    	required:"Anticipated moving date is required",
 		    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
 		    },
-		    gdprOptIn:"You must agree to our terms and conditions to get quote" 
+		    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
 		    
 		},
 
@@ -545,7 +545,11 @@ jQuery( document ).ready(function() {
 		            if(element.attr("name") == "gdprOptIn")
 					{
 						error.appendTo(jQuery(element).parent().parent());
-					}					
+					}
+		            else 
+					{
+		                error.insertAfter(element);
+		            }
 
 		        },	
 				showErrors: function(errorMap, errorList) {
@@ -585,7 +589,7 @@ jQuery( document ).ready(function() {
 				    	required:"Anticipated moving date is required",
 				    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
 				    },
-				    gdprOptIn:"You must agree to our terms and conditions to get quote" 
+				    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
 				},
 
 		        submitHandler: function(form) {
@@ -825,7 +829,7 @@ jQuery( document ).ready(function() {
     			    	required:"Anticipated moving date is required",
     			    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
     			    },
-    			    gdprOptIn:"You must agree to our terms and conditions to get quote" 
+    			    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
         		},
 
                 submitHandler: function(form) {

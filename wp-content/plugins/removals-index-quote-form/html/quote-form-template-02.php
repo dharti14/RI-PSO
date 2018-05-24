@@ -330,7 +330,7 @@
 									 </div>									 
 								     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
 								     <div class="form-group">
-									 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+			 							<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
 									 </div>
 										<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 								     </div>
@@ -643,7 +643,7 @@
 		 </div>									 
 			<div class="danger" id="danger-get-my-quote-second-business"><span></span></div>
 		 	<div class="form-group">
-				<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+			 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
 			 </div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 		</div>
