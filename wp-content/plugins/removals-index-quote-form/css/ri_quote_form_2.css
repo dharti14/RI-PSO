@@ -894,3 +894,28 @@ label.error:after {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }
+
+.gdpr-opt-in-chk-wrapper{
+	width:15px;
+	float:left;
+	margin-top:3px;
+}
+.gdpr-opt-in
+{	
+	margin-top:8px;
+}
+.gdpr-opt-in-label
+{
+	float:right;
+	width:calc(100% - 20px);
+	
+}
+.gdpr-opt-in-label label
+{
+	font-size:12px;	
+}
+.gdpr-info-wrapper
+{
+	margin:20px 0px 0px 0px;
+	overflow:hidden;
+}

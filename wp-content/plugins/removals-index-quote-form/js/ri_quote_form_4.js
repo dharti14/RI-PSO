@@ -324,6 +324,7 @@ jQuery( document ).ready(function() {
 			additional_info:"additional_info_valid",
 			gdprOptIn:"required" 
 
+
 		},
 
 		errorPlacement: function (error, element) {
@@ -337,7 +338,7 @@ jQuery( document ).ready(function() {
 			else if(element.attr("name") == "bedrooms")
 			{
 				error.appendTo("div.step1 div.removing-stress-form-con");
-			}	
+			}
 			else if(element.attr("name") == "gdprOptIn")
 			{
 				error.appendTo(jQuery(element).parent().parent());
@@ -396,6 +397,7 @@ jQuery( document ).ready(function() {
 		    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
 		    },
 			 gdprOptIn:"You must agree to our terms and conditions to get quotes"
+
 		},
 
         submitHandler: function(form) {								
@@ -717,8 +719,8 @@ jQuery( document ).ready(function() {
 					{
 		                error.insertAfter(element);
 		            }
-
 		        },							   
+
 				showErrors: function(errorMap, errorList) {
 					var errors = this.numberOfInvalids();
 					if(errors > 0){
@@ -764,7 +766,9 @@ jQuery( document ).ready(function() {
 				    	required:"Anticipated moving date is required",
 				    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
 				    },
+
 					 gdprOptIn:"You must agree to our terms and conditions to get quotes"
+
 				},
 
 		        submitHandler: function(form) {
@@ -942,7 +946,9 @@ jQuery( document ).ready(function() {
         		},
         		agree:"required",
         		additional_info:"additional_info_valid",
+
 				gdprOptIn:"required"
+
         		},
 
         		errorPlacement: function (error, element) {
@@ -1005,7 +1011,9 @@ jQuery( document ).ready(function() {
     			    	required:"Anticipated moving date is required",
     			    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
     			    },
+
 				    gdprOptIn:"You must agree to our terms and conditions to get quotes"						   
+
         		},
 
                 submitHandler: function(form) {

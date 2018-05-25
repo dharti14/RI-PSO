@@ -32,7 +32,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		protected $page_id = '';
 
 		protected $request_url = '';
-
+		
+		protected $gdpr_tc_link = '';
+		
+		protected $gdpr_pp_link = '';
 
 
 		/**
@@ -56,6 +59,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				'apiUrl'		=> '',
 				'default_pinlocal_source_key'	=> '',
 				'default_conversion_page_id'	=> '',
+				'gdpr_tc_link'  => '',
+				'gdpr_pp_link'	=> ''
 
 			);
 
@@ -66,6 +71,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			$this->default_pinlocal_source_key	= $options['default_pinlocal_source_key'];
 
 			$this->default_conversion_page_id	= $options['default_conversion_page_id'];
+			
+			$this->gdpr_tc_link 	= $options['gdpr_tc_link'];
+			
+			$this->gdpr_pp_link 	= $options['gdpr_pp_link'];
 
 			define( 'RI_QUOTE_FORM_URL' , plugin_dir_url( __FILE__ ) );
 
@@ -110,10 +119,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 			//Passing the name of the template file(.php) as key and the value will be Name (which is to be visible on front end).
 			$quote_form_templates = array(
 					'quote-form-template-02' => 'Template 02',
-					'quote-form-template-03' => 'Template 03',
+					//'quote-form-template-03' => 'Template 03',
 					'quote-form-template-04' => 'Template 04 (Linear Form)',
 // 					'quote-form-template-01' => 'Template 01',
-					'quote-form-template-anyvan' => 'Anyvan - 1'
+				   //'quote-form-template-anyvan' => 'Anyvan - 1'
 			);
 
 			//Including ci plugin metaboxes file
@@ -156,6 +165,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				'apiUrl'		=> '',
 				'default_pinlocal_source_key'	=> '',
 				'default_conversion_page_id'	=> '',
+				'gdpr_tc_link'	=> '',
+				'gdpr_pp_link' => ''	
 
 			);
 
@@ -165,6 +176,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 					'apiUrl'		=> $_POST['apiUrl'],
 					'default_pinlocal_source_key'	=> $_POST['default_pinlocal_source_key'],
 					'default_conversion_page_id'	=> $_POST['default_conversion_page_id'],
+					'gdpr_tc_link' => $_POST['gdpr_tc_link'],
+					'gdpr_pp_link' => $_POST['gdpr_pp_link']
 				);
 
 				if( get_option('ri_quote_form') )
