@@ -30,6 +30,21 @@
 	}
 	
 	
+	
+	$gdprTCPageLink  = '';
+	$gdprPPPageLink = '';
+	
+	$options = get_option('ri_quote_form', array());
+	
+	if( isset($options['gdpr_tc_link']) ) {
+		$gdprTCPageLink = $options['gdpr_tc_link'];
+	}
+	
+	if( isset($options['gdpr_pp_link']) ) {
+		$gdprPPPageLink = $options['gdpr_pp_link'];
+	}
+	
+	
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
