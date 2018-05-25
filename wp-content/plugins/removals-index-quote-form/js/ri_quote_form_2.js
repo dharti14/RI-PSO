@@ -232,7 +232,7 @@ jQuery( document ).ready(function() {
 			date:{
 				required:true,
 				dateValidate:true
-			},
+			},			
 			email:{
 				required:true,
 				email:true,
@@ -246,18 +246,24 @@ jQuery( document ).ready(function() {
 				required:true,
 				minlength:5
 			},
-			agree:"required",
-			additional_info:"additional_info_valid"
+			agree:"required",			
+			additional_info:"additional_info_valid",
+			gdprOptIn:"required"
 
 		},
 
 		errorPlacement: function (error, element) {
+			
             if (element.attr("name") == "property_type_from") {
                error.appendTo("div.leftpart div.radio-with-text");
             }
 			else if(element.attr("name") == "property_type_to")
 			{
 				error.appendTo("div.rightpart div.radio-with-text");
+			}
+			else if(element.attr("name") == "gdprOptIn")
+			{
+				error.appendTo(jQuery(element).parent().parent());
 			}
 			else {
                 error.insertAfter(element);
@@ -302,7 +308,9 @@ jQuery( document ).ready(function() {
 		    date:{
 		    	required:"Anticipated moving date is required",
 		    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
-		    }
+		    },
+		    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
+		    
 		},
 
         submitHandler: function(form) {
@@ -529,9 +537,21 @@ jQuery( document ).ready(function() {
 					minlength:5
 				},
 				agree:"required",
-				additional_info:"additional_info_valid"
+				additional_info:"additional_info_valid",
+				gdprOptIn:"required"
 				},
+				errorPlacement: function (error, element) {
+					
+		            if(element.attr("name") == "gdprOptIn")
+					{
+						error.appendTo(jQuery(element).parent().parent());
+					}
+		            else 
+					{
+		                error.insertAfter(element);
+		            }
 
+		        },	
 				showErrors: function(errorMap, errorList) {
 					var errors = this.numberOfInvalids();
 					if(errors > 0){
@@ -568,7 +588,8 @@ jQuery( document ).ready(function() {
 					date:{
 				    	required:"Anticipated moving date is required",
 				    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
-				    }
+				    },
+				    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
 				},
 
 		        submitHandler: function(form) {
@@ -743,21 +764,28 @@ jQuery( document ).ready(function() {
         			minlength:5
         		},
         		agree:"required",
-        		additional_info:"additional_info_valid"
+        		additional_info:"additional_info_valid",
+        		gdprOptIn:"required"
         		},
 
         		errorPlacement: function (error, element) {
 
-                    if (element.attr("name") == "property_type_from") {
-                       error.appendTo("div.leftpart div.radio-with-text");
+                    if (element.attr("name") == "property_type_from") 
+                    {                    	
+                       error.appendTo("div.leftpart div.radio-with-text");                       
                     }
 					else if(element.attr("name") == "property_type_to")
 					{
 						error.appendTo("div.rightpart div.radio-with-text");
 					}
-					else {
+					else if(element.attr("name") == "gdprOptIn")
+					{
+						error.appendTo(jQuery(element).parent().parent());
+					}
+					else 
+					{
                         error.insertAfter(element);
-                    }
+                    }                  
 
                 },
 				showErrors: function(errorMap, errorList) {
@@ -800,7 +828,8 @@ jQuery( document ).ready(function() {
         			date:{
     			    	required:"Anticipated moving date is required",
     			    	dateValidate:"Invalid moving date. Date must be in dd/mm/yyyy format and must be a future date."
-    			    }
+    			    },
+    			    gdprOptIn:"You must agree to our terms and conditions to get quotes" 
         		},
 
                 submitHandler: function(form) {

@@ -30,6 +30,21 @@
 	}
 	
 	
+	
+	$gdprTCPageLink  = '';
+	$gdprPPPageLink = '';
+	
+	$options = get_option('ri_quote_form', array());
+	
+	if( isset($options['gdpr_tc_link']) ) {
+		$gdprTCPageLink = $options['gdpr_tc_link'];
+	}
+	
+	if( isset($options['gdpr_pp_link']) ) {
+		$gdprPPPageLink = $options['gdpr_pp_link'];
+	}
+	
+	
 	//Loading js and css file depending upon the lookup functionality selected
 
      $dki_hln = dki_get_hln();
@@ -345,10 +360,15 @@
 						        	 <!-- Step 4 -->
 						        	<div class="col-xs-12 col-sm-12 col-md-12 domestic-submit-btn" style="display:none"> 
 										<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
-	
-	<!-- 						        	  <div id="get-my-quote-top" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div>  -->
+										<div class="form-group gdpr-info-wrapper">
+											  <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
+											  <div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+									 	</div>		
 	
 									     <div class="danger" id="danger-get-my-quote-second"><span></span></div>
+									     <div class="form-group">
+			 								<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+										 </div>
 										 <p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 								   </div>	 
 							</div>
@@ -650,15 +670,18 @@
               </div>
                <textarea style="display:none;" id="greenwood_drive1" placeholder="Enter any additional information about your move.." name="additional_info"></textarea>
               </div>
-
-
+            </div>
           </div>
-        </div>
 
-		<button type="submit" id="get-my-quote-top-commercial" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>																									 
-<!--         /* <div id="button"><div class="btn btn-quote get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></div></div> */ -->
-
-		<div class="danger" id="danger-get-my-quote-second-business"><span></span></div>
+			<button type="submit" id="get-my-quote-top-commercial" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>																									 
+			<div class="form-group gdpr-info-wrapper">
+				  <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
+				  <div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+		 	</div>	
+			<div class="danger" id="danger-get-my-quote-second-business"><span></span></div>
+			<div class="form-group">
+	 			<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+			</div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 		</div>
 
@@ -997,8 +1020,14 @@
           </div>
         </div>
 		<button type="submit" id="get-my-quote-top-international" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>	
-
-		<div class="danger" id="danger-get-my-quote-second-international"><span></span></div>
+			<div class="form-group gdpr-info-wrapper">
+				  <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
+				  <div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+		 	</div>	
+			<div class="danger" id="danger-get-my-quote-second-international"><span></span></div>
+			 <div class="form-group">
+ 				<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+			</div>
 			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 		</div>
 
