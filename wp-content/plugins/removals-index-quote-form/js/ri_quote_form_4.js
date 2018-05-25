@@ -454,11 +454,16 @@ jQuery( document ).ready(function() {
 					
 				if(isvalidAddress){
 					
-					jQuery("#show-after-get input[name='houseno']").focus();
+					jQuery("#show-after-get input[name='houseno']").focus();					
 				}
 				else
 				{
 					jQuery("#show-after-get input[name='postcode']").focus();
+					if(jQuery("#show-after-get input[name='postcode']")[0].value != '')
+					{	
+						var dm_form =  jQuery("#form").validate(); 				 
+						dm_form.element("#show-after-get input[name='postcode']");
+					}	
 				}
 			}
 			
