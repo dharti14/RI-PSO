@@ -93,6 +93,17 @@ if ($_POST)
 
 		
 		$additionalInfo = isset($_POST["additional_info"]) ? $_POST["additional_info"] : $_POST["greenwood_drive"];
+		
+		
+		if(isset($_POST["gdprOptIn"]) && $_POST["gdprOptIn"] == "on")
+		  {
+		   $gdprOptIn  = "y";   
+		  }
+		  else
+		  {
+		   $gdprOptIn  = "n";   
+		  }
+		$gdprPPLink = "https://www.removals-index.com/removals-index-privacy-policy/";
 
 		//Get data from your form POST and assign it to appropriate lead fields.
 		
@@ -129,7 +140,9 @@ if ($_POST)
 					
 					'f28'=>urlencode($_POST["date"]),							//approx moving date
 					'f27'=>urlencode($additionalInfo),						//additional info or instructions
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprPPLink'=>urlencode($gdprPPLink),
+					'gdprOptIn'=>urlencode($gdprOptIn)
 						
 			);
 		}
@@ -173,8 +186,9 @@ if ($_POST)
 					'preferred_shipping_method' => urlencode($_POST['shipping_method']),	//preferred shipping method
 
 					'f17' => urlencode($additionalInfo),						//additional info or instructions				
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
-						
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprPPLink'=>urlencode($gdprPPLink),
+					'gdprOptIn'=>urlencode($gdprOptIn)	
 			);
 		}
 		elseif ($formType==2)
@@ -216,8 +230,9 @@ if ($_POST)
 					
 					'f18'=>urlencode($_POST["date"]),							//approx moving date
 					'f17' => urlencode($additionalInfo),				//additional info or instructions
-					'ip'=>$_SERVER['REMOTE_ADDR']								//customer's IP address
-						
+					'ip'=>$_SERVER['REMOTE_ADDR'],								//customer's IP address
+					'gdprPPLink'=>urlencode($gdprPPLink),
+					'gdprOptIn'=>urlencode($gdprOptIn)	
 			);
 		}
 		
