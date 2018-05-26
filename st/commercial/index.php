@@ -432,21 +432,16 @@ display:none;
         
         <div class="get-my"><a class="get-my-quote-second-business">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></a></div>
 		
-		 <div class="form-group gdpr-info-wrapper">
-			<div class="gdpr-opt-in-chk-wrapper">
-			<input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id="gdpr-opt-in">
-			</div>
-			 <div class="gdpr-opt-in-label"><label for="gdpr-opt-in">By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="/terms-and-conditions/" target="_blank"> terms and conditions </a> and <a href="/removals-index-privacy-policy/" target="_blank">privacy policy</a>.</label></div> 
-		   </div>
-		   <div class="form-group">
-			 <p class="protect-text">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
-		  </div>
-	
-		
-		
-        <p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
-        
-        
+        	<div class="pp-info-wraper"> 	
+			     <div class="form-group gdpr-info-wrapper">
+				   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_commercial"></div>
+				   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_commercial">By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="/terms-and-conditions/" target="_blank"> terms and conditions </a> and <a href="/removals-index-privacy-policy/" target="_blank">privacy policy</a>.</label></div>	
+				</div>									 
+			 	<div class="form-group">
+				 	<p class="protect-text">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+				</div>
+				<p class="protect-text"><span>Your information is protected by 128 bit SSL encryption</span></p>
+ 		   </div>             
          
      </div>
      

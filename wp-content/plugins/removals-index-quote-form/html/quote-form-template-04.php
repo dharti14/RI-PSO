@@ -335,7 +335,7 @@
 							              <div class="form-group">
 
 							                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-							                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
+							                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
 
 							                <input type="text" class="form-control email" name="email"  placeholder="Enter Email Address...*"  value="">
 							                <div class="form-group">
@@ -654,7 +654,7 @@
               <div class="form-group">
               	<input type="text" class="form-control" name="companyname" placeholder="Company Name...">
                 <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
-                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
+                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
 
                 <input type="text" class="form-control email"  name="email" placeholder="Enter Email Address..." value="">
                  <div class="form-group">
@@ -1004,7 +1004,7 @@
               <div class="form-group">
 
                 <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
+                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
                 <input type="text" class="form-control email" name="email"  value="" placeholder="Enter Email Address...*">
 
                 <div class="form-group">
