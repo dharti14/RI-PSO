@@ -364,7 +364,7 @@
 										<div class="pp-info-wraper"> 	
 											<div class="form-group gdpr-info-wrapper">
 											   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_domestic"></div>
-											   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_domestic">By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+											   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_domestic">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
 											</div>									 
 										 	<div class="form-group">
 											 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
@@ -681,7 +681,7 @@
 			<div class="pp-info-wraper"> 	
 				<div class="form-group gdpr-info-wrapper">
 				   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_commercial"></div>
-				   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_commercial">By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+				   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_commercial">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
 				</div>									 
 			 	<div class="form-group">
 				 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
@@ -1032,7 +1032,7 @@
 		<div class="pp-info-wraper"> 	
 			<div class="form-group gdpr-info-wrapper">
 			   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_international"></div>
-			   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_international">By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+			   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_international">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
 			</div>									 
 		 	<div class="form-group">
 			 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
