@@ -40,7 +40,7 @@ span.vaild-check.floor_from , span.vaild-check.floor_to {
 
 .security {
       text-align: center;
-      font-size: 15px;
+      font-size: 13px;
       margin-top: 15px;
       margin-bottom: 0;
       color: #8d8d8d; 
@@ -917,8 +917,16 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
 	margin-bottom: 138px;
 }
 
+.pp-info-wraper{	
+	height:auto;
+	overflow:hidden;
+	padding:10px;
+	background:#eeeeee;
+	margin:20px 0 0 0;
+}
+
 .gdpr-opt-in-chk-wrapper{
-	width:15px;
+	width:25px;
 	float:left;
 	margin-top:3px;
 }
@@ -929,16 +937,21 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
 .gdpr-opt-in-label
 {
 	float:right;
-	width:calc(100% - 20px);
+	width:calc(100% - 25px);
 	
 }
 .gdpr-opt-in-label label
 {
-	font-size:12px;	
+	font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+.gdpr-opt-in-chk-wrapper input[type='checkbox']{
+	width:20px;
+	height:20px;
 }
 .gdpr-info-wrapper
-{
-	margin:20px 0px 0px 0px;
+{	
 	overflow:hidden;
 }						 
 

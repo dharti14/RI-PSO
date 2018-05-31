@@ -335,7 +335,7 @@
 							              <div class="form-group">
 
 							                <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-							                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
+							                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
 
 							                <input type="text" class="form-control email" name="email"  placeholder="Enter Email Address...*"  value="">
 							                <div class="form-group">
@@ -360,19 +360,18 @@
 						        	 <!-- Step 4 -->
 						        	<div class="col-xs-12 col-sm-12 col-md-12 domestic-submit-btn" style="display:none"> 
 										<button type="submit" id="get-my-quote-top-domestic" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>											
-										<div class="form-group gdpr-info-wrapper">
-				 						 	<div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
-				  							<div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
-		 								</div>	
-	
-									    <div class="danger" id="danger-get-my-quote-second"><span></span></div>
-										
-										<div class="form-group">
- 											<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
-										</div>
-										
 
-										 <p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+										<div class="danger" id="danger-get-my-quote-second"><span></span></div>
+										<div class="pp-info-wraper"> 	
+											<div class="form-group gdpr-info-wrapper">
+											   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_domestic"></div>
+											   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_domestic">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+											</div>									 
+										 	<div class="form-group">
+											 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+											</div>
+											<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+							 		   </div>								   
 								   </div>	 
 							</div>
 						</div>
@@ -656,7 +655,7 @@
               <div class="form-group">
               	<input type="text" class="form-control" name="companyname" placeholder="Company Name...">
                 <input type="text" class="form-control" name="fullname" placeholder="Contact Name...">
-                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
+                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...">
 
                 <input type="text" class="form-control email"  name="email" placeholder="Enter Email Address..." value="">
                  <div class="form-group">
@@ -677,16 +676,21 @@
           </div>
 
 			<button type="submit" id="get-my-quote-top-commercial" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>																									 
-			<div class="form-group gdpr-info-wrapper">
 
-	 			<div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
-	  			<div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
-	 		</div>
+				
 			<div class="danger" id="danger-get-my-quote-second-business"><span></span></div>
-			<div class="form-group">
- 				<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
-			</div>
-			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+			
+			<div class="pp-info-wraper"> 	
+				<div class="form-group gdpr-info-wrapper">
+				   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_commercial"></div>
+				   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_commercial">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+				</div>									 
+			 	<div class="form-group">
+				 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+				</div>
+				<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+ 		   </div>
+			
 		</div>
 
 
@@ -1002,7 +1006,7 @@
               <div class="form-group">
 
                 <input type="text" class="form-control" name="fullname" placeholder="Enter Full Name...*">
-                <input type="text" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
+                <input type="tel" class="form-control phone" name="phone" placeholder="Enter Best Contact Number...*">
                 <input type="text" class="form-control email" name="email"  value="" placeholder="Enter Email Address...*">
 
                 <div class="form-group">
@@ -1024,16 +1028,23 @@
           </div>
         </div>
 		<button type="submit" id="get-my-quote-top-international" class="btn btn-quote get-my-quote-second">YES! GET MY FREE QUOTES <span>100% Safe &amp; Secure Quote Delivery Process</span></button>	
-		 <div class="form-group gdpr-info-wrapper">
- 			<div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn"></div>
-  			<div class="gdpr-opt-in-label"><label>By clicking 'YES! GET MY FREE QUOTES' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
- 		</div>
+
+				
 		<div class="danger" id="danger-get-my-quote-second-international"><span></span></div>
-		<div class="form-group">
- 			<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
-		</div>
-		<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
-	</div>
+		
+		<div class="pp-info-wraper"> 	
+			<div class="form-group gdpr-info-wrapper">
+			   <div class="gdpr-opt-in-chk-wrapper"><input type="checkbox" class="from-control gdpr-opt-in" name="gdprOptIn" id = "GDPR_opt_in_international"></div>
+			   <div class="gdpr-opt-in-label"><label for="GDPR_opt_in_international">By clicking 'Yes, Get My Free Quotes' I agree to the <a href="<?php echo $gdprTCPageLink ?>" target="_blank"> terms and conditions </a> and <a href="<?php echo $gdprPPPageLink ?>" target="_blank">privacy policy</a>.</label></div>	
+			</div>									 
+		 	<div class="form-group">
+			 	<p class="security">Your details are not shared with anyone other than the firms who are providing the quotes and we operate a strict no spam policy.</p>
+			</div>
+			<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+ 		</div>
+		
+	 </div>
+
 
      <!--Right sec start -->
 

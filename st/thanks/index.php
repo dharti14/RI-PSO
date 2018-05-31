@@ -47,8 +47,8 @@ $('dt').click(
 <script async type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
 <?php include("../inc/analytics.php"); ?>
 
-
-<!-- Facebook Conversion Code for Completed - Step 1 Enter Postcode -->
+<?php /*
+<!-- Facebook Conversion Code for Completed - Step 1 Enter Postcode 
 <script>(function() {
   var _fbq = window._fbq || (window._fbq = []);
   if (!_fbq.loaded) {
@@ -64,6 +64,27 @@ window._fbq = window._fbq || [];
 window._fbq.push(['track', '6023862189065', {'value':'0.00','currency':'GBP'}]);
 </script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6023862189065&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+-->
+*/
+?>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1803055596627597'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1803055596627597&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
 
 </head>
 <body>
@@ -84,15 +105,14 @@ window._fbq.push(['track', '6023862189065', {'value':'0.00','currency':'GBP'}]);
 </header>
 
 <!-- Google Code for Removals Index Thanks - generated 04/05/15 Conversion Page -->
+<!-- Google Code for Removals Index Thanks Cross Account - Generated 310117 Conversion Page -->
 <script type="text/javascript">
 /* <![CDATA[ */
-var google_conversion_id = 999191207;
+var google_conversion_id = 966350786;
 var google_conversion_language = "en";
 var google_conversion_format = "3";
 var google_conversion_color = "ffffff";
-var google_conversion_label = "DffUCPOQkFwQp-W53AM";
-var google_conversion_value = 1;
-var google_conversion_currency = "USD";
+var google_conversion_label = "srw-CNKE6G0Qwq_lzAM";
 var google_remarketing_only = false;
 /* ]]> */
 </script>
@@ -100,7 +120,7 @@ var google_remarketing_only = false;
 </script>
 <noscript>
 <div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/999191207/?value=1&amp;currency_code=USD&amp;label=DffUCPOQkFwQp-W53AM&amp;guid=ON&amp;script=0"/>
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/966350786/?label=srw-CNKE6G0Qwq_lzAM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
 		

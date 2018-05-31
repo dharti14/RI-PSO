@@ -69,11 +69,8 @@ jQuery( document ).ready(function() {
 	
 	//Validate City
 	
-	lazyValidationFields = {
-	
-		cityValid:true;
-	
-	
+	lazyValidationFields = {	
+		cityValid:true	
 	}
 	
 	//var cityValid = true;
