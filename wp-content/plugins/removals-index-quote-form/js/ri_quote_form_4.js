@@ -117,7 +117,12 @@ jQuery( document ).ready(function() {
 	
 	jQuery("#show-after-get #postcodeto").keypress(function(){
 		lazyValidationFields.cityValid=true;
+    });
+	
+	jQuery("#show-after-get #nearesttown").keypress(function(){
+		lazyValidationFields.cityValid=true;
     })
+    
     
 	
 	//Validate Phone Number
