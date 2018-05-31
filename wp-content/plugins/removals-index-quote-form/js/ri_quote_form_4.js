@@ -1,4 +1,7 @@
 // JavaScript Document
+
+
+
 jQuery( document ).ready(function() {
 
 	//Custom Validations
@@ -65,7 +68,41 @@ jQuery( document ).ready(function() {
 	
 	
 	//Validate City
+	
+	lazyValidationFields = {
+	
+		cityValid:true;
+	
+	
+	}
+	
+	//var cityValid = true;
+	
+	function isValidCityReal(){
+		
+		if(jQuery(active_business_type_class+' #cityto').val() == "")
+		{	
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+		
+	}
+	
 	jQuery.validator.addMethod("cityValidate", function (tocity, element) {
+		
+		
+		if(lazyValidationFields.cityValid == true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		/*
 
 		if(jQuery(active_business_type_class+' #cityto').val() == "")
 		{	
@@ -74,7 +111,8 @@ jQuery( document ).ready(function() {
 		else
 		{
 			return true;
-		}	
+		}
+		*/	
 
 
     }, "Please select a value form dropdown");
@@ -289,7 +327,7 @@ jQuery( document ).ready(function() {
 				required: function(element) {
 		            return jQuery("#nearesttown").is(':empty');
 		        },
-		        postcodeValidate:true,
+		       // postcodeValidate:true,
 		        cityValidate:true
 		    },
 			nearesttown:{
@@ -400,15 +438,32 @@ jQuery( document ).ready(function() {
 
 		},
 
-        submitHandler: function(form) {								
-
-				jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
-
-                form.submit();
+        submitHandler: function(form) {					
+        	
+        		lazyValidationFields.cityValid = isValidCityReal();
+        		dm_form.element("#show-after-get #postcodeto");	
+        		
+        		if(lazyValidationFields.cityValid ){        		
+        		
+        			jQuery(form).find("button[type='submit']").attr( 'disabled' , true);
+                    form.submit();
+                    
+        		}
+        		else
+        		{
+        			return false;
+        		}
+        		
+				
         }
      });
 
 		
+       
+       jQuery("#show-after-get #postcodeto").keypress(function(){
+    	   cityValid=true;
+       })
+       
 
      //checking for the checkbox checked and apply valid class to it.
 	 	jQuery('#show-after-get .bedroom-radios-container').click(function(){	 		
@@ -1247,12 +1302,11 @@ jQuery(document).ready(function(){
     
     jQuery("body").off('onResponsePlItems').on('onResponsePlItems',function(event,term){ 
     	
-    	
-    	   jQuery(auto_complete_plugin.selector).removeClass("valid");
-     	   jQuery(active_business_type_class+' input[name="city_to"]').val("");
- 		   jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
- 		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(""); 
-		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'none'});
+       jQuery(auto_complete_plugin.selector).removeClass("valid");
+   	   jQuery(active_business_type_class+' input[name="city_to"]').val("");
+  	   jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
+  	   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(""); 
+  	   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'none'});
     	
     });
     
@@ -1277,10 +1331,9 @@ jQuery(document).ready(function(){
   					
   			}
   			
-  			jQuery(auto_complete_plugin.selector).addClass("valid");
-  			
-  			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'block'});
-  			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(term);
+  			jQuery(auto_complete_plugin.selector).addClass("valid");  			
+  			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(term).show();
+
   				
   		 }
          else    	   
@@ -1288,9 +1341,7 @@ jQuery(document).ready(function(){
            jQuery(auto_complete_plugin.selector).removeClass("valid"); 
       	   jQuery(active_business_type_class+' input[name="city_to"]').val("");
   		   jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
-  		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("");
-  		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'none'});
-
+  		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("").hide();
          }
     	
     	
@@ -1300,56 +1351,45 @@ jQuery(document).ready(function(){
     {
     	jQuery(auto_complete_plugin.selector).keydown(function(){   	 
     		
-    		if(jQuery(this)[0].value != '')
+    		if(jQuery(this).val() != '' && jQuery.trim(jQuery(this).val()).length > 0)
     		{	
-    			jQuery(this).addClass("pending");    			
+    			jQuery(this).addClass("pending");  
+			
     		}
     		else
     		{
-    			jQuery(this).removeClass("pending");  
-    		}   		
+    			jQuery(this).removeClass("pending");    			
+
+    		}
+    		
+    		
     		
     	});  
     		
     	jQuery(auto_complete_plugin.selector).focusout(function() {
     		
-    		jQuery(this).removeClass("pending");
+    		if(jQuery(this).val() == ''){
+    			
+    			jQuery(this).removeClass("valid");
+    			jQuery(active_business_type_class+' input[name="city_to"]').val("");
+    	  		jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
+    	  		jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("").hide();
+    			
+    		}
+    		else
+    		{
+    			jQuery(this).removeClass("pending");
+    			var dm_form =  jQuery("#form").validate(); 				 
+    			dm_form.element("#show-after-get #nearesttown");
+    			  
+    		}	
+    		
+
     		
     	});
     }	
     
-   /* postcodeLookupCallback = function(term)
-    {   	
-       if(typeof(term) != "undefined" && term != '' && term != "No Data Found")
- 	   {
-    	  
-    	    postcode = '';
-    	    townName = '';        					
-    	    
-			var temp = term.split("(");
-			if(temp.length>1)
-			{
-				townName = temp[0].trim();
-				postcode = temp[1].replace(")","").trim();
-				
-				jQuery(active_business_type_class+' input[name="city_to"]').val(townName);
-				jQuery(active_business_type_class+' input[name="postcode_to"]').val(postcode);				
-					
-			}
-			
-			//jQuery(active_business_type_class+' input[name="town_postcode_to"]').val(term);
-			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').css({'display':'block'});
-			jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text(term);
-				
-		}
-       else    	   
-       {
-    	   jQuery(active_business_type_class+' input[name="city_to"]').val("");
-		   jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
-		   jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("");
-       } 
-        
-    }*/
+  
     
    
 
@@ -1413,7 +1453,7 @@ jQuery(document).ready(function(){
 		                        jQuery(active_business_type_class+" div.rightpart div.stress-moving-from input[name='address_to']").val(result.line_1_to);
 		                           
              					jQuery(active_business_type_class+" .to-address-wrapper input:text").each(function(){
-             						if (jQuery.trim(jQuery(this).val()).length != 0){
+             						if (jQuery.trim(jQuery(this).val()).length != 0 && jQuery(active_business_type_class+" input[name=city]").val() != ""){
              							
              							jQuery(this).addClass("valid");
              						}
@@ -1488,16 +1528,20 @@ jQuery(document).ready(function(){
  				var dm_form =  jQuery("#form").validate(); 				 
  				dm_form.element("#show-after-get #postcodeto");				
  				jQuery("#show-after-get .readyonly-address-wrapper").html("<div>"+addressHtml+"</div>").show();
- 				jQuery("#show-after-get #postcodeto.valid").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat','border':'1px solid #1ec279'});
+ 				jQuery("#show-after-get #postcodeto").css({'background':'url(/wp-content/plugins/removals-index-quote-form/images/input-check.png) 97% 4px no-repeat','border':'1px solid #1ec279'});
  				
  			
 
  		},
  		onSearchFocus: function(classObj, domObject, resObj) {
  			
- 			jQuery("#show-after-get #postcodeto.valid").css({'background':'none','border':'1px solid #66afe9'}); 			
+ 			jQuery("#show-after-get #postcodeto").css({'background':'none','border':'1px solid #66afe9'}); 			
  			jQuery("#show-after-get input[name='postcode_to']").removeClass('valid');
  			jQuery("#show-after-get input[name='postcode_to']").val('');
+ 			jQuery("#show-after-get input[name='address_to']").val('');
+			jQuery("#show-after-get input[name='city_to']").val('');
+			jQuery("#show-after-get .readyonly-address-wrapper").html("").hide();
+
  			
  		}
  	  });

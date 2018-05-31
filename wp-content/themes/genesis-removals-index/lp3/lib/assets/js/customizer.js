@@ -104,7 +104,8 @@ jQuery( document ).ready(function() {
 					
 				jQuery("."+business_type_class+" input:text").each(function(){
 					jQuery(this).removeClass("pending");
-					if (jQuery.trim(jQuery(this).val()).length != 0){								
+					if (jQuery.trim(jQuery(this).val()).length != 0 && jQuery("."+business_type_class+" input[name=city]").val() != ""){
+								
 						jQuery(this).addClass("valid");
 					}
 					
@@ -151,7 +152,9 @@ jQuery( document ).ready(function() {
 					jQuery(".residential input[name=postcode]").val(postcode_from);
 										
 					jQuery(".residential input:text").each(function(){
-						if (jQuery.trim(jQuery(this).val()).length != 0){
+						jQuery(this).removeClass("pending");
+						if (jQuery.trim(jQuery(this).val()).length != 0 && jQuery(".residential input[name=city]").val() != ""){
+
 							jQuery(this).addClass("valid");
 							
 						}
@@ -198,7 +201,9 @@ jQuery( document ).ready(function() {
 					jQuery(".residential input[name=postcode]").val(postcode_from);
 										
 					jQuery(".residential input:text").each(function(){
-						if (jQuery.trim(jQuery(this).val()).length != 0){
+						jQuery(this).removeClass("pending");
+						if (jQuery.trim(jQuery(this).val()).length != 0 && jQuery(".residential input[name=city]").val() != ""){
+
 							jQuery(this).addClass("valid");
 							
 						}
