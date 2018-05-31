@@ -245,6 +245,10 @@ label#bedrooms-error{
 	margin:10px 0 5px 0;	
 }
 
+.change-moving-to-address,.change-nearesttown-address{
+	font-size:15px;
+}
+
 
 /* crafti click css */
 #cc_c2a .mainbar {
