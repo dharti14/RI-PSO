@@ -898,8 +898,7 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
 }
 
 .dont-know-address,.know-address{
-	text-align: center;
-	display: block;
+	text-align: center;	
 	margin:5px 0 8px 0 !important;
 	font-size: 15px !important;
 	clear: both;
@@ -912,6 +911,10 @@ input[name=city].pending,input[name=address].pending,input[name=postcode].pendin
  #show-after-get-business input.nearesttown{
 	margin-bottom: 0px !important;
 } 
+
+.text-center{
+	text-align:center;
+}
 
 .dontknow-exact-address {
 	margin-bottom: 138px;

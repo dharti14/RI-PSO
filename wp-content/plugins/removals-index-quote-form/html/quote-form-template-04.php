@@ -201,18 +201,31 @@
 							              <div class="form-group stress-moving-to to-address-wrapper">
 							                <label for="exampleInputEmail1">I'm moving to:</label>
 							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
+							                <div class="text-center">
 											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
+											</div>
 						                	 <input type="hidden" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
 						                	 <input type="hidden" class="form-control" name="address_to" placeholder="Street Name">
 						                	 <input type="hidden" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
 							              </div>
-							              
+							              <div class="form-group moving-to-readonly-address-wrapper" style="display:none;">	
+							              	<div class="moving-to-address"></div>
+							              	<div class="text-center">						              
+							              		<a href="javascript:void(0);" id="changeMovingToAddress" class="change-moving-to-address">Change Address</a>
+							              	</div>
+							              </div>
 										  <div class="form-group dontknow-exact-address">
 											  <label>Nearest town to property</label>
 											  <input type='text' class="form-control nearesttown" placeholder='Nearest town to property' name='nearesttown' id='nearesttown' autocomplete="off" value="">
-											  <a href="javascript:void(0);" class="know-address" id='knowexactaddress'>I have the exact address</a>
+											   <div class="text-center">
+											   	<a href="javascript:void(0);" class="know-address" id='knowexactaddress'>I have the exact address</a>
+											  </div>
 										  </div>
-										  <div class="form-group readyonly-address-wrapper" style="display:none;">
+										   <div class="form-group nearesttown-readonly-address-wrapper" style="display:none;">	
+							              	<div class="nearest-address"></div>
+							              	<div class="text-center">						              
+							              		<a href="javascript:void(0);" id="changeNearestTownAddress" class="change-nearesttown-address">Change Address</a>
+							              	</div>
 							              </div>
 							              <div class="form-group radio-with-text">
 							               <h5>Property Type:</h5>
