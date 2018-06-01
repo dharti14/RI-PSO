@@ -426,7 +426,7 @@ jQuery( document ).ready(function() {
 		    	cityValidate:"Please select a valid postcode"
 		    },
 		    nearesttown:{
-		    	required:"Please select nearesttown",
+		    	required:"Please select nearest town",
 		        cityValidate:"Please select a valid town"
 		    },
 		    address:"Your address is required",
