@@ -249,6 +249,13 @@ label#bedrooms-error{
 	font-size:15px;
 }
 
+.residential #nearesttown.valid
+{
+	border:1px solid #ccc;
+	background:none;	
+}
+
+
 
 /* crafti click css */
 #cc_c2a .mainbar {

@@ -426,7 +426,7 @@ jQuery( document ).ready(function() {
 		    	cityValidate:"Please select a valid postcode"
 		    },
 		    nearesttown:{
-		    	required:"Please select nearest town",
+		    	required:"Please select nearesttown",
 		        cityValidate:"Please select a valid town"
 		    },
 		    address:"Your address is required",
@@ -1359,7 +1359,8 @@ jQuery(document).ready(function(){
     	
     	if(typeof(term) != "undefined" && term != '' && term != "No Data Found")	
    	    {
-      	  
+      	  	
+    		
       	    postcode = '';
       	    townName = '';        					
       	    
@@ -1419,16 +1420,13 @@ jQuery(document).ready(function(){
     		if(jQuery(this).val() == ''){
     			
     			jQuery(this).removeClass("valid");
-    			jQuery(active_business_type_class+' input[name="city_to"]').val("");
-    	  		jQuery(active_business_type_class+' input[name="postcode_to"]').val("");
-    	  		jQuery(active_business_type_class+' div.moving-to-wrapper .readyonly-address-wrapper').text("").hide();
-    			
+    			jQuery(active_business_type_class+" div.to-address-wrapper input.form-control").each(function(){
+    				jQuery(this).val("");				
+    			});    			
     		}
     		else
     		{
-    			jQuery(this).removeClass("pending");
-    			var dm_form =  jQuery("#form").validate(); 				 
-    			dm_form.element("#show-after-get #nearesttown");
+    			jQuery(this).removeClass("pending");    			  				
     			  
     		}	
     		
