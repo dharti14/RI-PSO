@@ -310,6 +310,16 @@ span.bottom-arrow {
     	
 }
 
+.vaild-check {
+	position:absolute;
+	margin:0 3% 0 0
+}
+
+span.vaild-check.property_type, span.vaild-check.floor_from, span.vaild-check.floor_to, .radio-with-text2 span.vaild-check, .radio-with-text3 span.vaild-check { 
+	float:right; 
+	position:relative
+}
+
 label.error:after {
     border-style: solid;
     border-width: 0;
@@ -444,7 +454,27 @@ p.right-email a {
 	padding:30px 0 0 0;
 } 
 
+.form-control.valid { 
+	border:#1ec279 solid 1px; 
+	background:url(../images/input-check.png) 97% 4px no-repeat;
+}
 
+span.valid {
+	background:url(../images/valid.png);
+	display:inline-block;
+	height:19px;
+	margin-left:5px;
+	width:19px
+}
+
+.select-item.valid {
+	background:url(../images/input-check.png)97% 1px no-repeat
+}
+
+#greenwood_drive.form-control.valid{
+	background-position-x: 99% !important;
+    background-position-y: 50% !important;
+}
 
 /*  postcode lookup css */
 

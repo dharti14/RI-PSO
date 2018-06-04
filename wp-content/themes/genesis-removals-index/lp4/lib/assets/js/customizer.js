@@ -77,9 +77,9 @@ function onclickGetQuoteBtn(postcode_from)
 	if(postcode_from != '')
 	{
 		
-		jQuery("."+business_type_class+" input[name=city]").addClass("pending");
-		jQuery("."+business_type_class+" input[name=address]").addClass("pending");
-		jQuery("."+business_type_class+" input[name=postcode]").addClass("pending");
+		jQuery(active_business_type_class+" input[name=city]").addClass("pending");
+		jQuery(active_business_type_class+" input[name=address]").addClass("pending");
+		jQuery(active_business_type_class+" input[name=postcode]").addClass("pending");
 		
 		
 		jQuery.ajax({

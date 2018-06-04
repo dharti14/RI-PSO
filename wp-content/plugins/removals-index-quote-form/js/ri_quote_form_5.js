@@ -446,8 +446,13 @@ jQuery( document ).ready(function() {
 
         submitHandler: function(form) {					
         	
+        	
+        		//console.log(form);
         		lazyValidationFields.cityValid = isValidCityReal();
-        		dm_form.element("#show-after-get #postcodeto");	
+        		
+        		dm_form.element("#show-after-get #postcodeto");
+        		
+        		dm_form.element("#show-after-get #nearesttown");
         		
         		if(lazyValidationFields.cityValid ){        		
         		
@@ -458,6 +463,7 @@ jQuery( document ).ready(function() {
         		else
         		{
         			 var errors = dm_form.errorList;
+        			 //console.log(dm_form.errorList);
  					 if (errors.length>0) {
 
  				      var first_element = errors[0].element;
@@ -861,7 +867,7 @@ jQuery(document).ready(function(){
        jQuery(active_business_type_class+" div.to-address-wrapper input.form-control").each(function(){
 			jQuery(this).val("");				
 		});
-       jQuery(active_business_type_class+' div.nearesttown-readonly-address-wrapper .nearest-address').text("");
+      // jQuery(active_business_type_class+' div.nearesttown-readonly-address-wrapper .nearest-address').text("");
     	
     });
     
