@@ -447,7 +447,9 @@ jQuery( document ).ready(function() {
         submitHandler: function(form) {					
         	
         		lazyValidationFields.cityValid = isValidCityReal();
-        		dm_form.element("#show-after-get #postcodeto");	
+        		
+        		dm_form.element("#show-after-get #postcodeto");	        		
+        		dm_form.element("#show-after-get #nearesttown");
         		
         		if(lazyValidationFields.cityValid ){        		
         		
@@ -616,18 +618,7 @@ jQuery( document ).ready(function() {
 
 		});
 
-		/*jQuery("#show-after-get input[name='parking_available_from']").click(function(){
-			jQuery("#show-after-get .leftpart .radio-with-text3 span").remove();
-			jQuery("#show-after-get .leftpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
-
-		});
-
-		jQuery("#show-after-get input[name='parking_available_to']").click(function(){
-			jQuery("#show-after-get .rightpart .radio-with-text3 span").remove();
-			jQuery("#show-after-get .rightpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
-
-		});
-*/
+		
 
 		jQuery("#show-after-get input[name='packing_service']").click(function(){
 			jQuery("#show-after-get .packing-service .input-label-wrapper span").remove();
@@ -853,15 +844,7 @@ jQuery( document ).ready(function() {
 	});
 
 
-		/*jQuery(".get-my-quote-second-business").click(function() {
-    		jQuery("#form-business").submit();
- 		 });
-
-	 	jQuery('#form-business input').keydown(function(e) {
-			if (e.keyCode == 13) {
-    			jQuery("#form-business").submit();
-			}
- 		 });*/
+		
 
 
 		jQuery("#form-business input[name='property_type_from']").click(function(){
@@ -1349,7 +1332,6 @@ jQuery(document).ready(function(){
        jQuery(active_business_type_class+" div.to-address-wrapper input.form-control").each(function(){
 			jQuery(this).val("");				
 		});
-       jQuery(active_business_type_class+' div.nearesttown-readonly-address-wrapper .nearest-address').text("");
     	
     });
     
@@ -1407,7 +1389,7 @@ jQuery(document).ready(function(){
     		}
     		else
     		{
-    			jQuery(this).removeClass("pending");    			
+    			jQuery(this).removeClass("pending"); 			
 
     		}
     		
@@ -1426,11 +1408,9 @@ jQuery(document).ready(function(){
     		}
     		else
     		{
-    			jQuery(this).removeClass("pending");    			  				
-    			  
+    			jQuery(this).removeClass("pending"); 
+    			
     		}	
-    		
-
     		
     	});
     }	
