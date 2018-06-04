@@ -237,12 +237,24 @@ label#bedrooms-error{
     left: 46%;
 }
 
-.residential .readyonly-address-wrapper{
+.residential .moving-to-readonly-address-wrapper .moving-to-address,.residential .nearesttown-readonly-address-wrapper .nearest-address{
 	background-color:#efefef;
 	width:100%;
 	height:auto;
-	padding:10px;	
+	padding:10px;
+	margin:10px 0 5px 0;	
 }
+
+.change-moving-to-address,.change-nearesttown-address{
+	font-size:15px;
+}
+
+.residential #nearesttown.valid
+{
+	border:1px solid #ccc;
+	background:none;	
+}
+
 
 
 /* crafti click css */

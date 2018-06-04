@@ -705,6 +705,7 @@ label.error:after {
 }
 
 
+
 /* In Mobile View Adjust in checked icon */
 @media (max-width: 358px){
 	
@@ -892,25 +893,28 @@ label.error:after {
 	border-color: #66afe9;
 }
 
-input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending,.form-control.phone.pending, .form-control.email.pending {
+input[name=city].pending,input[name=address].pending,input[name=postcode].pending,input[name=city_to].pending,input[name=address_to].pending,input[name=postcode_to].pending,.form-control.phone.pending, .form-control.email.pending,.form-control.nearesttown.pending {
     background: url("images/ajax-loader.gif") no-repeat;
     background-position:97% center;
 }
 
 .dont-know-address,.know-address{
-	text-align: center;
-	display: block;
+	text-align: center;	
 	margin:5px 0 8px 0 !important;
 	font-size: 15px !important;
 	clear: both;
 }
 
-input[name="postcode_to"]{
+#show-after-get-business input[name="postcode_to"]{
 	margin-bottom: 5px !important;
 }
 
-input.nearesttown{
+ #show-after-get-business input.nearesttown{
 	margin-bottom: 0px !important;
+} 
+
+.text-center{
+	text-align:center;
 }
 
 .dontknow-exact-address {
@@ -953,5 +957,6 @@ input.nearesttown{
 .gdpr-info-wrapper
 {	
 	overflow:hidden;
-}
+}						 
+
 
