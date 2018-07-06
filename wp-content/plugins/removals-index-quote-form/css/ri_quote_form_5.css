@@ -82,6 +82,10 @@ blockquote,q {
 	border-radius:5px;
 }
 
+input.form-control.error {
+    border: 1px solid #c00!important;
+}
+
 .residential .bedimgwrapper
 {	
 	background-color: #D9D9D9;

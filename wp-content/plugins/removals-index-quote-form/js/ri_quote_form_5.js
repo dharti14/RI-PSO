@@ -487,23 +487,21 @@ jQuery( document ).ready(function() {
 
      //checking for the checkbox checked and apply valid class to it.
 	 	jQuery('#show-after-get .bedroom-radios-container').click(function(){	 		
-	 		
-	 		jQuery("#show-after-get .bedroom-radios-container").each(function(){
+	 		var clickedElement = jQuery(this);
+	 		jQuery("#show-after-get .bedroom-radios-container").each(function(){	 			
 	 			jQuery(this).children().eq(0).removeClass("bedroom-radios-container-sel");
 	 		});	 		
 
+	 		jQuery(clickedElement).children().eq(0).addClass("bedroom-radios-container-sel");
+	 		
 			if(jQuery(this).attr("rel") == "bed0"){
 				// need to update as per new design
 				jQuery(".step-4-checkbox span").remove();
 				jQuery(".step-4-checkbox").append('<span class="vaild-check valid"></span>');
 				jQuery('#greenwood_drive').show();
-				
-
 				jQuery("input[name='any_addition_information']").attr('checked', 'checked');
 				jQuery('textarea[name="additional_info"]').valid();
 
-			}else{
-				jQuery(this).children().eq(0).addClass("bedroom-radios-container-sel");
 			}
 
 			jQuery(this).find("input[type='radio']").prop("checked", true);
@@ -619,20 +617,7 @@ jQuery( document ).ready(function() {
 			jQuery("#show-after-get .moving-to-wrapper .radio-with-text2 span").remove();
 			jQuery("#show-after-get .moving-to-wrapper .radio-with-text2").append('<span class="vaild-check valid"></span>');
 
-		});
-
-		/*jQuery("#show-after-get input[name='parking_available_from']").click(function(){
-			jQuery("#show-after-get .leftpart .radio-with-text3 span").remove();
-			jQuery("#show-after-get .leftpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
-
-		});
-
-		jQuery("#show-after-get input[name='parking_available_to']").click(function(){
-			jQuery("#show-after-get .rightpart .radio-with-text3 span").remove();
-			jQuery("#show-after-get .rightpart .radio-with-text3").append('<span class="vaild-check valid"></span>');
-
-		});
-*/
+		});		
 
 		jQuery("#show-after-get input[name='packing_service']").click(function(){
 			jQuery("#show-after-get .packing-service .input-label-wrapper span").remove();
@@ -1103,6 +1088,15 @@ jQuery(document).ready(function(){
  		}
  	  });
  
+    	 
+    
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
     	
          
      });
