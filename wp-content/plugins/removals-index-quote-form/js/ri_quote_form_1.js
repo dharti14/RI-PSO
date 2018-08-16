@@ -877,6 +877,7 @@ jQuery( document ).ready(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
+		minDate: 0,
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
@@ -887,6 +888,7 @@ jQuery( document ).ready(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
+		minDate: 0,
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
@@ -897,6 +899,7 @@ jQuery( document ).ready(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
+		minDate: 0,
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
