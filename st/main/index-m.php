@@ -1286,7 +1286,7 @@ $(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
-		minDate: 0,
+		minDate: 1,
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
