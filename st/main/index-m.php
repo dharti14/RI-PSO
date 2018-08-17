@@ -154,7 +154,7 @@ display:none;
            
           </div>
           
-          <div class="quotes-text">â€œWe help thousands of people,<br> just like you move every month...â€�</div>
+          <div class="quotes-text">“We help thousands of people,<br> just like you move every month...”</div>
         </div>
      </div>
   </div>
