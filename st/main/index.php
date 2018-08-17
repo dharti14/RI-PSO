@@ -168,7 +168,7 @@ if($hln == 'Trusted Local Removal Companies'){
            
           </div>
           
-          <div class="quotes-text">“We help thousands of people,<br> just like you move every month...”</div>
+          <div class="quotes-text">â€œWe help thousands of people,<br> just like you move every month...â€�</div>
         </div>
      </div>
   </div>
@@ -1300,6 +1300,7 @@ $(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'dd/mm/yy',
+		minDate: 0,
 		onSelect: function(dateText,inst){
 			jQuery(this).trigger('blur');
 			
