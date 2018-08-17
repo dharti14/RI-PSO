@@ -35,6 +35,15 @@ function silo_footer(){
 	  </div>
    
  </div>
+ 
+ <div class="regulatory-info-container">
+	<div class="container">
+		<div class="regulatory-info center">
+			<?php echo get_regulatory_info(); 	?>
+		</div>
+	</div>	
 </div>
+ 
+</footer>
 	
 <?php  } ?>
