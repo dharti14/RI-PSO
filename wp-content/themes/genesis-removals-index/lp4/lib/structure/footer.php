@@ -49,9 +49,18 @@ function lp4_footer(){
 		   
 	<?php //Displaying copyright information and ri address, getting from functions.php ?>
    
-  </div>
+  </div> 
  </div>
-</div>
+ 
+	<div class="regulatory-info-container">
+		<div class="container">
+			<div class="regulatory-info center">
+				<?php echo get_regulatory_info(); 	?>
+			</div>
+		</div>	
+	</div>
+ 
+</footer>
 	
 <?php  }
 ?>
