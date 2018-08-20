@@ -433,7 +433,7 @@ blockquote:after,blockquote:before,label.error:after,q:after,q:before {
 
 @media only screen and (min-width: 1400px) {
    #get_quotes.get_quotes2 .sh2 {
-	    background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/start-compare-img-new.png");
+	    background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/start-compare-img-new.png");
 	    width: 143px;
 	    height: 186px;
 	    left: -117px;
@@ -859,7 +859,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 640px) {
     #hero {
-		background:url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/home_hero.jpg") 50% 100% no-repeat;
+		background:url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/home_hero.jpg") 50% 100% no-repeat;
 /* 		  background: url("../images/details-new.png"); */
 	}
 }
@@ -1337,35 +1337,35 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 }
 
 #how_will .steps .num1 i {
-      background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/details-new.png");
+      background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/details-new.png");
       background-size: 81px 75px; 
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         #how_will .steps .num1 i {
-         	 background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/details-new.png"); 
+         	 background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/details-new.png"); 
          } 
 }
 
 #how_will .steps .num2 i {
-      background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/compare-new.png");
+      background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/compare-new.png");
       background-size: 102px 83px; 
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         #how_will .steps .num2 i {
-     	     background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/compare-new.png"); 
+     	     background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/compare-new.png"); 
      	 } 
 }
 
 #how_will .steps .num3 i {
-      background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/hire-new.png");
+      background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/hire-new.png");
       background-size: 59px 77px; 
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         #how_will .steps .num3 i {
-	          background-image: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/hire-new.png"); 
+	          background-image: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/hire-new.png"); 
 	     } 
 }
 
@@ -1492,7 +1492,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 1300px) {
     .quote_box .sh1 {
-	      background: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/start_here1.png");
+	      background: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/start_here1.png");
 	      background-repeat: no-repeat;
 	      position: absolute;
 	      width: 81px;
@@ -1530,7 +1530,11 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 .quote_box .btn {
     margin-top: 20px; 
 }
-
+#get-my-quote-top
+{
+	margin-top: 60px;
+	margin-bottom: 60px; 
+}
 .quote_box .security {
     text-align: center;
     font-size: 11px;
@@ -1597,7 +1601,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 
 @media only screen and (min-width: 1400px) {
       #get_quotes form .sh2 {
-	        background: url("/wp-content/themes/genesis-removals-index/lp3/lib/assets/images/start_here2_new.png");
+	        background: url("/wp-content/themes/genesis-removals-index/lp4/lib/assets/images/start_here2_new.png");
 	        background-repeat: no-repeat;
 	        position: absolute;
 	        width: 143px;
@@ -1644,7 +1648,8 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 	        font-size: 25px;
 	        padding: 13px 10px 20px;
 	        height: 90px;
-	        margin-top: 0; 
+	        margin: 0 auto;
+	        max-width:450px; 
 	   } 
 }
 
@@ -2254,5 +2259,18 @@ div.progress_bar {
 
 /* Mobile Changes */
 
+.regulatory-info-container {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+}
 
+.regulatory-info-container .regulatory-info {
+	color: #8a95a4;
+	font-size: 12px;
+}
+
+.regulatory-info-container .regulatory-info p {
+	margin: 0px 0px 5px 0px;
+	line-height: 15px;
+}
 

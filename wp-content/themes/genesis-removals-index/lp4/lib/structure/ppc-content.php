@@ -22,17 +22,17 @@ $dki_loc = dki_get_loc();
 								<h3 class="title">SAVE Up To 40% On Your Move!</h3>
 
 								<form id="form1">
-									<div class="row">
+									<!-- <div class="row">
 										<div class="form-group col-sm-12">
 											<label>I'm Moving From:</label>
 											<input type="text" id="postcode_from" name="postcode_from" class="form-control" placeholder="Enter Postcode..."/>
 										</div>
-										<!-- <div class="form-group col-sm-6 moving-to">
+									 <div class="form-group col-sm-6 moving-to">
 											<label>I'm Moving To:</label>
 											<input type="text" id="postcode_to" name="postcode_to" class="form-control" placeholder="Enter Postcode..."/>
-										</div> -->
+										</div> 
 									</div>
-								<!--	<div class="checkbox align_center">
+									<div class="checkbox align_center">
 										<div class="row">
 											<label class="col-sm-4 mg-b-10">
 												<input type="radio" onclick="jQuery('#form1 .moving-to').show();" checked name="business_type" value="Residential" /> Residential
@@ -179,22 +179,26 @@ $dki_loc = dki_get_loc();
 				
 				<form>
 					<div class="row">
+						<div class="col-md-12">
+							<div id="get-my-quote-middle" class="btn btn-quote get-my-quote2">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
+							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+						</div>
+					
+						<!-- 
 						<div class="col-sm-7">
 							<div class="row">
 								<div class="form-group col-sm-12">
 									<label>I'm Moving From:</label>
 									<input type="text" id="postcode_from2" name="postcode_from2" class="form-control" placeholder="Enter Postcode..."/>
-								</div>
+								</div> -->
 								<!-- <div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
 									<input type="text" id="postcode_to2" name="postcode_to2" class="form-control" placeholder="Enter Postcode..."/>
-								</div> -->
+								</div> 
 							</div>
-							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<div id="get-my-quote-middle" class="btn btn-quote get-my-quote2">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
-						</div>
+						</div>-->
 					</div>
 					
 						<p class="mobile-security security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
@@ -275,26 +279,27 @@ $dki_loc = dki_get_loc();
 	<section id="get_quotes" class="get_quotes2">
 		<div class="container">
 			<div class="inner-container">
-			<div class="pad65">
-				
+			<div class="pad65">				
 				<form>
 					<div class="row">
-						<div class="col-sm-7">
+						<div class="col-md-12">
+							<div id="get-my-quote-bottom" class="btn btn-quote get-my-quote3">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
+							 <p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
+						</div>
+						<!-- <div class="col-sm-7">
 							<div class="row">
 								<div class="form-group col-sm-12">
 									<label>I'm Moving From:</label>
 									<input type="text" id="postcode_from3" name="postcode_from3" class="form-control" placeholder="Enter Postcode..."/>
 								</div>
-								<!-- <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label>I'm Moving To:</label>
 									<input type="text" id="postcode_to3" name="postcode_to3" class="form-control" placeholder="Enter Postcode..."/>
-								</div> -->
+								</div> 
 							</div>
-							<p class="security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
 						</div>
 						<div class="col-sm-5">
-							<div id="get-my-quote-bottom" class="btn btn-quote get-my-quote3">GET MY FREE QUOTES <span>You'll be done in less than 60 seconds..</span></div>
-						</div>
+						</div>-->
 					</div>
 
 						<p class="mobile-security security"><span class="glyphicon glyphicon-lock"></span> Your information is protected by 128-bit SSL encryption</p>
