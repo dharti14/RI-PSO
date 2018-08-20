@@ -966,7 +966,8 @@ $(function() {
 	$('#date3').datepicker({
 		changeMonth: true,
 		changeYear: true,
-		dateFormat: 'dd/mm/yy'
+		dateFormat: 'dd/mm/yy',
+		 minDate: 1
 	});
 
 

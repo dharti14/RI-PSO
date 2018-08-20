@@ -326,14 +326,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 			 			$output = json_decode($output, true);	 			
 			 			
-			 			if ($output['status'] == 'valid' || $output['status'] == 'accept_all')
+			 			if ($output['status'] == 'valid' || $output['status'] == 'accept_all' || $output['status'] == 'unknown')
 			 			{
-		 				echo "true";
-			 			}
-			 			elseif($output['status'] == 'unknown' && stripos($output['domain'],'yahoo') !== false)
-			 			{
-			 				echo "true";
-			 			}
+		 					echo "true";
+			 			}			 			
 			 			elseif($output['status'] == 'invalid')
 			 			{
 			 				echo "false";

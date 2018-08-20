@@ -2313,3 +2313,18 @@ div.progress_bar {
     word-wrap: break-word;
     line-height: 1.2 !important;
 }
+
+.regulatory-info-container {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.regulatory-info-container .regulatory-info {
+	color: #8a95a4;
+	font-size: 12px;
+}
+
+.regulatory-info-container .regulatory-info p {
+	margin: 0px 0px 5px 0px;
+	line-height: 15px;
+}

@@ -166,11 +166,21 @@ function ri_copyright_information(){
 
 //Setting removals-index address
 function ri_display_address(){
-	return 'Removals Index, Communications House, 26 York St, London, W1U 6PZ';
+	return 'Removals Index, 4 Old Park Lane, London, W1K 1QW';
 }
 
 //*************** Copyright Section *****************//
 
+
+function get_regulatory_info() {
+	
+	$info = "<p>Removals Index is a trading style of iPlace Global Limited.</p>
+			 <p>iPlace Global Limited is authorised and regulated as an Appointment Representative Number: 801732.</p> 
+			 <p>iPlace Global Limited is an Appointed Representative of Sure Wise Limited who are authorised and regulated by the Financial Conduct Authority (FCA). Firm reference Number is 618327.</p>";
+
+	return $info;
+	
+}
 
 
 // Setting Site header and footer for all pages

@@ -279,20 +279,32 @@ For example, if you are packing your own boxes up, then correctly labelling them
 </div>
 
 <div class="footer">
- <div class="container">
-  <div class="footer-link"> 
-   <ul>
-    <li><a href="#">Removal Companies Join Us</a>|</li>
-    <li><a href="#">Terms and Conditions</a>|</li>
-    <li><a href="#">Privacy Policy</a>|</li>
-    <li><a href="#">Removals Price Guide</a> </li>
-   </ul>
-  </div>
-  <div class="copyright">
-   <p>Copyright &copy; 2013 removals-index.com All rights reserved</p>
-   <p>Pinlocal Leads, Communications House, 26 York St, London, W1U 6PZ</p>
-  </div>
- </div>
+	<div class="container">
+  		<div class="footer-link"> 
+   			<ul>
+    			<li><a href="#">Removal Companies Join Us</a>|</li>
+			    <li><a href="#">Terms and Conditions</a>|</li>
+			    <li><a href="#">Privacy Policy</a>|</li>
+			    <li><a href="#">Removals Price Guide</a> </li>
+			</ul>
+  		</div>
+  	
+  		<div class="copyright">
+   			<p>Copyright &copy; 2013 removals-index.com All rights reserved</p>
+   			<p>Removals Index, 4 Old Park Lane, London, W1K 1QW</p>
+  		</div>
+ 	</div>
+ 	
+ 	<div class="regulatory-info-container">
+		<div class="container">
+			<div class="regulatory-info center">
+				<p>Removals Index is a trading style of iPlace Global Limited.</p>
+				<p>iPlace Global Limited is authorised and regulated as an Appointment Representative Number: 801732.</p>
+			 	<p>iPlace Global Limited is an Appointed Representative of Sure Wise Limited who are authorised and regulated by the Financial Conduct Authority (FCA). Firm reference Number is 618327.</p>
+			</div>
+		</div>	
+	</div>
+ 	
 </div>
 
 <?php include('../inc/footer-code.php');?>
