@@ -70,6 +70,24 @@ blockquote,q {
 	text-align:center;
 }
 
+
+.removing-the-stress .form-group select { 
+	font-size:15px; 
+	color:#000; 
+	width:230px;
+}
+
+.drop-down {
+	
+	background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 14px;
+    color: #555;
+}
 .residential .bedroom-radios-container {						
     cursor: pointer;
     display:inline-block;

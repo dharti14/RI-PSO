@@ -1533,13 +1533,12 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 #get-my-quote-top
 {
 	margin-top: 60px;
-	margin-bottom: 60px; 
 }
 .quote_box .security {
     text-align: center;
     font-size: 11px;
     margin-top: 10px;
-    margin-bottom: 0; 
+    margin-bottom:60px;
     color: #D3D3D3;
 }
 

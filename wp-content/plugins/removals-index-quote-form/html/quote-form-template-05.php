@@ -180,7 +180,7 @@
 							              </div>
 							              <div id="appartment-floor-from" style="display:none;">
 							              <div class="form-group">
-							               <select name="floor_from" class="drop-down form-control">
+							               <select name="floor_from" class="drop-down">
 							               		<option value="">Select Which Floor...</option>
 							                    <option value="Ground">Ground</option>
 							                    <option value="1">1</option>
@@ -248,7 +248,7 @@
 							              </div>
 							              <div id="appartment-floor-to" style="display:none;">
 							              <div class="form-group">
-							               <select name="floor_to" class="drop-down form-control">
+							               <select name="floor_to" class="drop-down">
 							               		<option value="">Select Which Floor...</option>
 							                    <option value="Ground">Ground</option>
 							                    <option value="1">1</option>
