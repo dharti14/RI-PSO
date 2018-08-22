@@ -150,12 +150,20 @@
 							          <div class="removing-stress-form-con">
 							           <div class="section-wrapper">
 							           <div class="moving-from-wrapper">
-							              <div class="form-group stress-moving-from">
+							              <div class="form-group stress-moving-from address-wrapper">
 							                <label for="exampleInputEmail1">I'm moving from:</label>
-							                <input type="text" class="form-control postcode" name="postcode" placeholder="Postcode *">							                
-							                <input type="text" class="form-control" name="city" placeholder="Town / City *">
-							                <input type="text" class="form-control" name="address" placeholder="Street Name *">
-							                <input type="text" class="form-control" name="houseno" placeholder="Enter House Number...">
+							                <input type="text" class="form-control postcode" id="postcode_from" name="postcode" placeholder="Postcode *">							                
+							                
+							                <input type="hidden" class="form-control" name="city" placeholder="Town / City *">
+							                <input type="hidden" class="form-control" name="address" placeholder="Street Name *">
+							                <input type="hidden" class="form-control" name="houseno" placeholder="Enter House Number...">
+							              </div>
+							              
+							              <div class="form-group moving-from-readonly-address-wrapper" style="display:none;">	
+							              	<div class="moving-from-address"></div>
+							              	<div class="text-center">						              
+							              		<a href="javascript:void(0);" id="changeMovingFromAddress" class="change-moving-from-address">Change Address</a>
+							              	</div>
 							              </div>
 
 							              <div class="form-group radio-with-text">
@@ -172,7 +180,7 @@
 							              </div>
 							              <div id="appartment-floor-from" style="display:none;">
 							              <div class="form-group">
-							               <select name="floor_from" class="drop-down">
+							               <select name="floor_from" class="drop-down form-control">
 							               		<option value="">Select Which Floor...</option>
 							                    <option value="Ground">Ground</option>
 							                    <option value="1">1</option>
@@ -201,8 +209,8 @@
 							                <label for="exampleInputEmail1">I'm moving to:</label>
 							                <input type="text" class="form-control" name="postcode_to" id="postcodeto" placeholder="Postcode">
 							                <div class="text-center">
-											<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
-											</div>
+												<a href="javascript:void(0);" class="dont-know-address" id='dontknow'>I don't know the exact address</a>
+											 </div>
 						                	 <input type="hidden" class="form-control" name="city_to" id="cityto" placeholder="Town / City *">
 						                	 <input type="hidden" class="form-control" name="address_to" placeholder="Street Name">
 						                	 <input type="hidden" class="form-control" name="houseno_to" placeholder="Enter House Number...">	
@@ -240,7 +248,7 @@
 							              </div>
 							              <div id="appartment-floor-to" style="display:none;">
 							              <div class="form-group">
-							               <select name="floor_to" class="drop-down">
+							               <select name="floor_to" class="drop-down form-control">
 							               		<option value="">Select Which Floor...</option>
 							                    <option value="Ground">Ground</option>
 							                    <option value="1">1</option>

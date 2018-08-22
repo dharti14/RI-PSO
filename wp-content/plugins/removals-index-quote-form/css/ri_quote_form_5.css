@@ -362,7 +362,7 @@ label#bedrooms-error{
     left: 46%;
 }
 
-.residential .moving-to-readonly-address-wrapper .moving-to-address,.residential .nearesttown-readonly-address-wrapper .nearest-address{
+.residential .moving-to-readonly-address-wrapper .moving-to-address,.residential .nearesttown-readonly-address-wrapper .nearest-address,.residential .moving-from-readonly-address-wrapper .moving-from-address{
 	background-color:#efefef;
 	width:100%;
 	height:auto;

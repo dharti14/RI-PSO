@@ -30,32 +30,23 @@ jQuery( document ).ready(function() {
 	
 	}
 	
-	jQuery(".get-my-quote").click(function(){
-		
-		postcode_from = jQuery("#postcode_from").val();
-		onclickGetQuoteBtn(postcode_from);
-		
+	jQuery(".get-my-quote").click(function(){		
+		onclickGetQuoteBtn();		
 	});
 	
 	
-	jQuery(".get-my-quote2").click(function(){		
-	
-		var postcode_from = jQuery("#postcode_from2").val();
-		onclickGetQuoteBtn(postcode_from);
-		
+	jQuery(".get-my-quote2").click(function(){	
+		onclickGetQuoteBtn();		
 	});
 	
-	jQuery(".get-my-quote3").click(function(){
-				
-		var postcode_from = jQuery("#postcode_from3").val();
-		onclickGetQuoteBtn(postcode_from);
-			
+	jQuery(".get-my-quote3").click(function(){				
+		onclickGetQuoteBtn();			
 	});
 	
 });
 
 
-function onclickGetQuoteBtn(postcode_from)
+function onclickGetQuoteBtn()
 {
 	
 
@@ -74,7 +65,7 @@ function onclickGetQuoteBtn(postcode_from)
 		scrollTop: jQuery('#show-after-get').offset().top
 	}, 300);
 	
-	if(postcode_from != '')
+/*	if(postcode_from != '')
 	{
 		
 		jQuery(active_business_type_class+" input[name=city]").addClass("pending");
@@ -107,7 +98,7 @@ function onclickGetQuoteBtn(postcode_from)
 		}
 
 	});	
-  }
+  }*/
 	
 	
 }

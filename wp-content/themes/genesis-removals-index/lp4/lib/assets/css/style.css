@@ -273,7 +273,7 @@ span.arrow-post1 {
     color: #fff; 
 }
 
-form .form-control {
+form input.form-control {
   padding: 9px 12px;
   height: 35px; 
 }
