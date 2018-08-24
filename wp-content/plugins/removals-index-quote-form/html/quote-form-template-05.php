@@ -363,10 +363,10 @@
 							               <span class="additional">Eg Parking issues, contents</span>
 							               <div class="step-4-checkbox ">
 							                <label>
-							                  <input onClick="jQuery('#greenwood_drive').hide();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No
+							                  <input onClick="jQuery('#greenwood_drive').hide();jQuery('#greenwood_drive-error').hide();" type="radio" name="any_addition_information" id="any-addition-information-n" checked value="No"> No
 							                </label>&nbsp; &nbsp;
 							                <label>
-							                  <input onClick="jQuery('#greenwood_drive').show();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes
+							                  <input onClick="jQuery('#greenwood_drive').show();jQuery('#greenwood_drive-error').show();" type="radio" name="any_addition_information" id="any-addition-information-y" value="Yes"> Yes
 							                </label>
 							                </div>
 							              </div>

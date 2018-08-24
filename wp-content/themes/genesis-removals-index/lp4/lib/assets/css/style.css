@@ -855,6 +855,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 #hero {
 /* 	  border-bottom: 6px solid #f5f5f5; */
 	  padding-top: 10px;
+	  min-height:530px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -1486,7 +1487,7 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 @media only screen and (min-width: 768px) {
     .quote_box {
  	     padding: 25px; 
- 	     padding-top: 16px;
+/*  	    padding-top: 16px; */
  	 } 
 }
 
@@ -1528,17 +1529,15 @@ header.main .navbar-default .navbar-nav > li > a .caret {
 }
 
 .quote_box .btn {
-    margin-top: 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
 }
-#get-my-quote-top
-{
-	margin-top: 60px;
-}
+
 .quote_box .security {
     text-align: center;
     font-size: 11px;
     margin-top: 10px;
-    margin-bottom:60px;
+    margin-bottom:0px;
     color: #D3D3D3;
 }
 

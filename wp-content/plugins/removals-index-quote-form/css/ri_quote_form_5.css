@@ -78,7 +78,7 @@ blockquote,q {
 	height:37px;
 }
 
-.drop-down {
+.drop-down,textarea {
 	
 	background-color: #fff;
     background-image: none;
@@ -88,6 +88,10 @@ blockquote,q {
     padding: 9px 12px;
     font-size: 14px;
     color: #555;
+}
+.form-group textarea
+{
+	height:100px;
 }
 .residential .bedroom-radios-container {						
     cursor: pointer;
