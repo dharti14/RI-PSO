@@ -90,7 +90,7 @@ jQuery( document ).ready(function() {
 	
 	function isValidFromCityReal(){
 		
-		if(jQuery(active_business_type_class+' #city').val() == "")
+		if(jQuery(active_business_type_class+' input[name="city"]').val() == "")
 		{	
 			return false;
 		}
