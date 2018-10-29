@@ -118,11 +118,10 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 			//Passing the name of the template file(.php) as key and the value will be Name (which is to be visible on front end).
 			$quote_form_templates = array(
-					'quote-form-template-02' => 'Template 02',
-					//'quote-form-template-03' => 'Template 03',
+					'quote-form-template-02' => 'Template 02',					
 					'quote-form-template-04' => 'Template 04 (Linear Form)',
-// 					'quote-form-template-01' => 'Template 01',
-				   //'quote-form-template-anyvan' => 'Anyvan - 1'
+					'quote-form-template-05' => 'Template 05 (Linear Form V2)'
+
 			);
 
 			//Including ci plugin metaboxes file
