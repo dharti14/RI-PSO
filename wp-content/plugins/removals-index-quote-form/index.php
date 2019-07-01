@@ -367,7 +367,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 					"level" => $level,
 		 					"options" => $options
 		 			);
-		 			$client = new SoapClient("http://webservices.data-8.co.uk/EmailValidation.asmx?WSDL");
+		 			$client = new SoapClient("https://webservices.data-8.co.uk/EmailValidation.asmx?WSDL");
 		 			$result = $client->IsValid($params);
 
 		 			if ($result->IsValidResult->Status->Success == 0)
@@ -429,7 +429,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 			);
 
 
-		 			$client = new SoapClient("http://webservices.data-8.co.uk/InternationalTelephoneValidation.asmx?WSDL");
+		 			$client = new SoapClient("https://webservices.data-8.co.uk/InternationalTelephoneValidation.asmx?WSDL");
 		 			$result = $client->IsValid($params, $defaultCountry);
 
 		 			// No access to the service
