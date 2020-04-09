@@ -20,4 +20,16 @@ function ci_canvas_page_notitle($title)
 	return '';
 }
 
+
+// Prevent WP from adding <p> tags on pages
+function ri_disable_wp_auto_p( $content ) {
+	
+	if ( is_singular( 'page' ) ) {
+	  remove_filter( 'the_content', 'wpautop' );
+	  remove_filter( 'the_excerpt', 'wpautop' );
+	}
+	return $content;
+  }
+ add_filter( 'the_content', 'ri_disable_wp_auto_p', 0 );
+
 genesis();
