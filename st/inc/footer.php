@@ -5,7 +5,7 @@
 			<ul>
 			    <li><a href="http://www.pinlocal.com/removals.html" target="_blank">Removal Companies Join Us</a></li>
 			    <li><a href="/terms-and-conditions/"  target="_blank">Terms and Conditions</a></li>
-			    <li><a href="/removals-index-privacy-policy/"  target="_blank">Privacy Policy</a></li>
+			    <li><a href="/removals-index-privacy-policy-v2/"  target="_blank">Privacy Policy</a></li>
 			    <li><a href="/removals-price-guide-moving-tips/"  target="_blank">Removals Price Guide</a></li>
 		   </ul>
   		</div>
