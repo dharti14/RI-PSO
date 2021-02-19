@@ -68,23 +68,7 @@ window._fbq.push(['track', '6023862189065', {'value':'0.00','currency':'GBP'}]);
 */
 ?>
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1803055596627597'); 
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" src="https://www.facebook.com/tr?id=1803055596627597&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Facebook Pixel Code -->
+
 
 </head>
 <body>
@@ -278,34 +262,9 @@ For example, if you are packing your own boxes up, then correctly labelling them
 
 </div>
 
-<div class="footer">
-	<div class="container">
-  		<div class="footer-link"> 
-   			<ul>
-    			<li><a href="http://www.pinlocal.com/removals.html" target="_blank">Removal Companies Join Us</a></li>
-          <li><a href="/terms-and-conditions/"  target="_blank">Terms and Conditions</a></li>
-          <li><a href="/removals-index-privacy-policy-v2/"  target="_blank">Privacy Policy</a></li>
-          <li><a href="/removals-price-guide-moving-tips/"  target="_blank">Removals Price Guide</a></li>
-			</ul>
-  		</div>
-  	
-  		<div class="copyright">
-   			<p>Copyright &copy; 2013 removals-index.com All rights reserved</p>
-   			<p>Removals Index, 4 Old Park Lane, London, W1K 1QW</p>
-  		</div>
- 	</div>
- 	
- 	<div class="regulatory-info-container">
-		<div class="container">
-			<div class="regulatory-info center">
-				<p>Removals Index is a trading style of iPlace Global Limited.</p>
-				<p>iPlace Global Limited is authorised and regulated as an Appointment Representative Number: 801732.</p>
-			 	<p>iPlace Global Limited is an Appointed Representative of Sure Wise Limited who are authorised and regulated by the Financial Conduct Authority (FCA). Firm reference Number is 618327.</p>
-			</div>
-		</div>	
-	</div>
- 	
-</div>
+<?php include('../inc/footer.php');?>
+
+
 
 <?php include('../inc/footer-code.php');?>
 </body>

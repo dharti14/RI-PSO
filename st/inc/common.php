@@ -180,9 +180,7 @@ function get_plocal_tags_var() {
 
 function get_regulatory_info() {
 	
-	$info = "<p>Removals Index is a trading style of iPlace Global Limited.</p>
-			 <p>iPlace Global Limited is authorised and regulated as an Appointment Representative Number: 801732.</p>
-			 <p>iPlace Global Limited is an Appointed Representative of Sure Wise Limited who are authorised and regulated by the Financial Conduct Authority (FCA). Firm reference Number is 618327.</p>";
+	$info = "<p>Removals Index is a trading style of iPlace Global Limited.</p>";
 	
 	return $info;
 	
