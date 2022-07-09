@@ -290,56 +290,59 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 public static function ri_email_verify( ) {
 
 
-		 	/**
-		 	 * Brite Verify API Key.
-		 	 */
-		 	$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
+		 	$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";			
 
-		 	$apiUrl = "https://bpi.briteverify.com/emails.json?";
+			if( $_POST && isset( $_POST['emailAddress'] ) ) {
+					
+				$curl = curl_init();
 
-		 	if( $_POST && isset( $_POST['emailAddress'] ) ) {
+				curl_setopt_array($curl, array(
+				  CURLOPT_URL => $apiUrl,
+				  CURLOPT_RETURNTRANSFER => true,
+				  CURLOPT_ENCODING => '',
+				  CURLOPT_MAXREDIRS => 10,
+				  CURLOPT_TIMEOUT => 0,
+				  CURLOPT_FOLLOWLOCATION => true,
+				  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				  CURLOPT_CUSTOMREQUEST => 'POST',
+				  CURLOPT_POSTFIELDS =>'{
+				    "email": "'.$_POST['emailAddress'].'"
+				}',
+				  CURLOPT_HTTPHEADER => array(
+				    'Content-Type: application/json',
+				    'Authorization: ApiKey: 2aa0cffd-73b8-41f9-ae2c-232d644a09cf'
+				  ),
+				));
 
-		 		$initUrl = $apiUrl."address=".urlencode(trim($_POST['emailAddress']))."&apikey=".urlencode($apiKey);
+				$res = curl_exec($curl);
+				curl_close($curl);
+								
 
-		 		$ch = curl_init();
-
-		 		curl_setopt($ch, CURLOPT_URL, $initUrl);
-
-		 		//curl_setopt($ch, CURLOPT_HEADER, 0);
-
-		 		//curl_setopt($ch, CURLOPT_POST, 1);
-
-		 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-		 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-		 		$output = curl_exec($ch);
-
-		 		if($output === false)
-		 		{
-		 			//echo 'Curl error: ' . curl_error($ch);
-		 			echo "true";
-		 		}
-		 		else
-		 		{
-
-			 			$output = json_decode($output, true);	 			
-			 			
-			 			if ($output['status'] == 'valid' || $output['status'] == 'accept_all' || $output['status'] == 'unknown')
-			 			{
-		 					echo "true";
-			 			}			 			
-			 			elseif($output['status'] == 'invalid')
-			 			{
-			 				echo "false";
-			 			}
-
-		 			}
-		 	}
-		 	else {
-		 		
-		 		echo "false";
-		 	}
+				if($res === false)
+				{
+			    	echo "true";
+				}
+				else
+				{
+					$output = json_decode($res);
+					if(isset($output->email) && isset($output->email->status))	
+					{
+						if($output->email->status == 'valid' || $output->email->status == 'accept_all' || $output->email->status == "unknown")
+						{
+							echo "true";
+						}						
+						else if($output->email->status == 'invalid')
+						{
+							echo "false";
+						}
+						
+					}							
+					
+				}
+			}
+		    else {
+		 			echo "false";
+		     }
 		 	die();
 
 		 }
