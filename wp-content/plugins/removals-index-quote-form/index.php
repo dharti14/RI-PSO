@@ -290,7 +290,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 public static function ri_email_verify( ) {
 
 
-		 	$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";			
+		 	$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";
 
 			if( $_POST && isset( $_POST['emailAddress'] ) ) {
 					
@@ -307,43 +307,45 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				  CURLOPT_CUSTOMREQUEST => 'POST',
 				  CURLOPT_POSTFIELDS =>'{
 				    "email": "'.$_POST['emailAddress'].'"
-				}',
+				  }',
 				  CURLOPT_HTTPHEADER => array(
 				    'Content-Type: application/json',
-				    'Authorization: ApiKey: 2aa0cffd-73b8-41f9-ae2c-232d644a09cf'
+				    'Authorization: ApiKey:2aa0cffd-73b8-41f9-ae2c-232d644a09cf'
 				  ),
 				));
 
 				$res = curl_exec($curl);
-				curl_close($curl);
-								
-
+				curl_close($curl);			
+				
 				if($res === false)
 				{
 			    	echo "true";
 				}
 				else
 				{
-					$output = json_decode($res);
-					if(isset($output->email) && isset($output->email->status))	
+					$output = json_decode($res,true);
+					if(!empty($output) && isset($output['email']) && isset($output['email']['status']))	
 					{
-						if($output->email->status == 'valid' || $output->email->status == 'accept_all' || $output->email->status == "unknown")
+						if($output['email']['status'] == 'valid' || $output['email']['status'] == 'accept_all' || $output['email']['status'] == "unknown")
 						{
 							echo "true";
 						}						
-						else if($output->email->status == 'invalid')
+						else if($output['email']['status'] == 'invalid')
 						{
 							echo "false";
 						}
+						else
+						{
+							echo "false";
+						}	
 						
-					}							
-					
+					}
 				}
-			}
+			}	
 		    else {
 		 			echo "false";
 		     }
-		 	die();
+			die();
 
 		 }
 
