@@ -315,29 +315,33 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				));
 
 				$res = curl_exec($curl);
-				curl_close($curl);			
-				
+				curl_close($curl);					
+				$output = json_decode($res,true);
+
 				if($res === false)
 				{
 			    	echo "true";
 				}
-				else
+				elseif(isset($output['errors']))
 				{
-					$output = json_decode($res,true);
+					echo "true";
+				}				
+				else
+				{					
 					if(!empty($output) && isset($output['email']) && isset($output['email']['status']))	
 					{
 						if($output['email']['status'] == 'valid' || $output['email']['status'] == 'accept_all' || $output['email']['status'] == "unknown")
 						{
 							echo "true";
 						}						
-						else if($output['email']['status'] == 'invalid')
+						elseif($output['email']['status'] == 'invalid')
 						{
 							echo "false";
 						}
 						else
 						{
-							echo "false";
-						}	
+							echo "true";
+						}							
 						
 					}
 				}
