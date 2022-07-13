@@ -310,14 +310,14 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				  }',
 				  CURLOPT_HTTPHEADER => array(
 				    'Content-Type: application/json',
-				    'Authorization: ApiKey:2aa0cffd-73b8-41f9-ae2c-232d644a09cf'
+				    'Authorization: ApiKey: 2aa0cffd-73b8-41f9-ae2c-232d644a09cf'
 				  ),
 				));
 
 				$res = curl_exec($curl);
 				curl_close($curl);					
 				$output = json_decode($res,true);
-
+				
 				if($res === false)
 				{
 			    	echo "true";
