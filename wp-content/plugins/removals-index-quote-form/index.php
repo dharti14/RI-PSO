@@ -324,7 +324,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				}
 				elseif(isset($output['errors']))
 				{
-					echo "true";
+					echo "true"; // Error is due to many reason, Lead should not be missed so return true.  
 				}				
 				else
 				{					
@@ -340,7 +340,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 						}
 						else
 						{
-							echo "true";
+							echo "true"; //In case of any status, Lead should not be missed so return true. 
 						}							
 						
 					}
