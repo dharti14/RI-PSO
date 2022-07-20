@@ -291,6 +291,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 
 		 	$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";
+		 	$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
 
 			if( $_POST && isset( $_POST['emailAddress'] ) ) {
 					
@@ -310,7 +311,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				  }',
 				  CURLOPT_HTTPHEADER => array(
 				    'Content-Type: application/json',
-				    'Authorization: ApiKey: 2aa0cffd-73b8-41f9-ae2c-232d644a09cf' // Don't remove the space after ApiKey:,it is required.
+				    'Authorization: ApiKey: '.$apiKey // Don't remove the space after ApiKey:,it is required.
 				  ),
 				));
 
