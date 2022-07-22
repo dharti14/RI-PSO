@@ -291,7 +291,8 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 
 		 	$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";
-		 	$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
+			$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
+			$response = "true";
 
 			if( $_POST && isset( $_POST['emailAddress'] ) ) {
 					
@@ -308,7 +309,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				  CURLOPT_CUSTOMREQUEST => 'POST',
 				  CURLOPT_POSTFIELDS =>'{
 				    "email": "'.$_POST['emailAddress'].'"
-				  }',
+				}',
 				  CURLOPT_HTTPHEADER => array(
 				    'Content-Type: application/json',
 				    'Authorization: ApiKey: '.$apiKey // Don't remove the space after ApiKey:,it is required.
@@ -316,40 +317,24 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 				));
 
 				$res = curl_exec($curl);
-				curl_close($curl);					
-				$output = json_decode($res,true);
-				
-				if($res === false)
+				curl_close($curl);			
+			
+				if($res !== false)
 				{
-			    	echo "true";
-				}
-				elseif(isset($output['errors']))
-				{
-					echo "true"; // Error is due to many reason, Lead should not be missed so return true.  
-				}				
-				else
-				{					
-					if(!empty($output) && isset($output['email']) && isset($output['email']['status']))	
-					{
-						if($output['email']['status'] == 'valid' || $output['email']['status'] == 'accept_all' || $output['email']['status'] == "unknown")
-						{
-							echo "true";
-						}						
-						elseif($output['email']['status'] == 'invalid')
-						{
-							echo "false";
-						}
-						else
-						{
-							echo "true"; //In case of any status, Lead should not be missed so return true. 
-						}							
+			    	$output = json_decode($res,true);
+					
+					if(!empty($output) && isset($output['email']) && isset($output['email']['status']) && $output['email']['status'] == 'invalid')	
+					{						 
+						$response = "false";											
 						
 					}
 				}
 			}	
 		    else {
-		 			echo "false";
+		 			$response = "false";
 		     }
+
+		    echo $response;
 			die();
 
 		 }
