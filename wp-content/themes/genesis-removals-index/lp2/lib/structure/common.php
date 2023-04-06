@@ -46,7 +46,7 @@ function lp2_load_scripts() {
 	// Enqueuing Scripts and Styles for lp2
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('lp2_customizer', THEME_PATH_URI.'/lp2/lib/assets/js/customizer.js',array('jquery'),'',true );
-	wp_enqueue_script('lp2_bootstrapjs', THEME_PATH_URI.'/lp2/lib/assets/js/bootstrap.min.js',array('jquery'),'',true );
+	
 	
 
 	// LOAD MAIN STYLE

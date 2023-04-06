@@ -19,7 +19,7 @@ define('THEME_PATH',get_template_directory());
 
 
 //* Add HTML5 markup structure from Genesis
-add_theme_support( 'html5' );
+add_theme_support( 'html5',array('search-form', 'comment-list', 'comment-form', 'gallery', 'caption'));
 
 //* Add HTML5 responsive recognition
 add_theme_support( 'genesis-responsive-viewport' );

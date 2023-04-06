@@ -2,4 +2,3 @@
 
 .gdpr-info-wrapper,.pp-info-wraper{overflow:hidden}.pp-info-wraper{height:auto;padding:10px;background:#eee;margin: 10px 23px 20px 0;}.gdpr-opt-in-chk-wrapper{width:25px;float:left;margin-top:3px}.gdpr-opt-in{margin-top:8px}.gdpr-opt-in-label{float:right;width:calc(100% - 25px)}.gdpr-opt-in-label label{font-size:16px;font-weight:400;margin-bottom:0}.gdpr-opt-in-chk-wrapper input[type=checkbox]{width:20px;height:20px}
 @media (max-width: 640px) {.pp-info-wraper{margin:0px}}
-.regulatory-info-container { margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px; }.regulatory-info-container .regulatory-info p { color: #8a95a4; font-size: 12px; text-align: center; }

@@ -1,11 +1,12 @@
-
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
 
 <!-- Displaying Customer Name -->
 
 <script type="text/javascript">	     
-var ploc_key = "c6c2f463db4cb59a6e8bd62783a9f063";
-var domain = ((document.location.hostname == "local.dipesh.removals-index.com")?"local.dipesh.removals-index.com":"www.pinlocal.com");        
+var ploc_key = ((document.location.hostname == "removalsinstg.wpengine.com")?"c2de1a5a2df0c707893fb6e20392e546":"1bc3b960b3b93f3a7a87f6f6bef9520f");
+var domain = ((document.location.hostname == "removalsinstg.wpengine.com")?"pinlocal5-dev.rollingcodes.io":"www.pinlocal.com");        
 var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); 
 document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));
 </script>
@@ -104,14 +105,9 @@ document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead
      <div class="col-sm-4"> 
         <div id="testimonials">
 		
-			<div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="830px" data-style-width="100%" data-stars="5"> 
-				<a href="https://www.trustpilot.com/review/www.removals-index.com" target="_blank" rel="nofollow" hidden>Removals Index Reviews</a> 
+			<div class="trustpilot-widget" data-locale="en-GB" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="4ed29d5a000064000511a9a9" data-style-height="500px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" data-review-languages="en">
+  			    <a href="https://uk.trustpilot.com/review/www.removals-index.com" target="_blank" rel="noopener">Trustpilot</a>
 			</div>
-			
-			
-			<script type="text/javascript">
-			    (function () { var a = "https:" == document.location.protocol ? "https://ssl.trustpilot.com" : "http://s.trustpilot.com", b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = a + "/tpelements/tp_elements_all.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c) })();
-			</script>
 		</div>
      </div>
   </div>

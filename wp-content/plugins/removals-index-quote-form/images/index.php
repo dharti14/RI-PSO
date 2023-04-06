@@ -118,10 +118,11 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 
 			//Passing the name of the template file(.php) as key and the value will be Name (which is to be visible on front end).
 			$quote_form_templates = array(
-					'quote-form-template-02' => 'Template 02',					
+					'quote-form-template-02' => 'Template 02',
+					//'quote-form-template-03' => 'Template 03',
 					'quote-form-template-04' => 'Template 04 (Linear Form)',
-					'quote-form-template-05' => 'Template 05 (Linear Form V2)'
-
+// 					'quote-form-template-01' => 'Template 01',
+				   //'quote-form-template-anyvan' => 'Anyvan - 1'
 			);
 
 			//Including ci plugin metaboxes file
@@ -287,57 +288,62 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		  * Validated email id
 		  */
 
-		  public static function ri_email_verify( ) {
+		 public static function ri_email_verify( ) {
 
 
-			$apiUrl = "https://bpi.briteverify.com/api/v1/fullverify";
-		   $apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
-		   $response = "true";
+		 	/**
+		 	 * Brite Verify API Key.
+		 	 */
+		 	$apiKey = "2aa0cffd-73b8-41f9-ae2c-232d644a09cf";
 
-		   if( $_POST && isset( $_POST['emailAddress'] ) ) {
-				   
-			   $curl = curl_init();
+		 	$apiUrl = "https://bpi.briteverify.com/emails.json?";
 
-			   curl_setopt_array($curl, array(
-				 CURLOPT_URL => $apiUrl,
-				 CURLOPT_RETURNTRANSFER => true,
-				 CURLOPT_ENCODING => '',
-				 CURLOPT_MAXREDIRS => 10,
-				 CURLOPT_TIMEOUT => 0,
-				 CURLOPT_FOLLOWLOCATION => true,
-				 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-				 CURLOPT_CUSTOMREQUEST => 'POST',
-				 CURLOPT_POSTFIELDS =>'{
-				   "email": "'.$_POST['emailAddress'].'"
-			   }',
-				 CURLOPT_HTTPHEADER => array(
-				   'Content-Type: application/json',
-				   'Authorization: ApiKey: '.$apiKey // Don't remove the space after ApiKey:,it is required.
-				 ),
-			   ));
+		 	if( $_POST && isset( $_POST['emailAddress'] ) ) {
 
-			   $res = curl_exec($curl);
-			   curl_close($curl);			
-		   
-			   if($res !== false)
-			   {
-				   $output = json_decode($res,true);
-				   
-				   if(!empty($output) && isset($output['email']) && isset($output['email']['status']) && $output['email']['status'] == 'invalid')	
-				   {						 
-					   $response = "false";											
-					   
-				   }
-			   }
-		   }	
-		   else {
-					$response = "false";
-			}
+		 		$initUrl = $apiUrl."address=".urlencode(trim($_POST['emailAddress']))."&apikey=".urlencode($apiKey);
 
-		   echo $response;
-		   die();
+		 		$ch = curl_init();
 
-		}
+		 		curl_setopt($ch, CURLOPT_URL, $initUrl);
+
+		 		//curl_setopt($ch, CURLOPT_HEADER, 0);
+
+		 		//curl_setopt($ch, CURLOPT_POST, 1);
+
+		 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+		 		$output = curl_exec($ch);
+
+		 		if($output === false)
+		 		{
+		 			//echo 'Curl error: ' . curl_error($ch);
+		 			echo "true";
+		 		}
+		 		else
+		 		{
+
+			 			$output = json_decode($output, true);	 			
+			 			
+			 			if ($output['status'] == 'valid' || $output['status'] == 'accept_all' || $output['status'] == 'unknown')
+			 			{
+		 					echo "true";
+			 			}			 			
+			 			elseif($output['status'] == 'invalid')
+			 			{
+			 				echo "false";
+			 			}
+
+		 			}
+		 	}
+		 	else {
+		 		
+		 		echo "false";
+		 	}
+		 	die();
+
+		 }
 
 
 		 public static function ri_validate_email_data8( ) {
@@ -362,8 +368,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 					"level" => $level,
 		 					"options" => $options
 		 			);
-		 			$client = new SoapClient("https://webservices.data-8.co.uk/EmailValidation.asmx?WSDL");
-					
+		 			$client = new SoapClient("http://webservices.data-8.co.uk/EmailValidation.asmx?WSDL");
 		 			$result = $client->IsValid($params);
 
 		 			if ($result->IsValidResult->Status->Success == 0)
@@ -425,8 +430,7 @@ if( !class_exists( 'RI_QuoteForm' ) ) {
 		 			);
 
 
-		 			$client = new SoapClient("https://webservices.data-8.co.uk/InternationalTelephoneValidation.asmx?WSDL");
-					
+		 			$client = new SoapClient("http://webservices.data-8.co.uk/InternationalTelephoneValidation.asmx?WSDL");
 		 			$result = $client->IsValid($params, $defaultCountry);
 
 		 			// No access to the service

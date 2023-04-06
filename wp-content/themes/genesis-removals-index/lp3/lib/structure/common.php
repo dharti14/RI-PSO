@@ -46,7 +46,7 @@ function lp3_load_scripts() {
 	// Enqueuing Scripts and Styles for lp3
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('lp3_customizer', THEME_PATH_URI.'/lp3/lib/assets/js/customizer.js',array('jquery'),'',true );
-	wp_enqueue_script('lp3_bootstrapjs', THEME_PATH_URI.'/lp3/lib/assets/js/bootstrap.min.js',array('jquery'),'',true );
+	
 	
 
 	// LOAD MAIN STYLE

@@ -7,7 +7,7 @@ function site_load_scripts() {
 	
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('site_customizer', THEME_PATH_URI.'/lib/site/assets/js/customizer.js',array('jquery'),'',true );
-	wp_enqueue_script('bootstrapjs', THEME_PATH_URI.'/lib/site/assets/js/bootstrap.min.js',array('jquery'),'',true );
+	//wp_enqueue_script('bootstrapjs', THEME_PATH_URI.'/lib/site/assets/js/bootstrap.min.js',array('jquery'),'',true );
 	
 
 	// LOAD MAIN STYLE

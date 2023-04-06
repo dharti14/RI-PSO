@@ -127,18 +127,23 @@ function pinlocal_get_all_css_files() {
 				$file = str_replace(SITE_URL,$path,$file);
 				
 				$file = str_replace('/wp-content','wp-content',$file);
-				
-				//reads entire file into string
-				$cssFile = file_get_contents($file);
-						
-				//Replacing Fonts path
-				$cssFile = str_replace($replaceFonts,$replaceFontsWith,$cssFile);
-				
-				//Replacing Images path
-				$cssFile = str_replace($replaceImages,$replaceImagesWith,$cssFile);
 
-				//minifying css files removing whitspaces before and after tags
-				echo $minifiedCssFile =  pinlocal_minify_css_files($cssFile);
+				$file = str_replace('/wp-includes','wp-includes',$file);
+				
+				if(!empty($file))
+				{
+					//reads entire file into string
+					$cssFile = file_get_contents($file);
+							
+					//Replacing Fonts path
+					$cssFile = str_replace($replaceFonts,$replaceFontsWith,$cssFile);
+					
+					//Replacing Images path
+					$cssFile = str_replace($replaceImages,$replaceImagesWith,$cssFile);
+
+					//minifying css files removing whitspaces before and after tags
+					echo $minifiedCssFile =  pinlocal_minify_css_files($cssFile);
+		    	}
 			 }
 		}
 		
