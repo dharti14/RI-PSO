@@ -2,18 +2,6 @@
 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- End TrustBox script -->
 
-
-<!-- Displaying Customer Name -->
-
-<script type="text/javascript">	     
-		var ploc_key = ((document.location.hostname == "removalsinstg.wpengine.com")?"c2de1a5a2df0c707893fb6e20392e546":"1bc3b960b3b93f3a7a87f6f6bef9520f");
-		var domain = ((document.location.hostname == "removalsinstg.wpengine.com")?"pinlocal5-dev.rollingcodes.io":"www.pinlocal.com");        
-		var ploc_protocol = (("https:" == document.location.protocol) ? "https://" : "//"); 
-		document.write(unescape("%3Cscript src='" + ploc_protocol + domain+ "/sites/lead.js' id='plocal_script' type='text/javascript'%3E%3C/script%3E"));	
-	</script>
-	
-<!-- Displaying Customer Name -->
-
 <aside class="steps thanks_steps">
       <div class="container">
         <div class="row">
