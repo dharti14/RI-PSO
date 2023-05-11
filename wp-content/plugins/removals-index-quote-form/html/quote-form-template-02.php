@@ -139,8 +139,13 @@
 
 							              </div>
 
+							               <div class="form-group">
+							                 <h5>Test Field</h5>
+							                 <label><input type="text" name="test_field"></label>
+              							   </div>
+
 							              <div class="form-group radio-with-text">
-							               <h5>Property Type:</h5>
+							               <h5>Property Type2:</h5>
 							                <label>
 							                  <input type="radio" name="property_type_from" class="test" value="House"> House
 							                </label>
