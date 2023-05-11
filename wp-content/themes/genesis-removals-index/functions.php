@@ -28,7 +28,6 @@ add_theme_support( 'genesis-responsive-viewport' );
 remove_action('genesis_meta', 'genesis_load_favicon');
 
 
-
 //********************* remove default genesis action *********************//
 
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
