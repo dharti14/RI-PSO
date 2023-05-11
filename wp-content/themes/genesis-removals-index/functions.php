@@ -17,7 +17,6 @@ define('SITE_URL',get_site_url());
 
 define('THEME_PATH',get_template_directory());
 
-
 //* Add HTML5 markup structure from Genesis
 add_theme_support( 'html5',array('search-form', 'comment-list', 'comment-form', 'gallery', 'caption'));
 
